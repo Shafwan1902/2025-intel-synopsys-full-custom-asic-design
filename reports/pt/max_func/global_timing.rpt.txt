@@ -1,0 +1,12 @@
+****************************************
+Report : global_timing
+	-format { narrow }
+Design : Top
+Version: V-2023.12-SP4-VAL-20240710
+Date   : Mon Sep  1 22:34:23 2025
+****************************************
+
+No setup violations found.
+
+No hold violations found.
+1

@@ -1,0 +1,48 @@
+****************************************
+Report : qor
+        -summary
+Design : Top
+Version: S-2021.06-SP2
+Date   : Mon Sep  1 19:18:47 2025
+****************************************
+Information: The stitching and editing of coupling caps is turned OFF for design 'MYLIB:posroute64drc.design'. (TIM-125)
+Information: Design posroute64drc has 41571 nets, 0 global routed, 41569 detail routed. (NEX-024)
+Information: The RC mode used is DR for design 'Top'. (NEX-022)
+---extraction options---
+Corner: default
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Global options:
+ reference_direction       : use_from_tluplus
+ real_metalfill_extraction : none
+ virtual_shield_extraction : true
+---app options---
+ host.max_cores                   : 1
+ extract.connect_open           : true
+ extract.incremental_extraction : true
+ extract.enable_coupling_cap    : false
+Extracting design: posroute64drc 
+Information: coupling capacitance is lumped to ground. (NEX-030)
+Information: 41569 nets are successfully extracted. (NEX-028)
+Warning: Advanced receiver model has not been enabled for detailed routed design. (TIM-204)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 41569, routed nets = 41569, across physical hierarchy nets = 0, parasitics cached nets = 41569, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+Information: Timer using 'AWP, CRPR'. (TIM-050)
+
+Timing
+---------------------------------------------------------------------------
+Context                                 WNS            TNS            NVE
+---------------------------------------------------------------------------
+Design             (Setup)            -0.02          -0.10             15
+
+Design             (Hold)              0.00           0.00              0
+---------------------------------------------------------------------------
+
+Miscellaneous
+---------------------------------------------------------------------------
+Cell Area (netlist):                         169709.48
+Cell Area (netlist and physical only):       169709.48
+Nets with DRC Violations:      142
+1

@@ -1,0 +1,161 @@
+
+################################################################
+# PrimeTime Run Script (Post-Layout STA)
+################################################################
+ 
+source scripts/lib_setup.tcl
+################################################################
+# Read Post-Layout Netlist from ICC2
+################################################################
+read_verilog ../output/icc2/final/MYTOP.v
+current_design MYTOP
+link_design -force
+current_design
+################################################################
+# Load and Check Libraries
+################################################################
+get_libs
+printvar link_path
+printvar search_path
+ 
+################################################################
+# Load Constraints (from ICC2-exported SDC)
+################################################################
+ 
+read_sdc -echo ../output/icc2/final/MYTOP.sdc
+# source scripts/pt_con.tcl
+ 
+################################################################
+# Read the Parasicitics file for MaxTLU
+################################################################
+read_parasitics -format SPEF ../output/icc2/final/MYTOP.spef.maxTLU_125.spef
+ 
+report_annotated_parasitics
+################################################################
+# Constraint + Timing Sanity Checks
+################################################################
+ 
+check_timing -verbose
+report_clock -skew -attribute
+report_port -verbose
+report_design
+report_exceptions -ignored
+report_case_analysis
+################################################################
+# Update Timing and Set to Functional Mode
+################################################################
+ 
+update_timing -full
+set_case_analysis 0 in_c[63]
+################################################################
+# Reports
+################################################################
+ 
+redirect -tee -file ../reports/pt/max_func/analysis_coverage.rpt {report_analysis_coverage}
+redirect -tee -file ../reports/pt/max_func/analysis_coverage_untested.rpt {report_analysis_coverage -status_details untested}
+redirect -tee -file ../reports/pt/max_func/global_timing.rpt {report_global_timing}
+redirect -tee -file ../reports/pt/max_func/qor_summary.rpt {report_qor -summary}
+# Setup timing (max path delays)
+redirect -tee -file ../reports/pt/max_func/setup_timing.rpt {report_timing -significant_digits 5}
+# Hold timing (min path delays)
+redirect -tee -file ../reports/pt/max_func/hold_timing.rpt {report_timing -significant_digits 5 -delay_type min}
+# Constraint checks (cap/transition/etc.)
+redirect -tee -file ../reports/pt/max_func/constraints.rpt {report_constraint -max_capacitance -max_transition -min_capacitance -all_violators}
+ 
+################################################################
+# Update Timing and Set to Test Mode
+################################################################
+ 
+update_timing -full
+set_case_analysis 1 in_c[63]
+################################################################
+# Reports
+################################################################
+ 
+redirect -tee -file ../reports/pt/max_test/analysis_coverage.rpt {report_analysis_coverage}
+redirect -tee -file ../reports/pt/max_test/analysis_coverage_untested.rpt {report_analysis_coverage -status_details untested}
+redirect -tee -file ../reports/pt/max_test/global_timing.rpt {report_global_timing}
+redirect -tee -file ../reports/pt/max_test/qor_summary.rpt {report_qor -summary}
+# Setup timing (max path delays)
+redirect -tee -file ../reports/pt/max_test/setup_timing.rpt {report_timing -significant_digits 5}
+# Hold timing (min path delays)
+redirect -tee -file ../reports/pt/max_test/hold_timing.rpt {report_timing -significant_digits 5 -delay_type min}
+# Constraint checks (cap/transition/etc.)
+redirect -tee -file ../reports/pt/max_test/constraints.rpt {report_constraint -max_capacitance -max_transition -min_capacitance -all_violators}
+ 
+
+################################################################
+# Save Session
+################################################################
+ 
+save_session MYTOP_maxTLU.session
+ 
+################################################################
+# Read the Parasicitics file for MinTLU
+################################################################
+remove_annotated_parasitic
+
+read_parasitics -format SPEF ../icc2/outputs/MYTOP.spef.minTLU_125.spef
+
+report_annotated_parasitics
+################################################################
+# Constraint + Timing Sanity Checks
+################################################################
+ 
+check_timing -verbose
+report_clock -skew -attribute
+report_port -verbose
+report_design
+report_exceptions -ignored
+report_case_analysis
+################################################################
+# Update Timing and Set to Functional Mode
+################################################################
+ 
+update_timing -full
+set_case_analysis 0 in_c[63]
+################################################################
+# Reports
+################################################################
+ 
+redirect -tee -file ../reports/pt/min_func/analysis_coverage.rpt {report_analysis_coverage}
+redirect -tee -file ../reports/pt/min_func/analysis_coverage_untested.rpt {report_analysis_coverage -status_details untested}
+redirect -tee -file ../reports/pt/min_func/global_timing.rpt {report_global_timing}
+redirect -tee -file ../reports/pt/min_func/qor_summary.rpt {report_qor -summary}
+# Setup timing (max path delays)
+redirect -tee -file ../reports/pt/min_func/setup_timing.rpt {report_timing -significant_digits 5}
+# Hold timing (min path delays)
+redirect -tee -file ../reports/pt/min_func/hold_timing.rpt {report_timing -significant_digits 5 -delay_type min}
+# Constraint checks (cap/transition/etc.)
+redirect -tee -file ../reports/pt/min_func/constraints.rpt {report_constraint -max_capacitance -max_transition -min_capacitance -all_violators}
+ 
+################################################################
+# Update Timing and Set to Test Mode
+################################################################
+ 
+update_timing -full
+set_case_analysis 1 in_c[63]
+################################################################
+# Reports
+################################################################
+ 
+redirect -tee -file ../reports/pt/min_test/analysis_coverage.rpt {report_analysis_coverage}
+redirect -tee -file ../reports/pt/min_test/analysis_coverage_untested.rpt {report_analysis_coverage -status_details untested}
+redirect -tee -file ../reports/pt/min_test/global_timing.rpt {report_global_timing}
+redirect -tee -file ../reports/pt/min_test/qor_summary.rpt {report_qor -summary}
+# Setup timing (max path delays)
+redirect -tee -file ../reports/pt/min_test/setup_timing.rpt {report_timing -significant_digits 5}
+# Hold timing (min path delays)
+redirect -tee -file ../reports/pt/min_test/hold_timing.rpt {report_timing -significant_digits 5 -delay_type min}
+# Constraint checks (cap/transition/etc.)
+redirect -tee -file ../reports/pt/min_test/constraints.rpt {report_constraint -max_capacitance -max_transition -min_capacitance -all_violators}
+ 
+ 
+################################################################
+# Save Session
+#####################################z###########################
+save_session MYTOP_minTLU.session
+
+
+
+

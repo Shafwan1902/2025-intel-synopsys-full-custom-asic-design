@@ -1,0 +1,8 @@
+#@ # 
+#@ # Running icc_shell Version P-2019.03-SP4 for linux64 -- Aug 28, 2019
+#@ # Date:   Thu Sep  4 05:33:43 2025
+#@ # Run by: manis@pglkvm08
+#@ 
+
+open_lib MYLIB/
+pwd

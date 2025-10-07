@@ -1,0 +1,53 @@
+
+$dft_rpt_postdft_path
+
+set_dft_insertion_configuration \
+	-synthesis_optimization all \
+	-preserve_design_name true \
+	-map_effort high
+
+insert_dft
+
+redirect -tee \
+	-file "$dft_rpt_postdft_path/before_scan_coverage_estimated.rpt" \
+	{dft_drc -coverage_estimate}
+redirect -tee \
+	-file "$dft_rpt_postdft_path/before_check_design_post_synthesis.rpt" \
+	{check_design}
+
+compile_ultra -incremental -only_design_rule
+
+#reports on pre dft scan chains results
+redirect -tee -file "$dft_rpt_postdft_path/scan_coverage_estimated.rpt" \
+	{dft_drc -coverage_estimate}
+redirect -tee -file "$dft_rpt_postdft_path/check_design_post_synthesis.rpt" \
+	{check_design}
+redirect -tee -file "$dft_rpt_postdft_path/timing.rpt" \
+	{report_timing}
+redirect -tee -file "$dft_rpt_postdft_path/timing_max.rpt" \
+	{report_timing -max_paths 10 -delay_type max}
+redirect -tee -file "$dft_rpt_postdft_path/timing_min.rpt" \
+	{report_timing -max_paths 10 -delay_type min}
+redirect -tee -file "$dft_rpt_postdft_path/area.rpt" \
+	{report_area}
+redirect -tee -file "$dft_rpt_postdft_path/power.rpt" \
+	{report_power}
+redirect -tee -file "$dft_rpt_postdft_path/constraint.rpt" \
+	{report_constraints -all}
+redirect -tee -file "$dft_rpt_postdft_path/qor.rpt" \
+	{report_qor}
+redirect -tee -file "$dft_rpt_postdft_path/scan_config.rpt" \
+	{report_scan_configuration}
+redirect -tee -file "$dft_rpt_postdft_path/dft_signal.rpt" \
+	{report_dft_signal -view exist}
+
+#save netlist and protocol
+set test_stil_netlist_format verilog 
+
+write -format verilog -hierarchy -output "$all_output_path/mapped_scan_opt.v"
+write_scan_def -output "$all_output_path/mapped_scan_opt.scandef"
+check_scan_def
+
+write_test_protocol -output "$all_output_path/mapped_scan_opt.spf"
+write -format ddc -hierarchy -output "$all_output_path/mapped_scan_opt.ddc"
+write_sdc -nosplit "$all_output_path/mapped_scan_opt.sdc"

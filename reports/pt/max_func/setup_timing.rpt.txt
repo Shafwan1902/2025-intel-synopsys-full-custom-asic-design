@@ -1,0 +1,80 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : Top
+Version: V-2023.12-SP4-VAL-20240710
+Date   : Mon Sep  1 22:34:34 2025
+****************************************
+
+
+  Startpoint: in_c[4] (input port clocked by clk)
+  Endpoint: final_out[767]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                0.00000    0.00000
+  clock network delay (ideal)                          0.37033    0.37033
+  input external delay                                 0.10000    0.47033 r
+  in_c[4] (in)                                         0.00000 +  0.47033 r
+  U3541/Y (NBUFFX8_HVT)                                0.08729 +  0.55761 r
+  U4932/Y (NAND2X0_HVT)                                0.12646 +  0.68408 f
+  U4934/Y (OAI21X1_HVT)                                0.21289 +  0.89696 r
+  U4938/Y (AOI21X1_HVT)                                0.13800 +  1.03497 f
+  U4939/Y (OAI21X2_HVT)                                0.13178 +  1.16675 r
+  ropt_mt_inst_17002/Y (NBUFFX4_HVT)                   0.10137 H  1.26812 r
+  U6037/Y (AOI21X1_RVT)                                0.10831 H  1.37644 f
+  HFSBUF_32_2089/Y (NBUFFX8_HVT)                       0.08519 H  1.46162 f
+  U9473/Y (OAI21X2_HVT)                                0.21850 H  1.68012 r
+  U3702/Y (AO21X1_HVT)                                 0.19538 +  1.87550 r
+  U18599/CO (FADDX1_HVT)                               0.18572 +  2.06122 r
+  U18598/CO (FADDX1_HVT)                               0.15548 +  2.21670 r
+  U18597/CO (FADDX1_HVT)                               0.15461 +  2.37130 r
+  U18596/CO (FADDX1_HVT)                               0.16492 +  2.53622 r
+  U18595/CO (FADDX1_HVT)                               0.17797 +  2.71419 r
+  U18594/CO (FADDX1_HVT)                               0.16082 +  2.87501 r
+  U18593/CO (FADDX1_HVT)                               0.15855 +  3.03356 r
+  U18592/CO (FADDX1_HVT)                               0.16068 +  3.19424 r
+  U18591/CO (FADDX1_HVT)                               0.20537 +  3.39962 r
+  U18590/CO (FADDX1_HVT)                               0.19638 +  3.59600 r
+  U18589/CO (FADDX1_HVT)                               0.18308 +  3.77908 r
+  U18588/CO (FADDX1_HVT)                               0.16352 +  3.94260 r
+  U18587/CO (FADDX1_HVT)                               0.15683 +  4.09943 r
+  U18586/CO (FADDX1_HVT)                               0.15681 +  4.25624 r
+  U18585/CO (FADDX1_HVT)                               0.17216 +  4.42840 r
+  U18584/CO (FADDX1_HVT)                               0.16569 +  4.59409 r
+  U18583/CO (FADDX1_HVT)                               0.15427 +  4.74836 r
+  U18582/CO (FADDX1_HVT)                               0.15001 +  4.89838 r
+  U18581/CO (FADDX1_HVT)                               0.15021 +  5.04859 r
+  U18580/CO (FADDX1_HVT)                               0.16004 +  5.20863 r
+  U18579/CO (FADDX1_HVT)                               0.15760 +  5.36623 r
+  U18578/CO (FADDX1_HVT)                               0.15370 +  5.51993 r
+  U18577/CO (FADDX1_HVT)                               0.16137 +  5.68130 r
+  U18576/CO (FADDX1_HVT)                               0.19108 +  5.87238 r
+  U18575/CO (FADDX2_RVT)                               0.12065 +  5.99304 r
+  U18574/CO (FADDX1_HVT)                               0.13970 +  6.13274 r
+  U18573/CO (FADDX1_HVT)                               0.14666 +  6.27940 r
+  U18572/CO (FADDX1_HVT)                               0.14537 +  6.42477 r
+  U13003/Y (XOR2X1_HVT)                                0.18025 +  6.60502 f
+  HFSBUF_4_391/Y (NBUFFX2_HVT)                         0.12448 H  6.72950 f
+  final_out[767] (out)                                 0.00215 &  6.73165 f
+  data arrival time                                               6.73165
+
+  clock clk (rise edge)                                6.50000    6.50000
+  clock network delay (ideal)                          0.14516    6.64516
+  clock reconvergence pessimism                        0.20000    6.84516
+  output external delay                               -0.10000    6.74516
+  data required time                                              6.74516
+  ------------------------------------------------------------------------------
+  data required time                                              6.74516
+  data arrival time                                              -6.73165
+  ------------------------------------------------------------------------------
+  slack (MET)                                                     0.01351
+
+
+1

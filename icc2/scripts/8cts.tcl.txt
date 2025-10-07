@@ -1,0 +1,44 @@
+
+# Clock Tree Synthesis (CTS)
+#
+
+# Pre-CTS checks
+check_design -checks pre_clock_tree_stage 
+
+# Configure CTS options for better QoR
+set_app_options -name cts.compile.enable_global_route -value true 
+set_app_options -name cts.compile.enable_local_skew -value true 
+set_app_options -name cts.optimize.enable_local_skew -value true 
+set_app_options -name cts.optimize.enable_congestion_aware_ndr_promotion -value true
+
+# Remove pessimism for better timing optimization
+set_app_options -name time.remove_clock_reconvergence_pessimism -value true 
+
+# Remove clock uncertainty (will be added back by CTS)
+remove_clock_uncertainty [all_clocks] -scenarios [all_scenarios]
+
+# Run CTS with clock routing
+clock_opt -to route_clock 
+
+# Pre-optimization reports
+file mkdir ../reports/icc2/cts
+redirect -tee -file ../reports/icc2/cts/clock_qor_pre_opt.rpt {report_clock_qor}
+redirect -tee -file ../reports/icc2/cts/qor_pre_opt.rpt {report_qor -summary}
+
+# Post-CTS global route optimization
+set_app_options -name clock_opt.flow.enable_global_route_opt -value true 
+clock_opt -to global_route_opt 
+
+# Final CTS reports
+file mkdir ../reports/icc2/post_cts
+redirect -tee -file ../reports/icc2/post_cts/clock_qor_final.rpt {report_clock_qor}
+redirect -tee -file ../reports/icc2/post_cts/qor_final.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/post_cts/timing_setup.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/post_cts/timing_hold.rpt {report_timing -delay_type min -significant_digits 5}
+redirect -tee -file ../reports/icc2/post_cts/constraints.rpt {report_constraints -all_violators}
+redirect -tee -file ../reports/icc2/post_cts/design_physical.rpt {report_design -physical}
+redirect -tee -file ../reports/icc2/post_cts/congestion.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/post_cts/check_lvs.txt {check_lvs}
+
+# Save after CTS
+save_block -as save_blocks/MYTOP_CTS

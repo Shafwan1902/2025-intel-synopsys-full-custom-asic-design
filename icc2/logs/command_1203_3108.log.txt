@@ -1,0 +1,1954 @@
+
+
+
+                              IC Compiler II (TM)
+
+             Version S-2021.06-SP2 for linux64 - Aug 26, 2021 -SLE
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Loading user preference file /nfs/site/home/yabdrash/.synopsys_icc2_gui/preferences.tcl
+Load ICV ICCII menu file: /nfs/png/disks/MDC_Elite/cad/icv/P-2019.06-SP2-11/etc/tcl-u/Icc2Menu.tcl
+ + VUE INFO: Please click View->IC Validator VUE in LayoutWindow menu
+            to launch VUE.
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE INFO: Found a usable port: 2458
+
+Loading user favorites file /nfs/site/home/yabdrash/.synopsys_icc2_gui/favorites.tcl
+icc2_shell> source -verbose -echo ./scripts/5icc2_init.tcl
+alias s "source -echo -verbose"
+suppress_message FRAM-054
+suppress_message UIC-025
+suppress_message "ATTR-11 ATTR-12"
+s scripts/lib_setup.tcl
+# ICC2 Library Setup - MYLIB
+#Paths (all libraries needed)
+set_app_var search_path ".     ../libs/tech/milkyway     ../libs/tech/star_rcxt     ../libs/stdcell_hvt/ndms     ../libs/stdcell_lvt/ndms     ../libs/stdcell_rvt/ndms     ../libs/sram/ndms"
+.     ../libs/tech/milkyway     ../libs/tech/star_rcxt     ../libs/stdcell_hvt/ndms     ../libs/stdcell_lvt/ndms     ../libs/stdcell_rvt/ndms     ../libs/sram/ndms
+set TECH_FILE "../libs/tech/milkyway/saed32nm_1p9m_mw.tf"
+../libs/tech/milkyway/saed32nm_1p9m_mw.tf
+set REFERENCE_LIBRARY [join "../libs/stdcell_hvt/ndms/saed32hvt_c.ndm                               ../libs/stdcell_lvt/ndms/saed32lvt_c.ndm                               ../libs/stdcell_rvt/ndms/saed32rvt_c.ndm                               ../libs/sram/ndms/saed32sram.ndm"]
+../libs/stdcell_hvt/ndms/saed32hvt_c.ndm ../libs/stdcell_lvt/ndms/saed32lvt_c.ndm ../libs/stdcell_rvt/ndms/saed32rvt_c.ndm ../libs/sram/ndms/saed32sram.ndm
+if {![file isdirectory MYLIB]} {
+    create_lib MYLIB -technology $TECH_FILE -ref_libs $REFERENCE_LIBRARY
+    derive_design_level_via_regions
+} else {
+    open_lib MYLIB
+}
+Warning: saed32nm_1p9m_mw.tf line 649, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 648, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 728, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 726, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 727, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 803, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 801, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 802, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 877, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 875, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 876, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 951, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 949, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 950, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1025, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1023, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1024, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1099, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1097, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1098, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: Property isDefaultContact is re-defined in section ContactCode. Ignoring previous definition.(saed32nm_1p9m_mw.tf line:2061) (TECH-220)
+Warning: Property isDefaultContact is re-defined in section ContactCode. Ignoring previous definition.(saed32nm_1p9m_mw.tf line:2081) (TECH-220)
+Warning: The value of the sameNetMinSpacing attribute of layer M1 is invalid. Attribute sameNetMinSpacing should not be greater than attribute minSpacing. (saed32nm_1p9m_mw.tf line 591) (TECH-050)
+Information: Loading technology file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/tech/milkyway/saed32nm_1p9m_mw.tf' (FILE-007)
+Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'saed32hvt_c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'MYLIB'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'saed32lvt_c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'MYLIB'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'saed32rvt_c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'MYLIB'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Information: Using technology 'saed32nm_1p9m_mw.tf' to derive design library via region in the frame-views of library 'saed32hvt_c'. (FRAM-088)
+Via regions for library saed32hvt_c created successfully
+Information: Using technology 'saed32nm_1p9m_mw.tf' to derive design library via region in the frame-views of library 'saed32lvt_c'. (FRAM-088)
+Via regions for library saed32lvt_c created successfully
+Information: Using technology 'saed32nm_1p9m_mw.tf' to derive design library via region in the frame-views of library 'saed32rvt_c'. (FRAM-088)
+Via regions for library saed32rvt_c created successfully
+Finish deriving library override via region
+1
+set np [exec grep processor /proc/cpuinfo | wc -l]
+20
+if {$np > 8} { set np 8 }
+8
+set_host_options -max_cores $np
+1
+puts "ICC2 library setup complete. MYLIB ready to use."
+ICC2 library setup complete. MYLIB ready to use.
+read_ddc {../output/mapped_scan_opt.ddc}
+Information: Loading DDC file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/output/mapped_scan_opt.ddc' (FILE-007)
+Information: Reading DDC into new design 'Top' in library 'MYLIB'. (DDCR-002)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Using libraries: MYLIB saed32hvt_c saed32lvt_c saed32rvt_c saed32sram
+Linking block MYLIB:Top.design
+Information: User units loaded from library 'saed32hvt_c' (LNK-040)
+Design 'Top' was successfully linked.
+Information: Loading DEF file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/icc2/snps_check_scan_def_temp_file.def' (FILE-007)
+Information: Reading 'VERSION' statement. (DEFR-016)
+Warning: Ignoring unsupported 'NAMESCASESENSITIVE' statement. (DEFR-015)
+Information: Reading 'DIVIDERCHAR' statement. (DEFR-016)
+Information: Reading 'BUSBITCHARS' statement. (DEFR-016)
+Information: Reading 'DESIGN' statement. (DEFR-016)
+Information: Reading 'SCANCHAINS' section. (DEFR-016)
+--------------------------------
+Number of Ignored DEF Constructs
+--------------------------------
+NAMESCASESENSITIVE             : 1/1
+---------------------------------------
+Number of Processed/Read DEF Constructs
+---------------------------------------
+VERSION                        : 1/1
+DIVIDERCHAR                    : 1/1
+BUSBITCHARS                    : 1/1
+DESIGN                         : 1/1
+SCANCHAINS                     : 11/11
+1
+read_sdc {../output/mapped_scan_opt.sdc}
+Information: Loading SDC version 2.1 file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/output/mapped_scan_opt.sdc' (FILE-007)
+Information: Timer using 8 threads
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021
+Blocked VAs: 
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M9
+Turn off antenna since no rule is specified
+Warning: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Cannot find a default contact code for layer CO. (ZRT-022)
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Info: number of net_type_blockage: 0 
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.55 outside the layer range. (ZRT-707)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+GR Routing Service: Started IMRD 
+GR Routing Service: ndmAttrDef 'usr_tmng_crit' created with default value 0 
+GR Routing Service: ndmAttrDef 'rted_by_minDly' created with default value 0 
+GR Routing Service: ndmAttrDef 'port_subnet_crit_blkConn' created with default value 0 
+GR Routing Service: ndmAttrDef 'port_subnet_crit_blkPort' created with default value 0 
+Loading timing information to the router ...
+Design  Scenario default (Mode default Corner default)
+Timing information loaded to the router.
+GR Routing Service: Setting costIdx to 3 
+GR Routing Service: rebuildCongmap: itr = 3 
+Average gCell capacity  3.55	 on layer (1)	 M1
+Average gCell capacity  9.89	 on layer (2)	 M2
+Average gCell capacity  5.35	 on layer (3)	 M3
+Average gCell capacity  4.93	 on layer (4)	 M4
+Average gCell capacity  2.68	 on layer (5)	 M5
+Average gCell capacity  2.48	 on layer (6)	 M6
+Average gCell capacity  1.34	 on layer (7)	 M7
+Average gCell capacity  1.06	 on layer (8)	 M8
+Average gCell capacity  0.50	 on layer (9)	 M9
+Average gCell capacity  0.34	 on layer (10)	 MRDL
+Average number of tracks per gCell 11.00	 on layer (1)	 M1
+Average number of tracks per gCell 11.01	 on layer (2)	 M2
+Average number of tracks per gCell 5.50	 on layer (3)	 M3
+Average number of tracks per gCell 5.51	 on layer (4)	 M4
+Average number of tracks per gCell 2.75	 on layer (5)	 M5
+Average number of tracks per gCell 2.76	 on layer (6)	 M6
+Average number of tracks per gCell 1.38	 on layer (7)	 M7
+Average number of tracks per gCell 1.38	 on layer (8)	 M8
+Average number of tracks per gCell 0.69	 on layer (9)	 M9
+Average number of tracks per gCell 0.34	 on layer (10)	 MRDL
+Number of gCells = 998560
+Created 8 thread routing service with costIdx = 3. 
+GR Routing Service: Setting costIdx to 3 
+rtapi Thread-server 1: startup 
+Mgr Thread-server 1: Ctor 
+rtapi Thread-server 6: startup 
+rtapi Thread-server 5: startup 
+rtapi Thread-server 0: startup 
+rtapi Thread-server 2: startup 
+rtapi Thread-server 4: startup 
+rtapi Thread-server 7: startup 
+rtapi Thread-server 3: startup 
+Mgr Thread-server 6: Ctor 
+Mgr Thread-server 5: Ctor 
+Mgr Thread-server 0: Ctor 
+Mgr Thread-server 2: Ctor 
+Mgr Thread-server 4: Ctor 
+Mgr Thread-server 7: Ctor 
+Mgr Thread-server 3: Ctor 
+Corner Scaling is off, multiplier is 1.000000
+Using default layer M4
+maxCornerId = 0
+corner=default, tran factor=1.0000 (0.1379 / 0.1379)
+Core Area = 50 X 50 ()
+GR Routing Service: loadPermBufBlockages 
+Information: The netlist change observers are disabled for incremental timing updates. (TIM-119)
+
+INFO: GRE flow is enabled.
+
+
+Global-route-opt optimization Phase 27 Iter  1         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 27 Iter  2         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 27 Iter  3         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 27 Iter  4         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 27 Iter  5         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+
+Global-route-opt optimization Phase 28 Iter  1         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter  2         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter  3         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter  4         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter  5         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter  6         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter  7         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter  8         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter  9         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter 10         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.72      3060
+Global-route-opt optimization Phase 28 Iter 11         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.73      3060
+
+
+Global-route-opt optimization Phase 30 Iter  1         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.73      3060
+Global-route-opt optimization Phase 30 Iter  2         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.73      3060
+Global-route-opt optimization Phase 30 Iter  3         0.00        0.00      0.00       906     167727.92  7127818752.00       37664              0.73      3060
+
+Global-route-opt optimization Phase 31 Iter  1         0.00        0.00      0.00         7     167833.64  7135776768.00       37687              0.73      3060
+Global-route-opt optimization Phase 31 Iter  2         0.00        0.00      0.00         7     167833.64  7135776768.00       37687              0.73      3060
+
+
+Global-route-opt optimization complete                 0.00        0.00      0.00         7     167833.64  7135776768.00       37687              0.73      3060
+
+Global-route-opt route preserve complete         CPU:  5457 s (  1.52 hr )  ELAPSE:  2617 s (  0.73 hr )  MEM-PEAK:  3060 MB
+INFO: Sending timing info to router
+Information: The netlist change observers are enabled for incremental timing updates. (TIM-120)
+Information: The netlist change observers are enabled for incremental extraction. (TIM-127)
+nplDplc2Placer::setParam(effort,1)
+nplDplc2Placer::setParam(debug,0)
+nplDplc2Placer::setParam(site_check,2)
+nplDplc2Placer::setParam(app_firm_wgt,0)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Warning: Technology file via layer VIA1 definition has conflicting sizes of cut name, width, height tables. (PDC-006)
+Warning: Technology file via layer VIA1 definition has conflicting sizes of cut name, width, height tables. (PDC-006)
+Warning: Technology file via layer VIA1 definition has conflicting sizes of cut name, width, height tables. (PDC-006)
+Warning: Technology file via layer VIA1 definition has conflicting sizes of cut name, width, height tables. (PDC-006)
+Warning: Technology file via layer VIA1 definition has conflicting sizes of cut name, width, height tables. (PDC-006)
+Warning: Technology file via layer VIA1 definition has conflicting sizes of cut name, width, height tables. (PDC-006)
+Warning: Technology file via layer VIA1 definition has conflicting sizes of cut name, width, height tables. (PDC-006)
+Layer M1: cached 0 shapes out of 40831 total shapes.
+Layer M2: cached 0 shapes out of 131678 total shapes.
+Cached 33988 vias out of 454455 total vias.
+
+Legalizing Top Level Design Top ... 
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Total 0.1165 seconds to build cellmap data
+Information: Creating classic rule checker.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+=====> Processed 113 ref cells (19 fillers) from library
+
+Bounds/Regions In This Design:
+        Area    Num Cells  Exclusive Name
+ (square um)
+      238660        37687        Yes DEFAULT_VA
+
+Starting legalizer.
+Warning: Exclusive bound 'DEFAULT' has no cells.
+Optimizing Exclusive Bound 'DEFAULT_VA' (2/2)
+    Done Exclusive Bound 'DEFAULT_VA' (2/2) (6 sec)
+Legalization complete (13 total sec)
+
+****************************************
+  Report : Placement Attempts
+  Site   : unit
+****************************************
+
+number of cells:                  37687
+number of references:               113
+number of site rows:                292
+number of locations attempted:   791371
+number of locations failed:         361  (0.0%)
+
+Legality of references at locations:
+6 references had failures.
+
+Worst 6 references by total failures:
+ CELLS       UNFLIPPED                       FLIPPED                REFERENCE NAME
+         ATTEMPTS  FAILURES            ATTEMPTS  FAILURES           
+   572       8766       111 (  1.3%)       4347        46 (  1.1%)  HADDX1_HVT
+  6460      99396        77 (  0.1%)        110        45 ( 40.9%)  SDFFARX1_RVT
+   128       1984        20 (  1.0%)         32        20 ( 62.5%)  DFFASX1_HVT
+  1076      16919        32 (  0.2%)       7139         0 (  0.0%)  FADDX1_HVT
+    18        278         5 (  1.8%)         80         1 (  1.2%)  HADDX2_HVT
+   118       1884         4 (  0.2%)        509         0 (  0.0%)  FADDX2_HVT
+
+Worst 6 references by failure rate:
+ CELLS       UNFLIPPED                       FLIPPED                REFERENCE NAME
+         ATTEMPTS  FAILURES            ATTEMPTS  FAILURES           
+   128       1984        20 (  1.0%)         32        20 ( 62.5%)  DFFASX1_HVT
+    18        278         5 (  1.8%)         80         1 (  1.2%)  HADDX2_HVT
+   572       8766       111 (  1.3%)       4347        46 (  1.1%)  HADDX1_HVT
+   118       1884         4 (  0.2%)        509         0 (  0.0%)  FADDX2_HVT
+  1076      16919        32 (  0.2%)       7139         0 (  0.0%)  FADDX1_HVT
+  6460      99396        77 (  0.1%)        110        45 ( 40.9%)  SDFFARX1_RVT
+
+Legality of references in rows:
+0 references had row failures.
+
+****************************************
+  Report : Cell Displacements
+****************************************
+
+number of cells aggregated:       37573 (656469 total sites)
+avg row height over cells:        1.672 um
+rms cell displacement:            0.021 um ( 0.01 row height)
+rms weighted cell displacement:   0.021 um ( 0.01 row height)
+max cell displacement:            1.699 um ( 1.02 row height)
+avg cell displacement:            0.001 um ( 0.00 row height)
+avg weighted cell displacement:   0.001 um ( 0.00 row height)
+number of cells moved:               60
+number of large displacements:        0
+large displacement threshold:     3.000 row height
+
+Displacements of worst 10 cells:
+Cell: pipeline_chain_5__u_seq2/gre_mt_inst_20063 (NBUFFX2_HVT)
+  Input location: (235.688,406.232)
+  Legal location: (235.384,407.904)
+  Displacement:   1.699 um ( 1.02 row height)
+Cell: gre_mt_inst_20048 (NBUFFX2_HVT)
+  Input location: (323.088,127.008)
+  Legal location: (323.392,128.68)
+  Displacement:   1.699 um ( 1.02 row height)
+Cell: gre_mt_inst_20047 (NBUFFX2_HVT)
+  Input location: (147.072,192.216)
+  Legal location: (147.376,190.544)
+  Displacement:   1.699 um ( 1.02 row height)
+Cell: gre_mt_inst_20049 (NBUFFX2_HVT)
+  Input location: (404.104,105.272)
+  Legal location: (404.104,106.944)
+  Displacement:   1.672 um ( 1.00 row height)
+Cell: gre_mt_inst_20068 (NBUFFX2_HVT)
+  Input location: (488.768,227.328)
+  Legal location: (488.768,229)
+  Displacement:   1.672 um ( 1.00 row height)
+Cell: gre_mt_inst_20046 (NBUFFX2_HVT)
+  Input location: (384.496,50.096)
+  Legal location: (384.496,48.424)
+  Displacement:   1.672 um ( 1.00 row height)
+Cell: gre_mt_inst_20062 (NBUFFX2_HVT)
+  Input location: (474.632,170.48)
+  Legal location: (474.632,168.808)
+  Displacement:   1.672 um ( 1.00 row height)
+Cell: gre_mt_inst_20060 (NBUFFX2_HVT)
+  Input location: (464.144,459.736)
+  Legal location: (464.144,458.064)
+  Displacement:   1.672 um ( 1.00 row height)
+Cell: gre_mt_inst_20056 (NBUFFX2_HVT)
+  Input location: (103.296,379.48)
+  Legal location: (104.512,379.48)
+  Displacement:   1.216 um ( 0.73 row height)
+Cell: gre_mt_inst_20050 (NBUFFX2_HVT)
+  Input location: (491.656,90.224)
+  Legal location: (490.592,90.224)
+  Displacement:   1.064 um ( 0.64 row height)
+
+Legalization succeeded.
+Total Legalizer CPU: 15.819
+Total Legalizer Wall Time: 15.164
+----------------------------------------------------------------
+
+Global-route-opt legalization complete           CPU:  5473 s (  1.52 hr )  ELAPSE:  2632 s (  0.73 hr )  MEM-PEAK:  3060 MB
+rtapi Thread-server 1: shutdown 
+rtapi Thread-server 5: shutdown 
+Mgr Thread-server 1: Dtor 
+rtapi Thread-server 6: shutdown 
+rtapi Thread-server 0: shutdown 
+rtapi Thread-server 2: shutdown 
+Mgr Thread-server 2: Dtor 
+Mgr Thread-server 6: Dtor 
+rtapi Thread-server 4: shutdown 
+rtapi Thread-server 3: shutdown 
+rtapi Thread-server 7: shutdown 
+Mgr Thread-server 0: Dtor 
+Mgr Thread-server 5: Dtor 
+Mgr Thread-server 4: Dtor 
+Mgr Thread-server 3: Dtor 
+Mgr Thread-server 7: Dtor 
+Updating congestion ...
+Updating congestion ...
+GR Routing Service: Wrote GR congmap to NDM 
+
+No. startProblems      =   455 
+
+No. doRoutes           =     0 
+No. doUnroutes         =     0 
+No. redoRoutes         =     0 
+No. redoUnroutes       =     0 
+No. undoRoutes         =     0 
+No. undoUnroutes       =     0 
+No. commitRoutes       =     0 
+No. commitUnroutes     =     0 
+No. uncommitRoutes     =     0 
+No. uncommitUnroutes   =     0 
+No. doRoute fails      =     0 
+No. doUnroute fails    =     0 
+
+No. viaLadderQueries   =     0 
+No. doDelVias          =     0 
+No. doAddVias          =     0 
+No. redoDelVias        =     0 
+No. redoAddVias        =     0 
+No. undoDelVias        =     0 
+No. undoAddVias        =     0 
+No. commitChangeVias   =     0 
+No. uncommitChangeVias =     0 
+No. doDelVias fails    =     0 
+No. doAddVias fails    =     0 
+
+rtapi Thread-server 0: Dtor 
+rtapi Thread-server 1: Dtor 
+rtapi Thread-server 2: Dtor 
+rtapi Thread-server 3: Dtor 
+rtapi Thread-server 4: Dtor 
+rtapi Thread-server 5: Dtor 
+rtapi Thread-server 6: Dtor 
+rtapi Thread-server 7: Dtor 
+GR Routing Service: Stopped IMRD 
+Terminated routing service. 
+Information: The netlist change observers are disabled for incremental extraction. (TIM-126)
+Information: The netlist change observers are enabled for incremental extraction. (TIM-127)
+INFO: Running refresh_via_ladders
+Information: Forcing rerun of global router after global_route_opt due to app option route.global.force_rerun_after_global_route_opt being set. (ZRT-608)
+Information: The net parasitics of block Top are cleared. (TIM-123)
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used    7  Alloctr    8  Proc 6065 
+Printing options for 'route.common.*'
+common.verbose_level                                    :	 0                   
+
+Printing options for 'route.global.*'
+global.deterministic                                    :	 off                 
+global.force_rerun_after_global_route_opt               :	 true                
+global.timing_driven                                    :	 false               
+
+Begin global routing.
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M9
+Turn off antenna since no rule is specified
+Warning: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Cannot find a default contact code for layer CO. (ZRT-022)
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Info: number of net_type_blockage: 0 
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.55 outside the layer range. (ZRT-707)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+soft rule LOPT_M2_M9_3_8_wire is redundant
+soft rule _snps_autoNdr_delay_1w3s_3_8_wire is redundant
+soft rule _snps_autoNdr_delay_2w3s_3_8_wire is redundant
+Current Stage stats:
+[End of Read DB] Elapsed real time: 0:00:02 
+[End of Read DB] Elapsed cpu  time: sys=0:00:00 usr=0:00:06 total=0:00:06
+[End of Read DB] Stage (MB): Used  105  Alloctr  106  Proc    0 
+[End of Read DB] Total (MB): Used  112  Alloctr  115  Proc 6065 
+Loading parastics information to the router ...
+parastics information loaded to the router.
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (0.00,0.00,528.83,528.22)
+Number of routing layers = 10
+layer M1, dir Hor, min width = 0.05, min space = 0.05 pitch = 0.152
+layer M2, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.152
+layer M3, dir Hor, min width = 0.056, min space = 0.056 pitch = 0.304
+layer M4, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.304
+layer M5, dir Hor, min width = 0.056, min space = 0.056 pitch = 0.608
+layer M6, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.608
+layer M7, dir Hor, min width = 0.056, min space = 0.056 pitch = 1.216
+layer M8, dir Ver, min width = 0.056, min space = 0.056 pitch = 1.216
+layer M9, dir Hor, min width = 0.16, min space = 0.16 pitch = 2.432
+layer MRDL, dir Ver, min width = 2, min space = 2 pitch = 4.864
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used    5  Alloctr    5  Proc    0 
+[End of Build Tech Data] Total (MB): Used  118  Alloctr  121  Proc 6065 
+Net statistics:
+Total number of nets     = 41311
+Number of nets to route  = 41239
+41283 nets are fully connected,
+ of which 72 are detail routed and 41168 are global routed.
+4 nets have non-default rule _snps_autoNdr_power
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:00 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build All Nets] Stage (MB): Used   19  Alloctr   20  Proc    0 
+[End of Build All Nets] Total (MB): Used  138  Alloctr  141  Proc 6065 
+Average gCell capacity  3.55	 on layer (1)	 M1
+Average gCell capacity  9.89	 on layer (2)	 M2
+Average gCell capacity  5.35	 on layer (3)	 M3
+Average gCell capacity  4.93	 on layer (4)	 M4
+Average gCell capacity  2.68	 on layer (5)	 M5
+Average gCell capacity  2.48	 on layer (6)	 M6
+Average gCell capacity  1.34	 on layer (7)	 M7
+Average gCell capacity  1.06	 on layer (8)	 M8
+Average gCell capacity  0.50	 on layer (9)	 M9
+Average gCell capacity  0.34	 on layer (10)	 MRDL
+Average number of tracks per gCell 11.00	 on layer (1)	 M1
+Average number of tracks per gCell 11.01	 on layer (2)	 M2
+Average number of tracks per gCell 5.50	 on layer (3)	 M3
+Average number of tracks per gCell 5.51	 on layer (4)	 M4
+Average number of tracks per gCell 2.75	 on layer (5)	 M5
+Average number of tracks per gCell 2.76	 on layer (6)	 M6
+Average number of tracks per gCell 1.38	 on layer (7)	 M7
+Average number of tracks per gCell 1.38	 on layer (8)	 M8
+Average number of tracks per gCell 0.69	 on layer (9)	 M9
+Average number of tracks per gCell 0.34	 on layer (10)	 MRDL
+Number of gCells = 998560
+Current Stage stats:
+[End of Build Congestion map] Elapsed real time: 0:00:02 
+[End of Build Congestion map] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:02
+[End of Build Congestion map] Stage (MB): Used   17  Alloctr   18  Proc    0 
+[End of Build Congestion map] Total (MB): Used  156  Alloctr  160  Proc 6065 
+Net Count 41239, Total HPWL 1469343 microns
+HPWL   0 ~  100 microns: Net Count    37424	Total HPWL     643910 microns
+HPWL 100 ~  200 microns: Net Count     2363	Total HPWL     334008 microns
+HPWL 200 ~  300 microns: Net Count      757	Total HPWL     182290 microns
+HPWL 300 ~  400 microns: Net Count      285	Total HPWL      99670 microns
+HPWL 400 ~  500 microns: Net Count      234	Total HPWL     104519 microns
+HPWL 500 ~  600 microns: Net Count      106	Total HPWL      57207 microns
+HPWL 600 ~  700 microns: Net Count       49	Total HPWL      31671 microns
+HPWL 700 ~  800 microns: Net Count       19	Total HPWL      13950 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL          0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL          0 microns
+HPWL     > 1000 microns: Net Count        2	Total HPWL       2114 microns
+Number of user frozen nets = 0
+Information: RC layer preference is turned on for this design. (ZRT-613)
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:02 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:03 total=0:00:03
+[End of Build Data] Stage (MB): Used   45  Alloctr   46  Proc    0 
+[End of Build Data] Total (MB): Used  158  Alloctr  161  Proc 6065 
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:00 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Blocked Pin Detection] Stage (MB): Used  177  Alloctr  177  Proc    0 
+[End of Blocked Pin Detection] Total (MB): Used  334  Alloctr  337  Proc 6065 
+Information: Using 8 threads for routing. (ZRT-444)
+multi gcell levels ON
+
+Start GR phase 0
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:01 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 to
+
+   seq1_out[44]              8.00000        8.05601       -0.05601  (VIOLATED) 
+     PIN : pipeline_chain_5__u_seq1/lfsr_reg_4_/Q
+                             8.00000        8.05601       -0.05601  (VIOLATED) 
+
+   final_out[1431]           8.00000        8.05559       -0.05559  (VIOLATED) 
+     PIN : U12389/Y          8.00000        8.05559       -0.05559  (VIOLATED) 
+
+   n10412                    8.00000        8.04623       -0.04623  (VIOLATED) 
+     PIN : U12273/Y          8.00000        8.04623       -0.04623  (VIOLATED) 
+
+   n15413                    8.00000        8.04502       -0.04502  (VIOLATED) 
+     PIN : U10620/Y          8.00000        8.04502       -0.04502  (VIOLATED) 
+
+   n22921                   16.00000       16.04347       -0.04347  (VIOLATED) 
+     PIN : U17848/Y         16.00000       16.04347       -0.04347  (VIOLATED) 
+
+   aps_rename_316_           8.00000        8.04334       -0.04334  (VIOLATED) 
+     PIN : U6807/Y           8.00000        8.04334       -0.04334  (VIOLATED) 
+
+   n25844                    8.00000        8.04291       -0.04291  (VIOLATED) 
+     PIN : pipeline_chain_17__u_mult/stage3_reg_23_/QN
+                             8.00000        8.04291       -0.04291  (VIOLATED) 
+
+   final_out[758]            8.00000        8.04283       -0.04283  (VIOLATED) 
+     PIN : U18580/S          8.00000        8.04283       -0.04283  (VIOLATED) 
+
+   n22860                   16.00000       16.04211       -0.04211  (VIOLATED) 
+     PIN : U17753/Y         16.00000       16.04211       -0.04211  (VIOLATED) 
+
+   n1830                     8.00000        8.04150       -0.04150  (VIOLATED) 
+     PIN : pipeline_chain_22__u_seq2/addr_reg_3_/QN
+                             8.00000        8.04150       -0.04150  (VIOLATED) 
+
+   seq2_out[302]            16.00000       16.04067       -0.04067  (VIOLATED) 
+     PIN : pipeline_chain_18__u_seq2/BUFT_RR_3140/Y
+                            16.00000       16.04067       -0.04067  (VIOLATED) 
+
+   res_out[1121]            16.00000       16.03551       -0.03551  (VIOLATED) 
+     PIN : BUFT_RR_483/Y    16.00000       16.03551       -0.03551  (VIOLATED) 
+
+   pipeline_chain_17__u_seq2/addr[0]
+                             8.00000        8.03539       -0.03539  (VIOLATED) 
+     PIN : pipeline_chain_17__u_seq2/addr_reg_0_/Q
+                             8.00000        8.03539       -0.03539  (VIOLATED) 
+
+   seq2_out[284]            16.00000       16.03506       -0.03506  (VIOLATED) 
+     PIN : pipeline_chain_17__u_seq2/BUFT_RR_3149/Y
+                            16.00000       16.03506       -0.03506  (VIOLATED) 
+
+   dftopt659                 8.00000        8.03398       -0.03398  (VIOLATED) 
+     PIN : pipeline_chain_9__u_seq2/addr_reg_3_/Q
+                             8.00000        8.03398       -0.03398  (VIOLATED) 
+
+   pipeline_chain_18__u_seq2/_gOb145_addr[1]
+                             8.00000        8.03342       -0.03342  (VIOLATED) 
+     PIN : pipeline_chain_18__u_seq2/addr_reg_1_/Q
+                             8.00000        8.03342       -0.03342  (VIOLATED) 
+
+   n25842                    8.00000        8.02929       -0.02929  (VIOLATED) 
+     PIN : pipeline_chain_17__u_mult/stage3_reg_25_/QN
+                             8.00000        8.02929       -0.02929  (VIOLATED) 
+
+   BUF_net_816              16.00000       16.02863       -0.02863  (VIOLATED) 
+     PIN : BINV_R_816/Y     16.00000       16.02863       -0.02863  (VIOLATED) 
+
+   n15355                    8.00000        8.02801       -0.02801  (VIOLATED) 
+     PIN : U19261/Y          8.00000        8.02801       -0.02801  (VIOLATED) 
+
+   n25544                   16.00000       16.02744       -0.02744  (VIOLATED) 
+     PIN : pipeline_chain_24__u_mult/stage3_reg_45_/QN
+                            16.00000       16.02744       -0.02744  (VIOLATED) 
+
+   seq1_out[71]             16.00000       16.02619       -0.02619  (VIOLATED) 
+     PIN : BUFT_RR_3505/Y   16.00000       16.02619       -0.02619  (VIOLATED) 
+
+   pipeline_chain_8__u_seq2/_gOb97_addr[3]
+                             8.00000        8.02456       -0.02456  (VIOLATED) 
+     PIN : pipeline_chain_8__u_seq2/addr_reg_3_/Q
+                             8.00000        8.02456       -0.02456  (VIOLATED) 
+
+   n22418                   16.00000       16.02324       -0.02324  (VIOLATED) 
+     PIN : U15241/Y         16.00000       16.02324       -0.02324  (VIOLATED) 
+
+   res_out[1080]             8.00000        8.02009       -0.02009  (VIOLATED) 
+     PIN : pipeline_chain_16__u_mult/stage3_reg_56_/QN
+                             8.00000        8.02009       -0.02009  (VIOLATED) 
+
+   n15363                    8.00000        8.01663       -0.01663  (VIOLATED) 
+     PIN : U10635/Y          8.00000        8.01663       -0.01663  (VIOLATED) 
+
+   pipeline_chain_2__u_seq2/addr[1]
+                             8.00000        8.01606       -0.01606  (VIOLATED) 
+     PIN : pipeline_chain_2__u_seq2/addr_reg_1_/Q
+                             8.00000        8.01606       -0.01606  (VIOLATED) 
+
+   aps_rename_901_          16.00000       16.01441       -0.01441  (VIOLATED) 
+     PIN : U17905/Y         16.00000       16.01441       -0.01441  (VIOLATED) 
+
+   aps_rename_295_           8.00000        8.01434       -0.01434  (VIOLATED) 
+     PIN : U6837/Y           8.00000        8.01434       -0.01434  (VIOLATED) 
+
+   n15315                    8.00000        8.01332       -0.01332  (VIOLATED) 
+     PIN : U10607/Y          8.00000        8.01332       -0.01332  (VIOLATED) 
+
+   n26294                    8.00000        8.01328       -0.01328  (VIOLATED) 
+     PIN : pipeline_chain_8__u_mult/stage3_reg_35_/QN
+                             8.00000        8.01328       -0.01328  (VIOLATED) 
+
+   n14466                    8.00000        8.01231       -0.01230  (VIOLATED) 
+     PIN : U18243/CO         8.00000        8.01231       -0.01230  (VIOLATED) 
+
+   BUF_net_625              16.00000       16.01162       -0.01162  (VIOLATED) 
+     PIN : BINV_R_625/Y     16.00000       16.01162       -0.01162  (VIOLATED) 
+
+   res_out[880]              8.00000        8.00968       -0.00968  (VIOLATED) 
+     PIN : pipeline_chain_13__u_mult/stage3_reg_48_/QN
+                             8.00000        8.00968       -0.00968  (VIOLATED) 
+
+   aps_rename_1132_          8.00000        8.00904       -0.00904  (VIOLATED) 
+     PIN : U20627/Y          8.00000        8.00904       -0.00904  (VIOLATED) 
+
+   res_out[1650]             8.00000        8.00902       -0.00902  (VIOLATED) 
+     PIN : pipeline_chain_25__u_mult/stage3_reg_50_/QN
+                             8.00000        8.00902       -0.00902  (VIOLATED) 
+
+   n25652                    8.00000        8.00441       -0.00441  (VIOLATED) 
+     PIN : pipeline_chain_21__u_mult/stage3_reg_47_/QN
+                             8.00000        8.00441       -0.00441  (VIOLATED) 
+
+   res_out[743]             82.00000       82.00102       -0.00102  (VIOLATED) 
+     PIN : U22187/Y         82.00000       82.00102       -0.00102  (VIOLATED) 
+
+  ---------------------------------------------------------------------------
+   Number of max_capacitance violation(s): 1031
+
+   Mode: default Corner: default
+   Scenario: default
+  ---------------------------------------------------------------------------
+   Number of min_capacitance violation(s): 0
+
+   Total number of violation(s): 1051
+1
+icc2_shell> redirect -tee -file ../reports/icc2/route/qor_summary_post_route.rpt {report_qor -summary}
+****************************************
+Report : qor
+        -summary
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 13:24:07 2025
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+Timing
+---------------------------------------------------------------------------
+Context                                 WNS            TNS            NVE
+---------------------------------------------------------------------------
+Design             (Setup)            -0.15          -3.39             42
+
+Design             (Hold)              0.05           0.00              0
+---------------------------------------------------------------------------
+
+Miscellaneous
+---------------------------------------------------------------------------
+Cell Area (netlist):                         167833.65
+Cell Area (netlist and physical only):       167833.65
+Nets with DRC Violations:     1031
+1
+icc2_shell> redirect -tee -file ../reports/icc2/route/congestion_global_post_route.rpt {report_congestion -rerun_global_router}
+
+Running global router for congestion map ...
+Info: Set app option 'route.global.deterministic' to on
+
+Generating Timing information  
+Design  Scenario default (Mode default Corner default)
+Generating Timing information  ... Done
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used    7  Alloctr    9  Proc 6653 
+Printing options for 'route.common.*'
+common.verbose_level                                    :	 0                   
+
+Printing options for 'route.global.*'
+global.crosstalk_driven                                 :	 true                
+global.deterministic                                    :	 on                  
+global.timing_driven                                    :	 true                
+global.timing_driven_effort_level                       :	 medium              
+
+Begin global routing.
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M9
+Turn off antenna since no rule is specified
+Warning: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Cannot find a default contact code for layer CO. (ZRT-022)
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Info: number of net_type_blockage: 0 
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.55 outside the layer range. (ZRT-707)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+soft rule LOPT_M2_M9_3_8_wire is redundant
+soft rule _snps_autoNdr_delay_1w3s_3_8_wire is redundant
+soft rule _snps_autoNdr_delay_2w3s_3_8_wire is redundant
+Current Stage stats:
+[End of Read DB] Elapsed real time: 0:00:02 
+[End of Read DB] Elapsed cpu  time: sys=0:00:00 usr=0:00:13 total=0:00:13
+[End of Read DB] Stage (MB): Used  129  Alloctr  131  Proc    0 
+[End of Read DB] Total (MB): Used  137  Alloctr  140  Proc 6653 
+Loading timing information to the router from design
+Timing information loaded to the router.
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (0.00,0.00,528.83,528.22)
+Number of routing layers = 10
+layer M1, dir Hor, min width = 0.05, min space = 0.05 pitch = 0.152
+layer M2, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.152
+layer M3, dir Hor, min width = 0.056, min space = 0.056 pitch = 0.304
+layer M4, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.304
+layer M5, dir Hor, min width = 0.056, min space = 0.056 pitch = 0.608
+layer M6, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.608
+layer M7, dir Hor, min width = 0.056, min space = 0.056 pitch = 1.216
+layer M8, dir Ver, min width = 0.056, min space = 0.056 pitch = 1.216
+layer M9, dir Hor, min width = 0.16, min space = 0.16 pitch = 2.432
+layer MRDL, dir Ver, min width = 2, min space = 2 pitch = 4.864
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used    5  Alloctr    5  Proc    0 
+[End of Build Tech Data] Total (MB): Used  153  Alloctr  156  Proc 6653 
+Net statistics:
+Total number of nets     = 41311
+Number of nets to route  = 0
+41311 nets are fully connected,
+ of which 41311 are detail routed and 0 are global routed.
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:00 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build All Nets] Stage (MB): Used   19  Alloctr   20  Proc    0 
+[End of Build All Nets] Total (MB): Used  172  Alloctr  176  Proc 6653 
+Average gCell capacity  3.55	 on layer (1)	 M1
+Average gCell capacity  9.89	 on layer (2)	 M2
+Average gCell capacity  5.35	 on layer (3)	 M3
+Average gCell capacity  4.93	 on layer (4)	 M4
+Average gCell capacity  2.68	 on layer (5)	 M5
+Average gCell capacity  2.48	 on layer (6)	 M6
+Average gCell capacity  1.34	 on layer (7)	 M7
+Average gCell capacity  1.06	 on layer (8)	 M8
+Average gCell capacity  0.50	 on layer (9)	 M9
+Average gCell capacity  0.34	 on layer (10)	 MRDL
+Average number of tracks per gCell 11.00	 on layer (1)	 M1
+Average number of tracks per gCell 11.01	 on layer (2)	 M2
+Average number of tracks per gCell 5.50	 on layer (3)	 M3
+Average number of tracks per gCell 5.51	 on layer (4)	 M4
+Average number of tracks per gCell 2.75	 on layer (5)	 M5
+Average number of tracks per gCell 2.76	 on layer (6)	 M6
+Average number of tracks per gCell 1.38	 on layer (7)	 M7
+Average number of tracks per gCell 1.38	 on layer (8)	 M8
+Average number of tracks per gCell 0.69	 on layer (9)	 M9
+Average number of tracks per gCell 0.34	 on layer (10)	 MRDL
+Number of gCells = 998560
+Current Stage stats:
+[End of Build Congestion map] Elapsed real time: 0:00:01 
+[End of Build Congestion map] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[End of Build Congestion map] Stage (MB): Used   17  Alloctr   18  Proc    0 
+[End of Build Congestion map] Total (MB): Used  190  Alloctr  194  Proc 6653 
+Net Count 0, Total HPWL 0 microns
+HPWL   0 ~  100 microns: Net Count        0	Total HPWL          0 microns
+HPWL 100 ~  200 microns: Net Count        0	Total HPWL          0 microns
+HPWL 200 ~  300 microns: Net Count        0	Total HPWL          0 microns
+HPWL 300 ~  400 microns: Net Count        0	Total HPWL          0 microns
+HPWL 400 ~  500 microns: Net Count        0	Total HPWL          0 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL          0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL          0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL          0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL          0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL          0 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL          0 microns
+Number of user frozen nets = 0
+Information: RC layer preference is turned on for this design. (ZRT-613)
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:03 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:03 total=0:00:03
+[End of Build Data] Stage (MB): Used   43  Alloctr   44  Proc    0 
+[End of Build Data] Total (MB): Used  191  Alloctr  196  Proc 6653 
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:01 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[End of Blocked Pin Detection] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Blocked Pin Detection] Total (MB): Used  191  Alloctr  196  Proc 6653 
+Information: Using 8 threads for routing. (ZRT-444)
+multi gcell levels ON
+
+Start GR phase 0
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:00 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Initial Routing] Stage (MB): Used  176  Alloctr  176  Proc    0 
+[End of Initial Routing] Total (MB): Used  367  Alloctr  372  Proc 6653 
+Initial. Routing result:
+Initial. Both Dirs: Overflow =  3775 Max = 14 GRCs =  2714 (1.36%)
+Initial. H routing: Overflow =  1255 Max =  3 (GRCs =  2) GRCs =  1451 (1.45%)
+Initial. V routing: Overflow =  2520 Max = 14 (GRCs =  1) GRCs =  1263 (1.26%)
+Initial. M1         Overflow =    80 Max =  1 (GRCs = 84) GRCs =    84 (0.08%)
+Initial. M2         Overflow =  2392 Max = 14 (GRCs =  1) GRCs =  1094 (1.10%)
+Initial. M3         Overflow =   917 Max =  3 (GRCs =  2) GRCs =  1073 (1.07%)
+Initial. M4         Overflow =   106 Max =  2 (GRCs =  5) GRCs =   140 (0.14%)
+Initial. M5         Overflow =   232 Max =  2 (GRCs =  1) GRCs =   268 (0.27%)
+Initial. M6         Overflow =    21 Max =  1 (GRCs = 29) GRCs =    29 (0.03%)
+Initial. M7         Overflow =    25 Max =  1 (GRCs = 26) GRCs =    26 (0.03%)
+Initial. M8         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M9         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. MRDL       Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+
+
+Density distribution:
+Layer    0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  > 1.2 
+M1       85.5 7.95 0.75 1.73 0.66 1.01 0.86 0.76 0.13 0.01 0.53 0.00 0.00 0.08
+M2       16.0 14.4 15.0 16.9 11.0 11.7 7.49 3.78 1.75 0.11 0.89 0.17 0.27 0.31
+M3       2.65 8.38 0.02 21.5 0.00 11.0 32.2 0.00 18.4 0.00 5.09 0.09 0.52 0.04
+M4       16.9 19.2 1.65 25.7 0.03 13.6 16.2 1.20 3.46 0.00 1.80 0.01 0.02 0.04
+M5       18.0 0.00 0.00 24.5 0.00 13.8 30.0 0.00 0.00 0.00 13.3 0.00 0.00 0.20
+M6       43.6 0.00 0.00 22.1 0.00 14.7 15.3 0.00 0.00 0.00 4.10 0.00 0.00 0.01
+M7       69.7 0.00 0.00 0.00 0.00 17.3 0.00 0.00 0.00 0.00 12.9 0.00 0.00 0.02
+M8       93.7 0.00 0.00 0.00 0.00 6.03 0.00 0.00 0.00 0.00 0.25 0.00 0.00 0.00
+M9       98.7 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.26 0.00 0.00 0.00
+MRDL     100. 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Total    50.0 5.49 1.92 12.3 1.29 9.81 11.2 0.63 2.61 0.01 4.37 0.03 0.09 0.08
+
+
+Initial. Total Wire Length = 0.00
+Initial. Layer M1 wire length = 0.00
+Initial. Layer M2 wire length = 0.00
+Initial. Layer M3 wire length = 0.00
+Initial. Layer M4 wire length = 0.00
+Initial. Layer M5 wire length = 0.00
+Initial. Layer M6 wire length = 0.00
+Initial. Layer M7 wire length = 0.00
+Initial. Layer M8 wire length = 0.00
+Initial. Layer M9 wire length = 0.00
+Initial. Layer MRDL wire length = 0.00
+Initial. Total Number of Contacts = 0
+Initial. Via VIA12SQ_C count = 0
+Initial. Via VIA23SQ_C count = 0
+Initial. Via VIA34SQ_C count = 0
+Initial. Via VIA45SQ_C count = 0
+Initial. Via VIA56SQ_C count = 0
+Initial. Via VIA67SQ_C count = 0
+Initial. Via VIA78SQ_C count = 0
+Initial. Via VIA89_C count = 0
+Initial. Via VIA9RDL count = 0
+Initial. completed.
+
+Start GR phase 1
+Sun Aug 31 13:24:17 2025
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+[rtOvlpParts] Elapsed real time: 0:00:00 
+[rtOvlpParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Phase1 Routing] Elapsed real time: 0:00:00 
+[End of Phase1 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Phase1 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Phase1 Routing] Total (MB): Used  367  Alloctr  372  Proc 6653 
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+phase1. Routing result:
+phase1. Both Dirs: Overflow =  3775 Max = 14 GRCs =  2714 (1.36%)
+phase1. H routing: Overflow =  1255 Max =  3 (GRCs =  2) GRCs =  1451 (1.45%)
+phase1. V routing: Overflow =  2520 Max = 14 (GRCs =  1) GRCs =  1263 (1.26%)
+phase1. M1         Overflow =    80 Max =  1 (GRCs = 84) GRCs =    84 (0.08%)
+phase1. M2         Overflow =  2392 Max = 14 (GRCs =  1) GRCs =  1094 (1.10%)
+phase1. M3         Overflow =   917 Max =  3 (GRCs =  2) GRCs =  1073 (1.07%)
+phase1. M4         Overflow =   106 Max =  2 (GRCs =  5) GRCs =   140 (0.14%)
+phase1. M5         Overflow =   232 Max =  2 (GRCs =  1) GRCs =   268 (0.27%)
+phase1. M6         Overflow =    21 Max =  1 (GRCs = 29) GRCs =    29 (0.03%)
+phase1. M7         Overflow =    25 Max =  1 (GRCs = 26) GRCs =    26 (0.03%)
+phase1. M8         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M9         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. MRDL       Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+
+
+Density distribution:
+Layer    0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  > 1.2 
+M1       85.5 7.95 0.75 1.73 0.66 1.01 0.86 0.76 0.13 0.01 0.53 0.00 0.00 0.08
+M2       16.0 14.4 15.0 16.9 11.0 11.7 7.49 3.78 1.75 0.11 0.89 0.17 0.27 0.31
+M3       2.65 8.38 0.02 21.5 0.00 11.0 32.2 0.00 18.4 0.00 5.09 0.09 0.52 0.04
+M4       16.9 19.2 1.65 25.7 0.03 13.6 16.2 1.20 3.46 0.00 1.80 0.01 0.02 0.04
+M5       18.0 0.00 0.00 24.5 0.00 13.8 30.0 0.00 0.00 0.00 13.3 0.00 0.00 0.20
+M6       43.6 0.00 0.00 22.1 0.00 14.7 15.3 0.00 0.00 0.00 4.10 0.00 0.00 0.01
+M7       69.7 0.00 0.00 0.00 0.00 17.3 0.00 0.00 0.00 0.00 12.9 0.00 0.00 0.02
+M8       93.7 0.00 0.00 0.00 0.00 6.03 0.00 0.00 0.00 0.00 0.25 0.00 0.00 0.00
+M9       98.7 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.26 0.00 0.00 0.00
+MRDL     100. 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Total    50.0 5.49 1.92 12.3 1.29 9.81 11.2 0.63 2.61 0.01 4.37 0.03 0.09 0.08
+
+
+phase1. Total Wire Length = 0.00
+phase1. Layer M1 wire length = 0.00
+phase1. Layer M2 wire length = 0.00
+phase1. Layer M3 wire length = 0.00
+phase1. Layer M4 wire length = 0.00
+phase1. Layer M5 wire length = 0.00
+phase1. Layer M6 wire length = 0.00
+phase1. Layer M7 wire length = 0.00
+phase1. Layer M8 wire length = 0.00
+phase1. Layer M9 wire length = 0.00
+phase1. Layer MRDL wire length = 0.00
+phase1. Total Number of Contacts = 0
+phase1. Via VIA12SQ_C count = 0
+phase1. Via VIA23SQ_C count = 0
+phase1. Via VIA34SQ_C count = 0
+phase1. Via VIA45SQ_C count = 0
+phase1. Via VIA56SQ_C count = 0
+phase1. Via VIA67SQ_C count = 0
+phase1. Via VIA78SQ_C count = 0
+phase1. Via VIA89_C count = 0
+phase1. Via VIA9RDL count = 0
+phase1. completed.
+
+Start GR phase 2
+Sun Aug 31 13:24:18 2025
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+[rtOvlpParts] Elapsed real time: 0:00:00 
+[rtOvlpParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Phase2 Routing] Elapsed real time: 0:00:00 
+[End of Phase2 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Phase2 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Phase2 Routing] Total (MB): Used  367  Alloctr  372  Proc 6653 
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+phase2. Routing result:
+phase2. Both Dirs: Overflow =  3775 Max = 14 GRCs =  2714 (1.36%)
+phase2. H routing: Overflow =  1255 Max =  3 (GRCs =  2) GRCs =  1451 (1.45%)
+phase2. V routing: Overflow =  2520 Max = 14 (GRCs =  1) GRCs =  1263 (1.26%)
+phase2. M1         Overflow =    80 Max =  1 (GRCs = 84) GRCs =    84 (0.08%)
+phase2. M2         Overflow =  2392 Max = 14 (GRCs =  1) GRCs =  1094 (1.10%)
+phase2. M3         Overflow =   917 Max =  3 (GRCs =  2) GRCs =  1073 (1.07%)
+phase2. M4         Overflow =   106 Max =  2 (GRCs =  5) GRCs =   140 (0.14%)
+phase2. M5         Overflow =   232 Max =  2 (GRCs =  1) GRCs =   268 (0.27%)
+phase2. M6         Overflow =    21 Max =  1 (GRCs = 29) GRCs =    29 (0.03%)
+phase2. M7         Overflow =    25 Max =  1 (GRCs = 26) GRCs =    26 (0.03%)
+phase2. M8         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M9         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. MRDL       Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+
+
+Density distribution:
+Layer    0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  > 1.2 
+M1       85.5 7.95 0.75 1.73 0.66 1.01 0.86 0.76 0.13 0.01 0.53 0.00 0.00 0.08
+M2       16.0 14.4 15.0 16.9 11.0 11.7 7.49 3.78 1.75 0.11 0.89 0.17 0.27 0.31
+M3       2.65 8.38 0.02 21.5 0.00 11.0 32.2 0.00 18.4 0.00 5.09 0.09 0.52 0.04
+M4       16.9 19.2 1.65 25.7 0.03 13.6 16.2 1.20 3.46 0.00 1.80 0.01 0.02 0.04
+M5       18.0 0.00 0.00 24.5 0.00 13.8 30.0 0.00 0.00 0.00 13.3 0.00 0.00 0.20
+M6       43.6 0.00 0.00 22.1 0.00 14.7 15.3 0.00 0.00 0.00 4.10 0.00 0.00 0.01
+M7       69.7 0.00 0.00 0.00 0.00 17.3 0.00 0.00 0.00 0.00 12.9 0.00 0.00 0.02
+M8       93.7 0.00 0.00 0.00 0.00 6.03 0.00 0.00 0.00 0.00 0.25 0.00 0.00 0.00
+M9       98.7 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.26 0.00 0.00 0.00
+MRDL     100. 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Total    50.0 5.49 1.92 12.3 1.29 9.81 11.2 0.63 2.61 0.01 4.37 0.03 0.09 0.08
+
+
+phase2. Total Wire Length = 0.00
+phase2. Layer M1 wire length = 0.00
+phase2. Layer M2 wire length = 0.00
+phase2. Layer M3 wire length = 0.00
+phase2. Layer M4 wire length = 0.00
+phase2. Layer M5 wire length = 0.00
+phase2. Layer M6 wire length = 0.00
+phase2. Layer M7 wire length = 0.00
+phase2. Layer M8 wire length = 0.00
+phase2. Layer M9 wire length = 0.00
+phase2. Layer MRDL wire length = 0.00
+phase2. Total Number of Contacts = 0
+phase2. Via VIA12SQ_C count = 0
+phase2. Via VIA23SQ_C count = 0
+phase2. Via VIA34SQ_C count = 0
+phase2. Via VIA45SQ_C count = 0
+phase2. Via VIA56SQ_C count = 0
+phase2. Via VIA67SQ_C count = 0
+phase2. Via VIA78SQ_C count = 0
+phase2. Via VIA89_C count = 0
+phase2. Via VIA9RDL count = 0
+phase2. completed.
+Total number of nets with coarse-to-detailed routing failures: 0
+[End of Whole Chip Routing] Elapsed real time: 0:00:04 
+[End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:05 total=0:00:05
+[End of Whole Chip Routing] Stage (MB): Used  219  Alloctr  221  Proc    0 
+[End of Whole Chip Routing] Total (MB): Used  367  Alloctr  372  Proc 6653 
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+
+Congestion utilization per direction:
+Average vertical track utilization   = 34.05 %
+Peak    vertical track utilization   = 140.00 %
+Average horizontal track utilization = 38.29 %
+Peak    horizontal track utilization = 133.33 %
+
+Current Stage stats:
+[GR: Done] Elapsed real time: 0:00:00 
+[GR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[GR: Done] Stage (MB): Used  -15  Alloctr  -16  Proc    0 
+[GR: Done] Total (MB): Used  351  Alloctr  356  Proc 6653 
+GR Total stats:
+[GR: Done] Elapsed real time: 0:00:07 
+[GR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:19 total=0:00:19
+[GR: Done] Stage (MB): Used  344  Alloctr  346  Proc    0 
+[GR: Done] Total (MB): Used  351  Alloctr  356  Proc 6653 
+Writing out congestion map...
+Updating congestion ...
+Updating congestion ...
+[DBOUT] Elapsed real time: 0:00:00 
+[DBOUT] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[DBOUT] Stage (MB): Used -145  Alloctr -148  Proc    0 
+[DBOUT] Total (MB): Used   36  Alloctr   38  Proc 6653 
+Final total stats:
+[End of Global Routing] Elapsed real time: 0:00:07 
+[End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:19 total=0:00:20
+[End of Global Routing] Stage (MB): Used   29  Alloctr   29  Proc    0 
+[End of Global Routing] Total (MB): Used   36  Alloctr   38  Proc 6653 
+
+****************************************
+Report : congestion
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 13:24:18 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |    4338 |    14 |    2714  ( 1.36%) |       1
+H routing |    1522 |     3 |    1451  ( 1.45%) |       2
+V routing |    2816 |    14 |    1263  ( 1.26%) |       1
+
+1
+icc2_shell> redirect -tee -file ../reports/icc2/route/congestion_layers_post_route.rpt {report_congestion -layers {M3 M4 M5 M6 M7}}
+****************************************
+Report : congestion
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 13:24:19 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+M3        |    1143 |     3 |    1073  ( 1.07%) |       2
+M4        |     145 |     2 |     140  ( 0.14%) |       5
+M5        |     269 |     2 |     268  ( 0.27%) |       1
+M6        |      29 |     1 |      29  ( 0.03%) |      29
+M7        |      26 |     1 |      26  ( 0.03%) |      26
+---------------------------------------------------------------
+Both Dirs |    1612 |     3 |    1536  ( 0.77%) |       2
+H routing |    1438 |     3 |    1367  ( 1.37%) |       2
+V routing |     174 |     2 |     169  ( 0.17%) |       5
+
+1
+icc2_shell> quit[K[K[K[K
+   seq1_out[44]              8.00000        8.05601       -0.05601  (VIOLATED) 
+     PIN : pipeline_chain_5__u_seq1/lfsr_reg_4_/Q
+                             8.00000        8.05601       -0.05601  (VIOLATED) 
+
+   final_out[1431]           8.00000        8.05559       -0.05559  (VIOLATED) 
+     PIN : U12389/Y          8.00000        8.05559       -0.05559  (VIOLATED) 
+
+   n10412                    8.00000        8.04623       -0.04623  (VIOLATED) 
+     PIN : U12273/Y          8.00000        8.04623       -0.04623  (VIOLATED) 
+
+   n15413                    8.00000        8.04502       -0.04502  (VIOLATED) 
+     PIN : U10620/Y          8.00000        8.04502       -0.04502  (VIOLATED) 
+
+   n22921                   16.00000       16.04347       -0.04347  (VIOLATED) 
+     PIN : U17848/Y         16.00000       16.04347       -0.04347  (VIOLATED) 
+
+   aps_rename_316_           8.00000        8.04334       -0.04334  (VIOLATED) 
+     PIN : U6807/Y           8.00000        8.04334       -0.04334  (VIOLATED) 
+
+   n25844                    8.00000        8.04291       -0.04291  (VIOLATED) 
+     PIN : pipeline_chain_17__u_mult/stage3_reg_23_/QN
+                             8.00000        8.04291       -0.04291  (VIOLATED) 
+
+   final_out[758]            8.00000        8.04283       -0.04283  (VIOLATED) 
+     PIN : U18580/S          8.00000        8.04283       -0.04283  (VIOLATED) 
+
+   n22860                   16.00000       16.04211       -0.04211  (VIOLATED) 
+     PIN : U17753/Y         16.00000       16.04211       -0.04211  (VIOLATED) 
+
+   n1830                     8.00000        8.04150       -0.04150  (VIOLATED) 
+     PIN : pipeline_chain_22__u_seq2/addr_reg_3_/QN
+                             8.00000        8.04150       -0.04150  (VIOLATED) 
+
+   seq2_out[302]            16.00000       16.04067       -0.04067  (VIOLATED) 
+     PIN : pipeline_chain_18__u_seq2/BUFT_RR_3140/Y
+                            16.00000       16.04067       -0.04067  (VIOLATED) 
+
+   res_out[1121]            16.00000       16.03551       -0.03551  (VIOLATED) 
+     PIN : BUFT_RR_483/Y    16.00000       16.03551       -0.03551  (VIOLATED) 
+
+   pipeline_chain_17__u_seq2/addr[0]
+                             8.00000        8.03539       -0.03539  (VIOLATED) 
+     PIN : pipeline_chain_17__u_seq2/addr_reg_0_/Q
+                             8.00000        8.03539       -0.03539  (VIOLATED) 
+
+   seq2_out[284]            16.00000       16.03506       -0.03506  (VIOLATED) 
+     PIN : pipeline_chain_17__u_seq2/BUFT_RR_3149/Y
+                            16.00000       16.03506       -0.03506  (VIOLATED) 
+
+   dftopt659                 8.00000        8.03398       -0.03398  (VIOLATED) 
+     PIN : pipeline_chain_9__u_seq2/addr_reg_3_/Q
+                             8.00000        8.03398       -0.03398  (VIOLATED) 
+
+   pipeline_chain_18__u_seq2/_gOb145_addr[1]
+                             8.00000        8.03342       -0.03342  (VIOLATED) 
+     PIN : pipeline_chain_18__u_seq2/addr_reg_1_/Q
+                             8.00000        8.03342       -0.03342  (VIOLATED) 
+
+   n25842                    8.00000        8.02929       -0.02929  (VIOLATED) 
+     PIN : pipeline_chain_17__u_mult/stage3_reg_25_/QN
+                             8.00000        8.02929       -0.02929  (VIOLATED) 
+
+   BUF_net_816              16.00000       16.02863       -0.02863  (VIOLATED) 
+     PIN : BINV_R_816/Y     16.00000       16.02863       -0.02863  (VIOLATED) 
+
+   n15355                    8.00000        8.02801       -0.02801  (VIOLATED) 
+     PIN : U19261/Y          8.00000        8.02801       -0.02801  (VIOLATED) 
+
+   n25544                   16.00000       16.02744       -0.02744  (VIOLATED) 
+     PIN : pipeline_chain_24__u_mult/stage3_reg_45_/QN
+                            16.00000       16.02744       -0.02744  (VIOLATED) 
+
+   seq1_out[71]             16.00000       16.02619       -0.02619  (VIOLATED) 
+     PIN : BUFT_RR_3505/Y   16.00000       16.02619       -0.02619  (VIOLATED) 
+
+   pipeline_chain_8__u_seq2/_gOb97_addr[3]
+                             8.00000        8.02456       -0.02456  (VIOLATED) 
+     PIN : pipeline_chain_8__u_seq2/addr_reg_3_/Q
+                             8.00000        8.02456       -0.02456  (VIOLATED) 
+
+   n22418                   16.00000       16.02324       -0.02324  (VIOLATED) 
+     PIN : U15241/Y         16.00000       16.02324       -0.02324  (VIOLATED) 
+
+   res_out[1080]             8.00000        8.02009       -0.02009  (VIOLATED) 
+     PIN : pipeline_chain_16__u_mult/stage3_reg_56_/QN
+                             8.00000        8.02009       -0.02009  (VIOLATED) 
+
+   n15363                    8.00000        8.01663       -0.01663  (VIOLATED) 
+     PIN : U10635/Y          8.00000        8.01663       -0.01663  (VIOLATED) 
+
+   pipeline_chain_2__u_seq2/addr[1]
+                             8.00000        8.01606       -0.01606  (VIOLATED) 
+     PIN : pipeline_chain_2__u_seq2/addr_reg_1_/Q
+                             8.00000        8.01606       -0.01606  (VIOLATED) 
+
+   aps_rename_901_          16.00000       16.01441       -0.01441  (VIOLATED) 
+     PIN : U17905/Y         16.00000       16.01441       -0.01441  (VIOLATED) 
+
+   aps_rename_295_           8.00000        8.01434       -0.01434  (VIOLATED) 
+     PIN : U6837/Y           8.00000        8.01434       -0.01434  (VIOLATED) 
+
+   n15315                    8.00000        8.01332       -0.01332  (VIOLATED) 
+     PIN : U10607/Y          8.00000        8.01332       -0.01332  (VIOLATED) 
+
+   n26294                    8.00000        8.01328       -0.01328  (VIOLATED) 
+     PIN : pipeline_chain_8__u_mult/stage3_reg_35_/QN
+                             8.00000        8.01328       -0.01328  (VIOLATED) 
+
+   n14466                    8.00000        8.01231       -0.01230  (VIOLATED) 
+     PIN : U18243/CO         8.00000        8.01231       -0.01230  (VIOLATED) 
+
+   BUF_net_625              16.00000       16.01162       -0.01162  (VIOLATED) 
+     PIN : BINV_R_625/Y     16.00000       16.01162       -0.01162  (VIOLATED) 
+
+   res_out[880]              8.00000        8.00968       -0.00968  (VIOLATED) 
+     PIN : pipeline_chain_13__u_mult/stage3_reg_48_/QN
+                             8.00000        8.00968       -0.00968  (VIOLATED) 
+
+   aps_rename_1132_          8.00000        8.00904       -0.00904  (VIOLATED) 
+     PIN : U20627/Y          8.00000        8.00904       -0.00904  (VIOLATED) 
+
+   res_out[1650]             8.00000        8.00902       -0.00902  (VIOLATED) 
+     PIN : pipeline_chain_25__u_mult/stage3_reg_50_/QN
+                             8.00000        8.00902       -0.00902  (VIOLATED) 
+
+   n25652                    8.00000        8.00441       -0.00441  (VIOLATED) 
+     PIN : pipeline_chain_21__u_mult/stage3_reg_47_/QN
+                             8.00000        8.00441       -0.00441  (VIOLATED) 
+
+   res_out[743]             82.00000       82.00102       -0.00102  (VIOLATED) 
+     PIN : U22187/Y         82.00000       82.00102       -0.00102  (VIOLATED) 
+
+  ---------------------------------------------------------------------------
+   Number of max_capacitance violation(s): 1031
+
+   Mode: default Corner: default
+   Scenario: default
+  ---------------------------------------------------------------------------
+   Number of min_capacitance violation(s): 0
+
+   Total number of violation(s): 1051
+1
+icc2_shell> redirect -tee -file ../reports/icc2/route/qor_summary_post_route.rpt {report_qor -summary}
+****************************************
+Report : qor
+        -summary
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 13:24:07 2025
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+Timing
+---------------------------------------------------------------------------
+Context                                 WNS            TNS            NVE
+---------------------------------------------------------------------------
+Design             (Setup)            -0.15          -3.39             42
+
+Design             (Hold)              0.05           0.00              0
+---------------------------------------------------------------------------
+
+Miscellaneous
+---------------------------------------------------------------------------
+Cell Area (netlist):                         167833.65
+Cell Area (netlist and physical only):       167833.65
+Nets with DRC Violations:     1031
+1
+icc2_shell> redirect -tee -file ../reports/icc2/route/congestion_global_post_route.rpt {report_congestion -rerun_global_router}
+
+Running global router for congestion map ...
+Info: Set app option 'route.global.deterministic' to on
+
+Generating Timing information  
+Design  Scenario default (Mode default Corner default)
+Generating Timing information  ... Done
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used    7  Alloctr    9  Proc 6653 
+Printing options for 'route.common.*'
+common.verbose_level                                    :	 0                   
+
+Printing options for 'route.global.*'
+global.crosstalk_driven                                 :	 true                
+global.deterministic                                    :	 on                  
+global.timing_driven                                    :	 true                
+global.timing_driven_effort_level                       :	 medium              
+
+Begin global routing.
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M9
+Turn off antenna since no rule is specified
+Warning: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Cannot find a default contact code for layer CO. (ZRT-022)
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Info: number of net_type_blockage: 0 
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.55 outside the layer range. (ZRT-707)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+soft rule LOPT_M2_M9_3_8_wire is redundant
+soft rule _snps_autoNdr_delay_1w3s_3_8_wire is redundant
+soft rule _snps_autoNdr_delay_2w3s_3_8_wire is redundant
+Current Stage stats:
+[End of Read DB] Elapsed real time: 0:00:02 
+[End of Read DB] Elapsed cpu  time: sys=0:00:00 usr=0:00:13 total=0:00:13
+[End of Read DB] Stage (MB): Used  129  Alloctr  131  Proc    0 
+[End of Read DB] Total (MB): Used  137  Alloctr  140  Proc 6653 
+Loading timing information to the router from design
+Timing information loaded to the router.
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (0.00,0.00,528.83,528.22)
+Number of routing layers = 10
+layer M1, dir Hor, min width = 0.05, min space = 0.05 pitch = 0.152
+layer M2, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.152
+layer M3, dir Hor, min width = 0.056, min space = 0.056 pitch = 0.304
+layer M4, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.304
+layer M5, dir Hor, min width = 0.056, min space = 0.056 pitch = 0.608
+layer M6, dir Ver, min width = 0.056, min space = 0.056 pitch = 0.608
+layer M7, dir Hor, min width = 0.056, min space = 0.056 pitch = 1.216
+layer M8, dir Ver, min width = 0.056, min space = 0.056 pitch = 1.216
+layer M9, dir Hor, min width = 0.16, min space = 0.16 pitch = 2.432
+layer MRDL, dir Ver, min width = 2, min space = 2 pitch = 4.864
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used    5  Alloctr    5  Proc    0 
+[End of Build Tech Data] Total (MB): Used  153  Alloctr  156  Proc 6653 
+Net statistics:
+Total number of nets     = 41311
+Number of nets to route  = 0
+41311 nets are fully connected,
+ of which 41311 are detail routed and 0 are global routed.
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:00 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build All Nets] Stage (MB): Used   19  Alloctr   20  Proc    0 
+[End of Build All Nets] Total (MB): Used  172  Alloctr  176  Proc 6653 
+Average gCell capacity  3.55	 on layer (1)	 M1
+Average gCell capacity  9.89	 on layer (2)	 M2
+Average gCell capacity  5.35	 on layer (3)	 M3
+Average gCell capacity  4.93	 on layer (4)	 M4
+Average gCell capacity  2.68	 on layer (5)	 M5
+Average gCell capacity  2.48	 on layer (6)	 M6
+Average gCell capacity  1.34	 on layer (7)	 M7
+Average gCell capacity  1.06	 on layer (8)	 M8
+Average gCell capacity  0.50	 on layer (9)	 M9
+Average gCell capacity  0.34	 on layer (10)	 MRDL
+Average number of tracks per gCell 11.00	 on layer (1)	 M1
+Average number of tracks per gCell 11.01	 on layer (2)	 M2
+Average number of tracks per gCell 5.50	 on layer (3)	 M3
+Average number of tracks per gCell 5.51	 on layer (4)	 M4
+Average number of tracks per gCell 2.75	 on layer (5)	 M5
+Average number of tracks per gCell 2.76	 on layer (6)	 M6
+Average number of tracks per gCell 1.38	 on layer (7)	 M7
+Average number of tracks per gCell 1.38	 on layer (8)	 M8
+Average number of tracks per gCell 0.69	 on layer (9)	 M9
+Average number of tracks per gCell 0.34	 on layer (10)	 MRDL
+Number of gCells = 998560
+Current Stage stats:
+[End of Build Congestion map] Elapsed real time: 0:00:01 
+[End of Build Congestion map] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[End of Build Congestion map] Stage (MB): Used   17  Alloctr   18  Proc    0 
+[End of Build Congestion map] Total (MB): Used  190  Alloctr  194  Proc 6653 
+Net Count 0, Total HPWL 0 microns
+HPWL   0 ~  100 microns: Net Count        0	Total HPWL          0 microns
+HPWL 100 ~  200 microns: Net Count        0	Total HPWL          0 microns
+HPWL 200 ~  300 microns: Net Count        0	Total HPWL          0 microns
+HPWL 300 ~  400 microns: Net Count        0	Total HPWL          0 microns
+HPWL 400 ~  500 microns: Net Count        0	Total HPWL          0 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL          0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL          0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL          0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL          0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL          0 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL          0 microns
+Number of user frozen nets = 0
+Information: RC layer preference is turned on for this design. (ZRT-613)
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:03 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:03 total=0:00:03
+[End of Build Data] Stage (MB): Used   43  Alloctr   44  Proc    0 
+[End of Build Data] Total (MB): Used  191  Alloctr  196  Proc 6653 
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:01 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[End of Blocked Pin Detection] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Blocked Pin Detection] Total (MB): Used  191  Alloctr  196  Proc 6653 
+Information: Using 8 threads for routing. (ZRT-444)
+multi gcell levels ON
+
+Start GR phase 0
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:00 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Initial Routing] Stage (MB): Used  176  Alloctr  176  Proc    0 
+[End of Initial Routing] Total (MB): Used  367  Alloctr  372  Proc 6653 
+Initial. Routing result:
+Initial. Both Dirs: Overflow =  3775 Max = 14 GRCs =  2714 (1.36%)
+Initial. H routing: Overflow =  1255 Max =  3 (GRCs =  2) GRCs =  1451 (1.45%)
+Initial. V routing: Overflow =  2520 Max = 14 (GRCs =  1) GRCs =  1263 (1.26%)
+Initial. M1         Overflow =    80 Max =  1 (GRCs = 84) GRCs =    84 (0.08%)
+Initial. M2         Overflow =  2392 Max = 14 (GRCs =  1) GRCs =  1094 (1.10%)
+Initial. M3         Overflow =   917 Max =  3 (GRCs =  2) GRCs =  1073 (1.07%)
+Initial. M4         Overflow =   106 Max =  2 (GRCs =  5) GRCs =   140 (0.14%)
+Initial. M5         Overflow =   232 Max =  2 (GRCs =  1) GRCs =   268 (0.27%)
+Initial. M6         Overflow =    21 Max =  1 (GRCs = 29) GRCs =    29 (0.03%)
+Initial. M7         Overflow =    25 Max =  1 (GRCs = 26) GRCs =    26 (0.03%)
+Initial. M8         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M9         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. MRDL       Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+
+
+Density distribution:
+Layer    0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  > 1.2 
+M1       85.5 7.95 0.75 1.73 0.66 1.01 0.86 0.76 0.13 0.01 0.53 0.00 0.00 0.08
+M2       16.0 14.4 15.0 16.9 11.0 11.7 7.49 3.78 1.75 0.11 0.89 0.17 0.27 0.31
+M3       2.65 8.38 0.02 21.5 0.00 11.0 32.2 0.00 18.4 0.00 5.09 0.09 0.52 0.04
+M4       16.9 19.2 1.65 25.7 0.03 13.6 16.2 1.20 3.46 0.00 1.80 0.01 0.02 0.04
+M5       18.0 0.00 0.00 24.5 0.00 13.8 30.0 0.00 0.00 0.00 13.3 0.00 0.00 0.20
+M6       43.6 0.00 0.00 22.1 0.00 14.7 15.3 0.00 0.00 0.00 4.10 0.00 0.00 0.01
+M7       69.7 0.00 0.00 0.00 0.00 17.3 0.00 0.00 0.00 0.00 12.9 0.00 0.00 0.02
+M8       93.7 0.00 0.00 0.00 0.00 6.03 0.00 0.00 0.00 0.00 0.25 0.00 0.00 0.00
+M9       98.7 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.26 0.00 0.00 0.00
+MRDL     100. 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Total    50.0 5.49 1.92 12.3 1.29 9.81 11.2 0.63 2.61 0.01 4.37 0.03 0.09 0.08
+
+
+Initial. Total Wire Length = 0.00
+Initial. Layer M1 wire length = 0.00
+Initial. Layer M2 wire length = 0.00
+Initial. Layer M3 wire length = 0.00
+Initial. Layer M4 wire length = 0.00
+Initial. Layer M5 wire length = 0.00
+Initial. Layer M6 wire length = 0.00
+Initial. Layer M7 wire length = 0.00
+Initial. Layer M8 wire length = 0.00
+Initial. Layer M9 wire length = 0.00
+Initial. Layer MRDL wire length = 0.00
+Initial. Total Number of Contacts = 0
+Initial. Via VIA12SQ_C count = 0
+Initial. Via VIA23SQ_C count = 0
+Initial. Via VIA34SQ_C count = 0
+Initial. Via VIA45SQ_C count = 0
+Initial. Via VIA56SQ_C count = 0
+Initial. Via VIA67SQ_C count = 0
+Initial. Via VIA78SQ_C count = 0
+Initial. Via VIA89_C count = 0
+Initial. Via VIA9RDL count = 0
+Initial. completed.
+
+Start GR phase 1
+Sun Aug 31 13:24:17 2025
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+[rtOvlpParts] Elapsed real time: 0:00:00 
+[rtOvlpParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Phase1 Routing] Elapsed real time: 0:00:00 
+[End of Phase1 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Phase1 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Phase1 Routing] Total (MB): Used  367  Alloctr  372  Proc 6653 
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+phase1. Routing result:
+phase1. Both Dirs: Overflow =  3775 Max = 14 GRCs =  2714 (1.36%)
+phase1. H routing: Overflow =  1255 Max =  3 (GRCs =  2) GRCs =  1451 (1.45%)
+phase1. V routing: Overflow =  2520 Max = 14 (GRCs =  1) GRCs =  1263 (1.26%)
+phase1. M1         Overflow =    80 Max =  1 (GRCs = 84) GRCs =    84 (0.08%)
+phase1. M2         Overflow =  2392 Max = 14 (GRCs =  1) GRCs =  1094 (1.10%)
+phase1. M3         Overflow =   917 Max =  3 (GRCs =  2) GRCs =  1073 (1.07%)
+phase1. M4         Overflow =   106 Max =  2 (GRCs =  5) GRCs =   140 (0.14%)
+phase1. M5         Overflow =   232 Max =  2 (GRCs =  1) GRCs =   268 (0.27%)
+phase1. M6         Overflow =    21 Max =  1 (GRCs = 29) GRCs =    29 (0.03%)
+phase1. M7         Overflow =    25 Max =  1 (GRCs = 26) GRCs =    26 (0.03%)
+phase1. M8         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M9         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. MRDL       Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+
+
+Density distribution:
+Layer    0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  > 1.2 
+M1       85.5 7.95 0.75 1.73 0.66 1.01 0.86 0.76 0.13 0.01 0.53 0.00 0.00 0.08
+M2       16.0 14.4 15.0 16.9 11.0 11.7 7.49 3.78 1.75 0.11 0.89 0.17 0.27 0.31
+M3       2.65 8.38 0.02 21.5 0.00 11.0 32.2 0.00 18.4 0.00 5.09 0.09 0.52 0.04
+M4       16.9 19.2 1.65 25.7 0.03 13.6 16.2 1.20 3.46 0.00 1.80 0.01 0.02 0.04
+M5       18.0 0.00 0.00 24.5 0.00 13.8 30.0 0.00 0.00 0.00 13.3 0.00 0.00 0.20
+M6       43.6 0.00 0.00 22.1 0.00 14.7 15.3 0.00 0.00 0.00 4.10 0.00 0.00 0.01
+M7       69.7 0.00 0.00 0.00 0.00 17.3 0.00 0.00 0.00 0.00 12.9 0.00 0.00 0.02
+M8       93.7 0.00 0.00 0.00 0.00 6.03 0.00 0.00 0.00 0.00 0.25 0.00 0.00 0.00
+M9       98.7 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.26 0.00 0.00 0.00
+MRDL     100. 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Total    50.0 5.49 1.92 12.3 1.29 9.81 11.2 0.63 2.61 0.01 4.37 0.03 0.09 0.08
+
+
+phase1. Total Wire Length = 0.00
+phase1. Layer M1 wire length = 0.00
+phase1. Layer M2 wire length = 0.00
+phase1. Layer M3 wire length = 0.00
+phase1. Layer M4 wire length = 0.00
+phase1. Layer M5 wire length = 0.00
+phase1. Layer M6 wire length = 0.00
+phase1. Layer M7 wire length = 0.00
+phase1. Layer M8 wire length = 0.00
+phase1. Layer M9 wire length = 0.00
+phase1. Layer MRDL wire length = 0.00
+phase1. Total Number of Contacts = 0
+phase1. Via VIA12SQ_C count = 0
+phase1. Via VIA23SQ_C count = 0
+phase1. Via VIA34SQ_C count = 0
+phase1. Via VIA45SQ_C count = 0
+phase1. Via VIA56SQ_C count = 0
+phase1. Via VIA67SQ_C count = 0
+phase1. Via VIA78SQ_C count = 0
+phase1. Via VIA89_C count = 0
+phase1. Via VIA9RDL count = 0
+phase1. completed.
+
+Start GR phase 2
+Sun Aug 31 13:24:18 2025
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+[rtOvlpParts] Elapsed real time: 0:00:00 
+[rtOvlpParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Phase2 Routing] Elapsed real time: 0:00:00 
+[End of Phase2 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Phase2 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Phase2 Routing] Total (MB): Used  367  Alloctr  372  Proc 6653 
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+phase2. Routing result:
+phase2. Both Dirs: Overflow =  3775 Max = 14 GRCs =  2714 (1.36%)
+phase2. H routing: Overflow =  1255 Max =  3 (GRCs =  2) GRCs =  1451 (1.45%)
+phase2. V routing: Overflow =  2520 Max = 14 (GRCs =  1) GRCs =  1263 (1.26%)
+phase2. M1         Overflow =    80 Max =  1 (GRCs = 84) GRCs =    84 (0.08%)
+phase2. M2         Overflow =  2392 Max = 14 (GRCs =  1) GRCs =  1094 (1.10%)
+phase2. M3         Overflow =   917 Max =  3 (GRCs =  2) GRCs =  1073 (1.07%)
+phase2. M4         Overflow =   106 Max =  2 (GRCs =  5) GRCs =   140 (0.14%)
+phase2. M5         Overflow =   232 Max =  2 (GRCs =  1) GRCs =   268 (0.27%)
+phase2. M6         Overflow =    21 Max =  1 (GRCs = 29) GRCs =    29 (0.03%)
+phase2. M7         Overflow =    25 Max =  1 (GRCs = 26) GRCs =    26 (0.03%)
+phase2. M8         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M9         Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. MRDL       Overflow =     0 Max =  0 (GRCs =  0) GRCs =     0 (0.00%)
+
+
+Density distribution:
+Layer    0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  > 1.2 
+M1       85.5 7.95 0.75 1.73 0.66 1.01 0.86 0.76 0.13 0.01 0.53 0.00 0.00 0.08
+M2       16.0 14.4 15.0 16.9 11.0 11.7 7.49 3.78 1.75 0.11 0.89 0.17 0.27 0.31
+M3       2.65 8.38 0.02 21.5 0.00 11.0 32.2 0.00 18.4 0.00 5.09 0.09 0.52 0.04
+M4       16.9 19.2 1.65 25.7 0.03 13.6 16.2 1.20 3.46 0.00 1.80 0.01 0.02 0.04
+M5       18.0 0.00 0.00 24.5 0.00 13.8 30.0 0.00 0.00 0.00 13.3 0.00 0.00 0.20
+M6       43.6 0.00 0.00 22.1 0.00 14.7 15.3 0.00 0.00 0.00 4.10 0.00 0.00 0.01
+M7       69.7 0.00 0.00 0.00 0.00 17.3 0.00 0.00 0.00 0.00 12.9 0.00 0.00 0.02
+M8       93.7 0.00 0.00 0.00 0.00 6.03 0.00 0.00 0.00 0.00 0.25 0.00 0.00 0.00
+M9       98.7 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.26 0.00 0.00 0.00
+MRDL     100. 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Total    50.0 5.49 1.92 12.3 1.29 9.81 11.2 0.63 2.61 0.01 4.37 0.03 0.09 0.08
+
+
+phase2. Total Wire Length = 0.00
+phase2. Layer M1 wire length = 0.00
+phase2. Layer M2 wire length = 0.00
+phase2. Layer M3 wire length = 0.00
+phase2. Layer M4 wire length = 0.00
+phase2. Layer M5 wire length = 0.00
+phase2. Layer M6 wire length = 0.00
+phase2. Layer M7 wire length = 0.00
+phase2. Layer M8 wire length = 0.00
+phase2. Layer M9 wire length = 0.00
+phase2. Layer MRDL wire length = 0.00
+phase2. Total Number of Contacts = 0
+phase2. Via VIA12SQ_C count = 0
+phase2. Via VIA23SQ_C count = 0
+phase2. Via VIA34SQ_C count = 0
+phase2. Via VIA45SQ_C count = 0
+phase2. Via VIA56SQ_C count = 0
+phase2. Via VIA67SQ_C count = 0
+phase2. Via VIA78SQ_C count = 0
+phase2. Via VIA89_C count = 0
+phase2. Via VIA9RDL count = 0
+phase2. completed.
+Total number of nets with coarse-to-detailed routing failures: 0
+[End of Whole Chip Routing] Elapsed real time: 0:00:04 
+[End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:05 total=0:00:05
+[End of Whole Chip Routing] Stage (MB): Used  219  Alloctr  221  Proc    0 
+[End of Whole Chip Routing] Total (MB): Used  367  Alloctr  372  Proc 6653 
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+
+Congestion utilization per direction:
+Average vertical track utilization   = 34.05 %
+Peak    vertical track utilization   = 140.00 %
+Average horizontal track utilization = 38.29 %
+Peak    horizontal track utilization = 133.33 %
+
+Current Stage stats:
+[GR: Done] Elapsed real time: 0:00:00 
+[GR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[GR: Done] Stage (MB): Used  -15  Alloctr  -16  Proc    0 
+[GR: Done] Total (MB): Used  351  Alloctr  356  Proc 6653 
+GR Total stats:
+[GR: Done] Elapsed real time: 0:00:07 
+[GR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:19 total=0:00:19
+[GR: Done] Stage (MB): Used  344  Alloctr  346  Proc    0 
+[GR: Done] Total (MB): Used  351  Alloctr  356  Proc 6653 
+Writing out congestion map...
+Updating congestion ...
+Updating congestion ...
+[DBOUT] Elapsed real time: 0:00:00 
+[DBOUT] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[DBOUT] Stage (MB): Used -145  Alloctr -148  Proc    0 
+[DBOUT] Total (MB): Used   36  Alloctr   38  Proc 6653 
+Final total stats:
+[End of Global Routing] Elapsed real time: 0:00:07 
+[End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:19 total=0:00:20
+[End of Global Routing] Stage (MB): Used   29  Alloctr   29  Proc    0 
+[End of Global Routing] Total (MB): Used   36  Alloctr   38  Proc 6653 
+
+****************************************
+Report : congestion
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 13:24:18 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |    4338 |    14 |    2714  ( 1.36%) |       1
+H routing |    1522 |     3 |    1451  ( 1.45%) |       2
+V routing |    2816 |    14 |    1263  ( 1.26%) |       1
+
+1
+icc2_shell> redirect -tee -file ../reports/icc2/route/congestion_layers_post_route.rpt {report_congestion -layers {M3 M4 M5 M6 M7}}
+****************************************
+Report : congestion
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 13:24:19 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+M3        |    1143 |     3 |    1073  ( 1.07%) |       2
+M4        |     145 |     2 |     140  ( 0.14%) |       5
+M5        |     269 |     2 |     268  ( 0.27%) |       1
+M6        |      29 |     1 |      29  ( 0.03%) |      29
+M7        |      26 |     1 |      26  ( 0.03%) |      26
+---------------------------------------------------------------
+Both Dirs |    1612 |     3 |    1536  ( 0.77%) |       2
+H routing |    1438 |     3 |    1367  ( 1.37%) |       2
+V routing |     174 |     2 |     169  ( 0.17%) |       5
+
+1
+icc2_shell> quit[K[K[K[K

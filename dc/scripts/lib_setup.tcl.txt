@@ -1,0 +1,51 @@
+set target_library "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db"
+set link_library "* $target_library saed32sram_ss0p95v125c.db"
+set search_path "$search_path . ../rtl ./scripts \
+ ../libs/stdcell_hvt/db_nldm \
+ ../libs/stdcell_lvt/db_nldm \
+ ../libs/stdcell_rvt/db_nldm \
+ ../libs/sram/db_nldm"
+
+define_design_lib default -path ./work 
+
+set MW_REFERENCE_LIB_DIRS "../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m \
+                           ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m \
+			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m \
+			   ../libs/sram/milkyway/SRAM32NM"
+
+set TECH_FILE "../libs/tech/milkyway/saed32nm_1p9m_mw.tf" 
+set MAP_FILE  "../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map"  
+set TLUPLUS_MAX_FILE "../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus"  
+set TLUPLUS_MIN_FILE "../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus" 
+
+set MW_POWER_NET                "VDD" 
+set MW_POWER_PORT               "VDD" 
+set MW_GROUND_NET               "VSS" 
+set MW_GROUND_PORT              "VSS" 
+
+set MIN_ROUTING_LAYER            "M1"   
+set MAX_ROUTING_LAYER            "M6"  
+
+set mw_reference_library ${MW_REFERENCE_LIB_DIRS}
+set mw_design_library MYLIB 
+
+if {![file isdirectory $mw_design_library ]} {
+   create_mw_lib   -technology $TECH_FILE \
+     -mw_reference_library $mw_reference_library \
+      $mw_design_library
+    } else {
+      set_mw_lib_reference $mw_design_library -mw_reference_library $mw_reference_library
+    }
+open_mw_lib     $mw_design_library
+
+check_library > ../reports/dc_check_lib.rpt 
+
+set_tlu_plus_files -max_tluplus $TLUPLUS_MAX_FILE \
+      -min_tluplus $TLUPLUS_MIN_FILE \
+      -tech2itf_map $MAP_FILE
+check_tlu_plus_files
+set_dont_use [get_lib_cell */ISO*]
+set_dont_use [get_lib_cell */RSDFFARX*]
+set_dont_use [get_lib_cell */*LS*]
+set_dont_use [get_lib_cell */*AO*]
+

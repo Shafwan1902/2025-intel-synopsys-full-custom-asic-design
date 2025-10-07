@@ -1,0 +1,498 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version S-2021.06-SP2 for linux64 - Aug 24, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Starting shell in Topographical mode...
+Initializing gui preferences from file  /nfs/site/home/yabdrash/.synopsys_dc_gui/preferences.tcl
+#Environment setup for DC Shell
+#shortcut
+alias s "source -verbose -echo"
+#dc reports setup pre synthesis
+set dc_rpt "../reports/dc"
+../reports/dc
+set dc_rpt_lib_path "../reports/dc/library"
+../reports/dc/library
+set dc_rpt_presyn_path "../reports/dc/pre_synthesis"
+../reports/dc/pre_synthesis
+#dc output
+set all_output_path "../output"
+../output
+#dc reports analysis
+set dc_rpt_analysis "../reports/dc/post_synthesis_analysis"
+../reports/dc/post_synthesis_analysis
+../reports/dc/post_synthesis_analysis
+dc_shell-topo> sor[K[K[Kcd sx[Kcripts/
+../            ./             0env_setup.tcl 1setup.tcl     2synthesis.tcl lib_setup.tcl  top.con        
+dc_shell-topo> cd scripts/1setup.tcl [P [P [1@s 
+#dc_shell -topo -f scripts/0env_setup.tcl | tee logs/command_{time}_{date}.log
+#
+#This script sets up the design compiler environment, reads in library and RTL files,
+#generates library reports, checks cell availability, and performs a pre-synthesis
+#design integrity check using check_design, create unmapped ddc
+#You only need to run once
+#
+#clean start
+remove_design -all
+1
+#initialization
+s scripts/lib_setup.tcl 
+set target_library "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db"
+saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db
+set link_library "* $target_library saed32sram_ss0p95v125c.db"
+* saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db
+set search_path "$search_path . ../rtl ./scripts  ../libs/stdcell_hvt/db_nldm  ../libs/stdcell_lvt/db_nldm  ../libs/stdcell_rvt/db_nldm  ../libs/sram/db_nldm"
+. /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/dw/syn_ver /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/dw/sim_ver . ../rtl ./scripts  ../libs/stdcell_hvt/db_nldm  ../libs/stdcell_lvt/db_nldm  ../libs/stdcell_rvt/db_nldm  ../libs/sram/db_nldm
+define_design_lib default -path ./work 
+1
+set MW_REFERENCE_LIB_DIRS "../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM"
+../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM
+set TECH_FILE "../libs/tech/milkyway/saed32nm_1p9m_mw.tf" 
+../libs/tech/milkyway/saed32nm_1p9m_mw.tf
+set MAP_FILE  "../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map"  
+../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map
+set TLUPLUS_MAX_FILE "../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus"  
+../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+set TLUPLUS_MIN_FILE "../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus" 
+../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+set MW_POWER_NET                "VDD" 
+VDD
+set MW_POWER_PORT               "VDD" 
+VDD
+set MW_GROUND_NET               "VSS" 
+VSS
+set MW_GROUND_PORT              "VSS" 
+VSS
+set MIN_ROUTING_LAYER            "M1"   
+M1
+set MAX_ROUTING_LAYER            "M6"  
+M6
+set mw_reference_library ${MW_REFERENCE_LIB_DIRS}
+../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM
+set mw_design_library MYLIB 
+MYLIB
+if {![file isdirectory $mw_design_library ]} {
+   create_mw_lib   -technology $TECH_FILE      -mw_reference_library $mw_reference_library       $mw_design_library
+    } else {
+      set_mw_lib_reference $mw_design_library -mw_reference_library $mw_reference_library
+    }
+
+------------------- Internal Reference Library Settings -----------------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/sram/milkyway/SRAM32NM
+
+
+------------------- Control File Reference Library Settings -----------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/sram/milkyway/SRAM32NM
+-------------------------------------------------------------------------
+
+1
+open_mw_lib     $mw_design_library
+{MYLIB}
+check_library > ../reports/dc_check_lib.rpt 
+set_tlu_plus_files -max_tluplus $TLUPLUS_MAX_FILE       -min_tluplus $TLUPLUS_MIN_FILE       -tech2itf_map $MAP_FILE
+1
+check_tlu_plus_files
+
+Sanity check for TLU+ vs MW-Tech files:
+ max_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+ min_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+ mapping_file: ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map
+ max_emul_tlu+: **NONE**
+ min_emul_tlu+: **NONE**
+ MW design lib: MYLIB
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+1
+set_dont_use [get_lib_cell */ISO*]
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+1
+set_dont_use [get_lib_cell */RSDFFARX*]
+1
+set_dont_use [get_lib_cell */*LS*]
+1
+set_dont_use [get_lib_cell */*AO*]
+1
+1
+#create necessary folders
+file mkdir $dc_rpt
+file mkdir $dc_rpt_lib_path
+file mkdir $dc_rpt_presyn_path 
+file mkdir $all_output_path
+#library setup and reports
+read_db "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db"
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/gtech.db'
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/standard.sldb'
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m. (PSYN-878)
+Warning: The pin direction of 'INP' pin on 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is inconsistent with the same-name pin in the '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m' physical library. No physical link for the logical lib cell. (PSYN-058)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/sram/milkyway/SRAM32NM. (PSYN-878)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+  Loading link library 'gtech'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'. (DDB-24)
+Loaded 0 designs.
+list_libs
+Logical Libraries:
+-------------------------------------------------------------------------
+Library		File			Path
+-------		----			----
+  gtech		gtech.db		/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn
+  standard.sldb	standard.sldb		/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn
+  saed32lvt_ss0p95v125c saed32lvt_ss0p95v125c.db /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_lvt/db_nldm
+  saed32hvt_ss0p95v125c saed32hvt_ss0p95v125c.db /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_hvt/db_nldm
+  saed32rvt_ss0p95v125c saed32rvt_ss0p95v125c.db /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/stdcell_rvt/db_nldm
+  saed32sram_ss0p95v125c saed32sram_ss0p95v125c.db /nfs/png/disks/MDC_Elite/2025/yabdrash/assignmentv1.1/libs/sram/db_nldm
+1
+redirect -tee -file $dc_rpt_lib_path/list_libs_lvt.rpt {report_lib saed32lvt_ss0p95v125c} 
+
+****************************************
+Report : library
+Library: saed32lvt_ss0p95v125c
+Version: S-2021.06-SP2
+Date   : Thu Aug 28 12:26:00 2025
+****************************************
+
+Library Type            : Technology, PG pin Based
+Tool Created            : F-2011.09-SP1
+Date Created            : [2010 APRIL 28]
+Library Version         : 1.0000000
+Time Unit               : 1ns
+
+Capacitive Load Unit    : 1.000000ff
+Pulling Resistance Unit : 1kilo-ohm
+Voltage Unit            : 1V
+Current Unit            : 1uA
+Dynamic Energy Unit     : 0.001000pJ   (derived from V,C units)
+Leakage Power Unit      : 1pW
+Bus Naming Style        : %s[%d] (default)
+
+Default Threshold Voltage Group : "saed32cell_lvt"
+
+Operating Conditions:
+
+
+    Operating Condition Name : ss0p95v125c
+    Library : saed32lvt_ss0p95v125c
+    Process :   0.99
+    Temperature : 125.00
+    Voltage :   0.95
+    Interconnect Model : best_case_tree
+
+Input Voltages:
+
+    No input_voltage groups specified.
+
+Output Voltages:
+
+    Name                Vol         Voh         Vomin       Vomax
+    -----------------------------------------------------------------
+    DC_0                0.05        0.90        0.00        VDD
+
+nom_voltage : 0.95
+Voltage Map: Voltage Name   : Voltage Value
+             VDD              0.95
+             VDDG             0.95
+             VSS              0
+
+default_wire_load_capacitance:	0.029396
+default_wire_load_resistance:	0.002273
+default_wire_load_area:	0.010000
+
+
+Wire Loading Model:
+
+Name           :   ForQA
+Location       :   saed32lvt_ss0p95v125c
+Resistance     :   0.002273
+Capacitance    :   0.029396
+Area           :   0.01
+Slope          :   30.2854
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     8.28
+     2    18.49
+     3    29.35
+     4    40.92
+     5    53.23
+     6    66.36
+     7    80.36
+     8    95.27
+     9   111.17
+    10   128.09
+    11   146.10
+    12   165.26
+    13   185.61
+    14   207.22
+
+   final_out[341]              16.00          16.70          -0.70  (VIOLATED)
+   final_out[660]              16.00          16.67          -0.67  (VIOLATED)
+   final_out[302]               8.00           8.66          -0.66  (VIOLATED)
+   final_out[432]               8.00           8.65          -0.65  (VIOLATED)
+   final_out[682]               8.00           8.65          -0.65  (VIOLATED)
+   final_out[295]               8.00           8.64          -0.64  (VIOLATED)
+   n27743                      16.00          16.63          -0.63  (VIOLATED)
+   final_out[556]               8.00           8.62          -0.62  (VIOLATED)
+   final_out[724]              16.00          16.61          -0.61  (VIOLATED)
+   final_out[370]               8.00           8.61          -0.61  (VIOLATED)
+   final_out[806]               8.00           8.60          -0.60  (VIOLATED)
+   final_out[627]               8.00           8.59          -0.59  (VIOLATED)
+   final_out[343]              16.00          16.59          -0.59  (VIOLATED)
+   final_out[661]              16.00          16.58          -0.58  (VIOLATED)
+   n27680                      16.00          16.57          -0.57  (VIOLATED)
+   final_out[555]               8.00           8.57          -0.57  (VIOLATED)
+   final_out[340]              16.00          16.56          -0.56  (VIOLATED)
+   final_out[493]               8.00           8.55          -0.55  (VIOLATED)
+   final_out[1001]              8.00           8.54          -0.54  (VIOLATED)
+   final_out[149]              16.00          16.53          -0.53  (VIOLATED)
+   final_out[296]               8.00           8.51          -0.51  (VIOLATED)
+   final_out[207]              16.00          16.51          -0.51  (VIOLATED)
+   final_out[300]               8.00           8.51          -0.51  (VIOLATED)
+   final_out[462]              16.00          16.50          -0.50  (VIOLATED)
+   final_out[210]              16.00          16.48          -0.48  (VIOLATED)
+   final_out[301]               8.00           8.47          -0.47  (VIOLATED)
+   final_out[684]               8.00           8.46          -0.46  (VIOLATED)
+   final_out[299]               8.00           8.46          -0.46  (VIOLATED)
+   final_out[815]               8.00           8.46          -0.46  (VIOLATED)
+   final_out[554]               8.00           8.46          -0.46  (VIOLATED)
+   final_out[486]               8.00           8.46          -0.46  (VIOLATED)
+   final_out[553]               8.00           8.45          -0.45  (VIOLATED)
+   final_out[297]               8.00           8.45          -0.45  (VIOLATED)
+   final_out[557]               8.00           8.44          -0.44  (VIOLATED)
+   final_out[467]              16.00          16.44          -0.44  (VIOLATED)
+   final_out[342]              16.00          16.43          -0.43  (VIOLATED)
+   n27666                      16.00          16.43          -0.43  (VIOLATED)
+   final_out[813]               8.00           8.43          -0.43  (VIOLATED)
+   final_out[807]               8.00           8.43          -0.43  (VIOLATED)
+   n27602                      16.00          16.42          -0.42  (VIOLATED)
+   final_out[298]               8.00           8.41          -0.41  (VIOLATED)
+   final_out[683]               8.00           8.41          -0.41  (VIOLATED)
+   final_out[884]               8.00           8.40          -0.40  (VIOLATED)
+   final_out[751]               8.00           8.40          -0.40  (VIOLATED)
+   final_out[558]               8.00           8.38          -0.38  (VIOLATED)
+   final_out[369]               8.00           8.38          -0.38  (VIOLATED)
+   final_out[433]               8.00           8.36          -0.36  (VIOLATED)
+   final_out[626]               8.00           8.35          -0.35  (VIOLATED)
+   final_out[411]              16.00          16.34          -0.34  (VIOLATED)
+   final_out[15]               16.00          16.33          -0.33  (VIOLATED)
+   final_out[410]              16.00          16.33          -0.33  (VIOLATED)
+   final_out[725]              16.00          16.32          -0.32  (VIOLATED)
+   final_out[809]               8.00           8.31          -0.31  (VIOLATED)
+   final_out[871]               8.00           8.30          -0.30  (VIOLATED)
+   final_out[148]              16.00          16.30          -0.30  (VIOLATED)
+   final_out[1002]              8.00           8.29          -0.29  (VIOLATED)
+   final_out[487]               8.00           8.27          -0.27  (VIOLATED)
+   final_out[812]               8.00           8.27          -0.27  (VIOLATED)
+   final_out[1005]              8.00           8.26          -0.26  (VIOLATED)
+   final_out[808]               8.00           8.25          -0.25  (VIOLATED)
+   n27679                      16.00          16.25          -0.25  (VIOLATED)
+   final_out[1004]              8.00           8.24          -0.24  (VIOLATED)
+   final_out[811]               8.00           8.24          -0.24  (VIOLATED)
+   seq2_out[80]                32.00          32.23          -0.23  (VIOLATED)
+   n27603                      16.00          16.23          -0.23  (VIOLATED)
+   final_out[1069]              8.00           8.22          -0.22  (VIOLATED)
+   seq2_out[481]               32.00          32.19          -0.19  (VIOLATED)
+   final_out[810]               8.00           8.19          -0.19  (VIOLATED)
+   seq2_out[84]                32.00          32.19          -0.19  (VIOLATED)
+   seq2_out[283]                8.00           8.17          -0.17  (VIOLATED)
+   final_out[559]               8.00           8.17          -0.17  (VIOLATED)
+   n27604                      16.00          16.17          -0.17  (VIOLATED)
+   final_out[434]               8.00           8.17          -0.17  (VIOLATED)
+   seq2_out[20]                32.00          32.16          -0.16  (VIOLATED)
+   final_out[1003]              8.00           8.16          -0.16  (VIOLATED)
+   final_out[1061]              8.00           8.15          -0.15  (VIOLATED)
+   res_out[1956]               16.00          16.15          -0.15  (VIOLATED)
+   final_out[615]               8.00           8.14          -0.14  (VIOLATED)
+   final_out[883]               8.00           8.14          -0.14  (VIOLATED)
+   final_out[625]               8.00           8.13          -0.13  (VIOLATED)
+   res_out[1514]               16.00          16.13          -0.13  (VIOLATED)
+   res_out[1973]               16.00          16.12          -0.12  (VIOLATED)
+   seq2_out[141]                8.00           8.12          -0.12  (VIOLATED)
+   seq2_out[74]                 8.00           8.12          -0.12  (VIOLATED)
+   final_out[14]               16.00          16.10          -0.10  (VIOLATED)
+   final_out[685]               8.00           8.09          -0.09  (VIOLATED)
+   final_out[368]               8.00           8.09          -0.09  (VIOLATED)
+   seq3_out[66]                 8.00           8.09          -0.09  (VIOLATED)
+   final_out[816]               8.00           8.09          -0.09  (VIOLATED)
+   seq2_out[285]                8.00           8.07          -0.07  (VIOLATED)
+   seq3_out[176]                8.00           8.07          -0.07  (VIOLATED)
+   res_out[1198]               16.00          16.06          -0.06  (VIOLATED)
+   final_out[752]               8.00           8.05          -0.05  (VIOLATED)
+   seq3_out[199]                8.00           8.05          -0.05  (VIOLATED)
+   final_out[435]               8.00           8.04          -0.04  (VIOLATED)
+   n13898                      16.00          16.03          -0.03  (VIOLATED)
+   seq3_out[127]                8.00           8.03          -0.03  (VIOLATED)
+   res_out[16]                 16.00          16.03          -0.03  (VIOLATED)
+   final_out[100]               8.00           8.03          -0.03  (VIOLATED)
+   final_out[126]               8.00           8.03          -0.03  (VIOLATED)
+   res_out[846]                16.00          16.02          -0.02  (VIOLATED)
+   n20020                       8.00           8.02          -0.02  (VIOLATED)
+   n27625                      16.00          16.01          -0.01  (VIOLATED)
+   n27623                      16.00          16.01          -0.01  (VIOLATED)
+   final_out[941]               8.00           8.01          -0.01  (VIOLATED)
+   res_out[1111]               16.00          16.01          -0.01  (VIOLATED)
+   res_out[10]                 16.00          16.00           0.00  (VIOLATED: increase significant digits)
+   seq3_out[45]                 8.00           8.00           0.00  (VIOLATED: increase significant digits)
+
+   -----------------------------------------------------------------
+   Total                      183              -125.14  
+
+1
+redirect -tee -file "$dc_rpt_analysis/qor.rpt" {report_qor}
+ 
+****************************************
+Report : qor
+Design : Top
+Version: S-2021.06-SP2
+Date   : Thu Aug 28 12:43:11 2025
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              36.00
+  Critical Path Length:          5.57
+  Critical Path Slack:           0.63
+  Critical Path Clk Period:      6.50
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'sclk'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          0.44
+  Critical Path Slack:           9.36
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         20
+  Hierarchical Port Count:        610
+  Leaf Cell Count:              35753
+  Buf/Inv Cell Count:            7273
+  Buf Cell Count:                2809
+  Inv Cell Count:                4464
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     24809
+  Sequential Cell Count:        10944
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    62384.727439
+  Noncombinational Area: 79745.052043
+  Buf/Inv Area:          13142.294663
+  Total Buffer Area:          7284.28
+  Total Inverter Area:        5858.02
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  Net XLength        :      826827.25
+  Net YLength        :      559431.69
+  -----------------------------------
+  Cell Area:            142129.779482
+  Design Area:          142129.779482
+  Net Length        :      1386259.00
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         37152
+  Nets With Violations:           185
+  Max Trans Violations:             6
+  Max Cap Violations:             183
+  -----------------------------------
+
+
+  Hostname: pglc9902
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    7.45
+  Logic Optimization:                 43.82
+  Mapping Optimization:               42.51
+  -----------------------------------------
+  Overall Compile Time:              218.27
+  Overall Compile Wall Clock Time:   224.61
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+echo "completed reports ----------------------"
+completed reports ----------------------
+dc_shell-topo> 

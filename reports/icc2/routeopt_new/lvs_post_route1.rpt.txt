@@ -1,0 +1,52 @@
+Information: Using 8 threads for LVS
+[Check Short] Stage 1	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] Init	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Short] Stage 1-2	Elapsed =    0:00:00, CPU =    0:00:04
+[Check Short] Stage 2	Elapsed =    0:00:01, CPU =    0:00:06
+Detected more than 20 short violations. Skip checking short violations
+[Check Short] Stage 3	Elapsed =    0:00:02, CPU =    0:00:17
+[Check Short] End	Elapsed =    0:00:02, CPU =    0:00:17
+[Check Net] 10% 	Elapsed =    0:00:02, CPU =    0:00:17
+[Check Net] 20% 	Elapsed =    0:00:02, CPU =    0:00:18
+[Check Net] 30% 	Elapsed =    0:00:02, CPU =    0:00:19
+[Check Net] 40% 	Elapsed =    0:00:02, CPU =    0:00:20
+[Check Net] 50% 	Elapsed =    0:00:03, CPU =    0:00:21
+[Check Net] 60% 	Elapsed =    0:00:03, CPU =    0:00:21
+[Check Net] 70% 	Elapsed =    0:00:03, CPU =    0:00:22
+[Check Net] 80% 	Elapsed =    0:00:03, CPU =    0:00:22
+[Check Net] 90% 	Elapsed =    0:00:03, CPU =    0:00:23
+[Check Net] All nets are submitted.
+[Check Net] 100%	Elapsed =    0:00:03, CPU =    0:00:24
+Information: Detected short violation. Net1: n4095. Net2: res_out[541]. BBox: (90.5000 321.8440)(90.5560 321.9000). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: VDD. Net2: n31339. BBox: (210.7320 472.3240)(210.7880 472.3350). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: VDD. Net2: n31339. BBox: (210.7300 472.3240)(210.7900 472.3800). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: VDD. Net2: n31339. BBox: (210.7300 472.3240)(210.7900 472.3800). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: dftopt129. Net2: n2840. BBox: (258.8110 452.2360)(258.8200 452.3430). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: dftopt129. Net2: n2840. BBox: (258.7640 452.2360)(258.8180 452.3430). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: dftopt129. Net2: n2840. BBox: (258.7870 452.2600)(258.8200 452.3160). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: dftopt129. Net2: n2840. BBox: (258.8110 452.2330)(258.8200 452.3400). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: dftopt129. Net2: n2840. BBox: (258.7640 452.2330)(258.8180 452.3400). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: dftopt129. Net2: n2840. BBox: (258.7640 452.2330)(258.8200 452.3430). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: n31598. Net2: res_out[351]. BBox: (83.8120 443.6400)(83.8680 443.6960). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: HFSNET_1922. Net2: n31458. BBox: (416.5400 419.4280)(416.5960 419.4840). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: HFSNET_1922. Net2: n31458. BBox: (416.5400 419.4010)(416.5960 419.5110). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: pipeline_chain_0__u_seq2/memory[41]. Net2: pipeline_chain_0__u_seq2/memory[42]. BBox: (396.1720 403.0120)(396.2280 403.0680). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: HFSNET_1884. Net2: n16267. BBox: (470.9560 392.9810)(470.9890 393.0370). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: HFSNET_1884. Net2: n16267. BBox: (470.9580 392.9540)(471.0120 393.0610). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: HFSNET_1884. Net2: n16267. BBox: (470.9560 392.9540)(470.9650 393.0610). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: HFSNET_1884. Net2: n16267. BBox: (470.9580 392.9570)(471.0120 393.0640). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: HFSNET_1884. Net2: n16267. BBox: (470.9560 392.9570)(470.9650 393.0640). Layer: M2. (RT-586)
+Information: Detected short violation. Net1: HFSNET_1884. Net2: n16267. BBox: (470.9560 392.9540)(471.0120 393.0640). Layer: M2. (RT-586)
+
+===============================================================
+    Maximum number of violations is set to 20
+    Abort checking when more than 20 violations are found
+    All violations might not be found.
+===============================================================
+Total number of input nets is 41964.
+Total number of short violations is 20.
+Total number of open nets is 0.
+Total number of floating route violations is 0.
+
+Elapsed =    0:00:04, CPU =    0:00:25
+1

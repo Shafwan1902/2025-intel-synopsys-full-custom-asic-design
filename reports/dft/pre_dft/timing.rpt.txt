@@ -1,0 +1,118 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'Top' contains 4 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Aug 30 16:09:54 2025
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p95v125c   Library: saed32lvt_ss0p95v125c
+Wire Load Model Mode: Inactive.
+
+  Startpoint: in_c[0] (input port clocked by clk)
+  Endpoint: final_out[1023]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.30       0.30
+  input external delay                     0.10       0.40 r
+  in_c[0] (in)                             0.00       0.40 r
+  U3758/Y (NAND2X0_HVT)                    0.15 *     0.55 f
+  U4186/Y (OAI21X1_HVT)                    0.22 *     0.77 r
+  U4671/Y (AOI21X1_HVT)                    0.18 *     0.95 f
+  U4679/Y (OAI21X2_HVT)                    0.20 *     1.14 r
+  U6443/Y (AOI21X2_HVT)                    0.20 *     1.35 f
+  U8823/Y (OAI21X1_HVT)                    0.21 *     1.55 r
+  U3689/Y (AO21X1_HVT)                     0.15 *     1.70 r
+  U18487/CO (FADDX1_HVT)                   0.17 *     1.87 r
+  U18486/CO (FADDX2_HVT)                   0.20 *     2.08 r
+  U18485/CO (FADDX1_HVT)                   0.18 *     2.25 r
+  U18484/CO (FADDX1_HVT)                   0.17 *     2.43 r
+  U18483/CO (FADDX1_HVT)                   0.17 *     2.60 r
+  U18482/CO (FADDX1_HVT)                   0.16 *     2.76 r
+  U18481/CO (FADDX1_HVT)                   0.16 *     2.91 r
+  U18480/CO (FADDX1_HVT)                   0.16 *     3.07 r
+  U18479/CO (FADDX1_HVT)                   0.15 *     3.22 r
+  U18478/CO (FADDX1_HVT)                   0.15 *     3.37 r
+  U18477/CO (FADDX1_HVT)                   0.15 *     3.52 r
+  U18476/CO (FADDX1_HVT)                   0.15 *     3.67 r
+  U18475/CO (FADDX1_HVT)                   0.14 *     3.81 r
+  U18474/CO (FADDX1_HVT)                   0.14 *     3.96 r
+  U18473/CO (FADDX1_HVT)                   0.14 *     4.10 r
+  U18472/CO (FADDX1_HVT)                   0.14 *     4.25 r
+  U18471/CO (FADDX1_HVT)                   0.14 *     4.39 r
+  U18470/CO (FADDX1_HVT)                   0.14 *     4.53 r
+  U18469/CO (FADDX1_HVT)                   0.15 *     4.68 r
+  U18468/CO (FADDX1_HVT)                   0.15 *     4.83 r
+  U18467/CO (FADDX1_HVT)                   0.15 *     4.97 r
+  U18466/CO (FADDX1_HVT)                   0.15 *     5.12 r
+  U18465/CO (FADDX1_HVT)                   0.15 *     5.27 r
+  U18464/CO (FADDX1_HVT)                   0.15 *     5.42 r
+  U18463/CO (FADDX1_HVT)                   0.15 *     5.56 r
+  U18462/CO (FADDX1_HVT)                   0.15 *     5.71 r
+  U18461/CO (FADDX1_HVT)                   0.14 *     5.85 r
+  U18460/CO (FADDX1_HVT)                   0.14 *     5.99 r
+  U13093/Y (XOR2X1_HVT)                    0.18 *     6.17 f
+  U23482/Y (MUX21X1_HVT)                   0.13 *     6.30 f
+  final_out[1023] (out)                    0.00 *     6.30 f
+  data arrival time                                   6.30
+
+  clock clk (rise edge)                    6.50       6.50
+  clock network delay (ideal)              0.30       6.80
+  clock uncertainty                       -0.10       6.70
+  output external delay                   -0.10       6.60
+  data required time                                  6.60
+  -----------------------------------------------------------
+  data required time                                  6.60
+  data arrival time                                  -6.30
+  -----------------------------------------------------------
+  slack (MET)                                         0.30
+
+
+  Startpoint: pipeline_chain_2__u_mult/stage2_reg_61_
+              (rising edge-triggered flip-flop clocked by sclk)
+  Endpoint: pipeline_chain_2__u_mult/stage3_reg_61_
+            (rising edge-triggered flip-flop clocked by sclk)
+  Path Group: sclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock sclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.30       0.30
+  pipeline_chain_2__u_mult/stage2_reg_61_/CLK (SDFFASX1_RVT)
+                                                          0.00 #     0.30 r
+  pipeline_chain_2__u_mult/stage2_reg_61_/Q (SDFFASX1_RVT)
+                                                          0.44       0.74 f
+  pipeline_chain_2__u_mult/stage3_reg_61_/D (SDFFASX1_RVT)
+                                                          0.00 *     0.75 f
+  data arrival time                                                  0.75
+
+  clock sclk (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.30      10.30
+  clock uncertainty                                      -0.10      10.20
+  pipeline_chain_2__u_mult/stage3_reg_61_/CLK (SDFFASX1_RVT)
+                                                          0.00      10.20 r
+  library setup time                                     -0.26       9.94
+  data required time                                                 9.94
+  --------------------------------------------------------------------------
+  data required time                                                 9.94
+  data arrival time                                                 -0.75
+  --------------------------------------------------------------------------
+  slack (MET)                                                        9.20
+
+
+1

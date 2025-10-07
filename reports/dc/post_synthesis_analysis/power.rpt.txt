@@ -1,0 +1,53 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Aug 30 16:04:43 2025
+****************************************
+
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32rvt_ss0p95v125c (File: /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32lvt_ss0p95v125c
+Wire Load Model Mode: Inactive.
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+Warning: Cannot report correlated power unless power prediction mode is set. (PWR-727)
+Power Breakdown
+---------------
+
+                             Cell        Driven Net  Tot Dynamic      Cell
+                             Internal    Switching   Power (uW)       Leakage
+Cell                         Power (uW)  Power (uW)  (% Cell/Tot)     Power (pW)
+--------------------------------------------------------------------------------
+Netlist Power                8.683e+03   1.658e+03   1.034e+04 (84%)  6.972e+09
+Estimated Clock Tree Power   N/A         N/A          (N/A)           N/A
+--------------------------------------------------------------------------------
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       7.6583e+03          338.6427        6.0451e+09        1.4042e+04  (  81.11%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  1.0247e+03        1.3190e+03        9.2673e+08        3.2705e+03  (  18.89%)
+--------------------------------------------------------------------------------------------------
+Total          8.6830e+03 uW     1.6576e+03 uW     6.9718e+09 pW     1.7312e+04 uW
+1

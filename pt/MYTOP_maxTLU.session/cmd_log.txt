@@ -1,0 +1,41 @@
+source /nfs/png/disks/MDC_Elite/cad/primetime/V-2023.12-SP4-VAL-20240710/admin/setup/.synopsys_pt.setup
+pwd
+source scripts/lib_setup.tcl
+read_verilog ../output/icc2/final/MYTOP.v
+current_design MYTOP
+link_design -force
+current_design
+get_libs
+printvar link_path
+printvar search_path
+read_sdc -echo ../output/icc2/final/MYTOP.sdc
+read_parasitics -format SPEF ../output/icc2/final/MYTOP.spef.maxTLU_125.spef
+update_timing -full
+set_case_analysis 0 test_se
+gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Cells}
+set_case_analysis 0 test_se
+set_case_analysis 0 test_se
+set_case_analysis 0
+pwd
+set_case_analysis 0 [get_pins u_test_reg/SE]
+set_case_analysis 0 in_c[63]
+update_timing -full
+set_case_analysis 0 in_c[63]
+pwd
+redirect -tee -file ../reports/pt/max_func/analysis_coverage.rpt {report_analysis_coverage}
+redirect -tee -file ../reports/pt/max_func/analysis_coverage_untested.rpt {report_analysis_coverage -status_details untested}
+redirect -tee -file ../reports/pt/max_func/global_timing.rpt {report_global_timing}
+redirect -tee -file ../reports/pt/max_func/qor_summary.rpt {report_qor -summary}
+redirect -tee -file ../reports/pt/max_func/setup_timing.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/pt/max_func/hold_timing.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/pt/max_func/constraints.rpt {report_constraint -max_capacitance -max_transition -min_capacitance -all_violators}
+update_timing -full
+set_case_analysis 1 in_c[63]
+redirect -tee -file ../reports/pt/max_test/analysis_coverage.rpt {report_analysis_coverage}
+redirect -tee -file ../reports/pt/max_test/analysis_coverage_untested.rpt {report_analysis_coverage -status_details untested}
+redirect -tee -file ../reports/pt/max_test/global_timing.rpt {report_global_timing}
+redirect -tee -file ../reports/pt/max_test/qor_summary.rpt {report_qor -summary}
+redirect -tee -file ../reports/pt/max_test/setup_timing.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/pt/max_test/hold_timing.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/pt/max_test/constraints.rpt {report_constraint -max_capacitance -max_transition -min_capacitance -all_violators}
+

@@ -1,0 +1,6 @@
+../output/icc2/final/MYTOP.spef.maxTLU_125.spef for scenarios: 
+	 scenario: default, corner type: late
+
+../output/icc2/final/MYTOP.spef.minTLU_125.spef for scenarios: 
+	 scenario: default, corner type: early
+

@@ -1,0 +1,46 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-max_paths 1
+	-sort_by slack
+Design : Top
+Version: V-2023.12-SP4-VAL-20240710
+Date   : Mon Sep  1 22:37:03 2025
+****************************************
+
+
+  Startpoint: pipeline_chain_16__u_mult/stage3_reg_58_
+               (rising edge-triggered flip-flop clocked by sclk)
+  Endpoint: pipeline_chain_26__u_mult/stage2_reg_44_
+               (rising edge-triggered flip-flop clocked by sclk)
+  Last common pin: sclk
+  Path Group: sclk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock sclk (rise edge)                               0.00000    0.00000
+  clock network delay (propagated)                     0.09273    0.09273
+  pipeline_chain_16__u_mult/stage3_reg_58_/CLK (SDFFASX1_RVT)
+                                                       0.00000    0.09273 r
+  pipeline_chain_16__u_mult/stage3_reg_58_/Q (SDFFASX1_RVT)
+                                                       0.17539 +  0.26812 f
+  pipeline_chain_26__u_mult/stage2_reg_44_/SI (SDFFASX1_RVT)
+                                                       0.00000 +  0.26812 f
+  data arrival time                                               0.26812
+
+  clock sclk (rise edge)                               0.00000    0.00000
+  clock network delay (propagated)                     0.51262    0.51262
+  clock reconvergence pessimism                       -0.20000    0.31262
+  pipeline_chain_26__u_mult/stage2_reg_44_/CLK (SDFFASX1_RVT)     0.31262 r
+  library hold time                                   -0.05240    0.26021
+  data required time                                              0.26021
+  ------------------------------------------------------------------------------
+  data required time                                              0.26021
+  data arrival time                                              -0.26812
+  ------------------------------------------------------------------------------
+  slack (MET)                                                     0.00790
+
+
+1

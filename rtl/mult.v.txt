@@ -1,0 +1,26 @@
+module PipelinedMultiplier (
+    input  logic         clk,
+    input  logic         rst_n,
+    input  logic [31:0]  a,
+    input  logic [31:0]  b,
+    output logic [63:0]  result
+);
+
+    logic [63:0] stage1, stage2, stage3;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            stage1 <= 64'd0;
+            stage2 <= 64'd0;
+            stage3 <= 64'd0;
+        end else begin
+            stage1 <= a * b;      // Simple multiply – treated as pipelined stage 1
+            stage2 <= stage1;     // Pipeline stage 2
+            stage3 <= stage2;     // Pipeline stage 3
+        end
+    end
+
+    assign result = stage3;
+
+endmodule
+

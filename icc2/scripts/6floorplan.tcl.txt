@@ -1,0 +1,66 @@
+
+
+# Floorplan
+
+initialize_floorplan -side_ratio {1 1} -core_offset {20} -core_utilization 0.68
+
+shape_blocks
+set_app_options -name place.coarse.fix_hard_macros -value false
+set_app_option -name plan.place.auto_create_blockages -value auto
+create_placement -floorplan
+
+#set_block_pin_constraints -self -allowed_layers {M3 M4 M5 M6}
+set_block_pin_constraints -self -allowed_layers {M3 M4 M5 M6 M7}
+
+place_pins -self
+
+report_congestion -rerun_global_router
+
+remove_pg_strategies -all
+remove_pg_patterns -all
+remove_pg_regions -all
+remove_pg_via_master rules -all
+remove_pg_strategy_via_rules -all
+remove_routes -net_types {power ground} -ring -stripe -macro_pin_connect -lib_cell_pin_connect > /dev/null
+
+# Automatically connect power and ground nets
+connect_pg_net -automatic
+
+# Create a ring pattern using M8 (horizontal) and M7 (vertical)
+#create_pg_ring_pattern ring1 -horizontal_layer M8 -vertical_layer M7 -horizontal_width 2.0 -vertical_width 2.0
+create_pg_ring_pattern ring1 -horizontal_layer M8 -vertical_layer M9 -horizontal_width 2.0 -vertical_width 2.0
+
+# Create a mesh pattern using M7 and M8
+#create_pg_mesh_pattern mesh_pattern -layers { {{horizontal_layer: M7} {width: 0.84} {pitch: 8.4} {spacing: interleaving}}  {{vertical_layer: M8} {width: 0.84} {pitch: 8.4} {spacing: interleaving}} }
+create_pg_mesh_pattern mesh_pattern -layers { {{horizontal_layer: M9} {width: 0.84} {pitch: 8.4} {spacing: interleaving}}  {{vertical_layer: M8} {width: 0.84} {pitch: 8.4} {spacing: interleaving}} }
+
+
+# Apply the mesh strategy to the core region
+set_pg_strategy mesh_strategy -core -pattern {{pattern: mesh_pattern}{nets: {VDD VSS}}} -blockage {macros: all}
+
+# Create standard cell connection pattern
+create_pg_std_cell_conn_pattern std_cell_pattern
+
+# Apply the standard cell strategy
+set_pg_strategy std_cell_strategy -core -pattern {{pattern: std_cell_pattern}{nets: {VDD VSS}}}
+
+compile_pg
+
+save_lib
+
+legalize_placement
+
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+create_placement -effort high -timing_driven -congestion
+
+refine_placement -effort high
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+set_app_options -list {cts.optimize.enable_congestion_aware_ndr_promotion {true}}
+
+# Reports
+file mkdir ../reports/icc2
+redirect -tee -file ../reports/icc2/check_floorplan.rpt {check_mv_design}
+redirect -tee -file ../reports/icc2/congestion_floorplan.rpt {report_congestion -rerun_global_router}
+
+save_block -as save_blocks/MYTOP_FLOORPLAN
+

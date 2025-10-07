@@ -1,0 +1,103 @@
+Information: Freeing timing information from routing. (ZRT-574)
+Information: The stitching and editing of coupling caps is turned OFF for design 'MYLIB:Top.design'. (TIM-125)
+Information: Design Top has 41330 nets, 0 global routed, 41328 detail routed. (NEX-024)
+Information: The RC mode used is DR for design 'Top'. (NEX-022)
+---extraction options---
+Corner: default
+Global options:
+ reference_direction       : use_from_tluplus
+ real_metalfill_extraction : none
+ virtual_shield_extraction : true
+---app options---
+ host.max_cores                   : 8
+ extract.connect_open           : true
+ extract.incremental_extraction : true
+ extract.enable_coupling_cap    : false
+Extracting design: Top 
+Information: coupling capacitance is lumped to ground. (NEX-030)
+Information: 41328 nets are successfully extracted. (NEX-028)
+Warning: Advanced receiver model has not been enabled for detailed routed design. (TIM-204)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 41328, routed nets = 41328, across physical hierarchy nets = 0, parasitics cached nets = 41328, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 21:41:33 2025
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+  Startpoint: in_c[0] (input port clocked by clk)
+  Endpoint: final_out[1087] (output port clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: **in2out_default**
+  Path Type: max
+
+  Point                                             Incr         Path  
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00000      0.00000
+  clock network delay (propagated)                 0.37530      0.37530
+  input external delay                             0.10000      0.47530 r
+  in_c[0] (in)                                     0.00000      0.47530 r
+  U3531/Y (NBUFFX8_HVT)                            0.09851      0.57382 r
+  U3763/Y (NAND2X0_HVT)                            0.15429      0.72810 f
+  U4249/Y (OAI21X1_HVT)                            0.23169      0.95979 r
+  U4827/Y (AOI21X1_HVT)                            0.14952      1.10931 f
+  U4835/Y (OAI21X2_RVT)                            0.12535      1.23466 r
+  HFSBUF_32_2145/Y (NBUFFX8_HVT)                   0.09340      1.32806 r
+  U6298/Y (AOI21X1_HVT)                            0.19104      1.51910 f
+  HFSBUF_17_2099/Y (NBUFFX8_HVT)                   0.10462      1.62372 f
+  U9408/Y (OAI21X2_HVT)                            0.20437      1.82809 r
+  U3683/Y (AO21X1_RVT)                             0.13626      1.96435 r
+  U18459/CO (FADDX1_HVT)                           0.20761      2.17197 r
+  U18458/CO (FADDX1_HVT)                           0.18612      2.35809 r
+  U18457/CO (FADDX1_RVT)                           0.11379      2.47188 r
+  U18456/CO (FADDX1_HVT)                           0.14174      2.61361 r
+  U18455/CO (FADDX1_HVT)                           0.14784      2.76145 r
+  U18454/CO (FADDX1_HVT)                           0.15512      2.91658 r
+  U18453/CO (FADDX1_HVT)                           0.15520      3.07178 r
+  U18452/CO (FADDX1_HVT)                           0.16476      3.23653 r
+  U18451/CO (FADDX1_HVT)                           0.16260      3.39914 r
+  HFSBUF_2_1818/Y (NBUFFX2_HVT)                    0.13472      3.53385 r
+  U18450/CO (FADDX1_HVT)                           0.17368      3.70754 r
+  U18449/CO (FADDX1_HVT)                           0.19606      3.90359 r
+  U18448/CO (FADDX1_HVT)                           0.20897      4.11256 r
+  U18447/CO (FADDX1_HVT)                           0.17115      4.28371 r
+  U18446/CO (FADDX1_HVT)                           0.15285      4.43656 r
+  U18445/CO (FADDX1_HVT)                           0.15766      4.59422 r
+  U18444/CO (FADDX1_HVT)                           0.16586      4.76009 r
+  U18443/CO (FADDX1_HVT)                           0.15757      4.91765 r
+  U18442/CO (FADDX1_HVT)                           0.15577      5.07343 r
+  U18441/CO (FADDX1_HVT)                           0.15615      5.22958 r
+  U18440/CO (FADDX1_RVT)                           0.11038      5.33996 r
+  U18439/CO (FADDX2_HVT)                           0.15028      5.49024 r
+  U18438/CO (FADDX1_HVT)                           0.16577      5.65601 r
+  U18437/CO (FADDX1_HVT)                           0.16453      5.82053 r
+  U18436/CO (FADDX1_HVT)                           0.15202      5.97255 r
+  U18435/CO (FADDX1_HVT)                           0.18028      6.15283 r
+  U18434/CO (FADDX1_HVT)                           0.19339      6.34622 r
+  U18433/CO (FADDX1_HVT)                           0.21622      6.56244 r
+  U18432/CO (FADDX1_HVT)                           0.17048      6.73291 r
+  U13129/Y (XOR2X1_HVT)                            0.19791      6.93082 f
+  final_out[1087] (out)                            0.00010      6.93092 f
+  data arrival time                                             6.93092
+
+  clock clk (rise edge)                            6.50000      6.50000
+  clock network delay (propagated)                 0.15123      6.65123
+  clock reconvergence pessimism                    0.20000      6.85123
+  output external delay                           -0.10000      6.75123
+  data required time                                            6.75123
+  ------------------------------------------------------------------------------
+  data required time                                            6.75123
+  data arrival time                                            -6.93092
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                             -0.17969
+
+
+1

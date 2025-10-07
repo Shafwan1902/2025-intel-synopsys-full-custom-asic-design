@@ -1,0 +1,42 @@
+ Info: Initializing timer in CLOCK_SYN_REPORT_MODE
+Information: The stitching and editing of coupling caps is turned OFF for design 'MYLIB:Top.design'. (TIM-125)
+Information: Design Average RC for design Top  (NEX-011)
+Information: r = 1.790512 ohm/um, via_r = 0.505660 ohm/cut, c = 0.082391 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 1.785714 ohm/um, via_r = 0.613975 ohm/cut, c = 0.098439 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 42328, routed nets = 128, across physical hierarchy nets = 0, parasitics cached nets = 42328, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+****************************************
+Report : clock qor
+        -type summary
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Sep  6 15:33:41 2025
+****************************************
+
+Attributes
+===========
+M Master Clock
+G Generated Clock
+& Internal Generated Clock
+U User Defined Skew Group
+D Default Skew Group
+* Generated Clock Balanced Separately
+
+==============================================
+==== Summary Reporting for Corner default ====
+==============================================
+
+================================================= Summary Table for Corner default =================================================
+Clock /                               Attrs     Sinks Levels    Clock     Clock     Clock       Max    Global  Trans DRC  Cap DRC
+Skew Group                                                   Repeater  Repeater   Stdcell   Latency      Skew     Count     Count
+                                                                Count      Area      Area
+------------------------------------------------------------------------------------------------------------------------------------
+### Mode: default, Scenario: default
+sclk                                    M,D      6144      5       71    751.25    751.25      0.29      0.21         0        10
+clk                                     M,D      4801      4       54    481.86    483.13      0.19      0.11         0         4
+------------------------------------------------------------------------------------------------------------------------------------
+All Clocks                                      10945      5      125   1233.11   1234.38      0.29      0.21         0        14
+
+
+Warning: Please use -largest / -smallest / -all switches with -show_verbose_paths / -show_paths to report the clock paths. (CTS-956)
+1

@@ -1,0 +1,15 @@
+****************************************
+Report : congestion
+Design : Top
+Version: S-2021.06-SP2
+Date   : Mon Sep  8 15:12:29 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |    4506 |    13 |    3906  ( 1.93%) |       1
+H routing |    4028 |     6 |    3648  ( 3.61%) |       1
+V routing |     478 |    13 |     258  ( 0.26%) |       1
+
+1

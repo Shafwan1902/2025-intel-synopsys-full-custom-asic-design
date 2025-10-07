@@ -1,0 +1,31 @@
+# ICC2 Library Setup - MYLIB
+
+#Paths (all libraries needed)
+ 
+set_app_var search_path ". \
+    ../libs/tech/milkyway \
+    ../libs/tech/star_rcxt \
+    ../libs/stdcell_hvt/ndms \
+    ../libs/stdcell_lvt/ndms \
+    ../libs/stdcell_rvt/ndms \
+    ../libs/sram/ndms"
+
+set TECH_FILE "../libs/tech/milkyway/saed32nm_1p9m_mw.tf"
+
+set REFERENCE_LIBRARY [join "../libs/stdcell_hvt/ndms/saed32hvt_c.ndm \
+                              ../libs/stdcell_lvt/ndms/saed32lvt_c.ndm \
+                              ../libs/stdcell_rvt/ndms/saed32rvt_c.ndm \
+                              ../libs/sram/ndms/saed32sram.ndm"]
+
+if {![file isdirectory MYLIB]} {
+    create_lib MYLIB -technology $TECH_FILE -ref_libs $REFERENCE_LIBRARY
+    derive_design_level_via_regions
+} else {
+    open_lib MYLIB
+}
+
+set np [exec grep processor /proc/cpuinfo | wc -l]
+if {$np > 8} { set np 8 }
+set_host_options -max_cores $np
+
+puts "ICC2 library setup complete. MYLIB ready to use."

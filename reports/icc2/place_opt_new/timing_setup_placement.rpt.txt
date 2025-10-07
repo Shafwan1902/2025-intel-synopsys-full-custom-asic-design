@@ -1,0 +1,82 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Sep  6 15:29:10 2025
+****************************************
+
+  Startpoint: in_c[5] (input port clocked by clk)
+  Endpoint: final_out[1599] (output port clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: **in2out_default**
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.30      0.30
+  input external delay                             0.10      0.40 r
+  in_c[5] (in)                                     0.00      0.40 r
+  U3543/Y (NBUFFX2_RVT)                            0.08      0.48 r
+  HFSBUF_877_3317/Y (NBUFFX8_RVT)                  0.09      0.56 r
+  U4400/Y (NOR2X0_HVT)                             0.15      0.72 f
+  U4414/Y (OAI21X1_HVT)                            0.17      0.88 r
+  U4418/Y (AOI21X1_HVT)                            0.14      1.03 f
+  U4419/Y (OAI21X2_RVT)                            0.13      1.16 r
+  U6646/Y (AOI21X1_RVT)                            0.11      1.26 f
+  HFSBUF_32_2674/Y (NBUFFX4_HVT)                   0.09      1.36 f
+  U8238/Y (OAI21X2_LVT)                            0.12      1.48 r
+  U3687/Y (AO21X2_RVT)                             0.13      1.61 r
+  U18235/CO (FADDX1_HVT)                           0.18      1.79 r
+  U18234/CO (FADDX1_HVT)                           0.16      1.95 r
+  U18233/CO (FADDX1_HVT)                           0.16      2.11 r
+  U18232/CO (FADDX1_HVT)                           0.21      2.32 r
+  U18231/CO (FADDX1_RVT)                           0.13      2.45 r
+  U18230/CO (FADDX1_HVT)                           0.16      2.60 r
+  U18229/CO (FADDX1_HVT)                           0.17      2.77 r
+  U18228/CO (FADDX1_HVT)                           0.15      2.92 r
+  HFSBUF_2_2492/Y (NBUFFX2_RVT)                    0.08      3.00 r
+  U18227/CO (FADDX1_RVT)                           0.12      3.12 r
+  U18226/CO (FADDX1_RVT)                           0.11      3.23 r
+  U18225/CO (FADDX1_HVT)                           0.15      3.39 r
+  U18224/CO (FADDX1_HVT)                           0.19      3.57 r
+  U18223/CO (FADDX1_RVT)                           0.12      3.69 r
+  U18222/CO (FADDX1_HVT)                           0.16      3.86 r
+  U18221/CO (FADDX1_HVT)                           0.19      4.05 r
+  U18220/CO (FADDX1_HVT)                           0.20      4.25 r
+  U18219/CO (FADDX1_HVT)                           0.16      4.41 r
+  U18218/CO (FADDX1_HVT)                           0.15      4.56 r
+  U18217/CO (FADDX1_HVT)                           0.15      4.71 r
+  HFSBUF_2_2287/Y (NBUFFX2_RVT)                    0.08      4.80 r
+  U18216/CO (FADDX1_HVT)                           0.16      4.95 r
+  U18215/CO (FADDX1_HVT)                           0.15      5.11 r
+  U18214/CO (FADDX1_HVT)                           0.17      5.28 r
+  U18213/CO (FADDX1_RVT)                           0.12      5.41 r
+  U18212/CO (FADDX1_RVT)                           0.10      5.51 r
+  U18211/CO (FADDX1_HVT)                           0.15      5.65 r
+  U18210/CO (FADDX1_HVT)                           0.16      5.81 r
+  U18209/CO (FADDX1_HVT)                           0.16      5.97 r
+  U18208/CO (FADDX1_RVT)                           0.11      6.09 r
+  U13105/Y (XOR2X1_HVT)                            0.21      6.30 f
+  final_out[1599] (out)                            0.00      6.30 f
+  data arrival time                                          6.30
+
+  clock clk (rise edge)                            6.50      6.50
+  clock network delay (ideal)                      0.00      6.50
+  clock uncertainty                               -0.10      6.40
+  output external delay                           -0.10      6.30
+  data required time                                         6.30
+  ------------------------------------------------------------------------
+  data required time                                         6.30
+  data arrival time                                         -6.30
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.00
+
+
+1

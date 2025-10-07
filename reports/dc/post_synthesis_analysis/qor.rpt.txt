@@ -1,0 +1,100 @@
+ 
+****************************************
+Report : qor
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Aug 30 16:04:44 2025
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              36.00
+  Critical Path Length:          5.80
+  Critical Path Slack:           0.40
+  Critical Path Clk Period:      6.50
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'sclk'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          0.38
+  Critical Path Slack:           9.42
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         20
+  Hierarchical Port Count:        599
+  Leaf Cell Count:              34677
+  Buf/Inv Cell Count:            6385
+  Buf Cell Count:                2145
+  Inv Cell Count:                4240
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     23733
+  Sequential Cell Count:        10944
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    59629.298127
+  Noncombinational Area:
+                        100439.489297
+  Buf/Inv Area:          11240.535087
+  Total Buffer Area:          5651.91
+  Total Inverter Area:        5588.63
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  Net XLength        :      636868.25
+  Net YLength        :      499943.44
+  -----------------------------------
+  Cell Area:            160068.787424
+  Design Area:          160068.787424
+  Net Length        :      1136811.75
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         36486
+  Nets With Violations:            53
+  Max Trans Violations:             2
+  Max Cap Violations:              51
+  -----------------------------------
+
+
+  Hostname: pglc9902
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    7.96
+  Logic Optimization:                 52.41
+  Mapping Optimization:               46.07
+  -----------------------------------------
+  Overall Compile Time:              262.03
+  Overall Compile Wall Clock Time:   270.02
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

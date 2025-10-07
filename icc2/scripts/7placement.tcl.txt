@@ -1,0 +1,32 @@
+#Placement
+#
+# High-effort placement optimization
+set_app_options -name place_opt.final_place.effort -value high
+set_app_options -name place_opt.initial_place.effort -value high
+set_app_options -name place_opt.place.congestion_effort -value high
+
+# Enable advanced optimizations
+set_app_options -name place_opt.flow.do_spg -value true
+set_app_options -name place_opt.flow.optimize_layers -value true
+set_app_options -name place_opt.flow.optimize_ndr -value true
+set_app_options -name place_opt.flow.enable_power -value true
+
+
+# Place and Optimization
+place_opt
+
+
+# Report
+file mkdir ../reports/icc2/place_opt
+redirect -tee -file ../reports/icc2/place_opt/qor.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/place_opt/timing.rpt {report_timing}
+redirect -tee -file ../reports/icc2/place_opt/timing_delaymin.rpt {report_timing -delay min}
+redirect -tee -file ../reports/icc2/place_opt/constraints.rpt {report_constraints}
+redirect -tee -file ../reports/icc2/place_opt/design_physical.rpt {report_design -physical}
+redirect -tee -file ../reports/icc2/place_opt/congestion.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/place_opt/report_qor_summary.rpt {report_qor -summary -include setup}
+redirect -tee -file ../reports/icc2/place_opt/check_lvs.txt {check_lvs}
+redirect -tee -file ../reports/icc2/place_opt/check_routes.txt {check_routes}
+
+# Save place_opt Block
+save_block -as save_blocks/MYTOP_PLACEOPT

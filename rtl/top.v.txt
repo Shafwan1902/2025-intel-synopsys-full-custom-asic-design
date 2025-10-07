@@ -1,0 +1,76 @@
+module Top #(
+    parameter NUM_BLOCKS = 32 
+)(
+    input  logic         clk, sclk,
+    input  logic         rst_n,
+    input  logic [31:0]  in_a,
+    input  logic [31:0]  in_b,
+    input  logic [63:0]  in_c,
+    output logic [63:0]  final_out [NUM_BLOCKS-1:0],
+    output logic [63:0]  res_out [NUM_BLOCKS-1:0],
+    output logic [7:0]  seq1_out     [NUM_BLOCKS-1:0],
+    output logic [15:0] seq2_out     [NUM_BLOCKS-1:0],
+    output logic [7:0]  seq3_out     [NUM_BLOCKS-1:0]
+);
+
+    // Intermediate wires
+    logic [63:0] mult_out     [NUM_BLOCKS-1:0];
+    logic [63:0] add_out      [NUM_BLOCKS-1:0];
+    logic [7:0]  tseq1_out     [NUM_BLOCKS-1:0];
+    logic [15:0] tseq2_out     [NUM_BLOCKS-1:0];
+    logic [7:0]  tseq3_out     [NUM_BLOCKS-1:0];
+
+    genvar i;
+    generate
+        for (i = 0; i < NUM_BLOCKS; i++) begin : pipeline_chain
+
+            // Pipelined Multiplier: A * B
+            PipelinedMultiplier u_mult (
+                .clk(sclk),
+                .rst_n(rst_n),
+                .a(in_a),
+                .b(in_b),
+                .result(mult_out[i])
+            );
+
+            // Adder: mult_out[31:0] + in_b
+            CombAdder u_adder (
+                .a(mult_out[i]),
+                .b(in_c),
+                .sum(add_out[i])
+            );
+
+            // FSM + LFSR using lower bits of adder output as seed input
+            SeqLogicBlock1_Mod u_seq1 (
+                .clk(clk),
+                .rst_n(rst_n),
+                .seed(add_out[i][7:0]),
+                .out_val(tseq1_out[i])
+            );
+
+            // RAM controller-like using LFSR output
+            SeqLogicBlock2_Mod u_seq2 (
+                .clk(clk),
+                .rst_n(rst_n),
+                .addr_seed(tseq1_out[i][3:0]),
+                .out_data(tseq2_out[i])
+            );
+
+            // Final shift/XOR logic using lower RAM output bits
+            SeqLogicBlock3_Mod u_seq3 (
+                .clk(clk),
+                .rst_n(rst_n),
+                .data_in(tseq2_out[i][7:0]),
+                .out_byte(tseq3_out[i])
+            );
+
+            assign final_out[i] = {tseq2_out[i], tseq3_out[i], add_out[i]};
+            assign res_out[i] = mult_out[i] ; 
+	    assign seq1_out[i] = tseq1_out[i];
+	    assign seq2_out[i] = tseq2_out[i];
+	    assign seq3_out[i] = tseq3_out[i];
+        end
+    endgenerate
+
+endmodule
+

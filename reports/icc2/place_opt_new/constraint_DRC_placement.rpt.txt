@@ -1,0 +1,171 @@
+****************************************
+Report : constraint
+        -all_violators
+        -max_transition
+        -max_capacitance
+        -min_capacitance
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Sep  6 15:29:10 2025
+****************************************
+
+
+
+   Mode: default Corner: default
+   Scenario: default
+  ---------------------------------------------------------------------------
+   Number of max_transition violation(s): 0
+
+   Mode: default Corner: default
+   Scenario: default
+   max_capacitance                                                             
+                             Required        Actual                            
+   Net                      Capacitance    Capacitance       Slack  Violation  
+  ---------------------------------------------------------------------------
+   pipeline_chain_14__u_seq2/n161
+                               16.00          16.10          -0.10  (VIOLATED) 
+     PIN : pipeline_chain_14__u_seq2/U32/Y
+                               16.00          16.10          -0.10  (VIOLATED) 
+
+   seq2_out[223]                8.00           8.10          -0.10  (VIOLATED) 
+     PIN : pipeline_chain_13__u_seq2/U216/Y
+                                8.00           8.10          -0.10  (VIOLATED) 
+
+   seq1_out[28]                16.00          16.10          -0.10  (VIOLATED) 
+     PIN : pipeline_chain_3__u_seq1/lfsr_reg_4_/Q
+                               16.00          16.10          -0.10  (VIOLATED) 
+
+   n25662                       8.00           8.10          -0.10  (VIOLATED) 
+     PIN : pipeline_chain_21__u_mult/stage3_reg_37_/QN
+                                8.00           8.10          -0.10  (VIOLATED) 
+
+   seq2_out[339]                8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U20807/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   pipeline_chain_2__u_seq2/n164
+                               16.00          16.09          -0.09  (VIOLATED) 
+     PIN : pipeline_chain_2__u_seq2/U34/Y
+                               16.00          16.09          -0.09  (VIOLATED) 
+
+   n25446                      16.00          16.09          -0.09  (VIOLATED) 
+     PIN : pipeline_chain_27__u_mult/stage3_reg_41_/QN
+                               16.00          16.09          -0.09  (VIOLATED) 
+
+   n22894                      16.00          16.09          -0.09  (VIOLATED) 
+     PIN : U17821/Y            16.00          16.09          -0.09  (VIOLATED) 
+
+   seq1_out[172]               16.00          16.09          -0.09  (VIOLATED) 
+     PIN : pipeline_chain_21__u_seq1/lfsr_reg_4_/Q
+                               16.00          16.09          -0.09  (VIOLATED) 
+
+   pipeline_chain_14__u_seq2/n158
+                               16.00          16.09          -0.09  (VIOLATED) 
+     PIN : pipeline_chain_14__u_seq2/U24/Y
+                               16.00          16.09          -0.09  (VIOLATED) 
+
+   HFSNET_2227                 32.00          32.09          -0.09  (VIOLATED) 
+     PIN : HFSBUF_32_2436/Y    32.00          32.09          -0.09  (VIOLATED) 
+
+   n14316                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U18093/CO            8.00           8.09          -0.09  (VIOLATED) 
+
+   final_out[1230]              8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U10183/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   seq2_out[182]                8.00           8.08          -0.08  (VIOLATED) 
+     PIN : pipeline_chain_11__u_seq2/U117/Y
+                                8.00           8.08          -0.08  (VIOLATED) 
+
+   pipeline_chain_19__u_seq2/n202
+                                8.00           8.08          -0.08  (VIOLATED) 
+     PIN : pipeline_chain_19__u_seq2/addr_reg_1_/QN
+                                8.00           8.08          -0.08  (VIOLATED) 
+
+   final_out[1501]              8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U12617/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   HFSNET_2032                 16.00          16.08          -0.08  (VIOLATED) 
+     PIN : HFSBUF_121_2241/Y
+                               16.00          16.08          -0.08  (VIOLATED) 
+
+   final_out[1688]              8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U10503/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   n26211                      16.00          16.07          -0.07  (VIOLATED) 
+     PIN : pipeline_chain_9__u_mult/stage3_reg_59_/QN
+                               16.00          16.07          -0.07  (VIOLATED) 
+
+   pipeline_chain_22__u_seq2/memory[107]
+                                8.00           8.07          -0.07  (VIOLATED) 
+     PIN : pipeline_chain_22__u_seq2/memory_reg_2__3_/Q
+                                8.00           8.07          -0.07  (VIOLATED) 
+
+   final_out[314]               8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U18772/S             8.00           8.06          -0.06  (VIOLATED) 
+
+   seq2_out[338]                8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U20795/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   n22810                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U17494/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   final_out[238]               8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U18812/S             8.00           8.06          -0.06  (VIOLATED) 
+
+   final_out[318]               8.00           8.05          -0.05  (VIOLATED) 
+     PIN : U18768/S             8.00           8.05          -0.05  (VIOLATED) 
+
+   pipeline_chain_20__u_seq2/n176
+                               16.00          16.03          -0.03  (VIOLATED) 
+     PIN : pipeline_chain_20__u_seq2/U47/Y
+                               16.00          16.03          -0.03  (VIOLATED) 
+
+   final_out[746]               8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U18592/S             8.00           8.03          -0.03  (VIOLATED) 
+
+   n12455                      32.00          32.03          -0.03  (VIOLATED) 
+     PIN : U16580/Y            32.00          32.03          -0.03  (VIOLATED) 
+
+   final_out[481]              16.00          16.03          -0.03  (VIOLATED) 
+     PIN : HFSBUF_4_282/Y      16.00          16.03          -0.03  (VIOLATED) 
+
+   pipeline_chain_8__u_seq2/n173
+                               16.00          16.02          -0.02  (VIOLATED) 
+     PIN : pipeline_chain_8__u_seq2/U45/Y
+                               16.00          16.02          -0.02  (VIOLATED) 
+
+   n31498                      64.00          64.02          -0.02  (VIOLATED) 
+     PIN : U23679/Y            64.00          64.02          -0.02  (VIOLATED) 
+
+   seq2_out[176]                8.00           8.02          -0.02  (VIOLATED) 
+     PIN : pipeline_chain_11__u_seq2/U51/Y
+                                8.00           8.02          -0.02  (VIOLATED) 
+
+   n14925                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U18702/CO            8.00           8.02          -0.02  (VIOLATED) 
+
+   n22832                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U17576/Y             8.00           8.02          -0.02  (VIOLATED) 
+
+   final_out[37]               16.00          16.01          -0.01  (VIOLATED) 
+     PIN : HFSBUF_4_578/Y      16.00          16.01          -0.01  (VIOLATED) 
+
+   n15435                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U10663/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n22350                      16.00          16.01          -0.01  (VIOLATED) 
+     PIN : U3725/Y             16.00          16.01          -0.01  (VIOLATED) 
+
+   res_out[1644]               16.00          16.00          -0.00  (VIOLATED) 
+     PIN : U23217/Y            16.00          16.00          -0.00  (VIOLATED) 
+
+  ---------------------------------------------------------------------------
+   Number of max_capacitance violation(s): 38
+
+   Mode: default Corner: default
+   Scenario: default
+  ---------------------------------------------------------------------------
+   Number of min_capacitance violation(s): 0
+
+   Total number of violation(s): 38
+1

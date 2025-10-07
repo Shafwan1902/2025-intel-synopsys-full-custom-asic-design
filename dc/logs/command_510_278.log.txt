@@ -1,0 +1,1000 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version S-2021.06-SP2 for linux64 - Aug 24, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Starting shell in Topographical mode...
+Initializing gui preferences from file  /nfs/site/home/yabdrash/.synopsys_dc_gui/preferences.tcl
+set target_library "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db"
+saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db
+set link_library "* $target_library saed32sram_ss0p95v125c.db"
+* saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db
+set search_path "$search_path . ../rtl ./scripts  ../libs/stdcell_hvt/db_nldm  ../libs/stdcell_lvt/db_nldm  ../libs/stdcell_rvt/db_nldm  ../libs/sram/db_nldm"
+. /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/dw/syn_ver /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/dw/sim_ver . ../rtl ./scripts  ../libs/stdcell_hvt/db_nldm  ../libs/stdcell_lvt/db_nldm  ../libs/stdcell_rvt/db_nldm  ../libs/sram/db_nldm
+define_design_lib default -path ./work 
+1
+set MW_REFERENCE_LIB_DIRS "../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM"
+../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM
+set TECH_FILE "../libs/tech/milkyway/saed32nm_1p9m_mw.tf" 
+../libs/tech/milkyway/saed32nm_1p9m_mw.tf
+set MAP_FILE  "../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map"  
+../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map
+set TLUPLUS_MAX_FILE "../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus"  
+../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+set TLUPLUS_MIN_FILE "../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus" 
+../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+set MW_POWER_NET                "VDD" 
+VDD
+set MW_POWER_PORT               "VDD" 
+VDD
+set MW_GROUND_NET               "VSS" 
+VSS
+set MW_GROUND_PORT              "VSS" 
+VSS
+set MIN_ROUTING_LAYER            "M1"   
+M1
+set MAX_ROUTING_LAYER            "M6"  
+M6
+set mw_reference_library ${MW_REFERENCE_LIB_DIRS}
+../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM
+set mw_design_library MYLIB 
+MYLIB
+if {![file isdirectory $mw_design_library ]} {
+   create_mw_lib   -technology $TECH_FILE      -mw_reference_library $mw_reference_library       $mw_design_library
+    } else {
+      set_mw_lib_reference $mw_design_library -mw_reference_library $mw_reference_library
+    }
+
+------------------- Internal Reference Library Settings -----------------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/milkyway/SRAM32NM
+
+
+------------------- Control File Reference Library Settings -----------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/milkyway/SRAM32NM
+-------------------------------------------------------------------------
+
+1
+open_mw_lib     $mw_design_library
+{MYLIB}
+check_library > ../reports/dc_check_lib.rpt 
+set_tlu_plus_files -max_tluplus $TLUPLUS_MAX_FILE       -min_tluplus $TLUPLUS_MIN_FILE       -tech2itf_map $MAP_FILE
+1
+check_tlu_plus_files
+
+Sanity check for TLU+ vs MW-Tech files:
+ max_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+ min_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+ mapping_file: ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map
+ max_emul_tlu+: **NONE**
+ min_emul_tlu+: **NONE**
+ MW design lib: MYLIB
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+1
+set_dont_use [get_lib_cell */ISO*]
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+1
+set_dont_use [get_lib_cell */RSDFFARX*]
+1
+set_dont_use [get_lib_cell */*LS*]
+1
+set_dont_use [get_lib_cell */*AO*]
+1
+1
+dc_shell-topo> remove_design -all
+Removing library 'saed32lvt_ss0p95v125c'
+Removing library 'saed32hvt_ss0p95v125c'
+Removing library 'saed32rvt_ss0p95v125c'
+Removing library 'saed32sram_ss0p95v125c'
+1
+dc_shell-topo> source scripts/lib_setup.tcl
+
+------------------- Internal Reference Library Settings -----------------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/milkyway/SRAM32NM
+
+
+------------------- Control File Reference Library Settings -----------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/milkyway/SRAM32NM
+-------------------------------------------------------------------------
+
+
+Sanity check for TLU+ vs MW-Tech files:
+ max_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+ min_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+ mapping_file: ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map
+ max_emul_tlu+: **NONE**
+ min_emul_tlu+: **NONE**
+ MW design lib: MYLIB
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+Error: Can't find lib_cells matching '*/ISO*'. (UID-109)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+1
+dc_shell-topo> read_db "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v 125c.db"
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/gtech.db'
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/standard.sldb'
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m. (PSYN-878)
+Warning: The pin direction of 'INP' pin on 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is inconsistent with the same-name pin in the '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m' physical library. No physical link for the logical lib cell. (PSYN-058)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/milkyway/SRAM32NM. (PSYN-878)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+  Loading link library 'gtech'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'. (DDB-24)
+Loaded 0 designs.
+dc_shell-topo> read_ddc ../output/unmapped_top.ddc
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m. (PSYN-878)
+Warning: The pin direction of 'INP' pin on 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is inconsistent with the same-name pin in the '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m' physical library. No physical link for the logical lib cell. (PSYN-058)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/libs/sram/milkyway/SRAM32NM. (PSYN-878)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Reading ddc file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/output/unmapped_top.ddc'.
+Loaded 6 designs.
+Current design is 'Top'.
+Top PipelinedMultiplier CombAdder SeqLogicBlock1_Mod SeqLogicBlock2_Mod SeqLogicBlock3_Mod
+dc_shell-topo> de[K[Klist+des[K[K[K[K_designs 
+CombAdder               SeqLogicBlock1_Mod      SeqLogicBlock3_Mod
+PipelinedMultiplier     SeqLogicBlock2_Mod      Top (*)
+1
+dc_shell-topo> list_designs[16Gread_ddc ../output/unmapped_top.ddc[22Gb "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v 
+125c.db"[A[22Gdc ../output/unmapped_top.ddc[K[117G 1
+[K[A[51G[16Glist_designs[K[16G[Ksource -echo -verbose scripts/top.con
+reset_design
+1
+create_clock -name clk  -period 6.5  [get_ports clk]
+1
+create_clock -name sclk -period 10.0 [get_ports sclk]
+1
+set_clock_groups -asynchronous -group {clk} -group {sclk}
+1
+set_clock_latency   -source -max 0.2 [get_clocks {clk sclk}]
+1
+set_clock_latency   -max 0.1        [get_clocks {clk sclk}]
+1
+set_clock_uncertainty -setup 0.1    [get_clocks {clk sclk}]
+1
+set_input_delay -max 0.1 -clock clk    [remove_from_collection [all_inputs] [get_ports {clk sclk}]]
+1
+set_output_delay -max 0.1 -clock clk  [remove_from_collection [all_outputs] [get_ports {res_out*}]]
+1
+set_output_delay -max 0.1 -clock sclk [get_ports {res_out*}]
+1
+set_load [expr 2 * [load_of saed32rvt_ss0p95v125c/NAND2X1_RVT/A1]] [all_outputs]
+1
+set_utilization 0.65
+1
+set_aspect_ratio 1.0 ;# default = square
+1
+set_cost_priority {max_delay min_delay max_design_rules}
+1
+set_operating_condition -max ss0p95v125c
+Using operating conditions 'ss0p95v125c' found in library 'saed32lvt_ss0p95v125c'.
+1
+# only if needed optional
+set_register_merging [get_designs *] false
+1
+set_app_var compile_seqmap_propagate_constants false
+false
+set_leakage_optimization true
+1
+set_ungroup {CombAdder PipelinedMultiplier}
+1
+set_optimize_registers true -design PipelinedMultiplier
+1
+current_design CombAdder
+Current design is 'CombAdder'.
+{CombAdder}
+set_multicycle_path -setup 2 -from {a[*] b[*]} -to sum[*] 
+1
+current_design Top
+Current design is 'Top'.
+{Top}
+echo "Constraints added"
+Constraints added
+dc_shell-topo> com[K[K[Kcompile_ultra
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/dw_foundation.sldb'
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+
+TLU+ File = ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+TLU+ File = ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.2 |     *     |
+| Licensed DW Building Blocks        | S-2021.06-DWBB_202106.2 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+Information: Retiming is enabled. SVF file must be used for formal verification. (OPT-1210)
+
+Information: There are 1 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+Information: Uniquified 32 instances of design 'PipelinedMultiplier'. (OPT-1056)
+Information: Uniquified 32 instances of design 'CombAdder'. (OPT-1056)
+Information: Uniquified 32 instances of design 'SeqLogicBlock1_Mod'. (OPT-1056)
+Information: Uniquified 32 instances of design 'SeqLogicBlock2_Mod'. (OPT-1056)
+Information: Uniquified 32 instances of design 'SeqLogicBlock3_Mod'. (OPT-1056)
+  Simplifying Design 'Top'
+
+****************************************************************
+Information: TLUPlus based RC computation is enabled. (RCEX-141)
+****************************************************************
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is TLU+. (RCEX-015)
+Information: Library Derived Cap for layer M1 : 0.16 0.14 (RCEX-011)
+Information: Library Derived Res for layer M1 : 2e-06 2e-06 (RCEX-011)
+Information: Library Derived Cap for layer M2 : 0.17 0.15 (RCEX-011)
+Information: Library Derived Res for layer M2 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M3 : 0.11 0.096 (RCEX-011)
+Information: Library Derived Res for layer M3 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M4 : 0.11 0.096 (RCEX-011)
+Information: Library Derived Res for layer M4 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M5 : 0.094 0.079 (RCEX-011)
+Information: Library Derived Res for layer M5 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M6 : 0.094 0.079 (RCEX-011)
+Information: Library Derived Res for layer M6 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M7 : 0.092 0.076 (RCEX-011)
+Information: Library Derived Res for layer M7 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M8 : 0.092 0.076 (RCEX-011)
+Information: Library Derived Res for layer M8 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M9 : 0.11 0.088 (RCEX-011)
+Information: Library Derived Res for layer M9 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer MRDL : 0.11 0.11 (RCEX-011)
+Information: Library Derived Res for layer MRDL : 1.8e-07 1.8e-07 (RCEX-011)
+Information: Library Derived Horizontal Cap : 0.11 0.096 (RCEX-011)
+Information: Library Derived Horizontal Res : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Vertical Cap : 0.11 0.1 (RCEX-011)
+Information: Library Derived Vertical Res : 1.5e-06 1.5e-06 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 4.6e-07 4.6e-07 (RCEX-011)
+Loaded alib file './alib-52/saed32lvt_ss0p95v125c.db.alib' (placeholder)
+Loaded alib file './alib-52/saed32hvt_ss0p95v125c.db.alib'
+Loaded alib file './alib-52/saed32rvt_ss0p95v125c.db.alib' (placeholder)
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy pipeline_chain[0].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[0].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[0].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[0].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[31].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[30].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[29].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[28].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[27].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[26].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[25].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[24].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[23].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[22].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[21].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[20].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[19].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[18].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[17].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[16].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[15].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[14].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[13].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[12].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[11].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[10].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[9].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[8].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[7].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[6].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[5].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[4].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[3].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[2].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[1].u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[31].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[30].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[29].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[28].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[27].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[26].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[25].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[24].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[23].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[22].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[21].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[20].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[19].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[18].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[17].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[16].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[15].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[14].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[13].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[12].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[11].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[10].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[9].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[8].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[7].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[6].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[5].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[4].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[3].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[2].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[1].u_seq1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[31].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[30].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[29].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[28].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[27].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[26].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[25].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[24].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[23].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[22].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[21].u_seq2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[31].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[30].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[29].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[28].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[27].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[26].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[25].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[24].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[23].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[22].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[21].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[20].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[19].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[18].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[17].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[16].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[15].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[14].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[13].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[12].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[11].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[10].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[9].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[8].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[7].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[6].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[5].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[4].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[3].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[2].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pipeline_chain[1].u_seq3 before Pass 1 (OPT-776)
+Information: Ungrouping 108 of 161 hierarchies before Pass 1 (OPT-775)
+  final_out[15][46]            8.00           9.23          -1.23  (VIOLATED)
+   final_out[4][55]             8.00           9.19          -1.19  (VIOLATED)
+   final_out[10][53]            8.00           9.16          -1.16  (VIOLATED)
+   final_out[4][45]             8.00           9.16          -1.16  (VIOLATED)
+   final_out[7][17]            16.00          17.15          -1.15  (VIOLATED)
+   final_out[4][54]             8.00           9.15          -1.15  (VIOLATED)
+   final_out[7][58]             8.00           9.15          -1.15  (VIOLATED)
+   final_out[4][46]             8.00           9.14          -1.14  (VIOLATED)
+   final_out[3][24]            16.00          17.14          -1.14  (VIOLATED)
+   final_out[14][44]            8.00           9.14          -1.14  (VIOLATED)
+   final_out[7][46]             8.00           9.12          -1.12  (VIOLATED)
+   final_out[4][53]             8.00           9.12          -1.12  (VIOLATED)
+   final_out[4][47]             8.00           9.11          -1.11  (VIOLATED)
+   final_out[4][52]             8.00           9.10          -1.10  (VIOLATED)
+   final_out[11][44]            8.00           9.09          -1.09  (VIOLATED)
+   final_out[6][58]             8.00           9.09          -1.09  (VIOLATED)
+   final_out[5][42]             8.00           9.09          -1.09  (VIOLATED)
+   final_out[11][45]            8.00           9.08          -1.08  (VIOLATED)
+   final_out[7][47]             8.00           9.07          -1.07  (VIOLATED)
+   final_out[30][36]            8.00           9.06          -1.06  (VIOLATED)
+   final_out[7][15]            16.00          17.06          -1.06  (VIOLATED)
+   final_out[11][54]            8.00           9.06          -1.06  (VIOLATED)
+   final_out[19][40]            8.00           9.05          -1.05  (VIOLATED)
+   final_out[5][10]            16.00          17.05          -1.05  (VIOLATED)
+   final_out[4][48]             8.00           9.05          -1.05  (VIOLATED)
+   final_out[4][23]            16.00          17.04          -1.04  (VIOLATED)
+   final_out[13][21]           16.00          17.04          -1.04  (VIOLATED)
+   final_out[16][42]            8.00           9.03          -1.03  (VIOLATED)
+   final_out[2][36]             8.00           9.01          -1.01  (VIOLATED)
+   final_out[12][42]            8.00           9.01          -1.01  (VIOLATED)
+   final_out[16][36]            8.00           9.01          -1.01  (VIOLATED)
+   final_out[7][48]             8.00           9.01          -1.01  (VIOLATED)
+   final_out[3][25]            16.00          17.01          -1.01  (VIOLATED)
+   final_out[4][36]             8.00           9.00          -1.00  (VIOLATED)
+   final_out[2][37]             8.00           9.00          -1.00  (VIOLATED)
+   final_out[20][37]            8.00           9.00          -1.00  (VIOLATED)
+   final_out[18][38]            8.00           8.98          -0.98  (VIOLATED)
+   final_out[4][49]             8.00           8.95          -0.95  (VIOLATED)
+   final_out[13][45]            8.00           8.94          -0.94  (VIOLATED)
+   final_out[7][49]             8.00           8.92          -0.92  (VIOLATED)
+   final_out[8][56]             8.00           8.91          -0.91  (VIOLATED)
+   final_out[4][51]             8.00           8.90          -0.90  (VIOLATED)
+   final_out[7][16]            16.00          16.89          -0.89  (VIOLATED)
+   final_out[11][46]            8.00           8.88          -0.88  (VIOLATED)
+   final_out[17][37]            8.00           8.88          -0.88  (VIOLATED)
+   final_out[7][52]             8.00           8.88          -0.88  (VIOLATED)
+   final_out[4][50]             8.00           8.88          -0.88  (VIOLATED)
+   final_out[20][38]            8.00           8.87          -0.87  (VIOLATED)
+   final_out[3][26]            16.00          16.87          -0.87  (VIOLATED)
+   final_out[7][36]             8.00           8.87          -0.87  (VIOLATED)
+   final_out[14][45]            8.00           8.85          -0.85  (VIOLATED)
+   final_out[5][43]             8.00           8.85          -0.85  (VIOLATED)
+   final_out[15][47]            8.00           8.84          -0.84  (VIOLATED)
+   final_out[10][54]            8.00           8.83          -0.83  (VIOLATED)
+   final_out[19][41]            8.00           8.82          -0.82  (VIOLATED)
+   final_out[13][46]            8.00           8.81          -0.81  (VIOLATED)
+   final_out[7][50]             8.00           8.81          -0.81  (VIOLATED)
+   final_out[20][39]            8.00           8.80          -0.80  (VIOLATED)
+   final_out[5][11]            16.00          16.80          -0.80  (VIOLATED)
+   final_out[20][36]            8.00           8.77          -0.77  (VIOLATED)
+   final_out[17][22]           16.00          16.76          -0.76  (VIOLATED)
+   final_out[16][43]            8.00           8.75          -0.75  (VIOLATED)
+   final_out[13][20]           16.00          16.74          -0.74  (VIOLATED)
+   final_out[13][53]            8.00           8.73          -0.73  (VIOLATED)
+   final_out[7][51]             8.00           8.73          -0.73  (VIOLATED)
+   final_out[9][19]            16.00          16.72          -0.72  (VIOLATED)
+   final_out[7][59]             8.00           8.72          -0.72  (VIOLATED)
+   final_out[11][55]            8.00           8.71          -0.71  (VIOLATED)
+   final_out[13][47]            8.00           8.69          -0.69  (VIOLATED)
+   final_out[22][37]            8.00           8.69          -0.69  (VIOLATED)
+   final_out[9][41]             8.00           8.68          -0.68  (VIOLATED)
+   final_out[13][48]            8.00           8.65          -0.65  (VIOLATED)
+   final_out[11][53]            8.00           8.65          -0.65  (VIOLATED)
+   final_out[16][50]            8.00           8.63          -0.63  (VIOLATED)
+   final_out[12][43]            8.00           8.63          -0.63  (VIOLATED)
+   final_out[11][47]            8.00           8.63          -0.63  (VIOLATED)
+   final_out[4][20]            16.00          16.63          -0.63  (VIOLATED)
+   final_out[6][59]             8.00           8.61          -0.61  (VIOLATED)
+   final_out[13][49]            8.00           8.61          -0.61  (VIOLATED)
+   final_out[11][36]            8.00           8.60          -0.60  (VIOLATED)
+   final_out[3][27]            16.00          16.59          -0.59  (VIOLATED)
+   final_out[14][46]            8.00           8.59          -0.59  (VIOLATED)
+   final_out[11][52]            8.00           8.59          -0.59  (VIOLATED)
+   final_out[10][55]            8.00           8.58          -0.58  (VIOLATED)
+   final_out[4][22]            16.00          16.57          -0.57  (VIOLATED)
+   final_out[19][42]            8.00           8.56          -0.56  (VIOLATED)
+   final_out[11][48]            8.00           8.56          -0.56  (VIOLATED)
+   final_out[15][48]            8.00           8.55          -0.55  (VIOLATED)
+   final_out[16][44]            8.00           8.53          -0.53  (VIOLATED)
+   final_out[11][49]            8.00           8.51          -0.51  (VIOLATED)
+   final_out[20][40]            8.00           8.50          -0.50  (VIOLATED)
+   final_out[20][41]            8.00           8.50          -0.50  (VIOLATED)
+   final_out[13][50]            8.00           8.50          -0.50  (VIOLATED)
+   final_out[8][57]             8.00           8.49          -0.49  (VIOLATED)
+   final_out[11][51]            8.00           8.47          -0.47  (VIOLATED)
+   final_out[13][51]            8.00           8.47          -0.47  (VIOLATED)
+   final_out[11][50]            8.00           8.46          -0.46  (VIOLATED)
+   final_out[13][54]            8.00           8.45          -0.45  (VIOLATED)
+   final_out[13][52]            8.00           8.44          -0.44  (VIOLATED)
+   final_out[7][18]            16.00          16.44          -0.44  (VIOLATED)
+   final_out[4][21]            16.00          16.42          -0.42  (VIOLATED)
+   final_out[13][36]            8.00           8.42          -0.42  (VIOLATED)
+   final_out[12][57]            8.00           8.40          -0.40  (VIOLATED)
+   final_out[18][39]            8.00           8.36          -0.36  (VIOLATED)
+   final_out[12][44]            8.00           8.36          -0.36  (VIOLATED)
+   final_out[16][45]            8.00           8.35          -0.35  (VIOLATED)
+   final_out[13][37]            8.00           8.32          -0.32  (VIOLATED)
+   final_out[9][42]             8.00           8.32          -0.32  (VIOLATED)
+   final_out[24][36]            8.00           8.31          -0.31  (VIOLATED)
+   final_out[20][42]            8.00           8.29          -0.29  (VIOLATED)
+   final_out[11][56]            8.00           8.28          -0.28  (VIOLATED)
+   final_out[14][47]            8.00           8.27          -0.27  (VIOLATED)
+   final_out[15][49]            8.00           8.26          -0.26  (VIOLATED)
+   final_out[5][17]            16.00          16.26          -0.26  (VIOLATED)
+   final_out[16][51]            8.00           8.25          -0.25  (VIOLATED)
+   final_out[10][56]            8.00           8.25          -0.25  (VIOLATED)
+   final_out[19][43]            8.00           8.25          -0.25  (VIOLATED)
+   final_out[6][11]            16.00          16.23          -0.23  (VIOLATED)
+   final_out[5][8]             16.00          16.22          -0.22  (VIOLATED)
+   final_out[19][4]            16.00          16.20          -0.20  (VIOLATED)
+   final_out[5][44]             8.00           8.19          -0.19  (VIOLATED)
+   seq2_out[10][13]             8.00           8.18          -0.18  (VIOLATED)
+   final_out[9][6]             16.00          16.18          -0.18  (VIOLATED)
+   seq2_out[0][9]               8.00           8.17          -0.17  (VIOLATED)
+   final_out[12][45]            8.00           8.17          -0.17  (VIOLATED)
+   res_out[26][53]             16.00          16.16          -0.16  (VIOLATED)
+   final_out[16][46]            8.00           8.16          -0.16  (VIOLATED)
+   final_out[26][36]            8.00           8.16          -0.16  (VIOLATED)
+   final_out[13][55]            8.00           8.16          -0.16  (VIOLATED)
+   final_out[19][44]            8.00           8.14          -0.14  (VIOLATED)
+   seq2_out[17][14]             8.00           8.14          -0.14  (VIOLATED)
+   final_out[15][16]            8.00           8.13          -0.13  (VIOLATED)
+   final_out[7][19]            16.00          16.13          -0.13  (VIOLATED)
+   res_out[29][62]             16.00          16.13          -0.13  (VIOLATED)
+   final_out[20][43]            8.00           8.12          -0.12  (VIOLATED)
+   final_out[28][36]            8.00           8.11          -0.11  (VIOLATED)
+   final_out[30][5]            16.00          16.11          -0.11  (VIOLATED)
+   seq2_out[12][13]             8.00           8.10          -0.10  (VIOLATED)
+   res_out[25][43]             16.00          16.09          -0.09  (VIOLATED)
+   seq2_out[17][11]             8.00           8.09          -0.09  (VIOLATED)
+   final_out[9][43]             8.00           8.09          -0.09  (VIOLATED)
+   final_out[6][60]             8.00           8.09          -0.09  (VIOLATED)
+   final_out[17][38]            8.00           8.09          -0.09  (VIOLATED)
+   seq2_out[12][12]             8.00           8.09          -0.09  (VIOLATED)
+   seq2_out[18][9]              8.00           8.08          -0.08  (VIOLATED)
+   seq2_out[27][8]              8.00           8.08          -0.08  (VIOLATED)
+   seq2_out[10][15]             8.00           8.08          -0.08  (VIOLATED)
+   final_out[17][21]           16.00          16.07          -0.07  (VIOLATED)
+   seq2_out[8][0]               8.00           8.05          -0.05  (VIOLATED)
+   final_out[16][47]            8.00           8.05          -0.05  (VIOLATED)
+   final_out[23][20]            8.00           8.05          -0.05  (VIOLATED)
+   seq2_out[0][13]              8.00           8.05          -0.05  (VIOLATED)
+   res_out[23][63]             16.00          16.05          -0.05  (VIOLATED)
+   final_out[14][48]            8.00           8.05          -0.05  (VIOLATED)
+   seq2_out[11][8]              8.00           8.04          -0.04  (VIOLATED)
+   seq2_out[7][14]              8.00           8.04          -0.04  (VIOLATED)
+   res_out[16][9]              16.00          16.04          -0.04  (VIOLATED)
+   final_out[20][44]            8.00           8.03          -0.03  (VIOLATED)
+   final_out[19][5]            16.00          16.03          -0.03  (VIOLATED)
+   res_out[18][52]             16.00          16.03          -0.03  (VIOLATED)
+   res_out[18][3]              16.00          16.03          -0.03  (VIOLATED)
+   final_out[13][31]            8.00           8.03          -0.03  (VIOLATED)
+   seq2_out[15][3]              8.00           8.02          -0.02  (VIOLATED)
+   final_out[13][25]            8.00           8.02          -0.02  (VIOLATED)
+   final_out[22][23]            8.00           8.02          -0.02  (VIOLATED)
+   res_out[22][30]             32.00          32.02          -0.02  (VIOLATED)
+   res_out[8][42]              16.00          16.02          -0.02  (VIOLATED)
+   res_out[15][3]              16.00          16.01          -0.01  (VIOLATED)
+   final_out[5][16]            16.00          16.01          -0.01  (VIOLATED)
+   final_out[16][25]            8.00           8.01          -0.01  (VIOLATED)
+   res_out[7][62]              16.00          16.00           0.00  (VIOLATED: increase significant digits)
+   final_out[13][19]           16.00          16.00           0.00  (VIOLATED: increase significant digits)
+   final_out[9][18]            16.00          16.00           0.00  (VIOLATED: increase significant digits)
+   final_out[0][30]             8.00           8.00           0.00  (VIOLATED: increase significant digits)
+   final_out[16][52]            8.00           8.00           0.00  (VIOLATED: increase significant digits)
+
+   -----------------------------------------------------------------
+   Total                      214              -151.51  
+
+1
+redirect -tee -file ../reports/qor.rpt {report_qor}
+ 
+****************************************
+Report : qor
+Design : Top
+Version: S-2021.06-SP2
+Date   : Wed Aug 27 20:14:46 2025
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              35.00
+  Critical Path Length:          5.50
+  Critical Path Slack:           0.70
+  Critical Path Clk Period:      6.50
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'sclk'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          0.44
+  Critical Path Slack:           9.36
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         20
+  Hierarchical Port Count:        630
+  Leaf Cell Count:              35516
+  Buf/Inv Cell Count:            7036
+  Buf Cell Count:                2573
+  Inv Cell Count:                4463
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     24572
+  Sequential Cell Count:        10944
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    61325.709365
+  Noncombinational Area: 79674.908278
+  Buf/Inv Area:          12405.785353
+  Total Buffer Area:          6530.48
+  Total Inverter Area:        5875.30
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  Net XLength        :      733389.19
+  Net YLength        :      478377.88
+  -----------------------------------
+  Cell Area:            141000.617644
+  Design Area:          141000.617644
+  Net Length        :      1211767.00
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         36915
+  Nets With Violations:           215
+  Max Trans Violations:             1
+  Max Cap Violations:             214
+  -----------------------------------
+
+
+  Hostname: pglc9902
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    7.17
+  Logic Optimization:                 45.02
+  Mapping Optimization:               42.17
+  -----------------------------------------
+  Overall Compile Time:              219.72
+  Overall Compile Wall Clock Time:   225.91
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+echo "completed report ----------------------"
+completed report ----------------------
+dc_shell-topo> lib_setup.tcl [K[K[K[K[K[K[K[K[K[K[K[K[Kls
+.   MYLIB    command.log  filenames.log		logs	 udul_default_fin.log
+..  alib-52  default.svf  lc_shell_command.log	scripts  udul_default_fin.log.1
+dc_shell-topo> all[K[K[K[get_in[K[K[K[K[K[K[Kget_input [K[K[K[K[K[K[K[K[Kget
+get_alternative_lib_cells        get_lib                          get_related_supply_net           
+get_always_on_logic              get_lib_attribute                get_route_zrt_common_options     
+get_app_var                      get_lib_cells                    get_route_zrt_global_options     
+get_attribute                    get_lib_pins                     get_rp_groups                    
+get_bounds                       get_libs                         get_scan_cell_names              
+get_buffers                      get_license                      get_scan_cells_of_chain          
+get_cells                        get_magnet_cells                 get_scan_chain_names             
+get_clock                        get_matching_nets_for_pattern    get_scan_chains                  
+get_clocks                       get_message_ids                  get_scan_chains_by_name          
+get_clusters                     get_message_info                 get_scenarios                    
+get_command_option_values        get_multibits                    get_selection                    
+get_cross_probing_info           get_nets                         get_shift_register_chains        
+get_defined_commands             get_object_name                  get_site_rows                    
+get_design_lib_path              get_operand_width                get_supply_nets                  
+get_designs                      get_path_groups                  get_supply_ports                 
+get_dft_hierarchical_pins        get_physical_hierarchy           get_switching_activity           
+get_die_area                     get_pins                         get_terminals                    
+get_dont_touch_cells             get_placement_area               get_timing_paths                 
+get_dont_touch_nets              get_placement_blockages          get_tracks                       
+get_estimated_area               get_polygon_area                 get_unix_variable                
+get_flat_cells                   get_ports                        get_via_rules                    
+get_flat_nets                    get_power_derate                 get_zero_interconnect_delay_mode 
+get_flat_pins                    get_power_domains                getenv                           
+get_generated_clocks             get_power_switches               gets                             
+get_latch_loop_groups            get_references                   
+dc_shell-topo> get_in[K[K[K[K[K[Kget_p
+get_path_groups         get_placement_area      get_ports               get_power_switches      
+get_physical_hierarchy  get_placement_blockages get_power_derate        
+get_pins                get_polygon_area        get_power_domains       
+dc_shell-topo> get_ports a[Kreset*[1@*r
+Warning: Can't find ports matching '*reset*' in design 'Top'. (UID-95)
+dc_shell-topo> get_ports *reset*[K[K[K[K[K*
+{res_out[31][63] res_out[31][62] res_out[31][61] res_out[31][60] res_out[31][59] res_out[31][58] res_out[31][57] res_out[31][56] res_out[31][55] res_out[31][54] res_out[31][53] res_out[31][52] res_out[31][51] res_out[31][50] res_out[31][49] res_out[31][48] res_out[31][47] res_out[31][46] res_out[31][45] res_out[31][44] res_out[31][43] res_out[31][42] res_out[31][41] res_out[31][40] res_out[31][39] res_out[31][38] res_out[31][37] res_out[31][36] res_out[31][35] res_out[31][34] res_out[31][33] res_out[31][32] res_out[31][31] res_out[31][30] res_out[31][29] res_out[31][28] res_out[31][27] res_out[31][26] res_out[31][25] res_out[31][24] res_out[31][23] res_out[31][22] res_out[31][21] res_out[31][20] res_out[31][19] res_out[31][18] res_out[31][17] res_out[31][16] res_out[31][15] res_out[31][14] res_out[31][13] res_out[31][12] res_out[31][11] res_out[31][10] res_out[31][9] res_out[31][8] res_out[31][7] res_out[31][6] res_out[31][5] res_out[31][4] res_out[31][3] res_out[31][2] res_out[31][1] res_out[31][0] res_out[30][63] res_out[30][62] res_out[30][61] res_out[30][60] res_out[30][59] res_out[30][58] res_out[30][57] res_out[30][56] res_out[30][55] res_out[30][54] res_out[30][53] res_out[30][52] res_out[30][51] res_out[30][50] res_out[30][49] res_out[30][48] res_out[30][47] res_out[30][46] res_out[30][45] res_out[30][44] res_out[30][43] res_out[30][42] res_out[30][41] res_out[30][40] res_out[30][39] res_out[30][38] res_out[30][37] res_out[30][36] res_out[30][35] res_out[30][34] res_out[30][33] res_out[30][32] res_out[30][31] res_out[30][30] res_out[30][29] res_out[30][28] ...}
+dc_shell-topo> get_ports *r*s*t*
+{rst_n}
+dc_shell-topo> get_port *ese*
+Warning: Can't find ports matching '*ese*' in design 'Top'. (UID-95)
+dc_shell-topo> get_port *ese*[K[K[K[K[K[K[K[K[K[K[K[K[Kman get
+get_alternative_lib_cells          get_generated_clocks               get_power_switches                 
+get_always_on_logic                get_latch_loop_groups              get_references                     
+get_app_var                        get_lib_attribute                  get_related_supply_net             
+get_attribute                      get_lib_cells                      get_route_zrt_common_options       
+get_attribute_float_auto_display   get_lib_pins                       get_route_zrt_global_options       
+get_attribute_float_decimal_places get_libs                           get_rp_groups                      
+get_bounds                         get_license                        get_scan_cell_names                
+get_buffers                        get_magnet_cells                   get_scan_cells_of_chain            
+get_cells                          get_matching_nets_for_pattern      get_scan_chain_names               
+get_clocks                         get_message_ids                    get_scan_chains                    
+get_clusters                       get_message_info                   get_scan_chains_by_name            
+get_command_option_values          get_multibits                      get_scenarios                      
+get_cross_probing_info             get_nets                           get_selection                      
+get_defined_commands               get_object_name                    get_shift_register_chains          
+get_design_lib_path                get_operand_width                  get_site_rows                      
+get_designs                        get_path_groups                    get_supply_nets                    
+get_dft_hierarchical_pins          get_physical_hierarchy             get_supply_ports                   
+get_die_area                       get_pins                           get_switching_activity             
+get_dont_touch_cells               get_placement_area                 get_terminals                      
+get_dont_touch_nets                get_placement_blockages            get_timing_paths                   
+get_estimated_area                 get_polygon_area                   get_tracks                         
+get_flat_cells                     get_ports                          get_via_rules                      
+get_flat_nets                      get_power_derate                   get_zero_interconnect_delay_mode   
+get_flat_pins                      get_power_domains                  
+dc_shell-topo> man get_ports 
+2.  Synopsys Commands                                        Command Reference
+                                   get_ports
+
+NAME
+       get_ports
+              Creates a collection of ports from the current design that match
+              the specified criteria.
+
+SYNTAX
+       collection get_ports
+               [-quiet]
+               [-regexp | -exact]
+               [-nocase]
+               [-filter expression]
+               [-hierarchical]
+               [patterns | -of_objects objects]
+
+   Data Types
+       expression     string
+       patterns       list
+       objects        collection
+
+ARGUMENTS
+       -quiet Suppresses warning and error messages if no objects match.  Syn-
+              tax error messages are not suppressed.
+
+       -regexp
+              Views  the patterns argument as a regular expression rather than
+              a simple wildcard pattern.
+
+              This option also modifies the behavior of the =~ and  !~  filter
+              operators to use regular expressions rather than simple wildcard
+              patterns.
+
+              The regular expression matching is similar  to  the  Tcl  regexp
+              command.   When  using  the  -regexp  option, be careful how you
+              quote the patterns argument and filter expression.  Using  rigid
+              quoting  with  curly braces around regular expressions is recom-
+              mended. Note that regular expressions are always anchored;  that
+              is, the expression is assumed to begin matching at the beginning
+              of an object name and end matching at the end of an object name.
+              You  can widen the search by adding ".*" to the beginning or end
+              of the expressions, as needed.
+
+              The -regexp and -exact options are mutually exclusive;  you  can
+              use only one.
+
+       -exact Considers  wildcards to be plain characters, and does not inter-
+              pret their meaning as wildcards.
+
+              The -regexp and -exact options are mutually exclusive;  you  can
+              use only one.
+
+       -nocase
+              Makes  matches  case-insensitive, both for the patterns argument
+              and for the ==, =~, and !~ filter operators.
+
+       -filter expression
+              Filters the collection with the specified expression.  For  each
+              port in the collection, the expression is evaluated based on the
+              port's attributes. If the expression evaluates to true, the port
+              is included in the result.
+
+              To  see  the  list  of  port  attributes that you can use in the
+              expression, use the  list_attributes  -application  -class  port
+              command.
+
+              For  more  information  about how to use the -filter option, see
+              the filter_collection man page.
+
+       -hierarchical
+              Searches for  ports  level-by-level,  relative  to  the  current
+              instance.   The  full  name  of the object at a particular level
+              must match the patterns.  The search is similar to that  of  the
+              UNIX  find  command.   For  example,  if  there  is a port named
+              block1/adder/D[0], a  hierarchical  search  finds  it  by  using
+              adder/D[0].
+
+              The  -hierarchical  option  is  mutually  exclusive with use the
+              -of_objects option; you can use only one.
+
+       patterns
+              Creates a collection of ports whose names  match  the  specified
+              patterns.  Patterns can include the * (asterisk) and ? (question
+              mark) wildcard characters. For more information about using  and
+              escaping  wildcards, see the wildcards man page.  Pattern match-
+              ing is case sensitive unless you use the -nocase option.
+
+              The patterns and -of_objects arguments are  mutually  exclusive;
+              you  can  specify  only one.  If you do not specify any of these
+              arguments, the command uses * (asterisk) as the default pattern.
+
+       -of_objects objects
+              Creates  a  collection  of  ports  connected  to  the  specified
+              objects.   Each  object  can  be  a net, terminal, bound, or via
+              region.
+
+              The patterns and -of_objects arguments are  mutually  exclusive;
+              you  can  specify  only one.  If you do not specify any of these
+              arguments, the command uses * (asterisk) as the default pattern.
+
+DESCRIPTION
+       This command creates a collection of ports by selecting ports from  the
+       current design that match the specified criteria.
+
+       The  command  returns a collection if any ports match the criteria.  If
+       no objects match the criteria, the command returns an empty string.
+
+       You can use this command at the command prompt or you can nest it as an
+       argument  to  another command, such as query_objects.  In addition, you
+       can assign the result to a variable.
+
+       When issued from the command prompt, the command behaves as though  you
+       have called the query_objects command to report the objects in the col-
+       lection.  By default, it displays a maximum of 100  objects.   You  can
+       change  this maximum by using the collection_result_display_limit vari-
+       able.
+
+       For information about collections and the querying of objects, see  the
+       collections man page.
+
+       In  addition, see the man pages for the all_inputs and all_outputs com-
+       mands, which also create collections of ports.
+
+   Multicorner-Multimode Support
+       This command has no dependency on scenario-specific information.
+
+EXAMPLES
+       The following example queries all input ports  beginning  with  "mode".
+       Although the output looks like a list, it is only a display.
+
+         prompt> get_ports mode* -filter {@port_direction == in}
+         {mode[0] mode[1] mode[2]}
+
+       The  following  example  sets the driving cell for ports beginning with
+       "in" to an FD2 library cell.
+
+         prompt> set_driving_cell -lib_cell FD2 -library my_lib \
+            [get_ports in*]
+
+       The following example reports ports connected to nets  that  match  the
+       pattern "bidir*".
+
+         prompt> report_port [get_ports -of_objects [get_nets bidir*]]
+
+       The  following  example get the ports connected to terminals that match
+       the pattern "CC*".
+
+         prompt> get_ports -of_objects [get_terminals CC*]]
+         {CC CCEN}
+
+       The following example shows you can get bus ports by their  base  name.
+       A[0],  A[1], and A[2] are bus ports with the base name A; A[3] is not a
+       bus port.
+
+         prompt> get_ports A
+         {A[0] A[1] A[2]}
+
+         prompt> get_ports A[3]
+         {A[3]}
+
+SEE ALSO
+       all_inputs(2)
+       all_outputs(2)
+       collections(2)
+       filter_collection(2)
+       list_attributes(2)
+       query_objects(2)
+       collection_result_display_limit(3)
+       find_allow_only_non_hier_ports(3)
+       wildcards(3)
+
+                          Version S-2021.06-SP2
+            Copyright (c) 2021 Synopsys, Inc. All rights reserved.
+dc_shell-topo> man get_ports[16G[Kman get_ports[16G[K-e[K[Kre[K[Kman get_ports[16G[Kget_ports *scan*
+Warning: Can't find ports matching '*scan*' in design 'Top'. (UID-95)
+dc_shell-topo> get_ports *scan**[K*[K
+{sclk}
+dc_shell-topo> get_ports *sc**[K*[Ka*n**[K*[Ke*n*
+Warning: Can't find ports matching '*en*' in design 'Top'. (UID-95)
+dc_shell-topo> get_ports *en**[K
+{res_out[31][63] res_out[31][62] res_out[31][61] res_out[31][60] res_out[31][59] res_out[31][58] res_out[31][57] res_out[31][56] res_out[31][55] res_out[31][54] res_out[31][53] res_out[31][52] res_out[31][51] res_out[31][50] res_out[31][49] res_out[31][48] res_out[31][47] res_out[31][46] res_out[31][45] res_out[31][44] res_out[31][43] res_out[31][42] res_out[31][41] res_out[31][40] res_out[31][39] res_out[31][38] res_out[31][37] res_out[31][36] res_out[31][35] res_out[31][34] res_out[31][33] res_out[31][32] res_out[31][31] res_out[31][30] res_out[31][29] res_out[31][28] res_out[31][27] res_out[31][26] res_out[31][25] res_out[31][24] res_out[31][23] res_out[31][22] res_out[31][21] res_out[31][20] res_out[31][19] res_out[31][18] res_out[31][17] res_out[31][16] res_out[31][15] res_out[31][14] res_out[31][13] res_out[31][12] res_out[31][11] res_out[31][10] res_out[31][9] res_out[31][8] res_out[31][7] res_out[31][6] res_out[31][5] res_out[31][4] res_out[31][3] res_out[31][2] res_out[31][1] res_out[31][0] res_out[30][63] res_out[30][62] res_out[30][61] res_out[30][60] res_out[30][59] res_out[30][58] res_out[30][57] res_out[30][56] res_out[30][55] res_out[30][54] res_out[30][53] res_out[30][52] res_out[30][51] res_out[30][50] res_out[30][49] res_out[30][48] res_out[30][47] res_out[30][46] res_out[30][45] res_out[30][44] res_out[30][43] res_out[30][42] res_out[30][41] res_out[30][40] res_out[30][39] res_out[30][38] res_out[30][37] res_out[30][36] res_out[30][35] res_out[30][34] res_out[30][33] res_out[30][32] res_out[30][31] res_out[30][30] res_out[30][29] res_out[30][28] ...}
+dc_shell-topo> get_ports *e**[Kt*e*s*t*
+Warning: Can't find ports matching '*test*' in design 'Top'. (UID-95)
+dc_shell-topo> get_ports *test*]**[K*[K*[K*[K*[Km*o*d*e*
+Warning: Can't find ports matching '*mode*' in design 'Top'. (UID-95)
+dc_shell-topo> get_ports *mode**[K*[K*[K*[Kt*s*t*
+Warning: Can't find ports matching '*tst*' in design 'Top'. (UID-95)
+dc_shell-topo> ls
+.   MYLIB    command.log  filenames.log		logs	 udul_default_fin.log
+..  alib-52  default.svf  lc_shell_command.log	scripts  udul_default_fin.log.1
+dc_shell-topo> pwd
+/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment/dc
+dc_shell-topo> 

@@ -1,0 +1,21 @@
+module SeqLogicBlock3_Mod (
+    input  logic clk,
+    input  logic rst_n,
+    input  logic [7:0] data_in,
+    output logic [7:0] out_byte
+);
+
+    logic [7:0] shifter;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            shifter <= 8'hA5;
+        end else begin
+            shifter <= {shifter[6:0], shifter[7]};
+        end
+    end
+
+    assign out_byte = data_in ^ shifter;
+
+endmodule
+

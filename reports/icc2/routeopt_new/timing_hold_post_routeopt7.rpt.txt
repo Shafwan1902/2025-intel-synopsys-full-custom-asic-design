@@ -1,0 +1,48 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 1
+        -report_by design
+Design : Top
+Version: S-2021.06-SP2
+Date   : Mon Sep  8 10:53:25 2025
+****************************************
+Information: Timer using 'AWP, CRPR'. (TIM-050)
+
+  Startpoint: pipeline_chain_8__u_mult/stage3_reg_60_ (rising edge-triggered flip-flop clocked by sclk)
+  Endpoint: pipeline_chain_7__u_mult/stage2_reg_59_ (rising edge-triggered flip-flop clocked by sclk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: sclk
+  Path Type: min
+
+  Point                                             Incr         Path  
+  ------------------------------------------------------------------------------
+  clock sclk (rise edge)                           0.00000      0.00000
+  clock network delay (propagated)                 0.08480      0.08480
+
+  pipeline_chain_8__u_mult/stage3_reg_60_/CLK (SDFFASX1_RVT)
+                                                   0.00000      0.08480 r
+  pipeline_chain_8__u_mult/stage3_reg_60_/Q (SDFFASX1_RVT)
+                                                   0.17406      0.25887 f
+  pipeline_chain_7__u_mult/stage2_reg_59_/SI (SDFFASX1_RVT)
+                                                   0.00000      0.25887 f
+  data arrival time                                             0.25887
+
+  clock sclk (rise edge)                           0.00000      0.00000
+  clock network delay (propagated)                 0.50052      0.50052
+  clock reconvergence pessimism                   -0.20000      0.30052
+  pipeline_chain_7__u_mult/stage2_reg_59_/CLK (SDFFASX1_RVT)
+                                                   0.00000      0.30052 r
+  library hold time                               -0.05096      0.24957
+  data required time                                            0.24957
+  ------------------------------------------------------------------------------
+  data required time                                            0.24957
+  data arrival time                                            -0.25887
+  ------------------------------------------------------------------------------
+  slack (MET)                                                   0.00930
+
+
+1

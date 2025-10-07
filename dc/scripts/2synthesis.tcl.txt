@@ -1,0 +1,52 @@
+#This script sets up the Design Compiler environment, loads libraries and 
+#constraints, reads the unmapped DDC design, performs synthesis using 
+#compile_ultra, and generates netlist files and analysis reports.
+#It also runs check_design after synthesis to verify design integrity.
+#Intended to be run after pre-synthesis setup is complete.
+#Can be run multiple times for constraints adjustments
+
+#setup for synthesis
+remove_design -all
+s scripts/0env_setup.tcl
+s scripts/lib_setup.tcl
+read_db "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db"
+read_ddc ../output/unmapped_top.ddc
+current_design Top
+
+#add constraints
+s scripts/top.con
+
+#setting up for synthesis
+#buffer for all multiple port nets
+#fixes nets connected to multiple ports
+set_fix_multiple_port_nets -all -buffer_constants
+#convert tri state to wire
+#fixes connectivity issues
+set verilogout_no_tri tru_timi
+#fixes naming issues 
+change_names -rules verilog -hierarchy
+
+#compile constraints to create netlist
+compile_ultra -scan
+
+echo "completed compilation -----------------"
+
+#formatting of all files
+write -format ddc -hier -out "$all_output_path/mapped_top.ddc"
+write -format verilog -hier -out "$all_output_path/mapped_top.v"
+write_sdc "$all_output_path/mapped_top.sdc"
+#write_icc2_files -force -output "$all_output_path/dc_write_icc2"
+
+echo "saved netlist -------------------------" 
+
+#reports on netlist level
+redirect -tee -file "$dc_rpt_analysis/check_design_post_synthesis.rpt" {check_design}
+redirect -tee -file "$dc_rpt_analysis/timing.rpt" {report_timing}
+redirect -tee -file "$dc_rpt_analysis/timing_max.rpt" {report_timing -max_paths 10 -delay_type max}
+redirect -tee -file "$dc_rpt_analysis/timing_min.rpt" {report_timing -max_paths 10 -delay_type min}
+redirect -tee -file "$dc_rpt_analysis/area.rpt" {report_area}
+redirect -tee -file "$dc_rpt_analysis/power.rpt" {report_power}
+redirect -tee -file "$dc_rpt_analysis/constraint.rpt" {report_constraints -all}
+redirect -tee -file "$dc_rpt_analysis/qor.rpt" {report_qor}
+
+echo "completed reports ----------------------"

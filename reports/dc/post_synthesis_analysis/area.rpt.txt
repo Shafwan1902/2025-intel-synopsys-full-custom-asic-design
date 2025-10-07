@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Aug 30 16:04:43 2025
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32rvt_ss0p95v125c (File: /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db)
+
+Number of ports:                         5850
+Number of nets:                         37085
+Number of cells:                        34932
+Number of combinational cells:          23733
+Number of sequential cells:             10944
+Number of macros/black boxes:               0
+Number of buf/inv:                       6385
+Number of references:                      83
+
+Combinational area:              59629.298127
+Buf/Inv area:                    11240.535087
+Noncombinational area:          100439.489297
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                160068.787424
+Total area:                 undefined
+1

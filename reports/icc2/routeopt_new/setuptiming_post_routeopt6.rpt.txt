@@ -1,0 +1,82 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : Top
+Version: S-2021.06-SP2
+Date   : Mon Sep  8 10:15:16 2025
+****************************************
+Information: Timer using 'AWP, CRPR'. (TIM-050)
+
+  Startpoint: in_c[0] (input port clocked by clk)
+  Endpoint: final_out[1215] (output port clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: **in2out_default**
+  Path Type: max
+
+  Point                                             Incr         Path  
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00000      0.00000
+  clock network delay (propagated)                 0.35431      0.35431
+  input external delay                             0.10000      0.45431 r
+  in_c[0] (in)                                     0.00000      0.45431 r
+  U3533/Y (NBUFFX16_HVT)                           0.08369      0.53801 r
+  U3808/Y (NAND2X0_HVT)                            0.15120      0.68920 f
+  U4221/Y (OAI21X1_HVT)                            0.23178      0.92099 r
+  U4723/Y (AOI21X1_HVT)                            0.15652      1.07750 f
+  U4731/Y (OAI21X2_RVT)                            0.15463      1.23213 r
+  U6791/Y (AOI21X1_RVT)                            0.11124      1.34337 f
+  HFSBUF_32_2687/Y (NBUFFX4_HVT)                   0.09598      1.43935 f
+  U9733/Y (OAI21X1_RVT)                            0.14658      1.58592 r
+  HFSBUF_17_2659/Y (NBUFFX4_HVT)                   0.10269      1.68862 r
+  U3681/Y (AO21X2_RVT)                             0.12989      1.81851 r
+  U18403/CO (FADDX1_HVT)                           0.16653      1.98504 r
+  U18402/CO (FADDX1_HVT)                           0.17414      2.15918 r
+  U18401/CO (FADDX2_HVT)                           0.16001      2.31919 r
+  U18400/CO (FADDX2_HVT)                           0.18639      2.50557 r
+  U18399/CO (FADDX1_RVT)                           0.12312      2.62869 r
+  U18398/CO (FADDX1_HVT)                           0.16376      2.79246 r
+  U18397/CO (FADDX1_RVT)                           0.11211      2.90457 r
+  HFSBUF_2_2517/Y (NBUFFX4_HVT)                    0.11131      3.01588 r
+  U18396/CO (FADDX1_HVT)                           0.16378      3.17967 r
+  U18395/CO (FADDX1_HVT)                           0.15341      3.33308 r
+  U18394/CO (FADDX1_HVT)                           0.15385      3.48692 r
+  U18393/CO (FADDX2_HVT)                           0.22171      3.70863 r
+  U18392/CO (FADDX1_HVT)                           0.20245      3.91108 r
+  U18391/CO (FADDX1_HVT)                           0.16144      4.07252 r
+  U18390/CO (FADDX1_HVT)                           0.15837      4.23088 r
+  U18389/CO (FADDX2_RVT)                           0.11429      4.34517 r
+  U18388/CO (FADDX1_HVT)                           0.15350      4.49868 r
+  U18387/CO (FADDX1_HVT)                           0.15133      4.65000 r
+  U18386/CO (FADDX1_HVT)                           0.16033      4.81034 r
+  U18385/CO (FADDX1_HVT)                           0.15985      4.97019 r
+  U18384/CO (FADDX1_HVT)                           0.18272      5.15292 r
+  U18383/CO (FADDX1_HVT)                           0.18988      5.34279 r
+  U18382/CO (FADDX1_HVT)                           0.16546      5.50825 r
+  U18381/CO (FADDX1_HVT)                           0.16548      5.67374 r
+  U18380/CO (FADDX1_HVT)                           0.17019      5.84393 r
+  U18379/CO (FADDX1_HVT)                           0.17572      6.01965 r
+  U18378/CO (FADDX1_HVT)                           0.16918      6.18883 r
+  U18377/CO (FADDX1_HVT)                           0.15615      6.34499 r
+  U18376/CO (FADDX1_HVT)                           0.14284      6.48783 r
+  U13141/Y (XOR2X1_HVT)                            0.22608      6.71391 f
+  final_out[1215] (out)                            0.00004      6.71395 f
+  data arrival time                                             6.71395
+
+  clock clk (rise edge)                            6.50000      6.50000
+  clock network delay (propagated)                 0.11747      6.61747
+  clock reconvergence pessimism                    0.20000      6.81747
+  output external delay                           -0.10000      6.71747
+  data required time                                            6.71747
+  ------------------------------------------------------------------------------
+  data required time                                            6.71747
+  data arrival time                                            -6.71395
+  ------------------------------------------------------------------------------
+  slack (MET)                                                   0.00352
+
+
+1

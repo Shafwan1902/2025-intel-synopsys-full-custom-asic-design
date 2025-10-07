@@ -1,0 +1,21 @@
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+****************************************
+Report : analysis_coverage
+Design : Top
+Version: V-2023.12-SP4-VAL-20240710
+Date   : Mon Sep  1 22:35:25 2025
+****************************************
+
+Type of Check         Total              Met         Violated         Untested
+--------------------------------------------------------------------------------
+setup                 24368      8205 ( 34%)         0 (  0%)     16163 ( 66%)
+hold                  24368      8202 ( 34%)         0 (  0%)     16166 ( 66%)
+recovery               8304      2160 ( 26%)         0 (  0%)      6144 ( 74%)
+removal                8304         0 (  0%)         0 (  0%)      8304 (100%)
+min_pulse_width       24912     16608 ( 67%)         0 (  0%)      8304 ( 33%)
+out_setup              5120      4794 ( 94%)         0 (  0%)       326 (  6%)
+out_hold               5120         0 (  0%)         0 (  0%)      5120 (100%)
+--------------------------------------------------------------------------------
+All Checks           100496     39969 ( 40%)         0 (  0%)     60527 ( 60%)
+
+1

@@ -1,0 +1,287 @@
+#@ # 
+#@ # Running lc_shell Version S-2021.06-SP2 for linux64 -- Aug 24, 2021
+#@ # Date:   Sat Aug 30 16:06:56 2025
+#@ # Run by: yabdrash@pglc9902
+#@ 
+
+source /nfs/png/disks/MDC_Elite/cad/librarycompiler/S-2021.06-SP2/admin/setup//.synopsys_lc.setup
+#@ # -- Starting source /nfs/png/disks/MDC_Elite/cad/librarycompiler/S-2021.06-SP2/admin/setup//.synopsys_lc.setup
+
+#@ #
+#@ #
+#@ #		".synopsys_lc.setup" Initialization File for
+#@ #
+#@ #		    Lc_Shell and Library_compiler
+#@ #
+#@ #	The variables in this file define the behavior of many parts
+#@ #	of the Synopsys Synthesis Tools.  Upon installation, they should 
+#@ #	be reviewed and modified to fit your site's needs.  Each engineer
+#@ #	can have a .synopsys file in his/her home directory or current
+#@ #	directory to override variable settings in this file.  
+#@ #
+#@ 
+#@ # System variables
+#@ # system default value for sh_continue_on_error is "false"
+#@ set sh_continue_on_error         "true"
+#@ # system default value for sh_source_uses_search_path is "false"
+#@ set sh_source_uses_search_path   "true"
+#@ 
+#@ # Enable customer support banner on fatal
+#@ if { $sh_arch == "linux"    || $sh_arch == "amd64"    || $sh_arch == "linux64" ||      $sh_arch == "sparcOS5" || $sh_arch == "sparc64"  ||      $sh_arch == "x86sol32" || $sh_arch == "x86sol64" ||      $sh_arch == "rs6000"   || $sh_arch == "aix64" } {
+#@    setenv SYNOPSYS_TRACE ""
+#@ }
+#@ 
+#@ #
+#@ # Load the procedures which make up part of the user interface.
+#@ #
+#@ source $synopsys_root/auxx/syn/.lc_procs.tcl
+#@ # -- Starting source /nfs/png/disks/MDC_Elite/cad/librarycompiler/S-2021.06-SP2/auxx/syn/.lc_procs.tcl
+
+#@ ##############################################################################
+#@ #
+#@ #
+#@ # FILE:         auxx/syn/.lc_procs.tcl
+#@ #
+#@ # ABSTRACT:     These procedures are part of the lc_shell
+#@ #               user interface.
+#@ #               They are loaded by .synopsys_lc.setup.
+#@ #
+#@ ##############################################################################
+#@ #
+#@ #
+#@ 
+#@ ##############################################################################
+#@ #
+#@ #
+#@ #  PROCEDURE:  add_model
+#@ #
+#@ #  ABSTRACT:  dummy call
+#@ #
+#@ ##############################################################################
+#@ #
+#@ 
+#@ proc add_model { args } {
+#@   return [uplevel #0 $cmd]
+#@ }
+#@ 
+#@ ##############################################################################
+#@ #
+#@ #  PROCEDURE:   remove_design
+#@ #
+#@ #  ABSTRACT:    map remove_design to remove_lib
+#@ #
+#@ #  HISTORY :    2014/05/09, Synopsys, initial
+#@ #
+#@ ##############################################################################
+#@ 
+#@ proc remove_design { args } {
+#@   parse_proc_arguments -args $args ra
+#@ 
+#@   if {[info exists ra(-library)]} {
+#@     set cmd [format {remove_lib %s} $ra(-library)]
+#@   } elseif {[info exists ra(-all)]} {
+#@     set cmd {remove_lib -all}
+#@   } else {
+#@     set cmd [format {remove_lib [list %s]} $args]
+#@   }
+#@ 
+#@   return [uplevel #0 $cmd]
+#@ }
+#@ 
+#@ define_proc_attributes remove_design -hide_body     -info " alias of remove_lib "     -define_args {      {file_names "" file_names list {optional hidden}}    }
+#@ # -- End source /nfs/png/disks/MDC_Elite/cad/librarycompiler/S-2021.06-SP2/auxx/syn/.lc_procs.tcl
+
+#@ source $synopsys_root/auxx/lc/.lc_scripts.tcl
+#@ # -- Starting source /nfs/png/disks/MDC_Elite/cad/librarycompiler/S-2021.06-SP2/auxx/lc/.lc_scripts.tcl
+
+#@ ##############################################################################
+#@ #
+#@ #
+#@ # FILE:         lc_scripts.tcl
+#@ #
+#@ # ABSTRACT:     These procedures are part of the lc_shell
+#@ #               user interface.
+#@ #               They are loaded by .synopsys_lc.setup.
+#@ #
+#@ ##############################################################################
+#@ 
+#@ ##############################################################################
+#@ # Proc: read in the csv file to list of list
+#@ # Author: Synopsys
+#@ # Date: 2015/11/01
+#@ # -channel: the input csv file
+#@ # -header: == 1: use first line as index; header == 0: use row number as index
+#@ # -symbol: delimiter, default is ","
+#@ ##############################################################################
+#@ proc read_csv { channel { header 1 } { symbol , }} {
+#@ 	set quote 0	
+#@ 	set data [ split [ read $channel nonewline ] "\n" ]
+#@ 	foreach line $data {
+#@ 		set quote [ expr { $quote + [ regexp -all \" $line ]}]
+#@ 		if { [ expr { $quote % 2 }] == "0" } {
+#@ 			set quote 0
+#@ 			append row_temp $line
+#@ 			set row_temp [ split $row_temp , ]	
+#@ 			foreach section $row_temp {
+#@ 				set quote [ expr { $quote + [ regexp -all \" $section ]}]
+#@ 				if { [ expr { $quote % 2 }] == "0" } {
+#@ 					append cell_temp $section
+#@ 					set cell_temp [ regsub {^\s*(.*\S)\s*$} $cell_temp {\1} ]
+#@ 					set cell_temp [ regsub {^\s*$} $cell_temp {\1} ]
+#@ 					set cell_temp [ regsub {"(.*)"} $cell_temp {\1} ]
+#@ 					lappend cell $cell_temp
+#@ 					unset cell_temp
+#@ 					set quote 0
+#@ 				} else {
+#@ 					append cell_temp $section$symbol
+#@ 				}
+#@ 			}
+#@ 			lappend final [ regsub -all {""} $cell \" ]
+#@ 			unset cell
+#@ 			unset row_temp
+#@ 		} else {
+#@ 			append row_temp $line\n
+#@ 		}
+#@ 	}
+#@ 	# return list of list
+#@ 	return $final
+#@ }
+#@ 
+#@ # This proc is hidden
+#@ define_proc_attributes read_csv -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: sort the db_filename
+#@ # Author: Synopsys
+#@ # Date: 2015/11/01
+#@ # Return array: key is db name, value is a list of colomn number
+#@ ##############################################################################
+#@ proc sort_array_by_db_filename { final id } {
+#@ 	set row [ llength $final ]
+#@ 
+#@ 	for { set i 1 } { $i < $row } { incr i } {
+#@ 		set db_name [lindex [lindex $final $i] $id]
+#@     set db_ids [array names db_map $db_name]
+#@     if { [string length $db_ids] > 0} {
+#@       set db_map($db_name) [concat $db_map($db_name) $i]
+#@     } else {
+#@       set db_map($db_name) $i
+#@     }
+#@   }
+#@ 
+#@   return [ array get db_map ]
+#@ }
+#@ 
+#@ # This proc is hidden
+#@ define_proc_attributes sort_array_by_db_filename -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get nldm delay point index/value
+#@ # Author: Synopsys
+#@ # Date: 2015/11/01
+#@ # Args: -matching_point: 1: fit; others: bucket;
+#@ # Return: for fit mode, return 1 grid point
+#@ #   for bucket mode, return a list of grid points
+#@ #
+#@ # Support NLDM NLPM query
+#@ #
+#@ # For different dimension lookup table
+#@ #         fit                     bucket
+#@ #   2-D:  1 (idx1,idx2,val)       4 * 3 (idx1,idx2,val)
+#@ #   1-D:  1 (idx1,val)            2 * 2 (idx1,val)
+#@ #   0-D:  1 (val)                 1 (val)
+#@ #
+#@ # The return array always contain 3 items (fit mode) or 12 items (bucket mode)
+#@ # The unused ones are left empty for 1-D/0-D lookup table
+#@ # If find any error, return array contains same number itmes with empty value
+#@ ##############################################################################
+#@ proc get_nldm_delay_point { line header idx {matching_point 1} } {
+#@ 
+#@   set column [llength $header]
+#@ 	for { set j 0 } { $j < $column } { incr j } {
+#@ 		set rec([ lindex $header $j ],$idx) [ lindex $line $j ]
+#@   }
+#@ 
+#@   # initial return array
+#@   if { $matching_point ==1 } {
+#@     set tb(idx1,$idx) ""
+#@     set tb(idx2,$idx) ""
+#@     set tb(value,$idx) ""
+#@   } else {
+#@     set tb(idx1_a,$idx) ""
+#@     set tb(idx2_a,$idx) ""
+#@     set tb(value_a,$idx) ""
+#@     set tb(idx1_b,$idx) ""
+#@     set tb(idx2_b,$idx) ""
+#@     set tb(value_b,$idx) ""
+#@     set tb(idx1_c,$idx) ""
+#@     set tb(idx2_c,$idx) ""
+#@     set tb(value_c,$idx) ""
+#@     set tb(idx1_d,$idx) ""
+#@     set tb(idx2_d,$idx) ""
+#@     set tb(value_d,$idx) ""
+#@   }
+#@ 
+#@   # check library
+#@   if { [string length [array names rec library,$idx]] ==0 ||
+#@     [string length $rec(library,$idx)] ==0} {
+#@     echo "line [expr $idx+1]: Error! Must specify field 'library' for query."
+#@     return [ array get tb ]
+#@   }
+#@   # check cell 
+#@   if { [string length [array names rec cell,$idx]] ==0 ||
+#@     [string length $rec(cell,$idx)] ==0} {
+#@     echo "line [expr $idx+1]: Error! Must specify field 'cell' for query."
+#@     return [ array get tb ]
+#@   }
+#@ 
+#@   # get the cell, save the collection into global array for fast access next time.
+#@   global lc_cells
+#@   set lib_cell_name [array names lc_cells $rec(library,$idx)/$rec(cell,$idx)]
+#@   if { [string length $lib_cell_name] > 0} {
+#@     set pcell $lc_cells($lib_cell_name)
+#@   } else {
+#@     set pcell [get_lib_cells $rec(library,$idx)/$rec(cell,$idx)]
+#@     if { [sizeof_collection $pcell] == 1 } {
+#@       set lc_cells($rec(library,$idx)/$rec(cell,$idx)) $pcell
+#@     } else {
+#@       echo "line [expr $idx+1]: Error! Can't find this cell group."
+#@       return [array get tb ]
+#@     }
+#@   }
+#@ 
+#@   # check group
+#@   if { [string length [array names rec group,$idx]] ==0 ||
+#@     [string length $rec(group,$idx)] ==0} {
+#@     echo "line [expr $idx+1]: Error! Must specify field 'group' for query."
+#@     return [ array get tb ]
+#@   }
+#@ 
+#@   # get value NOT from lookup table
+#@   if { [string equal $rec(group,$idx) leakage_power] } {
+#@     # leakage power
+#@  
+#@     # set filter
+
+#@ catch { set ::remove_unloaded_register [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_enable_scan_reordering_in_compile_incremental [list [binary format H* 74727565]] }
+#@ catch { set ::sdc_runtime_hier_block_pins_timing_path_threshold [list [binary format H* 353030]] }
+#@ catch { set ::auto_link_disable [list [binary format H* 66616c7365]] }
+#@ catch { set ::write_name_nets_same_as_ports [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_bit_type [list [binary format H* 7374645f6c6f676963]] }
+#@ catch { set ::reoptimize_design_changed_list_file_name "" }
+#@ catch { set ::preroute_opt_verbose [list [binary format H* 30]] }
+#@ catch { set ::cache_write "" }
+#@ catch { set ::link_force_case [list [binary format H* 636865636b5f7265666572656e6365]] }
+#@ ##@@@## gen_nglc_check_lib_procedure
+#@ source /tmp/51585_1756541120564296/nglc_check_lib.tcl
+#@ # -- Starting source /tmp/51585_1756541120564296/nglc_check_lib.tcl
+
+#@ ##@@@## gen_nglc_check_lib_procedure
+#@ set search_path ". /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/dw/syn_ver /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/dw/sim_ver . ../rtl ./scripts ../libs/stdcell_hvt/db_nldm ../libs/stdcell_lvt/db_nldm ../libs/stdcell_rvt/db_nldm ../libs/sram/db_nldm . ../rtl ./scripts ../libs/stdcell_hvt/db_nldm ../libs/stdcell_lvt/db_nldm ../libs/stdcell_rvt/db_nldm ../libs/sram/db_nldm . ../rtl ./scripts ../libs/stdcell_hvt/db_nldm ../libs/stdcell_lvt/db_nldm ../libs/stdcell_rvt/db_nldm ../libs/sram/db_nldm"
+#@ set link_library "* saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db"
+#@ set target_library "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db"
+#@ set_check_library_options 
+#@ check_library -logic_library_name "  saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db"
+#@ ##@@@##
+#@ exit

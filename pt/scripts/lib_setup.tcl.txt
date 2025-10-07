@@ -1,0 +1,26 @@
+
+
+# ============================================================
+# PrimeTime Library Setup
+# ============================================================
+
+# Multiple library flavors (LVT, HVT, RVT)
+set LVT_LIB "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db"
+
+# Search path
+set_app_var search_path "$search_path . \
+    ../libs/stdcell_lvt/db_nldm \
+    ../libs/stdcell_hvt/db_nldm \
+    ../libs/stdcell_rvt/db_nldm \
+    ../libs/sram/db_nldm \
+    ./scripts"
+
+# Target and link libraries
+set_app_var target_library "$LVT_LIB"
+set_app_var link_library "* $target_library"
+set_app_var link_path    "* $target_library"
+
+# ------------------------------------------------------------
+# NOTE: Remove Milkyway settings in PT
+# (set mw_design_library / set mw_reference_library)
+# ------------------------------------------------------------

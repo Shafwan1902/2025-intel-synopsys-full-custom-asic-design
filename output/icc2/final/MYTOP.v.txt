@@ -1,0 +1,1143 @@
+// IC Compiler II Version S-2021.06-SP2 Verilog Writer
+// Generated on 9/1/2025 at 21:7:33
+// Library Name: MYLIB
+// Block Name: posroute64drc_backup
+// User Label: 
+// Write Command: write_verilog -hierarchy top ../output/icc2/final/MYTOP.v
+module Top ( clk , sclk , rst_n , in_a , in_b , in_c , final_out , res_out , 
+    seq1_out , seq2_out , seq3_out ) ;
+input  clk ;
+input  sclk ;
+input  rst_n ;
+input  [31:0] in_a ;
+input  [31:0] in_b ;
+input  [63:0] in_c ;
+output [2047:0] final_out ;
+output [2047:0] res_out ;
+output [255:0] seq1_out ;
+output [511:0] seq2_out ;
+output [255:0] seq3_out ;
+
+wire [63:0] \pipeline_chain_1__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_2__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_3__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_4__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_5__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_6__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_7__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_8__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_9__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_10__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_11__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_12__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_13__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_14__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_15__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_16__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_17__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_18__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_19__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_20__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_21__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_22__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_23__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_24__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_25__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_26__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_27__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_28__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_29__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_30__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_31__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_0__u_mult/stage1 ;
+wire [7:0] \pipeline_chain_1__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_2__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_3__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_4__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_5__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_6__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_7__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_8__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_9__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_10__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_11__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_12__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_13__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_14__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_15__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_16__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_17__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_18__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_19__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_20__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_21__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_22__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_23__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_24__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_25__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_26__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_27__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_28__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_29__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_30__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_31__u_seq3/shifter ;
+wire [0:15] \pipeline_chain_21__u_seq2/memory ;
+wire [0:15] \pipeline_chain_22__u_seq2/memory ;
+wire [0:15] \pipeline_chain_23__u_seq2/memory ;
+wire [0:15] \pipeline_chain_24__u_seq2/memory ;
+wire [0:15] \pipeline_chain_25__u_seq2/memory ;
+wire [0:15] \pipeline_chain_26__u_seq2/memory ;
+wire [0:15] \pipeline_chain_27__u_seq2/memory ;
+wire [0:15] \pipeline_chain_28__u_seq2/memory ;
+wire [0:15] \pipeline_chain_29__u_seq2/memory ;
+wire [0:15] \pipeline_chain_30__u_seq2/memory ;
+wire [0:15] \pipeline_chain_31__u_seq2/memory ;
+wire [1:0] \pipeline_chain_1__u_seq1/state ;
+wire [1:0] \pipeline_chain_2__u_seq1/state ;
+wire [1:0] \pipeline_chain_3__u_seq1/state ;
+wire [1:0] \pipeline_chain_4__u_seq1/state ;
+wire [1:0] \pipeline_chain_5__u_seq1/state ;
+wire [1:0] \pipeline_chain_6__u_seq1/state ;
+wire [1:0] \pipeline_chain_7__u_seq1/state ;
+wire [1:0] \pipeline_chain_8__u_seq1/state ;
+wire [1:0] \pipeline_chain_9__u_seq1/state ;
+wire [1:0] \pipeline_chain_10__u_seq1/state ;
+wire [1:0] \pipeline_chain_11__u_seq1/state ;
+wire [1:0] \pipeline_chain_12__u_seq1/state ;
+wire [1:0] \pipeline_chain_13__u_seq1/state ;
+wire [1:0] \pipeline_chain_14__u_seq1/state ;
+wire [1:0] \pipeline_chain_15__u_seq1/state ;
+wire [1:0] \pipeline_chain_16__u_seq1/state ;
+wire [1:0] \pipeline_chain_17__u_seq1/state ;
+wire [1:0] \pipeline_chain_18__u_seq1/state ;
+wire [1:0] \pipeline_chain_19__u_seq1/state ;
+wire [1:0] \pipeline_chain_20__u_seq1/state ;
+wire [1:0] \pipeline_chain_21__u_seq1/state ;
+wire [1:0] \pipeline_chain_22__u_seq1/state ;
+wire [1:0] \pipeline_chain_23__u_seq1/state ;
+wire [1:0] \pipeline_chain_24__u_seq1/state ;
+wire [1:0] \pipeline_chain_25__u_seq1/state ;
+wire [1:0] \pipeline_chain_26__u_seq1/state ;
+wire [1:0] \pipeline_chain_27__u_seq1/state ;
+wire [1:0] \pipeline_chain_28__u_seq1/state ;
+wire [1:0] \pipeline_chain_29__u_seq1/state ;
+wire [1:0] \pipeline_chain_30__u_seq1/state ;
+wire [1:0] \pipeline_chain_31__u_seq1/state ;
+wire [7:0] \pipeline_chain_0__u_seq3/shifter ;
+wire [127:0] \pipeline_chain_0__u_seq2/memory ;
+wire [1:0] \pipeline_chain_0__u_seq1/state ;
+
+NBUFFX8_HVT U23954 ( .A ( \pipeline_chain_0__u_seq2/addr[1] ) , 
+    .Y ( n31783 ) ) ;
+NBUFFX2_HVT U23953 ( .A ( \pipeline_chain_0__u_seq2/addr[0] ) , 
+    .Y ( n31782 ) ) ;
+NBUFFX8_HVT U23952 ( .A ( \pipeline_chain_31__u_seq2/addr[0] ) , 
+    .Y ( n31781 ) ) ;
+NBUFFX4_HVT U23951 ( .A ( \pipeline_chain_0__u_seq2/addr[2] ) , 
+    .Y ( n31780 ) ) ;
+NBUFFX4_HVT U23950 ( .A ( \pipeline_chain_31__u_seq2/addr[2] ) , 
+    .Y ( n31779 ) ) ;
+NBUFFX4_HVT U23949 ( .A ( \pipeline_chain_31__u_seq2/addr[1] ) , 
+    .Y ( n31778 ) ) ;
+NBUFFX4_HVT U23948 ( .A ( \pipeline_chain_30__u_seq2/addr[1] ) , 
+    .Y ( n31777 ) ) ;
+NBUFFX4_HVT U23947 ( .A ( \pipeline_chain_30__u_seq2/addr[0] ) , 
+    .Y ( n31776 ) ) ;
+NBUFFX4_HVT U23946 ( .A ( \pipeline_chain_29__u_seq2/addr[0] ) , 
+    .Y ( n31775 ) ) ;
+NBUFFX4_HVT U23945 ( .A ( \pipeline_chain_30__u_seq2/addr[2] ) , 
+    .Y ( n31774 ) ) ;
+NBUFFX4_HVT U23944 ( .A ( \pipeline_chain_29__u_seq2/addr[2] ) , 
+    .Y ( n31773 ) ) ;
+NBUFFX4_HVT U23943 ( .A ( \pipeline_chain_29__u_seq2/addr[1] ) , 
+    .Y ( n31772 ) ) ;
+NBUFFX4_HVT U23942 ( .A ( \pipeline_chain_28__u_seq2/addr[1] ) , 
+    .Y ( n31771 ) ) ;
+NBUFFX8_HVT U23941 ( .A ( \pipeline_chain_28__u_seq2/addr[0] ) , 
+    .Y ( n31770 ) ) ;
+NBUFFX4_HVT U23940 ( .A ( \pipeline_chain_27__u_seq2/addr[0] ) , 
+    .Y ( n31769 ) ) ;
+NBUFFX8_HVT U23939 ( .A ( \pipeline_chain_28__u_seq2/addr[2] ) , 
+    .Y ( n31768 ) ) ;
+NBUFFX4_HVT U23938 ( .A ( \pipeline_chain_27__u_seq2/addr[2] ) , 
+    .Y ( n31767 ) ) ;
+NBUFFX4_HVT U23937 ( .A ( \pipeline_chain_27__u_seq2/addr[1] ) , 
+    .Y ( n31766 ) ) ;
+NBUFFX4_HVT U23936 ( .A ( \pipeline_chain_26__u_seq2/addr[1] ) , 
+    .Y ( n31765 ) ) ;
+NBUFFX8_HVT U23935 ( .A ( \pipeline_chain_26__u_seq2/addr[0] ) , 
+    .Y ( n31764 ) ) ;
+NBUFFX8_HVT U23934 ( .A ( \pipeline_chain_25__u_seq2/addr[0] ) , 
+    .Y ( n31763 ) ) ;
+NBUFFX4_HVT U23933 ( .A ( \pipeline_chain_26__u_seq2/addr[2] ) , 
+    .Y ( n31762 ) ) ;
+NBUFFX4_HVT U23932 ( .A ( \pipeline_chain_25__u_seq2/addr[2] ) , 
+    .Y ( n31761 ) ) ;
+NBUFFX4_HVT U23931 ( .A ( \pipeline_chain_25__u_seq2/addr[1] ) , 
+    .Y ( n31760 ) ) ;
+NBUFFX8_HVT U23930 ( .A ( \pipeline_chain_24__u_seq2/addr[1] ) , 
+    .Y ( n31759 ) ) ;
+NBUFFX4_HVT U23929 ( .A ( \pipeline_chain_24__u_seq2/addr[0] ) , 
+    .Y ( n31758 ) ) ;
+NBUFFX4_HVT U23928 ( .A ( \pipeline_chain_23__u_seq2/addr[0] ) , 
+    .Y ( n31757 ) ) ;
+NBUFFX8_HVT U23927 ( .A ( \pipeline_chain_24__u_seq2/addr[2] ) , 
+    .Y ( n31756 ) ) ;
+NBUFFX4_HVT U23926 ( .A ( \pipeline_chain_23__u_seq2/addr[2] ) , 
+    .Y ( n31755 ) ) ;
+NBUFFX4_HVT U23925 ( .A ( \pipeline_chain_23__u_seq2/addr[1] ) , 
+    .Y ( n31754 ) ) ;
+NBUFFX4_HVT U23924 ( .A ( \pipeline_chain_22__u_seq2/addr[1] ) , 
+    .Y ( n31753 ) ) ;
+NBUFFX4_HVT U23923 ( .A ( \pipeline_chain_22__u_seq2/addr[0] ) , 
+    .Y ( n31752 ) ) ;
+NBUFFX4_HVT U23922 ( .A ( \pipeline_chain_21__u_seq2/addr[0] ) , 
+    .Y ( n31751 ) ) ;
+NBUFFX4_HVT U23921 ( .A ( \pipeline_chain_22__u_seq2/addr[2] ) , 
+    .Y ( n31750 ) ) ;
+NBUFFX4_HVT U23920 ( .A ( \pipeline_chain_21__u_seq2/addr[2] ) , 
+    .Y ( n31749 ) ) ;
+NBUFFX4_HVT U23919 ( .A ( \pipeline_chain_21__u_seq2/addr[1] ) , 
+    .Y ( n31748 ) ) ;
+NBUFFX8_HVT U23918 ( .A ( n17942 ) , .Y ( n31747 ) ) ;
+NBUFFX4_HVT U23917 ( .A ( n17938 ) , .Y ( n31746 ) ) ;
+NBUFFX4_HVT U23916 ( .A ( n17950 ) , .Y ( n31745 ) ) ;
+NBUFFX4_HVT U23915 ( .A ( n17945 ) , .Y ( n31744 ) ) ;
+NBUFFX4_HVT U23914 ( .A ( n17957 ) , .Y ( n31743 ) ) ;
+NBUFFX8_HVT U23913 ( .A ( n17955 ) , .Y ( n31742 ) ) ;
+NBUFFX8_HVT U23912 ( .A ( n17965 ) , .Y ( n31741 ) ) ;
+NBUFFX4_HVT U23911 ( .A ( n17961 ) , .Y ( n31740 ) ) ;
+NBUFFX4_HVT U23910 ( .A ( n17975 ) , .Y ( n31739 ) ) ;
+NBUFFX4_HVT U23909 ( .A ( n17970 ) , .Y ( n31738 ) ) ;
+NBUFFX4_HVT U23908 ( .A ( \pipeline_chain_21__u_seq2/memory[38] ) , 
+    .Y ( n31736 ) ) ;
+NBUFFX4_HVT U23907 ( .A ( n17977 ) , .Y ( n31735 ) ) ;
+NBUFFX4_HVT U23906 ( .A ( \pipeline_chain_17__u_mult/stage1 [35] ) , 
+    .Y ( n31732 ) ) ;
+NBUFFX2_HVT U23905 ( .A ( \pipeline_chain_19__u_mult/stage1 [5] ) , 
+    .Y ( n31731 ) ) ;
+NBUFFX4_HVT U23904 ( .A ( \pipeline_chain_9__u_mult/stage1 [53] ) , 
+    .Y ( n31728 ) ) ;
+NBUFFX2_HVT U23903 ( .A ( \pipeline_chain_14__u_mult/stage1 [24] ) , 
+    .Y ( n31727 ) ) ;
+NBUFFX8_HVT U23902 ( .A ( n18303 ) , .Y ( n31725 ) ) ;
+NBUFFX2_HVT U23901 ( .A ( HFSNET_1090 ) , .Y ( n31722 ) ) ;
+NBUFFX2_HVT U23900 ( .A ( n31827 ) , .Y ( seq1_out[75] ) ) ;
+NBUFFX4_HVT U23899 ( .A ( n31826 ) , .Y ( seq1_out[205] ) ) ;
+NBUFFX2_HVT U23898 ( .A ( res_out[1758] ) , .Y ( n31719 ) ) ;
+NBUFFX2_HVT U23897 ( .A ( res_out[1930] ) , .Y ( n31718 ) ) ;
+NBUFFX2_HVT U23896 ( .A ( res_out[2] ) , .Y ( n31717 ) ) ;
+NBUFFX2_HVT U23895 ( .A ( aps_rename_840_ ) , .Y ( n31716 ) ) ;
+NBUFFX2_HVT U23894 ( .A ( n26691 ) , .Y ( n31715 ) ) ;
+NBUFFX2_HVT U23893 ( .A ( n26687 ) , .Y ( n31714 ) ) ;
+NBUFFX2_HVT U23892 ( .A ( res_out[1772] ) , .Y ( n31713 ) ) ;
+NBUFFX8_HVT U23891 ( .A ( \pipeline_chain_26__u_seq2/memory[22] ) , 
+    .Y ( n31712 ) ) ;
+NBUFFX2_HVT U23890 ( .A ( res_out[1530] ) , .Y ( n31711 ) ) ;
+NBUFFX2_HVT U23889 ( .A ( aps_rename_1009_ ) , .Y ( n31710 ) ) ;
+NBUFFX2_HVT U23888 ( .A ( res_out[1469] ) , .Y ( n31709 ) ) ;
+NBUFFX2_HVT U23887 ( .A ( n26690 ) , .Y ( n31707 ) ) ;
+OAI21X2_RVT U5043 ( .A1 ( n3670 ) , .A2 ( n3965 ) , .A3 ( n3669 ) , 
+    .Y ( n31706 ) ) ;
+AOI21X1_RVT U5035 ( .A1 ( n3666 ) , .A2 ( n3665 ) , .A3 ( n3664 ) , 
+    .Y ( n3965 ) ) ;
+SDFFARX1_RVT \pipeline_chain_13__u_seq1/lfsr_reg_3_ ( .D ( n2906 ) , 
+    .SI ( n31715 ) , .SE ( n31348 ) , .CLK ( ctsbuf_net_33123 ) , 
+    .RSTB ( n22625 ) , .Q ( n26690 ) ) ;
+SDFFARX1_RVT \pipeline_chain_25__u_seq1/lfsr_reg_5_ ( .D ( n3012 ) , 
+    .SI ( aps_rename_1389_ ) , .SE ( n31594 ) , .CLK ( ctsbuf_net_20110 ) , 
+    .RSTB ( n22737 ) , .Q ( n31826 ) ) ;
+SDFFARX1_RVT \pipeline_chain_9__u_seq1/lfsr_reg_3_ ( .D ( n2870 ) , 
+    .SI ( ZBUF_37_12 ) , .SE ( n31614 ) , .CLK ( ctsbuf_net_31121 ) , 
+    .RSTB ( HFSNET_134 ) , .Q ( n31827 ) ) ;
+SDFFASX1_RVT \pipeline_chain_2__u_mult/stage2_reg_61_ ( .D ( n18367 ) , 
+    .SI ( \pipeline_chain_2__u_mult/stage1 [61] ) , .SE ( n31628 ) , 
+    .CLK ( ctsbuf_net_82172 ) , .SETB ( n22531 ) , .Q ( n18303 ) ) ;
+SDFFARX1_RVT \pipeline_chain_9__u_mult/stage1_reg_53_ ( .D ( n25350 ) , 
+    .SI ( \pipeline_chain_18__u_mult/stage1 [45] ) , .SE ( n31515 ) , 
+    .CLK ( ctsbuf_net_80170 ) , .RSTB ( n22573 ) , 
+    .Q ( \pipeline_chain_9__u_mult/stage1 [53] ) ) ;
+SDFFARX1_RVT \pipeline_chain_14__u_mult/stage1_reg_24_ ( .D ( n22923 ) , 
+    .SI ( n30368 ) , .SE ( n31550 ) , .CLK ( ctsbuf_net_85175 ) , 
+    .RSTB ( n22779 ) , .Q ( \pipeline_chain_14__u_mult/stage1 [24] ) ) ;
+SDFFARX1_RVT \pipeline_chain_17__u_mult/stage1_reg_35_ ( .D ( n14126 ) , 
+    .SI ( n29928 ) , .SE ( n31544 ) , .CLK ( ctsbuf_net_92182 ) , 
+    .RSTB ( n22609 ) , .Q ( \pipeline_chain_17__u_mult/stage1 [35] ) ) ;
+SDFFARX1_RVT \pipeline_chain_19__u_mult/stage1_reg_5_ ( .D ( n22885 ) , 
+    .SI ( n30050 ) , .SE ( n31591 ) , .CLK ( ctsbuf_net_74164 ) , 
+    .RSTB ( n22733 ) , .Q ( \pipeline_chain_19__u_mult/stage1 [5] ) ) ;
+SDFFARX1_RVT \pipeline_chain_21__u_seq2/memory_reg_11__6_ ( .D ( 1'b0 ) , 
+    .SI ( \pipeline_chain_21__u_seq2/memory [6] ) , .SE ( n31667 ) , 
+    .CLK ( ctsbuf_net_15105 ) , .RSTB ( n22792 ) , 
+    .Q ( \pipeline_chain_21__u_seq2/memory[38] ) ) ;
+DFFARX1_HVT \pipeline_chain_21__u_seq2/addr_reg_3_ ( .D ( seq1_out[171] ) , 
+    .CLK ( ctsbuf_net_17107 ) , .RSTB ( n22646 ) , .Q ( n17977 ) , 
+    .QN ( n2012 ) ) ;
+DFFARX1_HVT \pipeline_chain_22__u_seq2/addr_reg_3_ ( .D ( seq1_out[179] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22797 ) , .Q ( n17975 ) , .QN ( n1830 ) ) ;
+DFFARX1_HVT \pipeline_chain_23__u_seq2/addr_reg_3_ ( .D ( seq1_out[187] ) , 
+    .CLK ( ctsbuf_net_16106 ) , .RSTB ( n22645 ) , .Q ( n17970 ) , 
+    .QN ( n1648 ) ) ;
+DFFARX1_HVT \pipeline_chain_24__u_seq2/addr_reg_3_ ( .D ( seq1_out[195] ) , 
+    .CLK ( ctsbuf_net_696 ) , .RSTB ( n22574 ) , .Q ( n17965 ) , 
+    .QN ( n1466 ) ) ;
+DFFARX1_HVT \pipeline_chain_25__u_seq2/addr_reg_3_ ( .D ( seq1_out[203] ) , 
+    .CLK ( ctsbuf_net_11101 ) , .RSTB ( n22561 ) , .Q ( n17961 ) , 
+    .QN ( n1284 ) ) ;
+DFFARX1_HVT \pipeline_chain_26__u_seq2/addr_reg_3_ ( .D ( seq1_out[211] ) , 
+    .CLK ( ctsbuf_net_10100 ) , .RSTB ( n22662 ) , .Q ( n17957 ) , 
+    .QN ( n1102 ) ) ;
+DFFARX1_HVT \pipeline_chain_27__u_seq2/addr_reg_3_ ( .D ( seq1_out[219] ) , 
+    .CLK ( ctsbuf_net_25115 ) , .RSTB ( n22638 ) , .Q ( n17955 ) , 
+    .QN ( n920 ) ) ;
+DFFARX1_HVT \pipeline_chain_28__u_seq2/addr_reg_3_ ( .D ( seq1_out[227] ) , 
+    .CLK ( ctsbuf_net_27117 ) , .RSTB ( n22620 ) , .Q ( n17950 ) , 
+    .QN ( n738 ) ) ;
+DFFARX1_HVT \pipeline_chain_29__u_seq2/addr_reg_3_ ( .D ( seq1_out[235] ) , 
+    .CLK ( ctsbuf_net_22112 ) , .RSTB ( n22468 ) , .Q ( n17945 ) , 
+    .QN ( n556 ) ) ;
+DFFARX1_HVT \pipeline_chain_30__u_seq2/addr_reg_3_ ( .D ( seq1_out[243] ) , 
+    .CLK ( ctsbuf_net_13103 ) , .RSTB ( n22670 ) , .Q ( n17942 ) , 
+    .QN ( n374 ) ) ;
+DFFARX1_HVT \pipeline_chain_31__u_seq2/addr_reg_3_ ( .D ( seq1_out[251] ) , 
+    .CLK ( ctsbuf_net_898 ) , .RSTB ( n22567 ) , .Q ( n17938 ) , 
+    .QN ( n192 ) ) ;
+DFFARX1_HVT \pipeline_chain_21__u_seq2/addr_reg_2_ ( .D ( seq1_out[170] ) , 
+    .CLK ( ctsbuf_net_15105 ) , .RSTB ( n22646 ) , 
+    .Q ( \pipeline_chain_21__u_seq2/addr[2] ) , .QN ( n17978 ) ) ;
+DFFARX1_HVT \pipeline_chain_21__u_seq2/addr_reg_1_ ( .D ( seq1_out[169] ) , 
+    .CLK ( ctsbuf_net_17107 ) , .RSTB ( n22646 ) , 
+    .Q ( \pipeline_chain_21__u_seq2/addr[1] ) , .QN ( n17976 ) ) ;
+DFFARX1_HVT \pipeline_chain_21__u_seq2/addr_reg_0_ ( .D ( seq1_out[168] ) , 
+    .CLK ( ctsbuf_net_17107 ) , .RSTB ( n22646 ) , 
+    .Q ( \pipeline_chain_21__u_seq2/addr[0] ) , .QN ( n17979 ) ) ;
+DFFARX1_HVT \pipeline_chain_22__u_seq2/addr_reg_2_ ( .D ( seq1_out[178] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22797 ) , 
+    .Q ( \pipeline_chain_22__u_seq2/addr[2] ) , .QN ( n17974 ) ) ;
+DFFARX1_HVT \pipeline_chain_22__u_seq2/addr_reg_1_ ( .D ( seq1_out[177] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22797 ) , 
+    .Q ( \pipeline_chain_22__u_seq2/addr[1] ) , .QN ( n17972 ) ) ;
+DFFARX1_HVT \pipeline_chain_22__u_seq2/addr_reg_0_ ( .D ( seq1_out[176] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22797 ) , 
+    .Q ( \pipeline_chain_22__u_seq2/addr[0] ) , .QN ( n17973 ) ) ;
+DFFARX1_HVT \pipeline_chain_23__u_seq2/addr_reg_2_ ( .D ( seq1_out[186] ) , 
+    .CLK ( ctsbuf_net_16106 ) , .RSTB ( n22645 ) , 
+    .Q ( \pipeline_chain_23__u_seq2/addr[2] ) , .QN ( n17968 ) ) ;
+DFFARX1_HVT \pipeline_chain_23__u_seq2/addr_reg_1_ ( .D ( seq1_out[185] ) , 
+    .CLK ( ctsbuf_net_16106 ) , .RSTB ( n22645 ) , 
+    .Q ( \pipeline_chain_23__u_seq2/addr[1] ) , .QN ( n17971 ) ) ;
+DFFARX1_HVT \pipeline_chain_23__u_seq2/addr_reg_0_ ( .D ( seq1_out[184] ) , 
+    .CLK ( ctsbuf_net_16106 ) , .RSTB ( n22645 ) , 
+    .Q ( \pipeline_chain_23__u_seq2/addr[0] ) , .QN ( n17969 ) ) ;
+DFFARX1_HVT \pipeline_chain_24__u_seq2/addr_reg_2_ ( .D ( seq1_out[194] ) , 
+    .CLK ( ctsbuf_net_696 ) , .RSTB ( n22574 ) , 
+    .Q ( \pipeline_chain_24__u_seq2/addr[2] ) , .QN ( n17967 ) ) ;
+DFFARX1_HVT \pipeline_chain_24__u_seq2/addr_reg_1_ ( .D ( seq1_out[193] ) , 
+    .CLK ( ctsbuf_net_696 ) , .RSTB ( n22574 ) , 
+    .Q ( \pipeline_chain_24__u_seq2/addr[1] ) , .QN ( n17964 ) ) ;
+DFFARX1_HVT \pipeline_chain_24__u_seq2/addr_reg_0_ ( .D ( seq1_out[192] ) , 
+    .CLK ( ctsbuf_net_696 ) , .RSTB ( n22574 ) , 
+    .Q ( \pipeline_chain_24__u_seq2/addr[0] ) , .QN ( n17966 ) ) ;
+DFFARX1_HVT \pipeline_chain_25__u_seq2/addr_reg_2_ ( .D ( seq1_out[202] ) , 
+    .CLK ( ctsbuf_net_11101 ) , .RSTB ( n22561 ) , 
+    .Q ( \pipeline_chain_25__u_seq2/addr[2] ) , .QN ( n17963 ) ) ;
+DFFARX1_HVT \pipeline_chain_25__u_seq2/addr_reg_1_ ( .D ( seq1_out[201] ) , 
+    .CLK ( ctsbuf_net_11101 ) , .RSTB ( n22561 ) , 
+    .Q ( \pipeline_chain_25__u_seq2/addr[1] ) , .QN ( n17960 ) ) ;
+DFFARX1_HVT \pipeline_chain_25__u_seq2/addr_reg_0_ ( .D ( seq1_out[200] ) , 
+    .CLK ( ctsbuf_net_11101 ) , .RSTB ( n22562 ) , 
+    .Q ( \pipeline_chain_25__u_seq2/addr[0] ) , .QN ( n17962 ) ) ;
+DFFARX1_HVT \pipeline_chain_26__u_seq2/addr_reg_2_ ( .D ( seq1_out[210] ) , 
+    .CLK ( ctsbuf_net_10100 ) , .RSTB ( n22441 ) , 
+    .Q ( \pipeline_chain_26__u_seq2/addr[2] ) , .QN ( n17956 ) ) ;
+DFFARX1_HVT \pipeline_chain_26__u_seq2/addr_reg_1_ ( .D ( seq1_out[209] ) , 
+    .CLK ( ctsbuf_net_10100 ) , .RSTB ( n22441 ) , 
+    .Q ( \pipeline_chain_26__u_seq2/addr[1] ) , .QN ( n17959 ) ) ;
+DFFARX1_HVT \pipeline_chain_26__u_seq2/addr_reg_0_ ( .D ( seq1_out[208] ) , 
+    .CLK ( ctsbuf_net_10100 ) , .RSTB ( n22441 ) , 
+    .Q ( \pipeline_chain_26__u_seq2/addr[0] ) , .QN ( n17958 ) ) ;
+DFFARX1_HVT \pipeline_chain_27__u_seq2/addr_reg_2_ ( .D ( seq1_out[218] ) , 
+    .CLK ( ctsbuf_net_25115 ) , .RSTB ( n22638 ) , 
+    .Q ( \pipeline_chain_27__u_seq2/addr[2] ) , .QN ( n17953 ) ) ;
+DFFARX1_HVT \pipeline_chain_27__u_seq2/addr_reg_1_ ( .D ( seq1_out[217] ) , 
+    .CLK ( ctsbuf_net_25115 ) , .RSTB ( n22599 ) , 
+    .Q ( \pipeline_chain_27__u_seq2/addr[1] ) , .QN ( n17954 ) ) ;
+DFFARX1_HVT \pipeline_chain_28__u_seq2/addr_reg_2_ ( .D ( seq1_out[226] ) , 
+    .CLK ( ctsbuf_net_27117 ) , .RSTB ( n22620 ) , 
+    .Q ( \pipeline_chain_28__u_seq2/addr[2] ) , .QN ( n17951 ) ) ;
+DFFARX1_HVT \pipeline_chain_27__u_seq2/addr_reg_0_ ( .D ( seq1_out[216] ) , 
+    .CLK ( ctsbuf_net_25115 ) , .RSTB ( n22599 ) , 
+    .Q ( \pipeline_chain_27__u_seq2/addr[0] ) , .QN ( n17952 ) ) ;
+DFFARX1_HVT \pipeline_chain_28__u_seq2/addr_reg_1_ ( .D ( seq1_out[225] ) , 
+    .CLK ( ctsbuf_net_27117 ) , .RSTB ( n22620 ) , 
+    .Q ( \pipeline_chain_28__u_seq2/addr[1] ) , .QN ( n17948 ) ) ;
+DFFARX1_HVT \pipeline_chain_28__u_seq2/addr_reg_0_ ( .D ( seq1_out[224] ) , 
+    .CLK ( ctsbuf_net_27117 ) , .RSTB ( n22620 ) , 
+    .Q ( \pipeline_chain_28__u_seq2/addr[0] ) , .QN ( n17949 ) ) ;
+DFFARX1_HVT \pipeline_chain_29__u_seq2/addr_reg_2_ ( .D ( seq1_out[234] ) , 
+    .CLK ( ctsbuf_net_22112 ) , .RSTB ( n22468 ) , 
+    .Q ( \pipeline_chain_29__u_seq2/addr[2] ) , .QN ( n17946 ) ) ;
+DFFARX1_HVT \pipeline_chain_29__u_seq2/addr_reg_1_ ( .D ( seq1_out[233] ) , 
+    .CLK ( ctsbuf_net_22112 ) , .RSTB ( n22468 ) , 
+    .Q ( \pipeline_chain_29__u_seq2/addr[1] ) , .QN ( n17947 ) ) ;
+DFFARX1_HVT \pipeline_chain_29__u_seq2/addr_reg_0_ ( .D ( seq1_out[232] ) , 
+    .CLK ( ctsbuf_net_22112 ) , .RSTB ( n22468 ) , 
+    .Q ( \pipeline_chain_29__u_seq2/addr[0] ) , .QN ( n17944 ) ) ;
+DFFARX1_HVT \pipeline_chain_30__u_seq2/addr_reg_2_ ( .D ( seq1_out[242] ) , 
+    .CLK ( ctsbuf_net_13103 ) , .RSTB ( n31695 ) , 
+    .Q ( \pipeline_chain_30__u_seq2/addr[2] ) , .QN ( n17941 ) ) ;
+DFFARX1_HVT \pipeline_chain_30__u_seq2/addr_reg_1_ ( .D ( seq1_out[241] ) , 
+    .CLK ( ctsbuf_net_13103 ) , .RSTB ( n22670 ) , 
+    .Q ( \pipeline_chain_30__u_seq2/addr[1] ) , .QN ( n17943 ) ) ;
+DFFARX1_HVT \pipeline_chain_30__u_seq2/addr_reg_0_ ( .D ( seq1_out[240] ) , 
+    .CLK ( ctsbuf_net_13103 ) , .RSTB ( n31695 ) , 
+    .Q ( \pipeline_chain_30__u_seq2/addr[0] ) , .QN ( n17940 ) ) ;
+DFFARX1_HVT \pipeline_chain_31__u_seq2/addr_reg_2_ ( .D ( seq1_out[250] ) , 
+    .CLK ( ctsbuf_net_898 ) , .RSTB ( n22567 ) , 
+    .Q ( \pipeline_chain_31__u_seq2/addr[2] ) , .QN ( n17939 ) ) ;
+DFFARX1_HVT \pipeline_chain_31__u_seq2/addr_reg_1_ ( .D ( seq1_out[249] ) , 
+    .CLK ( ctsbuf_net_898 ) , .RSTB ( HFSNET_111 ) , 
+    .Q ( \pipeline_chain_31__u_seq2/addr[1] ) , .QN ( n17936 ) ) ;
+DFFARX1_HVT \pipeline_chain_31__u_seq2/addr_reg_0_ ( .D ( seq1_out[248] ) , 
+    .CLK ( ctsbuf_net_898 ) , .RSTB ( HFSNET_111 ) , 
+    .Q ( \pipeline_chain_31__u_seq2/addr[0] ) , .QN ( n17937 ) ) ;
+DFFARX1_HVT \pipeline_chain_0__u_seq2/addr_reg_2_ ( .D ( seq1_out[2] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22432 ) , 
+    .Q ( \pipeline_chain_0__u_seq2/addr[2] ) , .QN ( n17935 ) ) ;
+DFFARX1_HVT \pipeline_chain_0__u_seq2/addr_reg_1_ ( .D ( seq1_out[1] ) , 
+    .CLK ( ctsbuf_net_19109 ) , .RSTB ( n22432 ) , 
+    .Q ( \pipeline_chain_0__u_seq2/addr[1] ) , .QN ( n17932 ) ) ;
+DFFARX1_HVT \pipeline_chain_0__u_seq2/addr_reg_0_ ( .D ( n29056 ) , 
+    .CLK ( ctsbuf_net_19109 ) , .RSTB ( n22432 ) , 
+    .Q ( \pipeline_chain_0__u_seq2/addr[0] ) , .QN ( n17933 ) ) ;
+FADDX1_HVT U18811 ( .A ( in_c[47] ) , .B ( n26544 ) , .CI ( n15035 ) , 
+    .CO ( n15034 ) , .S ( final_out[239] ) ) ;
+FADDX1_RVT U18810 ( .A ( in_c[48] ) , .B ( n26543 ) , .CI ( n15034 ) , 
+    .CO ( n15033 ) , .S ( aps_rename_499_ ) ) ;
+FADDX1_HVT U18809 ( .A ( in_c[49] ) , .B ( ropt_net_308 ) , .CI ( n15033 ) , 
+    .CO ( n15032 ) , .S ( aps_rename_498_ ) ) ;
+FADDX1_RVT U18808 ( .A ( in_c[50] ) , .B ( n26541 ) , .CI ( n15032 ) , 
+    .CO ( n15031 ) , .S ( final_out[242] ) ) ;
+FADDX2_HVT U18806 ( .A ( in_c[52] ) , .B ( n26539 ) , .CI ( n15030 ) , 
+    .CO ( n15029 ) , .S ( final_out[244] ) ) ;
+FADDX1_HVT U18805 ( .A ( in_c[53] ) , .B ( n26538 ) , .CI ( n15029 ) , 
+    .CO ( n15028 ) , .S ( final_out[245] ) ) ;
+FADDX1_HVT U18804 ( .A ( in_c[54] ) , .B ( n26537 ) , .CI ( n15028 ) , 
+    .CO ( n15027 ) , .S ( final_out[246] ) ) ;
+FADDX1_HVT U18803 ( .A ( in_c[55] ) , .B ( n26536 ) , .CI ( n15027 ) , 
+    .CO ( n15026 ) , .S ( final_out[247] ) ) ;
+FADDX1_HVT U18764 ( .A ( in_c[38] ) , .B ( n26449 ) , .CI ( n14988 ) , 
+    .CO ( n14987 ) , .S ( final_out[358] ) ) ;
+FADDX1_HVT U18735 ( .A ( in_c[39] ) , .B ( aps_rename_1175_ ) , 
+    .CI ( n14959 ) , .CO ( n14958 ) , .S ( final_out[423] ) ) ;
+FADDX1_HVT U18791 ( .A ( in_c[39] ) , .B ( n26502 ) , .CI ( n15015 ) , 
+    .CO ( n15014 ) , .S ( final_out[295] ) ) ;
+FADDX1_HVT U18678 ( .A ( in_c[40] ) , .B ( aps_rename_1139_ ) , 
+    .CI ( n14902 ) , .CO ( n14901 ) , .S ( final_out[552] ) ) ;
+FADDX1_HVT U18734 ( .A ( in_c[40] ) , .B ( n26391 ) , .CI ( n14958 ) , 
+    .CO ( n14957 ) , .S ( final_out[424] ) ) ;
+FADDX1_HVT U18790 ( .A ( in_c[40] ) , .B ( n26501 ) , .CI ( n15014 ) , 
+    .CO ( n15013 ) , .S ( final_out[296] ) ) ;
+FADDX1_HVT U18789 ( .A ( in_c[41] ) , .B ( HFSNET_1713 ) , .CI ( n15013 ) , 
+    .CO ( n15012 ) , .S ( aps_rename_494_ ) ) ;
+FADDX1_HVT U18814 ( .A ( in_c[44] ) , .B ( n26547 ) , .CI ( n15038 ) , 
+    .CO ( n15037 ) , .S ( final_out[236] ) ) ;
+FADDX1_RVT U18813 ( .A ( in_c[45] ) , .B ( n26546 ) , .CI ( n15037 ) , 
+    .CO ( n15036 ) , .S ( final_out[237] ) ) ;
+FADDX1_HVT U18812 ( .A ( in_c[46] ) , .B ( n26545 ) , .CI ( n15036 ) , 
+    .CO ( n15035 ) , .S ( final_out[238] ) ) ;
+FADDX1_HVT U18654 ( .A ( in_c[36] ) , .B ( n26234 ) , .CI ( n14878 ) , 
+    .CO ( n14877 ) , .S ( final_out[612] ) ) ;
+FADDX1_RVT U18682 ( .A ( in_c[36] ) , .B ( n26293 ) , .CI ( n14906 ) , 
+    .CO ( n14905 ) , .S ( final_out[548] ) ) ;
+FADDX1_HVT U18681 ( .A ( in_c[37] ) , .B ( res_out[549] ) , .CI ( n14905 ) , 
+    .CO ( n14904 ) , .S ( final_out[549] ) ) ;
+FADDX1_RVT U18680 ( .A ( in_c[38] ) , .B ( aps_rename_1141_ ) , 
+    .CI ( n14904 ) , .CO ( n14903 ) , .S ( final_out[550] ) ) ;
+XNOR2X1_HVT U12693 ( .A1 ( n10490 ) , .A2 ( n10489 ) , .Y ( final_out[541] ) ) ;
+NAND2X2_HVT U21578 ( .A1 ( n17077 ) , .A2 ( n17076 ) , .Y ( seq2_out[442] ) ) ;
+NAND2X2_HVT U21556 ( .A1 ( n17057 ) , .A2 ( n17056 ) , .Y ( seq2_out[440] ) ) ;
+NAND2X2_HVT U21479 ( .A1 ( n16971 ) , .A2 ( n16970 ) , .Y ( seq2_out[425] ) ) ;
+NAND2X4_HVT U21468 ( .A1 ( n16961 ) , .A2 ( n16960 ) , .Y ( seq2_out[424] ) ) ;
+HADDX1_HVT U20996 ( .A0 ( \pipeline_chain_3__u_seq3/shifter [3] ) , 
+    .B0 ( seq2_out[51] ) , .SO ( seq3_out[27] ) ) ;
+FADDX1_RVT U18543 ( .A ( in_c[35] ) , .B ( n26013 ) , .CI ( n22996 ) , 
+    .CO ( n14766 ) , .S ( final_out[867] ) ) ;
+FADDX1_HVT U18627 ( .A ( in_c[35] ) , .B ( n26173 ) , .CI ( n23011 ) , 
+    .CO ( n14850 ) , .S ( final_out[675] ) ) ;
+FADDX2_RVT U18655 ( .A ( in_c[35] ) , .B ( n26235 ) , .CI ( n23023 ) , 
+    .CO ( n14878 ) , .S ( final_out[611] ) ) ;
+FADDX1_RVT U18683 ( .A ( in_c[35] ) , .B ( n26294 ) , .CI ( n23012 ) , 
+    .CO ( n14906 ) , .S ( aps_rename_454_ ) ) ;
+FADDX1_HVT U18570 ( .A ( in_c[36] ) , .B ( n26069 ) , .CI ( n14794 ) , 
+    .CO ( n14793 ) , .S ( final_out[804] ) ) ;
+SDFFASX1_RVT \pipeline_chain_6__u_mult/stage2_reg_22_ ( .D ( n18918 ) , 
+    .SI ( n20646 ) , .SE ( n31374 ) , .CLK ( ctsbuf_net_83173 ) , 
+    .SETB ( n22455 ) , .Q ( n18854 ) ) ;
+SDFFASX1_RVT \pipeline_chain_12__u_mult/stage2_reg_22_ ( .D ( n19686 ) , 
+    .SI ( \pipeline_chain_19__u_mult/stage1 [23] ) , .SE ( n31519 ) , 
+    .CLK ( cts13 ) , .SETB ( n22667 ) , .Q ( n19622 ) ) ;
+SDFFASX1_RVT \pipeline_chain_13__u_mult/stage2_reg_20_ ( .D ( n19816 ) , 
+    .SI ( n29888 ) , .SE ( eco_net_25_n31373 ) , .CLK ( ctsbuf_net_83173 ) , 
+    .SETB ( n22773 ) , .Q ( n19752 ) ) ;
+SDFFASX1_RVT \pipeline_chain_20__u_mult/stage2_reg_20_ ( .D ( n20712 ) , 
+    .SI ( \pipeline_chain_13__u_mult/stage1 [23] ) , 
+    .SE ( eco_net_24_n31373 ) , .CLK ( ctsbuf_net_83173 ) , .SETB ( n22510 ) , 
+    .Q ( n20648 ) ) ;
+SDFFASX1_RVT \pipeline_chain_29__u_mult/stage2_reg_22_ ( .D ( n21862 ) , 
+    .SI ( n21670 ) , .SE ( n31435 ) , .CLK ( ctsbuf_net_83173 ) , 
+    .SETB ( n22569 ) , .Q ( n21798 ) ) ;
+NBUFFX2_HVT U22175 ( .A ( n26337 ) , .Y ( res_out[486] ) ) ;
+NAND2X2_HVT U21622 ( .A1 ( n17117 ) , .A2 ( n17116 ) , .Y ( seq2_out[446] ) ) ;
+NAND2X2_HVT U21600 ( .A1 ( n17097 ) , .A2 ( n17096 ) , .Y ( seq2_out[444] ) ) ;
+SDFFARX1_RVT \pipeline_chain_12__u_mult/stage1_reg_22_ ( .D ( n25329 ) , 
+    .SI ( \pipeline_chain_14__u_mult/stage1 [22] ) , .SE ( n31303 ) , 
+    .CLK ( cts13 ) , .RSTB ( n31695 ) , 
+    .Q ( \pipeline_chain_12__u_mult/stage1 [22] ) ) ;
+SDFFASX1_RVT \pipeline_chain_1__u_mult/stage2_reg_18_ ( .D ( n18282 ) , 
+    .SI ( \pipeline_chain_11__u_mult/stage1 [20] ) , 
+    .SE ( eco_net_26_n31373 ) , .CLK ( ctsbuf_net_83173 ) , .SETB ( n22773 ) , 
+    .Q ( n18218 ) ) ;
+SDFFASX1_RVT \pipeline_chain_3__u_mult/stage2_reg_23_ ( .D ( n18533 ) , 
+    .SI ( \pipeline_chain_24__u_mult/stage1 [23] ) , .SE ( n31577 ) , 
+    .CLK ( ctsbuf_net_84174 ) , .SETB ( n22455 ) , .Q ( n18469 ) ) ;
+SDFFASX1_RVT \pipeline_chain_3__u_mult/stage2_re// IC Compiler II Version S-2021.06-SP2 Verilog Writer
+// Generated on 9/1/2025 at 21:7:33
+// Library Name: MYLIB
+// Block Name: posroute64drc_backup
+// User Label: 
+// Write Command: write_verilog -hierarchy top ../output/icc2/final/MYTOP.v
+module Top ( clk , sclk , rst_n , in_a , in_b , in_c , final_out , res_out , 
+    seq1_out , seq2_out , seq3_out ) ;
+input  clk ;
+input  sclk ;
+input  rst_n ;
+input  [31:0] in_a ;
+input  [31:0] in_b ;
+input  [63:0] in_c ;
+output [2047:0] final_out ;
+output [2047:0] res_out ;
+output [255:0] seq1_out ;
+output [511:0] seq2_out ;
+output [255:0] seq3_out ;
+
+wire [63:0] \pipeline_chain_1__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_2__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_3__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_4__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_5__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_6__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_7__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_8__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_9__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_10__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_11__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_12__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_13__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_14__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_15__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_16__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_17__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_18__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_19__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_20__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_21__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_22__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_23__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_24__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_25__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_26__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_27__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_28__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_29__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_30__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_31__u_mult/stage1 ;
+wire [63:0] \pipeline_chain_0__u_mult/stage1 ;
+wire [7:0] \pipeline_chain_1__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_2__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_3__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_4__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_5__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_6__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_7__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_8__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_9__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_10__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_11__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_12__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_13__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_14__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_15__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_16__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_17__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_18__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_19__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_20__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_21__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_22__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_23__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_24__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_25__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_26__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_27__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_28__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_29__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_30__u_seq3/shifter ;
+wire [7:0] \pipeline_chain_31__u_seq3/shifter ;
+wire [0:15] \pipeline_chain_21__u_seq2/memory ;
+wire [0:15] \pipeline_chain_22__u_seq2/memory ;
+wire [0:15] \pipeline_chain_23__u_seq2/memory ;
+wire [0:15] \pipeline_chain_24__u_seq2/memory ;
+wire [0:15] \pipeline_chain_25__u_seq2/memory ;
+wire [0:15] \pipeline_chain_26__u_seq2/memory ;
+wire [0:15] \pipeline_chain_27__u_seq2/memory ;
+wire [0:15] \pipeline_chain_28__u_seq2/memory ;
+wire [0:15] \pipeline_chain_29__u_seq2/memory ;
+wire [0:15] \pipeline_chain_30__u_seq2/memory ;
+wire [0:15] \pipeline_chain_31__u_seq2/memory ;
+wire [1:0] \pipeline_chain_1__u_seq1/state ;
+wire [1:0] \pipeline_chain_2__u_seq1/state ;
+wire [1:0] \pipeline_chain_3__u_seq1/state ;
+wire [1:0] \pipeline_chain_4__u_seq1/state ;
+wire [1:0] \pipeline_chain_5__u_seq1/state ;
+wire [1:0] \pipeline_chain_6__u_seq1/state ;
+wire [1:0] \pipeline_chain_7__u_seq1/state ;
+wire [1:0] \pipeline_chain_8__u_seq1/state ;
+wire [1:0] \pipeline_chain_9__u_seq1/state ;
+wire [1:0] \pipeline_chain_10__u_seq1/state ;
+wire [1:0] \pipeline_chain_11__u_seq1/state ;
+wire [1:0] \pipeline_chain_12__u_seq1/state ;
+wire [1:0] \pipeline_chain_13__u_seq1/state ;
+wire [1:0] \pipeline_chain_14__u_seq1/state ;
+wire [1:0] \pipeline_chain_15__u_seq1/state ;
+wire [1:0] \pipeline_chain_16__u_seq1/state ;
+wire [1:0] \pipeline_chain_17__u_seq1/state ;
+wire [1:0] \pipeline_chain_18__u_seq1/state ;
+wire [1:0] \pipeline_chain_19__u_seq1/state ;
+wire [1:0] \pipeline_chain_20__u_seq1/state ;
+wire [1:0] \pipeline_chain_21__u_seq1/state ;
+wire [1:0] \pipeline_chain_22__u_seq1/state ;
+wire [1:0] \pipeline_chain_23__u_seq1/state ;
+wire [1:0] \pipeline_chain_24__u_seq1/state ;
+wire [1:0] \pipeline_chain_25__u_seq1/state ;
+wire [1:0] \pipeline_chain_26__u_seq1/state ;
+wire [1:0] \pipeline_chain_27__u_seq1/state ;
+wire [1:0] \pipeline_chain_28__u_seq1/state ;
+wire [1:0] \pipeline_chain_29__u_seq1/state ;
+wire [1:0] \pipeline_chain_30__u_seq1/state ;
+wire [1:0] \pipeline_chain_31__u_seq1/state ;
+wire [7:0] \pipeline_chain_0__u_seq3/shifter ;
+wire [127:0] \pipeline_chain_0__u_seq2/memory ;
+wire [1:0] \pipeline_chain_0__u_seq1/state ;
+
+NBUFFX8_HVT U23954 ( .A ( \pipeline_chain_0__u_seq2/addr[1] ) , 
+    .Y ( n31783 ) ) ;
+NBUFFX2_HVT U23953 ( .A ( \pipeline_chain_0__u_seq2/addr[0] ) , 
+    .Y ( n31782 ) ) ;
+NBUFFX8_HVT U23952 ( .A ( \pipeline_chain_31__u_seq2/addr[0] ) , 
+    .Y ( n31781 ) ) ;
+NBUFFX4_HVT U23951 ( .A ( \pipeline_chain_0__u_seq2/addr[2] ) , 
+    .Y ( n31780 ) ) ;
+NBUFFX4_HVT U23950 ( .A ( \pipeline_chain_31__u_seq2/addr[2] ) , 
+    .Y ( n31779 ) ) ;
+NBUFFX4_HVT U23949 ( .A ( \pipeline_chain_31__u_seq2/addr[1] ) , 
+    .Y ( n31778 ) ) ;
+NBUFFX4_HVT U23948 ( .A ( \pipeline_chain_30__u_seq2/addr[1] ) , 
+    .Y ( n31777 ) ) ;
+NBUFFX4_HVT U23947 ( .A ( \pipeline_chain_30__u_seq2/addr[0] ) , 
+    .Y ( n31776 ) ) ;
+NBUFFX4_HVT U23946 ( .A ( \pipeline_chain_29__u_seq2/addr[0] ) , 
+    .Y ( n31775 ) ) ;
+NBUFFX4_HVT U23945 ( .A ( \pipeline_chain_30__u_seq2/addr[2] ) , 
+    .Y ( n31774 ) ) ;
+NBUFFX4_HVT U23944 ( .A ( \pipeline_chain_29__u_seq2/addr[2] ) , 
+    .Y ( n31773 ) ) ;
+NBUFFX4_HVT U23943 ( .A ( \pipeline_chain_29__u_seq2/addr[1] ) , 
+    .Y ( n31772 ) ) ;
+NBUFFX4_HVT U23942 ( .A ( \pipeline_chain_28__u_seq2/addr[1] ) , 
+    .Y ( n31771 ) ) ;
+NBUFFX8_HVT U23941 ( .A ( \pipeline_chain_28__u_seq2/addr[0] ) , 
+    .Y ( n31770 ) ) ;
+NBUFFX4_HVT U23940 ( .A ( \pipeline_chain_27__u_seq2/addr[0] ) , 
+    .Y ( n31769 ) ) ;
+NBUFFX8_HVT U23939 ( .A ( \pipeline_chain_28__u_seq2/addr[2] ) , 
+    .Y ( n31768 ) ) ;
+NBUFFX4_HVT U23938 ( .A ( \pipeline_chain_27__u_seq2/addr[2] ) , 
+    .Y ( n31767 ) ) ;
+NBUFFX4_HVT U23937 ( .A ( \pipeline_chain_27__u_seq2/addr[1] ) , 
+    .Y ( n31766 ) ) ;
+NBUFFX4_HVT U23936 ( .A ( \pipeline_chain_26__u_seq2/addr[1] ) , 
+    .Y ( n31765 ) ) ;
+NBUFFX8_HVT U23935 ( .A ( \pipeline_chain_26__u_seq2/addr[0] ) , 
+    .Y ( n31764 ) ) ;
+NBUFFX8_HVT U23934 ( .A ( \pipeline_chain_25__u_seq2/addr[0] ) , 
+    .Y ( n31763 ) ) ;
+NBUFFX4_HVT U23933 ( .A ( \pipeline_chain_26__u_seq2/addr[2] ) , 
+    .Y ( n31762 ) ) ;
+NBUFFX4_HVT U23932 ( .A ( \pipeline_chain_25__u_seq2/addr[2] ) , 
+    .Y ( n31761 ) ) ;
+NBUFFX4_HVT U23931 ( .A ( \pipeline_chain_25__u_seq2/addr[1] ) , 
+    .Y ( n31760 ) ) ;
+NBUFFX8_HVT U23930 ( .A ( \pipeline_chain_24__u_seq2/addr[1] ) , 
+    .Y ( n31759 ) ) ;
+NBUFFX4_HVT U23929 ( .A ( \pipeline_chain_24__u_seq2/addr[0] ) , 
+    .Y ( n31758 ) ) ;
+NBUFFX4_HVT U23928 ( .A ( \pipeline_chain_23__u_seq2/addr[0] ) , 
+    .Y ( n31757 ) ) ;
+NBUFFX8_HVT U23927 ( .A ( \pipeline_chain_24__u_seq2/addr[2] ) , 
+    .Y ( n31756 ) ) ;
+NBUFFX4_HVT U23926 ( .A ( \pipeline_chain_23__u_seq2/addr[2] ) , 
+    .Y ( n31755 ) ) ;
+NBUFFX4_HVT U23925 ( .A ( \pipeline_chain_23__u_seq2/addr[1] ) , 
+    .Y ( n31754 ) ) ;
+NBUFFX4_HVT U23924 ( .A ( \pipeline_chain_22__u_seq2/addr[1] ) , 
+    .Y ( n31753 ) ) ;
+NBUFFX4_HVT U23923 ( .A ( \pipeline_chain_22__u_seq2/addr[0] ) , 
+    .Y ( n31752 ) ) ;
+NBUFFX4_HVT U23922 ( .A ( \pipeline_chain_21__u_seq2/addr[0] ) , 
+    .Y ( n31751 ) ) ;
+NBUFFX4_HVT U23921 ( .A ( \pipeline_chain_22__u_seq2/addr[2] ) , 
+    .Y ( n31750 ) ) ;
+NBUFFX4_HVT U23920 ( .A ( \pipeline_chain_21__u_seq2/addr[2] ) , 
+    .Y ( n31749 ) ) ;
+NBUFFX4_HVT U23919 ( .A ( \pipeline_chain_21__u_seq2/addr[1] ) , 
+    .Y ( n31748 ) ) ;
+NBUFFX8_HVT U23918 ( .A ( n17942 ) , .Y ( n31747 ) ) ;
+NBUFFX4_HVT U23917 ( .A ( n17938 ) , .Y ( n31746 ) ) ;
+NBUFFX4_HVT U23916 ( .A ( n17950 ) , .Y ( n31745 ) ) ;
+NBUFFX4_HVT U23915 ( .A ( n17945 ) , .Y ( n31744 ) ) ;
+NBUFFX4_HVT U23914 ( .A ( n17957 ) , .Y ( n31743 ) ) ;
+NBUFFX8_HVT U23913 ( .A ( n17955 ) , .Y ( n31742 ) ) ;
+NBUFFX8_HVT U23912 ( .A ( n17965 ) , .Y ( n31741 ) ) ;
+NBUFFX4_HVT U23911 ( .A ( n17961 ) , .Y ( n31740 ) ) ;
+NBUFFX4_HVT U23910 ( .A ( n17975 ) , .Y ( n31739 ) ) ;
+NBUFFX4_HVT U23909 ( .A ( n17970 ) , .Y ( n31738 ) ) ;
+NBUFFX4_HVT U23908 ( .A ( \pipeline_chain_21__u_seq2/memory[38] ) , 
+    .Y ( n31736 ) ) ;
+NBUFFX4_HVT U23907 ( .A ( n17977 ) , .Y ( n31735 ) ) ;
+NBUFFX4_HVT U23906 ( .A ( \pipeline_chain_17__u_mult/stage1 [35] ) , 
+    .Y ( n31732 ) ) ;
+NBUFFX2_HVT U23905 ( .A ( \pipeline_chain_19__u_mult/stage1 [5] ) , 
+    .Y ( n31731 ) ) ;
+NBUFFX4_HVT U23904 ( .A ( \pipeline_chain_9__u_mult/stage1 [53] ) , 
+    .Y ( n31728 ) ) ;
+NBUFFX2_HVT U23903 ( .A ( \pipeline_chain_14__u_mult/stage1 [24] ) , 
+    .Y ( n31727 ) ) ;
+NBUFFX8_HVT U23902 ( .A ( n18303 ) , .Y ( n31725 ) ) ;
+NBUFFX2_HVT U23901 ( .A ( HFSNET_1090 ) , .Y ( n31722 ) ) ;
+NBUFFX2_HVT U23900 ( .A ( n31827 ) , .Y ( seq1_out[75] ) ) ;
+NBUFFX4_HVT U23899 ( .A ( n31826 ) , .Y ( seq1_out[205] ) ) ;
+NBUFFX2_HVT U23898 ( .A ( res_out[1758] ) , .Y ( n31719 ) ) ;
+NBUFFX2_HVT U23897 ( .A ( res_out[1930] ) , .Y ( n31718 ) ) ;
+NBUFFX2_HVT U23896 ( .A ( res_out[2] ) , .Y ( n31717 ) ) ;
+NBUFFX2_HVT U23895 ( .A ( aps_rename_840_ ) , .Y ( n31716 ) ) ;
+NBUFFX2_HVT U23894 ( .A ( n26691 ) , .Y ( n31715 ) ) ;
+NBUFFX2_HVT U23893 ( .A ( n26687 ) , .Y ( n31714 ) ) ;
+NBUFFX2_HVT U23892 ( .A ( res_out[1772] ) , .Y ( n31713 ) ) ;
+NBUFFX8_HVT U23891 ( .A ( \pipeline_chain_26__u_seq2/memory[22] ) , 
+    .Y ( n31712 ) ) ;
+NBUFFX2_HVT U23890 ( .A ( res_out[1530] ) , .Y ( n31711 ) ) ;
+NBUFFX2_HVT U23889 ( .A ( aps_rename_1009_ ) , .Y ( n31710 ) ) ;
+NBUFFX2_HVT U23888 ( .A ( res_out[1469] ) , .Y ( n31709 ) ) ;
+NBUFFX2_HVT U23887 ( .A ( n26690 ) , .Y ( n31707 ) ) ;
+OAI21X2_RVT U5043 ( .A1 ( n3670 ) , .A2 ( n3965 ) , .A3 ( n3669 ) , 
+    .Y ( n31706 ) ) ;
+AOI21X1_RVT U5035 ( .A1 ( n3666 ) , .A2 ( n3665 ) , .A3 ( n3664 ) , 
+    .Y ( n3965 ) ) ;
+SDFFARX1_RVT \pipeline_chain_13__u_seq1/lfsr_reg_3_ ( .D ( n2906 ) , 
+    .SI ( n31715 ) , .SE ( n31348 ) , .CLK ( ctsbuf_net_33123 ) , 
+    .RSTB ( n22625 ) , .Q ( n26690 ) ) ;
+SDFFARX1_RVT \pipeline_chain_25__u_seq1/lfsr_reg_5_ ( .D ( n3012 ) , 
+    .SI ( aps_rename_1389_ ) , .SE ( n31594 ) , .CLK ( ctsbuf_net_20110 ) , 
+    .RSTB ( n22737 ) , .Q ( n31826 ) ) ;
+SDFFARX1_RVT \pipeline_chain_9__u_seq1/lfsr_reg_3_ ( .D ( n2870 ) , 
+    .SI ( ZBUF_37_12 ) , .SE ( n31614 ) , .CLK ( ctsbuf_net_31121 ) , 
+    .RSTB ( HFSNET_134 ) , .Q ( n31827 ) ) ;
+SDFFASX1_RVT \pipeline_chain_2__u_mult/stage2_reg_61_ ( .D ( n18367 ) , 
+    .SI ( \pipeline_chain_2__u_mult/stage1 [61] ) , .SE ( n31628 ) , 
+    .CLK ( ctsbuf_net_82172 ) , .SETB ( n22531 ) , .Q ( n18303 ) ) ;
+SDFFARX1_RVT \pipeline_chain_9__u_mult/stage1_reg_53_ ( .D ( n25350 ) , 
+    .SI ( \pipeline_chain_18__u_mult/stage1 [45] ) , .SE ( n31515 ) , 
+    .CLK ( ctsbuf_net_80170 ) , .RSTB ( n22573 ) , 
+    .Q ( \pipeline_chain_9__u_mult/stage1 [53] ) ) ;
+SDFFARX1_RVT \pipeline_chain_14__u_mult/stage1_reg_24_ ( .D ( n22923 ) , 
+    .SI ( n30368 ) , .SE ( n31550 ) , .CLK ( ctsbuf_net_85175 ) , 
+    .RSTB ( n22779 ) , .Q ( \pipeline_chain_14__u_mult/stage1 [24] ) ) ;
+SDFFARX1_RVT \pipeline_chain_17__u_mult/stage1_reg_35_ ( .D ( n14126 ) , 
+    .SI ( n29928 ) , .SE ( n31544 ) , .CLK ( ctsbuf_net_92182 ) , 
+    .RSTB ( n22609 ) , .Q ( \pipeline_chain_17__u_mult/stage1 [35] ) ) ;
+SDFFARX1_RVT \pipeline_chain_19__u_mult/stage1_reg_5_ ( .D ( n22885 ) , 
+    .SI ( n30050 ) , .SE ( n31591 ) , .CLK ( ctsbuf_net_74164 ) , 
+    .RSTB ( n22733 ) , .Q ( \pipeline_chain_19__u_mult/stage1 [5] ) ) ;
+SDFFARX1_RVT \pipeline_chain_21__u_seq2/memory_reg_11__6_ ( .D ( 1'b0 ) , 
+    .SI ( \pipeline_chain_21__u_seq2/memory [6] ) , .SE ( n31667 ) , 
+    .CLK ( ctsbuf_net_15105 ) , .RSTB ( n22792 ) , 
+    .Q ( \pipeline_chain_21__u_seq2/memory[38] ) ) ;
+DFFARX1_HVT \pipeline_chain_21__u_seq2/addr_reg_3_ ( .D ( seq1_out[171] ) , 
+    .CLK ( ctsbuf_net_17107 ) , .RSTB ( n22646 ) , .Q ( n17977 ) , 
+    .QN ( n2012 ) ) ;
+DFFARX1_HVT \pipeline_chain_22__u_seq2/addr_reg_3_ ( .D ( seq1_out[179] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22797 ) , .Q ( n17975 ) , .QN ( n1830 ) ) ;
+DFFARX1_HVT \pipeline_chain_23__u_seq2/addr_reg_3_ ( .D ( seq1_out[187] ) , 
+    .CLK ( ctsbuf_net_16106 ) , .RSTB ( n22645 ) , .Q ( n17970 ) , 
+    .QN ( n1648 ) ) ;
+DFFARX1_HVT \pipeline_chain_24__u_seq2/addr_reg_3_ ( .D ( seq1_out[195] ) , 
+    .CLK ( ctsbuf_net_696 ) , .RSTB ( n22574 ) , .Q ( n17965 ) , 
+    .QN ( n1466 ) ) ;
+DFFARX1_HVT \pipeline_chain_25__u_seq2/addr_reg_3_ ( .D ( seq1_out[203] ) , 
+    .CLK ( ctsbuf_net_11101 ) , .RSTB ( n22561 ) , .Q ( n17961 ) , 
+    .QN ( n1284 ) ) ;
+DFFARX1_HVT \pipeline_chain_26__u_seq2/addr_reg_3_ ( .D ( seq1_out[211] ) , 
+    .CLK ( ctsbuf_net_10100 ) , .RSTB ( n22662 ) , .Q ( n17957 ) , 
+    .QN ( n1102 ) ) ;
+DFFARX1_HVT \pipeline_chain_27__u_seq2/addr_reg_3_ ( .D ( seq1_out[219] ) , 
+    .CLK ( ctsbuf_net_25115 ) , .RSTB ( n22638 ) , .Q ( n17955 ) , 
+    .QN ( n920 ) ) ;
+DFFARX1_HVT \pipeline_chain_28__u_seq2/addr_reg_3_ ( .D ( seq1_out[227] ) , 
+    .CLK ( ctsbuf_net_27117 ) , .RSTB ( n22620 ) , .Q ( n17950 ) , 
+    .QN ( n738 ) ) ;
+DFFARX1_HVT \pipeline_chain_29__u_seq2/addr_reg_3_ ( .D ( seq1_out[235] ) , 
+    .CLK ( ctsbuf_net_22112 ) , .RSTB ( n22468 ) , .Q ( n17945 ) , 
+    .QN ( n556 ) ) ;
+DFFARX1_HVT \pipeline_chain_30__u_seq2/addr_reg_3_ ( .D ( seq1_out[243] ) , 
+    .CLK ( ctsbuf_net_13103 ) , .RSTB ( n22670 ) , .Q ( n17942 ) , 
+    .QN ( n374 ) ) ;
+DFFARX1_HVT \pipeline_chain_31__u_seq2/addr_reg_3_ ( .D ( seq1_out[251] ) , 
+    .CLK ( ctsbuf_net_898 ) , .RSTB ( n22567 ) , .Q ( n17938 ) , 
+    .QN ( n192 ) ) ;
+DFFARX1_HVT \pipeline_chain_21__u_seq2/addr_reg_2_ ( .D ( seq1_out[170] ) , 
+    .CLK ( ctsbuf_net_15105 ) , .RSTB ( n22646 ) , 
+    .Q ( \pipeline_chain_21__u_seq2/addr[2] ) , .QN ( n17978 ) ) ;
+DFFARX1_HVT \pipeline_chain_21__u_seq2/addr_reg_1_ ( .D ( seq1_out[169] ) , 
+    .CLK ( ctsbuf_net_17107 ) , .RSTB ( n22646 ) , 
+    .Q ( \pipeline_chain_21__u_seq2/addr[1] ) , .QN ( n17976 ) ) ;
+DFFARX1_HVT \pipeline_chain_21__u_seq2/addr_reg_0_ ( .D ( seq1_out[168] ) , 
+    .CLK ( ctsbuf_net_17107 ) , .RSTB ( n22646 ) , 
+    .Q ( \pipeline_chain_21__u_seq2/addr[0] ) , .QN ( n17979 ) ) ;
+DFFARX1_HVT \pipeline_chain_22__u_seq2/addr_reg_2_ ( .D ( seq1_out[178] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22797 ) , 
+    .Q ( \pipeline_chain_22__u_seq2/addr[2] ) , .QN ( n17974 ) ) ;
+DFFARX1_HVT \pipeline_chain_22__u_seq2/addr_reg_1_ ( .D ( seq1_out[177] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22797 ) , 
+    .Q ( \pipeline_chain_22__u_seq2/addr[1] ) , .QN ( n17972 ) ) ;
+DFFARX1_HVT \pipeline_chain_22__u_seq2/addr_reg_0_ ( .D ( seq1_out[176] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22797 ) , 
+    .Q ( \pipeline_chain_22__u_seq2/addr[0] ) , .QN ( n17973 ) ) ;
+DFFARX1_HVT \pipeline_chain_23__u_seq2/addr_reg_2_ ( .D ( seq1_out[186] ) , 
+    .CLK ( ctsbuf_net_16106 ) , .RSTB ( n22645 ) , 
+    .Q ( \pipeline_chain_23__u_seq2/addr[2] ) , .QN ( n17968 ) ) ;
+DFFARX1_HVT \pipeline_chain_23__u_seq2/addr_reg_1_ ( .D ( seq1_out[185] ) , 
+    .CLK ( ctsbuf_net_16106 ) , .RSTB ( n22645 ) , 
+    .Q ( \pipeline_chain_23__u_seq2/addr[1] ) , .QN ( n17971 ) ) ;
+DFFARX1_HVT \pipeline_chain_23__u_seq2/addr_reg_0_ ( .D ( seq1_out[184] ) , 
+    .CLK ( ctsbuf_net_16106 ) , .RSTB ( n22645 ) , 
+    .Q ( \pipeline_chain_23__u_seq2/addr[0] ) , .QN ( n17969 ) ) ;
+DFFARX1_HVT \pipeline_chain_24__u_seq2/addr_reg_2_ ( .D ( seq1_out[194] ) , 
+    .CLK ( ctsbuf_net_696 ) , .RSTB ( n22574 ) , 
+    .Q ( \pipeline_chain_24__u_seq2/addr[2] ) , .QN ( n17967 ) ) ;
+DFFARX1_HVT \pipeline_chain_24__u_seq2/addr_reg_1_ ( .D ( seq1_out[193] ) , 
+    .CLK ( ctsbuf_net_696 ) , .RSTB ( n22574 ) , 
+    .Q ( \pipeline_chain_24__u_seq2/addr[1] ) , .QN ( n17964 ) ) ;
+DFFARX1_HVT \pipeline_chain_24__u_seq2/addr_reg_0_ ( .D ( seq1_out[192] ) , 
+    .CLK ( ctsbuf_net_696 ) , .RSTB ( n22574 ) , 
+    .Q ( \pipeline_chain_24__u_seq2/addr[0] ) , .QN ( n17966 ) ) ;
+DFFARX1_HVT \pipeline_chain_25__u_seq2/addr_reg_2_ ( .D ( seq1_out[202] ) , 
+    .CLK ( ctsbuf_net_11101 ) , .RSTB ( n22561 ) , 
+    .Q ( \pipeline_chain_25__u_seq2/addr[2] ) , .QN ( n17963 ) ) ;
+DFFARX1_HVT \pipeline_chain_25__u_seq2/addr_reg_1_ ( .D ( seq1_out[201] ) , 
+    .CLK ( ctsbuf_net_11101 ) , .RSTB ( n22561 ) , 
+    .Q ( \pipeline_chain_25__u_seq2/addr[1] ) , .QN ( n17960 ) ) ;
+DFFARX1_HVT \pipeline_chain_25__u_seq2/addr_reg_0_ ( .D ( seq1_out[200] ) , 
+    .CLK ( ctsbuf_net_11101 ) , .RSTB ( n22562 ) , 
+    .Q ( \pipeline_chain_25__u_seq2/addr[0] ) , .QN ( n17962 ) ) ;
+DFFARX1_HVT \pipeline_chain_26__u_seq2/addr_reg_2_ ( .D ( seq1_out[210] ) , 
+    .CLK ( ctsbuf_net_10100 ) , .RSTB ( n22441 ) , 
+    .Q ( \pipeline_chain_26__u_seq2/addr[2] ) , .QN ( n17956 ) ) ;
+DFFARX1_HVT \pipeline_chain_26__u_seq2/addr_reg_1_ ( .D ( seq1_out[209] ) , 
+    .CLK ( ctsbuf_net_10100 ) , .RSTB ( n22441 ) , 
+    .Q ( \pipeline_chain_26__u_seq2/addr[1] ) , .QN ( n17959 ) ) ;
+DFFARX1_HVT \pipeline_chain_26__u_seq2/addr_reg_0_ ( .D ( seq1_out[208] ) , 
+    .CLK ( ctsbuf_net_10100 ) , .RSTB ( n22441 ) , 
+    .Q ( \pipeline_chain_26__u_seq2/addr[0] ) , .QN ( n17958 ) ) ;
+DFFARX1_HVT \pipeline_chain_27__u_seq2/addr_reg_2_ ( .D ( seq1_out[218] ) , 
+    .CLK ( ctsbuf_net_25115 ) , .RSTB ( n22638 ) , 
+    .Q ( \pipeline_chain_27__u_seq2/addr[2] ) , .QN ( n17953 ) ) ;
+DFFARX1_HVT \pipeline_chain_27__u_seq2/addr_reg_1_ ( .D ( seq1_out[217] ) , 
+    .CLK ( ctsbuf_net_25115 ) , .RSTB ( n22599 ) , 
+    .Q ( \pipeline_chain_27__u_seq2/addr[1] ) , .QN ( n17954 ) ) ;
+DFFARX1_HVT \pipeline_chain_28__u_seq2/addr_reg_2_ ( .D ( seq1_out[226] ) , 
+    .CLK ( ctsbuf_net_27117 ) , .RSTB ( n22620 ) , 
+    .Q ( \pipeline_chain_28__u_seq2/addr[2] ) , .QN ( n17951 ) ) ;
+DFFARX1_HVT \pipeline_chain_27__u_seq2/addr_reg_0_ ( .D ( seq1_out[216] ) , 
+    .CLK ( ctsbuf_net_25115 ) , .RSTB ( n22599 ) , 
+    .Q ( \pipeline_chain_27__u_seq2/addr[0] ) , .QN ( n17952 ) ) ;
+DFFARX1_HVT \pipeline_chain_28__u_seq2/addr_reg_1_ ( .D ( seq1_out[225] ) , 
+    .CLK ( ctsbuf_net_27117 ) , .RSTB ( n22620 ) , 
+    .Q ( \pipeline_chain_28__u_seq2/addr[1] ) , .QN ( n17948 ) ) ;
+DFFARX1_HVT \pipeline_chain_28__u_seq2/addr_reg_0_ ( .D ( seq1_out[224] ) , 
+    .CLK ( ctsbuf_net_27117 ) , .RSTB ( n22620 ) , 
+    .Q ( \pipeline_chain_28__u_seq2/addr[0] ) , .QN ( n17949 ) ) ;
+DFFARX1_HVT \pipeline_chain_29__u_seq2/addr_reg_2_ ( .D ( seq1_out[234] ) , 
+    .CLK ( ctsbuf_net_22112 ) , .RSTB ( n22468 ) , 
+    .Q ( \pipeline_chain_29__u_seq2/addr[2] ) , .QN ( n17946 ) ) ;
+DFFARX1_HVT \pipeline_chain_29__u_seq2/addr_reg_1_ ( .D ( seq1_out[233] ) , 
+    .CLK ( ctsbuf_net_22112 ) , .RSTB ( n22468 ) , 
+    .Q ( \pipeline_chain_29__u_seq2/addr[1] ) , .QN ( n17947 ) ) ;
+DFFARX1_HVT \pipeline_chain_29__u_seq2/addr_reg_0_ ( .D ( seq1_out[232] ) , 
+    .CLK ( ctsbuf_net_22112 ) , .RSTB ( n22468 ) , 
+    .Q ( \pipeline_chain_29__u_seq2/addr[0] ) , .QN ( n17944 ) ) ;
+DFFARX1_HVT \pipeline_chain_30__u_seq2/addr_reg_2_ ( .D ( seq1_out[242] ) , 
+    .CLK ( ctsbuf_net_13103 ) , .RSTB ( n31695 ) , 
+    .Q ( \pipeline_chain_30__u_seq2/addr[2] ) , .QN ( n17941 ) ) ;
+DFFARX1_HVT \pipeline_chain_30__u_seq2/addr_reg_1_ ( .D ( seq1_out[241] ) , 
+    .CLK ( ctsbuf_net_13103 ) , .RSTB ( n22670 ) , 
+    .Q ( \pipeline_chain_30__u_seq2/addr[1] ) , .QN ( n17943 ) ) ;
+DFFARX1_HVT \pipeline_chain_30__u_seq2/addr_reg_0_ ( .D ( seq1_out[240] ) , 
+    .CLK ( ctsbuf_net_13103 ) , .RSTB ( n31695 ) , 
+    .Q ( \pipeline_chain_30__u_seq2/addr[0] ) , .QN ( n17940 ) ) ;
+DFFARX1_HVT \pipeline_chain_31__u_seq2/addr_reg_2_ ( .D ( seq1_out[250] ) , 
+    .CLK ( ctsbuf_net_898 ) , .RSTB ( n22567 ) , 
+    .Q ( \pipeline_chain_31__u_seq2/addr[2] ) , .QN ( n17939 ) ) ;
+DFFARX1_HVT \pipeline_chain_31__u_seq2/addr_reg_1_ ( .D ( seq1_out[249] ) , 
+    .CLK ( ctsbuf_net_898 ) , .RSTB ( HFSNET_111 ) , 
+    .Q ( \pipeline_chain_31__u_seq2/addr[1] ) , .QN ( n17936 ) ) ;
+DFFARX1_HVT \pipeline_chain_31__u_seq2/addr_reg_0_ ( .D ( seq1_out[248] ) , 
+    .CLK ( ctsbuf_net_898 ) , .RSTB ( HFSNET_111 ) , 
+    .Q ( \pipeline_chain_31__u_seq2/addr[0] ) , .QN ( n17937 ) ) ;
+DFFARX1_HVT \pipeline_chain_0__u_seq2/addr_reg_2_ ( .D ( seq1_out[2] ) , 
+    .CLK ( cts8 ) , .RSTB ( n22432 ) , 
+    .Q ( \pipeline_chain_0__u_seq2/addr[2] ) , .QN ( n17935 ) ) ;
+DFFARX1_HVT \pipeline_chain_0__u_seq2/addr_reg_1_ ( .D ( seq1_out[1] ) , 
+    .CLK ( ctsbuf_net_19109 ) , .RSTB ( n22432 ) , 
+    .Q ( \pipeline_chain_0__u_seq2/addr[1] ) , .QN ( n17932 ) ) ;
+DFFARX1_HVT \pipeline_chain_0__u_seq2/addr_reg_0_ ( .D ( n29056 ) , 
+    .CLK ( ctsbuf_net_19109 ) , .RSTB ( n22432 ) , 
+    .Q ( \pipeline_chain_0__u_seq2/addr[0] ) , .QN ( n17933 ) ) ;
+FADDX1_HVT U18811 ( .A ( in_c[47] ) , .B ( n26544 ) , .CI ( n15035 ) , 
+    .CO ( n15034 ) , .S ( final_out[239] ) ) ;
+FADDX1_RVT U18810 ( .A ( in_c[48] ) , .B ( n26543 ) , .CI ( n15034 ) , 
+    .CO ( n15033 ) , .S ( aps_rename_499_ ) ) ;
+FADDX1_HVT U18809 ( .A ( in_c[49] ) , .B ( ropt_net_308 ) , .CI ( n15033 ) , 
+    .CO ( n15032 ) , .S ( aps_rename_498_ ) ) ;
+FADDX1_RVT U18808 ( .A ( in_c[50] ) , .B ( n26541 ) , .CI ( n15032 ) , 
+    .CO ( n15031 ) , .S ( final_out[242] ) ) ;
+FADDX2_HVT U18806 ( .A ( in_c[52] ) , .B ( n26539 ) , .CI ( n15030 ) , 
+    .CO ( n15029 ) , .S ( final_out[244] ) ) ;
+FADDX1_HVT U18805 ( .A ( in_c[53] ) , .B ( n26538 ) , .CI ( n15029 ) , 
+    .CO ( n15028 ) , .S ( final_out[245] ) ) ;
+FADDX1_HVT U18804 ( .A ( in_c[54] ) , .B ( n26537 ) , .CI ( n15028 ) , 
+    .CO ( n15027 ) , .S ( final_out[246] ) ) ;
+FADDX1_HVT U18803 ( .A ( in_c[55] ) , .B ( n26536 ) , .CI ( n15027 ) , 
+    .CO ( n15026 ) , .S ( final_out[247] ) ) ;
+FADDX1_HVT U18764 ( .A ( in_c[38] ) , .B ( n26449 ) , .CI ( n14988 ) , 
+    .CO ( n14987 ) , .S ( final_out[358] ) ) ;
+FADDX1_HVT U18735 ( .A ( in_c[39] ) , .B ( aps_rename_1175_ ) , 
+    .CI ( n14959 ) , .CO ( n14958 ) , .S ( final_out[423] ) ) ;
+FADDX1_HVT U18791 ( .A ( in_c[39] ) , .B ( n26502 ) , .CI ( n15015 ) , 
+    .CO ( n15014 ) , .S ( final_out[295] ) ) ;
+FADDX1_HVT U18678 ( .A ( in_c[40] ) , .B ( aps_rename_1139_ ) , 
+    .CI ( n14902 ) , .CO ( n14901 ) , .S ( final_out[552] ) ) ;
+FADDX1_HVT U18734 ( .A ( in_c[40] ) , .B ( n26391 ) , .CI ( n14958 ) , 
+    .CO ( n14957 ) , .S ( final_out[424] ) ) ;
+FADDX1_HVT U18790 ( .A ( in_c[40] ) , .B ( n26501 ) , .CI ( n15014 ) , 
+    .CO ( n15013 ) , .S ( final_out[296] ) ) ;
+FADDX1_HVT U18789 ( .A ( in_c[41] ) , .B ( HFSNET_1713 ) , .CI ( n15013 ) , 
+    .CO ( n15012 ) , .S ( aps_rename_494_ ) ) ;
+FADDX1_HVT U18814 ( .A ( in_c[44] ) , .B ( n26547 ) , .CI ( n15038 ) , 
+    .CO ( n15037 ) , .S ( final_out[236] ) ) ;
+FADDX1_RVT U18813 ( .A ( in_c[45] ) , .B ( n26546 ) , .CI ( n15037 ) , 
+    .CO ( n15036 ) , .S ( final_out[237] ) ) ;
+FADDX1_HVT U18812 ( .A ( in_c[46] ) , .B ( n26545 ) , .CI ( n15036 ) , 
+    .CO ( n15035 ) , .S ( final_out[238] ) ) ;
+FADDX1_HVT U18654 ( .A ( in_c[36] ) , .B ( n26234 ) , .CI ( n14878 ) , 
+    .CO ( n14877 ) , .S ( final_out[612] ) ) ;
+FADDX1_RVT U18682 ( .A ( in_c[36] ) , .B ( n26293 ) , .CI ( n14906 ) , 
+    .CO ( n14905 ) , .S ( final_out[548] ) ) ;
+FADDX1_HVT U18681 ( .A ( in_c[37] ) , .B ( res_out[549] ) , .CI ( n14905 ) , 
+    .CO ( n14904 ) , .S ( final_out[549] ) ) ;
+FADDX1_RVT U18680 ( .A ( in_c[38] ) , .B ( aps_rename_1141_ ) , 
+    .CI ( n14904 ) , .CO ( n14903 ) , .S ( final_out[550] ) ) ;
+XNOR2X1_HVT U12693 ( .A1 ( n10490 ) , .A2 ( n10489 ) , .Y ( final_out[541] ) ) ;
+NAND2X2_HVT U21578 ( .A1 ( n17077 ) , .A2 ( n17076 ) , .Y ( seq2_out[442] ) ) ;
+NAND2X2_HVT U21556 ( .A1 ( n17057 ) , .A2 ( n17056 ) , .Y ( seq2_out[440] ) ) ;
+NAND2X2_HVT U21479 ( .A1 ( n16971 ) , .A2 ( n16970 ) , .Y ( seq2_out[425] ) ) ;
+NAND2X4_HVT U21468 ( .A1 ( n16961 ) , .A2 ( n16960 ) , .Y ( seq2_out[424] ) ) ;
+HADDX1_HVT U20996 ( .A0 ( \pipeline_chain_3__u_seq3/shifter [3] ) , 
+    .B0 ( seq2_out[51] ) , .SO ( seq3_out[27] ) ) ;
+FADDX1_RVT U18543 ( .A ( in_c[35] ) , .B ( n26013 ) , .CI ( n22996 ) , 
+    .CO ( n14766 ) , .S ( final_out[867] ) ) ;
+FADDX1_HVT U18627 ( .A ( in_c[35] ) , .B ( n26173 ) , .CI ( n23011 ) , 
+    .CO ( n14850 ) , .S ( final_out[675] ) ) ;
+FADDX2_RVT U18655 ( .A ( in_c[35] ) , .B ( n26235 ) , .CI ( n23023 ) , 
+    .CO ( n14878 ) , .S ( final_out[611] ) ) ;
+FADDX1_RVT U18683 ( .A ( in_c[35] ) , .B ( n26294 ) , .CI ( n23012 ) , 
+    .CO ( n14906 ) , .S ( aps_rename_454_ ) ) ;
+FADDX1_HVT U18570 ( .A ( in_c[36] ) , .B ( n26069 ) , .CI ( n14794 ) , 
+    .CO ( n14793 ) , .S ( final_out[804] ) ) ;
+SDFFASX1_RVT \pipeline_chain_6__u_mult/stage2_reg_22_ ( .D ( n18918 ) , 
+    .SI ( n20646 ) , .SE ( n31374 ) , .CLK ( ctsbuf_net_83173 ) , 
+    .SETB ( n22455 ) , .Q ( n18854 ) ) ;
+SDFFASX1_RVT \pipeline_chain_12__u_mult/stage2_reg_22_ ( .D ( n19686 ) , 
+    .SI ( \pipeline_chain_19__u_mult/stage1 [23] ) , .SE ( n31519 ) , 
+    .CLK ( cts13 ) , .SETB ( n22667 ) , .Q ( n19622 ) ) ;
+SDFFASX1_RVT \pipeline_chain_13__u_mult/stage2_reg_20_ ( .D ( n19816 ) , 
+    .SI ( n29888 ) , .SE ( eco_net_25_n31373 ) , .CLK ( ctsbuf_net_83173 ) , 
+    .SETB ( n22773 ) , .Q ( n19752 ) ) ;
+SDFFASX1_RVT \pipeline_chain_20__u_mult/stage2_reg_20_ ( .D ( n20712 ) , 
+    .SI ( \pipeline_chain_13__u_mult/stage1 [23] ) , 
+    .SE ( eco_net_24_n31373 ) , .CLK ( ctsbuf_net_83173 ) , .SETB ( n22510 ) , 
+    .Q ( n20648 ) ) ;
+SDFFASX1_RVT \pipeline_chain_29__u_mult/stage2_reg_22_ ( .D ( n21862 ) , 
+    .SI ( n21670 ) , .SE ( n31435 ) , .CLK ( ctsbuf_net_83173 ) , 
+    .SETB ( n22569 ) , .Q ( n21798 ) ) ;
+NBUFFX2_HVT U22175 ( .A ( n26337 ) , .Y ( res_out[486] ) ) ;
+NAND2X2_HVT U21622 ( .A1 ( n17117 ) , .A2 ( n17116 ) , .Y ( seq2_out[446] ) ) ;
+NAND2X2_HVT U21600 ( .A1 ( n17097 ) , .A2 ( n17096 ) , .Y ( seq2_out[444] ) ) ;
+SDFFARX1_RVT \pipeline_chain_12__u_mult/stage1_reg_22_ ( .D ( n25329 ) , 
+    .SI ( \pipeline_chain_14__u_mult/stage1 [22] ) , .SE ( n31303 ) , 
+    .CLK ( cts13 ) , .RSTB ( n31695 ) , 
+    .Q ( \pipeline_chain_12__u_mult/stage1 [22] ) ) ;
+SDFFASX1_RVT \pipeline_chain_1__u_mult/stage2_reg_18_ ( .D ( n18282 ) , 
+    .SI ( \pipeline_chain_11__u_mult/stage1 [20] ) , 
+    .SE ( eco_net_26_n31373 ) , .CLK ( ctsbuf_net_83173 ) , .SETB ( n22773 ) , 
+    .Q ( n18218 ) ) ;
+SDFFASX1_RVT \pipeline_chain_3__u_mult/stage2_reg_23_ ( .D ( n18533 ) , 
+    .SI ( \pipeline_chain_24__u_mult/stage1 [23] ) , .SE ( n31577 ) , 
+    .CLK ( ctsbuf_net_84174 ) , .SETB ( n22455 ) , .Q ( n18469 ) ) ;
+SDFFASX1_RVT \pipeline_chain_3__u_mult/stage2_re
+NBUFFX4_HVT HFSBUF_34_2706 ( .A ( aps_rename_1033_ ) , .Y ( res_out[902] ) ) ;
+NBUFFX4_HVT HFSBUF_34_2710 ( .A ( aps_rename_622_ ) , .Y ( res_out[1999] ) ) ;
+INVX32_HVT inv_drc_cln15677 ( .A ( ctsbuf_net_37127 ) , .Y ( cts5 ) ) ;
+NBUFFX2_HVT HFSBUF_34_2712 ( .A ( aps_rename_969_ ) , .Y ( res_out[1094] ) ) ;
+NBUFFX2_HVT HFSBUF_34_2713 ( .A ( aps_rename_968_ ) , .Y ( res_out[1095] ) ) ;
+NBUFFX2_HVT HFSBUF_32_2715 ( .A ( n26531 ) , .Y ( HFSNET_2513 ) ) ;
+NBUFFX2_HVT ZBUF_4_inst_2893 ( .A ( aps_rename_499_ ) , 
+    .Y ( final_out[240] ) ) ;
+NBUFFX2_HVT HFSBUF_32_2717 ( .A ( n25997 ) , .Y ( HFSNET_2515 ) ) ;
+IBUFFX32_RVT inv_drc_cln15678 ( .A ( ctsbuf_net_37127 ) , .Y ( cts6 ) ) ;
+IBUFFX32_RVT inv_drc_cln15679 ( .A ( ctsbuf_net_38128 ) , .Y ( cts7 ) ) ;
+NBUFFX2_HVT HFSBUF_32_2720 ( .A ( n26413 ) , .Y ( HFSNET_2518 ) ) ;
+NBUFFX2_HVT HFSBUF_17_2721 ( .A ( n26418 ) , .Y ( HFSNET_2519 ) ) ;
+NBUFFX2_HVT HFSBUF_17_2722 ( .A ( n26417 ) , .Y ( HFSNET_2520 ) ) ;
+IBUFFX32_HVT inv_drc_cln15680 ( .A ( ctsbuf_net_38128 ) , .Y ( cts8 ) ) ;
+NBUFFX4_HVT HFSBUF_17_2724 ( .A ( n26203 ) , .Y ( HFSNET_2522 ) ) ;
+IBUFFX32_RVT inv_drc_cln15681 ( .A ( ctsbuf_net_38128 ) , .Y ( cts9 ) ) ;
+NBUFFX4_HVT HFSBUF_32_2726 ( .A ( n26416 ) , .Y ( HFSNET_2524 ) ) ;
+NBUFFX32_HVT buf_drc_cln15802 ( .A ( sclk ) , .Y ( cts10 ) ) ;
+NBUFFX32_HVT buf_drc_cln15803 ( .A ( sclk ) , .Y ( cts11 ) ) ;
+NBUFFX32_RVT buf_drc_cln15804 ( .A ( sclk ) , .Y ( cts12 ) ) ;
+NBUFFX2_HVT HFSBUF_32_2730 ( .A ( n26181 ) , .Y ( HFSNET_2528 ) ) ;
+NBUFFX32_LVT buf_drc_cln15805 ( .A ( sclk ) , .Y ( cts13 ) ) ;
+NBUFFX2_HVT HFSBUF_32_2732 ( .A ( n26197 ) , .Y ( HFSNET_2530 ) ) ;
+NBUFFX4_HVT HFSBUF_32_2733 ( .A ( n26193 ) , .Y ( HFSNET_2531 ) ) ;
+NBUFFX4_HVT HFSBUF_32_2734 ( .A ( n26401 ) , .Y ( HFSNET_2532 ) ) ;
+NBUFFX2_HVT HFSBUF_32_2735 ( .A ( n26196 ) , .Y ( HFSNET_2533 ) ) ;
+NBUFFX4_HVT HFSBUF_17_2736 ( .A ( n26252 ) , .Y ( HFSNET_2534 ) ) ;
+NBUFFX32_RVT buf_drc_cln15806 ( .A ( sclk ) , .Y ( cts14 ) ) ;
+NBUFFX4_HVT HFSBUF_19_2738 ( .A ( aps_rename_1003_ ) , .Y ( res_out[968] ) ) ;
+NBUFFX2_HVT HFSBUF_30_2739 ( .A ( aps_rename_1002_ ) , .Y ( res_out[969] ) ) ;
+NBUFFX4_HVT HFSBUF_34_2740 ( .A ( aps_rename_1004_ ) , .Y ( res_out[965] ) ) ;
+NBUFFX4_HVT HFSBUF_34_2741 ( .A ( aps_rename_1005_ ) , .Y ( res_out[960] ) ) ;
+NBUFFX2_HVT HFSBUF_222_2743 ( .A ( n22921 ) , .Y ( HFSNET_2541 ) ) ;
+NBUFFX4_HVT HFSBUF_718_2744 ( .A ( n22370 ) , .Y ( HFSNET_2542 ) ) ;
+NBUFFX4_HVT HFSBUF_969_2745 ( .A ( n22369 ) , .Y ( HFSNET_2543 ) ) ;
+NBUFFX4_HVT HFSBUF_704_2747 ( .A ( n22367 ) , .Y ( HFSNET_2545 ) ) ;
+NBUFFX4_HVT HFSBUF_708_2748 ( .A ( n22366 ) , .Y ( HFSNET_2546 ) ) ;
+NBUFFX4_HVT HFSBUF_721_2749 ( .A ( eco_net_42_n22365 ) , .Y ( HFSNET_2547 ) ) ;
+NBUFFX4_HVT HFSBUF_796_2750 ( .A ( n22364 ) , .Y ( HFSNET_2548 ) ) ;
+NBUFFX4_HVT HFSBUF_1215_2751 ( .A ( n22363 ) , .Y ( HFSNET_2549 ) ) ;
+NBUFFX2_HVT HFSBUF_179_2752 ( .A ( n22904 ) , .Y ( HFSNET_2550 ) ) ;
+NBUFFX4_HVT HFSBUF_907_2753 ( .A ( n22362 ) , .Y ( HFSNET_2551 ) ) ;
+NBUFFX2_HVT HFSBUF_176_2754 ( .A ( n22902 ) , .Y ( HFSNET_2552 ) ) ;
+NBUFFX4_HVT HFSBUF_1080_2755 ( .A ( n22361 ) , .Y ( HFSNET_2553 ) ) ;
+NBUFFX2_HVT HFSBUF_181_2756 ( .A ( n22900 ) , .Y ( HFSNET_2554 ) ) ;
+NBUFFX4_HVT HFSBUF_806_2757 ( .A ( n22360 ) , .Y ( HFSNET_2555 ) ) ;
+NBUFFX2_HVT HFSBUF_172_2759 ( .A ( n22898 ) , .Y ( HFSNET_2557 ) ) ;
+NBUFFX4_HVT HFSBUF_783_2760 ( .A ( n22359 ) , .Y ( HFSNET_2558 ) ) ;
+NBUFFX4_HVT HFSBUF_564_2761 ( .A ( n11324 ) , .Y ( HFSNET_2559 ) ) ;
+NBUFFX4_HVT HFSBUF_917_2763 ( .A ( n22358 ) , .Y ( HFSNET_2561 ) ) ;
+NBUFFX4_HVT HFSBUF_808_2764 ( .A ( n22357 ) , .Y ( HFSNET_2562 ) ) ;
+NBUFFX2_HVT HFSBUF_190_2766 ( .A ( n22892 ) , .Y ( HFSNET_2564 ) ) ;
+NBUFFX4_HVT HFSBUF_865_2767 ( .A ( n22356 ) , .Y ( HFSNET_2565 ) ) ;
+NBUFFX4_HVT HFSBUF_808_2768 ( .A ( n22355 ) , .Y ( HFSNET_2566 ) ) ;
+NBUFFX32_RVT buf_drc_cln15807 ( .A ( sclk ) , .Y ( cts15 ) ) ;
+NBUFFX2_HVT HFSBUF_166_2771 ( .A ( n22886 ) , .Y ( HFSNET_2569 ) ) ;
+NBUFFX4_HVT HFSBUF_780_2772 ( .A ( n22353 ) , .Y ( HFSNET_2570 ) ) ;
+NBUFFX4_HVT HFSBUF_846_2773 ( .A ( n22352 ) , .Y ( HFSNET_2571 ) ) ;
+NBUFFX32_RVT buf_drc_cln15808 ( .A ( sclk ) , .Y ( cts16 ) ) ;
+NBUFFX4_HVT HFSBUF_746_2776 ( .A ( n22351 ) , .Y ( HFSNET_2574 ) ) ;
+NBUFFX4_HVT HFSBUF_515_2778 ( .A ( n11448 ) , .Y ( HFSNET_2576 ) ) ;
+NBUFFX4_HVT HFSBUF_741_2779 ( .A ( n22350 ) , .Y ( HFSNET_2577 ) ) ;
+IBUFFX32_HVT inv_drc_cln15905 ( .A ( ctsbuf_net_71161 ) , .Y ( cts17 ) ) ;
+NBUFFX2_HVT HFSBUF_334_2782 ( .A ( n11632 ) , .Y ( HFSNET_2580 ) ) ;
+NBUFFX4_HVT HFSBUF_848_2784 ( .A ( n22348 ) , .Y ( HFSNET_2582 ) ) ;
+NBUFFX4_HVT HFSBUF_935_2785 ( .A ( n22347 ) , .Y ( HFSNET_2583 ) ) ;
+NBUFFX4_HVT HFSBUF_896_2786 ( .A ( n22346 ) , .Y ( HFSNET_2584 ) ) ;
+NBUFFX4_HVT HFSBUF_559_2787 ( .A ( n11913 ) , .Y ( HFSNET_2585 ) ) ;
+NBUFFX4_HVT HFSBUF_532_2788 ( .A ( n11767 ) , .Y ( HFSNET_2586 ) ) ;
+NBUFFX4_HVT HFSBUF_482_2789 ( .A ( n11759 ) , .Y ( HFSNET_2587 ) ) ;
+NBUFFX4_HVT HFSBUF_878_2790 ( .A ( n22345 ) , .Y ( HFSNET_2588 ) ) ;
+NBUFFX4_HVT HFSBUF_935_2791 ( .A ( n22344 ) , .Y ( HFSNET_2589 ) ) ;
+NBUFFX2_HVT HFSBUF_146_2792 ( .A ( n22868 ) , .Y ( HFSNET_2590 ) ) ;
+NBUFFX2_HVT HFSBUF_131_2793 ( .A ( n22382 ) , .Y ( HFSNET_2591 ) ) ;
+NBUFFX4_HVT HFSBUF_853_2794 ( .A ( n22343 ) , .Y ( HFSNET_2592 ) ) ;
+NBUFFX4_HVT HFSBUF_570_2797 ( .A ( n11315 ) , .Y ( HFSNET_2595 ) ) ;
+NBUFFX4_HVT HFSBUF_782_2798 ( .A ( n12243 ) , .Y ( HFSNET_2596 ) ) ;
+NBUFFX4_HVT HFSBUF_490_2799 ( .A ( n11307 ) , .Y ( HFSNET_2597 ) ) ;
+NBUFFX2_HVT HFSBUF_399_2805 ( .A ( n11279 ) , .Y ( HFSNET_2603 ) ) ;
+NBUFFX4_HVT HFSBUF_711_2806 ( .A ( n22341 ) , .Y ( HFSNET_2604 ) ) ;
+NBUFFX4_HVT HFSBUF_818_2807 ( .A ( n22340 ) , .Y ( HFSNET_2605 ) ) ;
+NBUFFX2_HVT ZBUF_4_inst_2894 ( .A ( aps_rename_498_ ) , 
+    .Y ( final_out[241] ) ) ;
+NBUFFX2_HVT ZBUF_11_inst_2895 ( .A ( aps_rename_572_ ) , .Y ( final_out[4] ) ) ;
+NBUFFX2_HVT ZBUF_11_inst_2896 ( .A ( aps_rename_364_ ) , 
+    .Y ( final_out[903] ) ) ;
+NBUFFX2_HVT ZBUF_2_inst_2897 ( .A ( aps_rename_592_ ) , .Y ( ZBUF_2_26 ) ) ;
+INVX32_HVT inv_drc_cln15978 ( .A ( ctsbuf_net_71161 ) , .Y ( cts18 ) ) ;
+NBUFFX2_HVT ZBUF_59_inst_2900 ( .A ( aps_rename_1377_ ) , 
+    .Y ( seq1_out[252] ) ) ;
+IBUFFX32_RVT inv_drc_cln15979 ( .A ( ctsbuf_net_73163 ) , .Y ( cts19 ) ) ;
+NBUFFX2_HVT ZBUF_17_inst_2902 ( .A ( seq1_out[43] ) , .Y ( ZBUF_17_26 ) ) ;
+NBUFFX4_HVT ZBUF_17_inst_2903 ( .A ( n26387 ) , .Y ( ZBUF_17_27 ) ) ;
+NBUFFX4_HVT ZBUF_2_inst_2906 ( .A ( aps_rename_1272_ ) , .Y ( ZBUF_2_27 ) ) ;
+NBUFFX2_HVT ZBUF_34_inst_2907 ( .A ( aps_rename_1386_ ) , 
+    .Y ( seq1_out[214] ) ) ;
+NBUFFX2_HVT ZBUF_19_inst_2908 ( .A ( aps_rename_1240_ ) , 
+    .Y ( res_out[176] ) ) ;
+NBUFFX2_HVT ZBUF_2_inst_2909 ( .A ( aps_rename_777_ ) , .Y ( ZBUF_2_28 ) ) ;
+NBUFFX2_HVT ZBUF_9_inst_2912 ( .A ( aps_rename_1151_ ) , .Y ( ZBUF_9_29 ) ) ;
+NBUFFX2_HVT ZBUF_24_inst_2914 ( .A ( aps_rename_1203_ ) , .Y ( ZBUF_24_29 ) ) ;
+NBUFFX2_HVT ZBUF_57_inst_2915 ( .A ( aps_rename_1375_ ) , 
+    .Y ( seq1_out[254] ) ) ;
+NBUFFX2_HVT ZBUF_2_inst_2916 ( .A ( aps_rename_779_ ) , .Y ( ZBUF_2_30 ) ) ;
+NBUFFX2_HVT ZBUF_2_inst_2917 ( .A ( n26109 ) , .Y ( ZBUF_2_31 ) ) ;
+NBUFFX2_HVT ZBUF_9_inst_2918 ( .A ( n25539 ) , .Y ( ZBUF_9_31 ) ) ;
+NBUFFX4_HVT ZBUF_17_inst_2919 ( .A ( n26478 ) , .Y ( ZBUF_17_31 ) ) ;
+IBUFFX32_RVT inv_drc_cln15980 ( .A ( ctsbuf_net_73163 ) , .Y ( cts20 ) ) ;
+IBUFFX32_RVT inv_drc_cln15981 ( .A ( ctsbuf_net_72162 ) , .Y ( cts21 ) ) ;
+NBUFFX2_HVT ZBUF_2_inst_16505 ( .A ( n30271 ) , .Y ( ZBUF_2_9 ) ) ;
+NBUFFX4_HVT ZBUF_5_inst_16506 ( 
+    .A ( \pipeline_chain_13__u_mult/stage1 [42] ) , .Y ( ZBUF_5_9 ) ) ;
+NBUFFX2_HVT ZBUF_9_inst_16507 ( .A ( n19602 ) , .Y ( ZBUF_9_9 ) ) ;
+NBUFFX2_HVT ZBUF_36_inst_16509 ( .A ( dftopt1 ) , .Y ( ZBUF_36_9 ) ) ;
+NBUFFX2_HVT ZBUF_9_inst_16513 ( .A ( \pipeline_chain_12__u_seq1/state [1] ) , 
+    .Y ( ZBUF_9_12 ) ) ;
+NBUFFX2_HVT ZBUF_37_inst_16516 ( .A ( aps_rename_1390_ ) , .Y ( ZBUF_37_12 ) ) ;
+NBUFFX2_HVT ZBUF_28_inst_16528 ( .A ( n25641 ) , .Y ( ZBUF_28_19 ) ) ;
+NBUFFX2_HVT ZBUF_17_inst_16533 ( .A ( n26033 ) , .Y ( ZBUF_17_23 ) ) ;
+NBUFFX2_HVT ZBUF_2_inst_16535 ( .A ( n26108 ) , .Y ( ZBUF_2_29 ) ) ;
+NBUFFX4_HVT ZBUF_2_inst_16539 ( .A ( n26730 ) , .Y ( ZBUF_2_35 ) ) ;
+NBUFFX2_HVT ZBUF_2_inst_16540 ( .A ( n18695 ) , .Y ( ZBUF_2_36 ) ) ;
+NBUFFX2_HVT ZBUF_36_inst_16542 ( .A ( n26726 ) , .Y ( ZBUF_36_38 ) ) ;
+NBUFFX2_HVT ZBUF_2_inst_16543 ( 
+    .A ( \pipeline_chain_12__u_mult/stage1 [47] ) , .Y ( ZBUF_2_39 ) ) ;
+NBUFFX2_HVT ZBUF_32_inst_16544 ( .A ( \pipeline_chain_2__u_mult/stage1 [0] ) , 
+    .Y ( ZBUF_32_39 ) ) ;
+NBUFFX2_HVT ZBUF_226_inst_16551 ( .A ( dftopt371 ) , .Y ( ZBUF_226_40 ) ) ;
+NBUFFX2_HVT ZBUF_17_inst_16562 ( .A ( aps_rename_621_ ) , .Y ( ZBUF_17_42 ) ) ;
+NBUFFX8_HVT ZBUF_778_inst_16567 ( .A ( n22895 ) , .Y ( ZBUF_778_44 ) ) ;
+NBUFFX2_HVT ZBUF_34_inst_16570 ( .A ( aps_rename_4_ ) , .Y ( res_out[1678] ) ) ;
+NBUFFX2_HVT ZBUF_17_inst_16574 ( .A ( n26051 ) , .Y ( ZBUF_17_46 ) ) ;
+endmodule
+
+

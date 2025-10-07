@@ -1,0 +1,36 @@
+reset_design
+ 
+create_clock -name clk  -period 6.5  [get_ports clk]
+create_clock -name sclk -period 10.0 [get_ports sclk]
+set_clock_groups -asynchronous -group {clk} -group {sclk}
+ 
+set_clock_latency   -source -max 0.2 [get_clocks {clk sclk}]
+set_clock_latency   -max 0.1        [get_clocks {clk sclk}]
+set_clock_uncertainty -setup 0.1    [get_clocks {clk sclk}]
+ 
+set_input_delay -max 0.1 -clock clk \
+   [remove_from_collection [all_inputs] [get_ports {clk sclk}]]
+ 
+set_output_delay -max 0.1 -clock clk  [remove_from_collection [all_outputs] [get_ports {res_out*}]]
+set_output_delay -max 0.1 -clock sclk [get_ports {res_out*}]
+ 
+set_load [expr 2 * [load_of saed32rvt_ss0p95v125c/NAND2X1_RVT/A1]] [all_outputs]
+ 
+set_utilization 0.65
+set_aspect_ratio 1.0 ;# default = square
+ 
+set_cost_priority {max_delay min_delay max_design_rules}
+set_operating_condition -max ss0p95v125c
+ 
+# only if needed optional
+set_register_merging [get_designs *] false
+set_app_var compile_seqmap_propagate_constants false
+set_leakage_optimization true
+set_ungroup {CombAdder PipelinedMultiplier}
+set_optimize_registers true -design PipelinedMultiplier
+
+current_design CombAdder
+set_multicycle_path -setup 2 -from {a[*] b[*]} -to sum[*] 
+current_design Top
+ 
+echo "Constraints added"

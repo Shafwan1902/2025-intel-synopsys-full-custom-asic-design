@@ -1,0 +1,438 @@
+ 
+                              IC Compiler II (TM)
+
+             Version S-2021.06-SP2 for linux64 - Aug 26, 2021 -SLE
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Loading user preference file /nfs/site/home/manis/.synopsys_icc2_gui/preferences.tcl
+icc2_shell> start_gui
+Load ICV ICCII menu file: /nfs/png/disks/MDC_Elite/cad/icv/P-2019.06-SP2-11/etc/tcl-u/Icc2Menu.tcl
+ + VUE INFO: Please click View->IC Validator VUE in LayoutWindow menu
+            to launch VUE.
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE INFO: Found a usable port: 2447
+
+Loading user favorites file /nfs/site/home/manis/.synopsys_icc2_gui/favorites.tcl
+icc2_shell> 
+# ---------------------------------------------
+# Suppress unnecessary messages
+# ---------------------------------------------
+suppress_message FRAM-054
+suppress_message UIC-025
+suppress_message "ATTR-11 ATTR-12"
+# ---------------------------------------------
+# Library setup
+# ---------------------------------------------
+source scripts/lib_setup.tcl 
+Information: Loading library file '/nfs/png/disks/MDC_Elite/2025/manis/assignment_report/icc2/MYLIB' (FILE-007)
+Information: Loading library file '/nfs/png/disks/MDC_Elite/2025/manis/assignment_report/libs/stdcell_hvt/ndms/saed32hvt_c.ndm' (FILE-007)
+Information: Loading library file '/nfs/png/disks/MDC_Elite/2025/manis/assignment_report/libs/stdcell_lvt/ndms/saed32lvt_c.ndm' (FILE-007)
+Information: Loading library file '/nfs/png/disks/MDC_Elite/2025/manis/assignment_report/libs/stdcell_rvt/ndms/saed32rvt_c.ndm' (FILE-007)
+Information: Loading library file '/nfs/png/disks/MDC_Elite/2025/manis/assignment_report/libs/sram/ndms/saed32sram.ndm' (FILE-007)
+ICC2 library setup complete. MYLIB ready to use.
+# ---------------------------------------------
+# Load netlist & constraints from DC
+# ---------------------------------------------
+read_verilog ../output/mapped_scan_opt.v -top Top
+Information: Reading Verilog into existing design 'Top' in library 'MYLIB'; the existing design contents has been truncated. (VR-013)
+Loading verilog file '/nfs/png/disks/MDC_Elite/2025/manis/assignment_report/output/mapped_scan_opt.v'
+Error: Failed to load the design core area. (PGR-037)
+Fail to set PG strategy S_default_vddvss.
+Error: Failed to load the design core area. (PGR-037)
+Fail to set PG strategy S_m2_vddvss.
+Error: Failed to load the design core area. (PGR-037)
+Fail to set PG strategy S_std_cell_rail_VSS_VDD.
+Number of modules read: 21
+Top level ports: 5251
+Total ports in all modules: 6556
+Total nets in all modules: 40533
+Total instances in all modules: 35311
+Elapsed = 00:00:00.80, CPU = 00:00:00.77
+1
+read_sdc ../output/mapped_scan_opt.sdc
+Using libraries: MYLIB saed32hvt_c saed32lvt_c saed32rvt_c saed32sram
+Linking block MYLIB:Top.design
+Information: User units loaded from library 'saed32hvt_c' (LNK-040)
+Design 'Top' was successfully linked.
+Information: Loading SDC version 2.1 file '/nfs/png/disks/MDC_Elite/2025/manis/assignment_report/output/mapped_scan_opt.sdc' (FILE-007)
+Information: Timer using 8 threads
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+90% of nets complete Elapsed cpu time: 0:00:04 Elapsed real time: 0:00:02
+[rtOvlpParts] Elapsed real time: 0:00:02 
+[rtOvlpParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:05 total=0:00:05
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+[updNetsDmd] Elapsed real time: 0:00:00 
+[updNetsDmd] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+Current Stage stats:
+[End of Phase3 Routing] Elapsed real time: 0:00:03 
+[End of Phase3 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:06 total=0:00:06
+[End of Phase3 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Phase3 Routing] Total (MB): Used  321  Alloctr  327  Proc 4936 
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+phase3. Routing result:
+phase3. Both Dirs: Overflow =   684 Max = 2 GRCs =  1123 (0.56%)
+phase3. H routing: Overflow =   684 Max = 2 (GRCs =  3) GRCs =  1123 (1.11%)
+phase3. V routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase3. M1         Overflow =   656 Max = 2 (GRCs =  3) GRCs =  1095 (1.08%)
+phase3. M2         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase3. M3         Overflow =    28 Max = 1 (GRCs = 28) GRCs =    28 (0.03%)
+phase3. M4         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase3. M5         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase3. M6         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase3. M7         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase3. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase3. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase3. MRDL       Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+
+phase3. Total Wire Length = 1954834.61
+phase3. Layer M1 wire length = 92554.56
+phase3. Layer M2 wire length = 493682.05
+phase3. Layer M3 wire length = 452454.32
+phase3. Layer M4 wire length = 402918.71
+phase3. Layer M5 wire length = 251886.36
+phase3. Layer M6 wire length = 172117.25
+phase3. Layer M7 wire length = 80010.07
+phase3. Layer M8 wire length = 9211.31
+phase3. Layer M9 wire length = 0.00
+phase3. Layer MRDL wire length = 0.00
+phase3. Total Number of Contacts = 348515
+phase3. Via VIA12SQ_C count = 158700
+phase3. Via VIA23SQ_C count = 138735
+phase3. Via VIA34SQ_C count = 24458
+phase3. Via VIA45SQ_C count = 17886
+phase3. Via VIA56SQ_C count = 5560
+phase3. Via VIA67SQ_C count = 3050
+phase3. Via VIA78SQ_C count = 126
+phase3. Via VIA89_C count = 0
+phase3. Via VIA9RDL count = 0
+phase3. completed.
+Total number of nets with coarse-to-detailed routing failures: 0
+[End of Whole Chip Routing] Elapsed real time: 0:00:59 
+[End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:01:19 total=0:01:20
+[End of Whole Chip Routing] Stage (MB): Used  249  Alloctr  253  Proc    0 
+[End of Whole Chip Routing] Total (MB): Used  321  Alloctr  327  Proc 4936 
+numPartCol 2 numPartRow 2 numCol 160 numRow 160
+Number of partitions: 4 (2 x 2)
+
+Congestion utilization per direction:
+Average vertical track utilization   = 43.70 %
+Peak    vertical track utilization   = 100.00 %
+Average horizontal track utilization = 44.29 %
+Peak    horizontal track utilization = 133.33 %
+
+Current Stage stats:
+[GR: Done] Elapsed real time: 0:00:00 
+[GR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[GR: Done] Stage (MB): Used  -17  Alloctr  -17  Proc    0 
+[GR: Done] Total (MB): Used  305  Alloctr  309  Proc 4936 
+GR Total stats:
+[GR: Done] Elapsed real time: 0:01:01 
+[GR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:01:28 total=0:01:29
+[GR: Done] Stage (MB): Used  297  Alloctr  301  Proc    0 
+[GR: Done] Total (MB): Used  305  Alloctr  309  Proc 4936 
+Writing out congestion map...
+Updating congestion ...
+Updating congestion ...
+[DBOUT] Elapsed real time: 0:00:00 
+[DBOUT] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[DBOUT] Stage (MB): Used -100  Alloctr -104  Proc    0 
+[DBOUT] Total (MB): Used   36  Alloctr   37  Proc 4936 
+Final total stats:
+[End of Global Routing] Elapsed real time: 0:01:01 
+[End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:01:29 total=0:01:29
+[End of Global Routing] Stage (MB): Used   29  Alloctr   29  Proc    0 
+[End of Global Routing] Total (MB): Used   36  Alloctr   37  Proc 4936 
+
+****************************************
+Report : congestion
+Design : Top
+Version: S-2021.06-SP2
+Date   : Thu Sep 11 09:23:31 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |    1126 |     2 |    1123  ( 0.56%) |       3
+H routing |    1126 |     2 |    1123  ( 1.11%) |       3
+V routing |       0 |     0 |       0  ( 0.00%) |       0
+
+1
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+place.coarse.continue_on_missing_scandef true
+set_app_options -list {cts.optimize.enable_congestion_aware_ndr_promotion {true}}
+cts.optimize.enable_congestion_aware_ndr_promotion true
+place_optInformation: Starting 'place_opt' (FLW-8000)
+Information: Time: 2025-09-11 09:24:02 / Session: 0.34 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Warning: Cannot find any max transition constraint on the design. (OPT-070)
+INFO: disable CRPR-based timing. 
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(EARLY) (NEX-018)
+Warning: no valid parasitic for (all corners) corner((both specs)) (NEX-018)
+Error: Scenario Manager creation failed. Optimization aborted. (OPT-041)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Skipping clock gate latency estimation because design setup is incomplete/invalid.
+
+Information: Starting place_opt / initial_place (FLW-8000)
+Information: Time: 2025-09-11 09:24:03 / Session: 0.34 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+
+
+Information: Starting place_opt / initial_place / Initial Placement (FLW-8000)
+Information: Time: 2025-09-11 09:24:03 / Session: 0.34 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Information: Ending place_opt / initial_place / Initial Placement (FLW-8001)
+Information: Time: 2025-09-11 09:24:03 / Session: 0.34 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Information: Running auto PG connection. (NDM-099)
+Warning: Incomplete place_opt / initial_place (FLW-8004)
+Information: Ending 'place_opt' (FLW-8001)
+Information: Time: 2025-09-11 09:24:03 / Session: 0.34 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Information: script '/tmp/icc2_shell-2.b27424'
+                stopped at line 4 due to error. (CMD-081)
+Extended error info:
+0
+    while executing
+"place_opt"
+    (file "/tmp/icc2_shell-2.b27424" line 4)
+ -- End Extended Error Info
+place_optInformation: Starting 'place_opt' (FLW-8000)
+Information: Time: 2025-09-11 09:24:33 / Session: 0.35 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Warning: Cannot find any max transition constraint on the design. (OPT-070)
+INFO: disable CRPR-based timing. 
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(EARLY) (NEX-018)
+Warning: no valid parasitic for (all corners) corner((both specs)) (NEX-018)
+Error: Scenario Manager creation failed. Optimization aborted. (OPT-041)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Skipping clock gate latency estimation because design setup is incomplete/invalid.
+
+Information: Starting place_opt / initial_place (FLW-8000)
+Information: Time: 2025-09-11 09:24:33 / Session: 0.35 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+
+
+Information: Starting place_opt / initial_place / Initial Placement (FLW-8000)
+Information: Time: 2025-09-11 09:24:33 / Session: 0.35 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Information: Ending place_opt / initial_place / Initial Placement (FLW-8001)
+Information: Time: 2025-09-11 09:24:33 / Session: 0.35 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Information: Running auto PG connection. (NDM-099)
+Warning: Incomplete place_opt / initial_place (FLW-8004)
+Information: Ending 'place_opt' (FLW-8001)
+Information: Time: 2025-09-11 09:24:34 / Session: 0.35 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Error: 0
+        Use error_info for more info. (CMD-013)
+Information: script '/tmp/icc2_shell-2.P27424'
+                stopped at line 1 due to error. (CMD-081)
+Extended error info:
+0
+    while executing
+"place_opt"
+    (file "/tmp/icc2_shell-2.P27424" line 1)
+ -- End Extended Error Info
+icc2_shell> place_opt
+Information: Starting 'place_opt' (FLW-8000)
+Information: Time: 2025-09-11 09:24:53 / Session: 0.36 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Warning: Cannot find any max transition constraint on the design. (OPT-070)
+INFO: disable CRPR-based timing. 
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(EARLY) (NEX-018)
+Warning: no valid parasitic for (all corners) corner((both specs)) (NEX-018)
+Error: Scenario Manager creation failed. Optimization aborted. (OPT-041)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Cannot determine layer RC values for buffer characterization in corner 'default'.
+Warning: Skipping clock gate latency estimation because design setup is incomplete/invalid.
+
+Information: Starting place_opt / initial_place (FLW-8000)
+Information: Time: 2025-09-11 09:24:54 / Session: 0.36 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+
+
+Information: Starting place_opt / initial_place / Initial Placement (FLW-8000)
+Information: Time: 2025-09-11 09:24:54 / Session: 0.36 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Information: Ending place_opt / initial_place / Initial Placement (FLW-8001)
+Information: Time: 2025-09-11 09:24:54 / Session: 0.36 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Information: Running auto PG connection. (NDM-099)
+Warning: Incomplete place_opt / initial_place (FLW-8004)
+Information: Ending 'place_opt' (FLW-8001)
+Information: Time: 2025-09-11 09:24:54 / Session: 0.36 hr / Command: 0.00 hr / Memory: 1680 MB (FLW-8100)
+Error: 0
+        Use error_info for more info. (CMD-013)
+icc2_shell> exit
+Maximum memory usage for this session: 1679.71 MB
+Maximum memory usage for this session including child processes: 1679.71 MB
+CPU usage for this session:   1054 seconds (  0.29 hours)
+Elapsed time for this session:   7709 seconds (  2.14 hours)
+Thank you for using IC Compiler II.

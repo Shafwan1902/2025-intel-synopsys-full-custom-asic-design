@@ -1,0 +1,85 @@
+
+# Routing
+# 1. Pre-routing check
+set_app_options -name route.common.verbose_level -value 1
+check_design -checks pre_route_stage
+set_app_options -name route.common.verbose_level -value 0
+ 
+# 2. Routing setup
+set_app_options -name route.global.timing_driven -value true
+set_app_option -name route.track.timing_driven -value true
+set_app_option -name route.detail.timing_driven -value true
+set_app_option -name route.global.timing_driven_effort_level -value medium
+set_app_options -name route.global.crosstalk_driven -value true
+set_app_options -name route.track.crosstalk_driven -value true
+ 
+# 3. Execute auto routing
+route_auto
+ 
+# 4. Route legality & DRC checks
+check_lvs
+check_legality
+check_route
+check_lvs -checks "short" -max_errors 10000 -check_zero_spacing_blockages 0 -check_top_level_blockages 1 -report_floating_pins 1
+ 
+save_block -as save_blocks/MYTOP_ROUTE
+
+# 5. Reports (post-route QoR & timing)
+file mkdir ../reports/icc2/route
+redirect -tee -file ../reports/icc2/route/timing_setup_post_route.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/route/timing_hold_post_route.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/route/constraint_post_route.rpt {report_constraints -all_violators -min_capacitance -max_capacitance -max_transition -significant_digits 5}
+redirect -tee -file ../reports/icc2/route/qor_summary_post_route.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/route/congestion_global_post_route.rpt {report_congestion -rerun_global_router}
+redirect -tee -file ../reports/icc2/route/congestion_layers_post_route.rpt {report_congestion -layers {M3 M4 M5 M6 M7}}
+
+# post route fix
+# Align timing with PT
+# Enable accurate timing analysis
+set_app_options -name time.enable_ccs_rcv_cap -value true
+set_app_options -name time.delay_calc_waveform_analysis_mode -value full_design
+set_app_option -name time.enable_si_timing_windows -value true
+set_app_options -name extract.enable_coupling_cap -value true
+
+# Enable timing-driven routing
+set_app_options -list {
+    route.global.timing_driven true
+    route.track.timing_driven true
+    route.detail.timing_driven true
+}
+
+# Optional: Enable redundant via insertion settings
+set_app_options -list {
+    route.common.post_detail_route_redundant_via_insertion medium
+    route.common.concurrent_redundant_via_mode reserve_space
+    route.common.concurrent_redundant_via_effort_level medium
+}
+
+# Run timing-driven route optimization
+route_opt
+
+# Incremental DRC cleanup
+route_detail -incremental true
+
+# Insert redundant vias
+add_redundant_vias
+
+# Final cleanup and optimization
+optimize_routes
+route_opt
+
+
+# Reports (signoff_tuning QoR & timing)
+redirect -tee -file ../reports/icc2/route/timing_setup_signoff_tune.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/route/timing_hold_signoff_tune.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/route/constraint_signoff_tune.rpt {report_constraints -all_violators -min_capacitance -max_capacitance -max_transition -significant_digits 5}
+redirect -tee -file ../reports/icc2/route/qor_summary_signoff_tune.rpt {report_qor -summary}
+
+save_block -as saver_blocks/MYTOP_SIGNOFF_TUNE
+
+
+# Export signoff files
+write_verilog ../output/icc2_scan_opt.v
+write_sdc -output ../output/icc2_scan_opt.sdc
+write_parasitics -output ../output/icc2_scan_opt.spef
+

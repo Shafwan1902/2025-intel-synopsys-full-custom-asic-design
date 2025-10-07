@@ -1,0 +1,24 @@
+module SeqLogicBlock2_Mod (
+    input  logic clk,
+    input  logic rst_n,
+    input  logic [3:0] addr_seed,
+    output logic [15:0] out_data
+);
+
+    logic [7:0] memory [0:15];
+    logic [3:0] addr;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            addr <= 4'd0;
+            foreach (memory[i]) memory[i] <= 0;
+        end else begin
+            addr <= addr_seed;
+	    foreach (memory[i]) memory[i] <= i;
+        end
+    end
+
+    assign out_data = {memory[addr], memory[(addr + 1) % 16]};
+
+endmodule
+

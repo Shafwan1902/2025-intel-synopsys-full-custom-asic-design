@@ -1,0 +1,115 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'Top' contains 3 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Aug 30 16:04:43 2025
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p95v125c   Library: saed32lvt_ss0p95v125c
+Wire Load Model Mode: Inactive.
+
+  Startpoint: in_c[0] (input port clocked by clk)
+  Endpoint: final_out[1279]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.30       0.30
+  input external delay                     0.10       0.40 r
+  in_c[0] (in)                             0.00       0.40 r
+  U3813/Y (NAND2X0_HVT)                    0.12 *     0.52 f
+  U4256/Y (OAI21X1_HVT)                    0.22 *     0.74 r
+  U4333/Y (AOI21X1_HVT)                    0.16 *     0.90 f
+  U4341/Y (OAI21X1_HVT)                    0.20 *     1.10 r
+  U6617/Y (AOI21X1_HVT)                    0.21 *     1.31 f
+  U9343/Y (OAI21X1_HVT)                    0.23 *     1.54 r
+  U3680/Y (AO21X2_HVT)                     0.20 *     1.74 r
+  U18375/CO (FADDX1_HVT)                   0.19 *     1.93 r
+  U18374/CO (FADDX1_HVT)                   0.17 *     2.10 r
+  U18373/CO (FADDX1_HVT)                   0.16 *     2.27 r
+  U18372/CO (FADDX1_HVT)                   0.16 *     2.43 r
+  U18371/CO (FADDX1_HVT)                   0.16 *     2.59 r
+  U18370/CO (FADDX1_HVT)                   0.15 *     2.75 r
+  U18369/CO (FADDX1_HVT)                   0.15 *     2.90 r
+  U18368/CO (FADDX1_HVT)                   0.15 *     3.05 r
+  U18367/CO (FADDX1_HVT)                   0.15 *     3.19 r
+  U18366/CO (FADDX1_HVT)                   0.15 *     3.34 r
+  U18365/CO (FADDX1_HVT)                   0.14 *     3.49 r
+  U18364/CO (FADDX1_HVT)                   0.14 *     3.63 r
+  U18363/CO (FADDX1_HVT)                   0.15 *     3.78 r
+  U18362/CO (FADDX1_HVT)                   0.15 *     3.93 r
+  U18361/CO (FADDX1_HVT)                   0.15 *     4.07 r
+  U18360/CO (FADDX1_HVT)                   0.15 *     4.22 r
+  U18359/CO (FADDX1_HVT)                   0.15 *     4.37 r
+  U18358/CO (FADDX1_HVT)                   0.15 *     4.52 r
+  U18357/CO (FADDX1_HVT)                   0.15 *     4.67 r
+  U18356/CO (FADDX1_HVT)                   0.15 *     4.82 r
+  U18355/CO (FADDX1_HVT)                   0.15 *     4.97 r
+  U18354/CO (FADDX1_HVT)                   0.15 *     5.13 r
+  U18353/CO (FADDX1_HVT)                   0.15 *     5.28 r
+  U18352/CO (FADDX1_HVT)                   0.15 *     5.43 r
+  U18351/CO (FADDX1_HVT)                   0.15 *     5.58 r
+  U18350/CO (FADDX1_HVT)                   0.15 *     5.73 r
+  U18349/CO (FADDX1_HVT)                   0.15 *     5.88 r
+  U18348/CO (FADDX1_HVT)                   0.14 *     6.01 r
+  U13135/Y (XOR2X1_HVT)                    0.18 *     6.20 f
+  final_out[1279] (out)                    0.00 *     6.20 f
+  data arrival time                                   6.20
+
+  clock clk (rise edge)                    6.50       6.50
+  clock network delay (ideal)              0.30       6.80
+  clock uncertainty                       -0.10       6.70
+  output external delay                   -0.10       6.60
+  data required time                                  6.60
+  -----------------------------------------------------------
+  data required time                                  6.60
+  data arrival time                                  -6.20
+  -----------------------------------------------------------
+  slack (MET)                                         0.40
+
+
+  Startpoint: pipeline_chain_10__u_mult/stage3_reg_22_
+              (rising edge-triggered flip-flop clocked by sclk)
+  Endpoint: res_out[662]
+            (output port clocked by sclk)
+  Path Group: sclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock sclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.30       0.30
+  pipeline_chain_10__u_mult/stage3_reg_22_/CLK (SDFFASX2_RVT)
+                                                          0.00 #     0.30 r
+  pipeline_chain_10__u_mult/stage3_reg_22_/QN (SDFFASX2_RVT)
+                                                          0.21       0.51 r
+  U23326/Y (NBUFFX4_HVT)                                  0.15 *     0.67 r
+  res_out[662] (out)                                      0.01 *     0.68 r
+  data arrival time                                                  0.68
+
+  clock sclk (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.30      10.30
+  clock uncertainty                                      -0.10      10.20
+  output external delay                                  -0.10      10.10
+  data required time                                                10.10
+  --------------------------------------------------------------------------
+  data required time                                                10.10
+  data arrival time                                                 -0.68
+  --------------------------------------------------------------------------
+  slack (MET)                                                        9.42
+
+
+1

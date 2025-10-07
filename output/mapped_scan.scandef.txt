@@ -1,0 +1,77 @@
+VERSION 5.5 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN Top ;
+
+SCANCHAINS 11 ;
+
+- chain1
++ START PIN in_a[0]
++ FLOATING pipeline_chain_10__u_seq2/memory_reg_8__5_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_14__5_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_14__4_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_14__0_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_13__1_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_11__4_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_11__5_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_12__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_10__0_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_8__1_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_14__2_ ( IN SI ) ( OUT Q )
+           pipeline_chain_10__u_seq2/memory_reg_10__2_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_10__6_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_12__1_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_11__1_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_13__1_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_0__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_4__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_7__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_6__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_10__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_11__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_13__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_12__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_6__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_5__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_12__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_13__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_9__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_8__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_14__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_4__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_15__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_1__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_0__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_10__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_3__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_1__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_8__3_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_11__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_12__2_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_7__7_ ( IN SI ) ( OUT Q )
+           pipeline_chain_29__u_seq2/memory_reg_8__2_ ( IN SI ) ( OUT Q )
+
+       pipeline_chain_17__u_mult/stage2_reg_55_ ( IN SI ) ( OUT Q )
+           pipeline_chain_9__u_mult/stage1_reg_54_ ( IN SI ) ( OUT Q )
+           pipeline_chain_9__u_mult/stage1_reg_55_ ( IN SI ) ( OUT Q )
+           pipeline_chain_9__u_mult/stage1_reg_58_ ( IN SI ) ( OUT Q )
+           pipeline_chain_9__u_mult/stage1_reg_61_ ( IN SI ) ( OUT Q )
+           pipeline_chain_9__u_mult/stage1_reg_63_ ( IN SI ) ( OUT Q )
+           pipeline_chain_9__u_mult/stage1_reg_57_ ( IN SI ) ( OUT Q )
+           pipeline_chain_14__u_mult/stage2_reg_44_ ( IN SI ) ( OUT Q )
+           pipeline_chain_9__u_mult/stage1_reg_56_ ( IN SI ) ( OUT Q )
+           pipeline_chain_17__u_mult/stage1_reg_55_ ( IN SI ) ( OUT Q )
+           pipeline_chain_14__u_mult/stage1_reg_63_ ( IN SI ) ( OUT Q )
+           pipeline_chain_14__u_mult/stage1_reg_57_ ( IN SI ) ( OUT Q )
+           pipeline_chain_14__u_mult/stage1_reg_56_ ( IN SI ) ( OUT Q )
+           pipeline_chain_14__u_mult/stage1_reg_53_ ( IN SI ) ( OUT Q )
+           pipeline_chain_14__u_mult/stage1_reg_61_ ( IN SI ) ( OUT Q )
+           pipeline_chain_9__u_mult/stage1_reg_53_ ( IN SI ) ( OUT Q )
+           pipeline_chain_20__u_mult/stage3_reg_33_ ( IN SI ) ( OUT Q )
++ PARTITION sclk_4_4
++ STOP U23480 A2 ;
+
+END SCANCHAINS
+
+END DESIGN

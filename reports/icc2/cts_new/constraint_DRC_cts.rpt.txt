@@ -1,0 +1,60 @@
+****************************************
+Report : constraint
+        -all_violators
+        -max_transition
+        -max_capacitance
+        -min_capacitance
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Sep  6 15:46:37 2025
+****************************************
+
+
+
+   Mode: default Corner: default
+   Scenario: default
+   max_transition                                                              
+                             Required        Actual                            
+   Net                      Transition     Transition        Slack  Violation  
+  ---------------------------------------------------------------------------
+   n20237                       0.09           0.09           0.00  (MET)      
+
+  ---------------------------------------------------------------------------
+   Number of max_transition violation(s): 0
+
+   Mode: default Corner: default
+   Scenario: default
+   max_capacitance                                                             
+                             Required        Actual                            
+   Net                      Capacitance    Capacitance       Slack  Violation  
+  ---------------------------------------------------------------------------
+   pipeline_chain_19__u_seq2/n183
+                               32.00          32.01          -0.01  (VIOLATED) 
+     PIN : pipeline_chain_19__u_seq2/U3/Y
+                               32.00          32.01          -0.01  (VIOLATED) 
+
+   final_out[771]              16.00          16.01          -0.01  (VIOLATED) 
+     PIN : HFSBUF_34_1716/Y    16.00          16.01          -0.01  (VIOLATED) 
+
+   n14271                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U18048/CO            8.00           8.01          -0.01  (VIOLATED) 
+
+   HFSNET_2118                 16.00          16.00          -0.00  (VIOLATED) 
+     PIN : HFSBUF_32_2327/Y    16.00          16.00          -0.00  (VIOLATED) 
+
+   res_out[1771]               32.00          32.00          -0.00  (VIOLATED) 
+     PIN : HFSBUF_19_2532/Y    32.00          32.00          -0.00  (VIOLATED) 
+
+   final_out[778]              32.00          32.00          -0.00  (VIOLATED) 
+     PIN : HFSBUF_4_72/Y       32.00          32.00          -0.00  (VIOLATED) 
+
+  ---------------------------------------------------------------------------
+   Number of max_capacitance violation(s): 6
+
+   Mode: default Corner: default
+   Scenario: default
+  ---------------------------------------------------------------------------
+   Number of min_capacitance violation(s): 0
+
+   Total number of violation(s): 6
+1

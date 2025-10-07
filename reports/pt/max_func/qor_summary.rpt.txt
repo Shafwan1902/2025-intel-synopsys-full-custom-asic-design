@@ -1,0 +1,40 @@
+****************************************
+Report : qor
+	-summary
+Design : Top
+Version: V-2023.12-SP4-VAL-20240710
+Date   : Mon Sep  1 22:34:27 2025
+****************************************
+
+  Summary of timing violations
+  -----------------------------------------------------------------------------
+  No setup violations found
+  No hold violations found
+  -----------------------------------------------------------------------------
+
+  Area
+  ---------------------------------------------
+  Net Interconnect area:               59625.81
+  Total cell area:                    134719.94
+  Design Area:                        194345.75
+  ---------------------------------------------
+
+
+  Cell & Pin Count
+  ---------------------------------------------
+  Pin Count:                             130013
+  Hierarchical Cell Count:                    0
+  Hierarchical Port Count:                    0
+  Leaf Cell Count:                        31272
+  ---------------------------------------------
+
+
+  Design Rule Violations
+  ---------------------------------------------
+  Total No. of Pins in Design:           130013
+  max_capacitance Count:                     57
+  max_capacitance Cost:                    4.32
+  Total DRC Cost:                          4.32
+  ---------------------------------------------
+
+1

@@ -1,0 +1,39 @@
+#dc_shell -topo -f scripts/0env_setup.tcl | tee logs/command_{time}_{date}.log
+#
+#This script sets up the design compiler environment, reads in library and RTL files,
+#generates library reports, checks cell availability, and performs a pre-synthesis
+#design integrity check using check_design, create unmapped ddc
+#You only need to run once
+#
+
+#clean start
+remove_design -all
+
+#initialization
+s scripts/lib_setup.tcl 
+
+#library setup and reports
+read_db "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db"
+list_libs
+redirect -tee -file $dc_rpt_lib_path/list_libs_lvt.rpt {report_lib saed32lvt_ss0p95v125c} 
+redirect -tee -file $dc_rpt_lib_path/list_libs_hvt.rpt {report_lib saed32hvt_ss0p95v125c} 
+redirect -tee -file $dc_rpt_lib_path/list_libs_rvt.rpt {report_lib saed32rvt_ss0p95v125c} 
+redirect -tee -file $dc_rpt_lib_path/list_libs_sram.rpt {report_lib saed32sram_ss0p95v125c} 
+
+#testing availability
+get_lib_cell saed32rvt_ss0p95v125c
+get_pins saed32rvt_ss0p95v125c/* 
+get_pins saed32rvt_ss0p95v125c/A1
+#expected outputs {its pins}
+
+#read all rtl level design
+read_sverilog {../rtl/adder.v ../rtl/mult.v ../rtl/seq1.v ../rtl/seq2.v ../rtl/seq3.v ../rtl/top.v}
+
+#set rtl top level 
+current_design Top
+elaborate
+link
+redirect -tee -file "$dc_rpt_presyn_path/check_design.rpt" {check_design}
+
+#create unmapped design to read
+write -format ddc -hier -out "$all_output_path/unmapped_top.ddc"

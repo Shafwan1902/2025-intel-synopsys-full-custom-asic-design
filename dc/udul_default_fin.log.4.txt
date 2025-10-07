@@ -1,0 +1,27 @@
+Info: layer_state_table size is 1 layer_pair_state_table size is 0
+LOD Repeater Report
+library=lib466
+physical layer id=-1
+core_area=[487616 488224] site_area=[152 1672]
+|opcond|=1 |tlayer|=1
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=INVX16_HVT type=inv area=5.082880 leakage_power=429859.000000 udulb=1.385e-07 stage_delay=0.072022 stage_tran=0.055601 stage_length=519992 intr=0.020837 wcapul=6.72092e-05 wresul=1.87775e-09
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=NBUFFX32_HVT type=buf area=10.674048 leakage_power=340343.937500 udulb=1.601e-07 stage_delay=0.160926 stage_tran=0.081126 stage_length=1004872 intr=0.076813 wcapul=6.70817e-05 wresul=1.8742e-09
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=INVX8_HVT type=inv area=3.049728 leakage_power=216967.953125 udulb=1.818e-07 stage_delay=0.106697 stage_tran=0.092215 stage_length=586872 intr=0.021419 wcapul=6.72554e-05 wresul=1.87905e-09
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=NBUFFX8_HVT type=buf area=3.812160 leakage_power=107794.460938 udulb=2.128e-07 stage_delay=0.249414 stage_tran=0.155335 stage_length=1172072 intr=0.068067 wcapul=6.72381e-05 wresul=1.87857e-09
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=INVX4_HVT type=inv area=2.033152 leakage_power=114964.218750 udulb=2.97e-07 stage_delay=0.159378 stage_tran=0.143391 stage_length=536712 intr=0.022578 wcapul=6.72716e-05 wresul=1.8795e-09
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=NBUFFX4_HVT type=buf area=2.541440 leakage_power=59716.464844 udulb=3.079e-07 stage_delay=0.396854 stage_tran=0.269247 stage_length=1289112 intr=0.070731 wcapul=6.72662e-05 wresul=1.87935e-09
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=NBUFFX2_HVT type=buf area=2.033152 leakage_power=38245.292969 udulb=5.032e-07 stage_delay=0.497222 stage_tran=0.372223 stage_length=988152 intr=0.068533 wcapul=6.72657e-05 wresul=1.87934e-09
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=INVX2_HVT type=inv area=1.524864 leakage_power=68801.820312 udulb=5.646e-07 stage_delay=0.170867 stage_tran=0.163172 stage_length=302632 intr=0.024857 wcapul=6.72687e-05 wresul=1.87942e-09
+
+table: opcond=0 tlayer=0 torder=0 mode=0 lib_cell=INVX1_HVT type=inv area=1.270720 leakage_power=47731.316406 udulb=1.128e-06 stage_delay=0.171565 stage_tran=0.166087 stage_length=152152 intr=0.026337 wcapul=6.72622e-05 wresul=1.87923e-09
+
+
+

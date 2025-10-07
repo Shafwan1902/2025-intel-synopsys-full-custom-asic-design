@@ -1,0 +1,253 @@
+Information: Derived library resistance unit is 999.999939 Kohm (Time unit is 1 ns, and Capacitance unit is 0.001000 pF). (DES-028)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_15__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_13__3_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_12__3_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_14__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_12__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_13__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__0_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/addr_reg_3_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_13__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__0_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_13__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/addr_reg_3_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_13__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_14__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__0_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_13__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__0_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_13__3_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_13__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_15__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_12__3_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_12__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_14__u_seq2/memory_reg_14__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_15__2_/SE' in design 'Top' (PARA-124)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_15__2_:SE 8.19897e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_13__3_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_12__3_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_14__2_:SE 8.48673e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_12__2_:SE 8.16231e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_14__1_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_14__6_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_14__4_:SE 7.95684e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_15__6_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_15__4_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_15__2_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_13__5_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_15__0_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_15__1_:SE 8.01631e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/addr_reg_3_:SE 1.73317e-05) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_14__7_:SE 8.01151e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_13__4_:SE 1.59923e-05) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_14__u_seq2/memory_reg_14__0_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_13__2_:SE 1e-06) on net n31528: node not found (PARA-044)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_4__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_3__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_6__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_3__0_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_5__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_5__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_3__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_3__0_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_6__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_4__2_/SE' in design 'Top' (PARA-124)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_4__2_:SE 7.72329e-06) on net n31527: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_3__1_:SE 8.21656e-06) on net n31527: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_6__1_:SE 8.35216e-06) on net n31527: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_3__0_:SE 1e-06) on net n31527: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_5__2_:SE 1e-06) on net n31527: node not found (PARA-044)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_8__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_9__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_8__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_9__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_8__0_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_12__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_11__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_12__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_13__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_11__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_12__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_11__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_12__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_13__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_13__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_11__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_13__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_13__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_8__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_13__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_11__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_12__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_8__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_13__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_11__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_12__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_13__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__6_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_12__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_9__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_9__2_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_11__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_11__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_12__4_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_8__0_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_13__u_seq2/memory_reg_10__5_/SE' in design 'Top' (PARA-124)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_8__1_:SE 7.3862e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_9__1_:SE 7.74751e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_8__2_:SE 7.57233e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_9__2_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_8__0_:SE 8.54168e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_10__2_:SE 8.22899e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_12__6_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_10__6_:SE 8.27304e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_11__6_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_10__7_:SE 8.32923e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_12__7_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_10__4_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_13__7_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_11__4_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_12__4_:SE 8.02133e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_10__5_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_11__5_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_12__5_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_13__5_:SE 1e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_13__4_:SE 8.31722e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_11__7_:SE 7.98376e-06) on net n31526: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_13__u_seq2/memory_reg_13__6_:SE 8.19002e-06) on net n31526: node not found (PARA-044)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_0__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_1__3_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_0__7_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_0__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_1__3_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_0__5_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_0__1_/SE' in design 'Top' (PARA-124)
+Error: Cannot find port/pin 'pipeline_chain_18__u_seq2/memory_reg_0__7_/SE' in design 'Top' (PARA-124)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_0__5_:SE 1e-06) on net n31525: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_1__3_:SE 1e-06) on net n31525: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_0__7_:SE 1e-06) on net n31525: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_0__1_:SE 1e-06) on net n31525: node not found (PARA-044)
+Note - message 'PARA-124' default limit (100) exceeded.  Remainder will be suppressed.
+Error: Invalid capacitor (pipeline_chain_18__u_seq2/memory_reg_4__0_:SE 1e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_0__7_:SE 1e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_1__5_:SE 1e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_1__7_:SE 7.87005e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_5__7_:SE 7.77784e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_5__4_:SE 1e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_6__3_:SE 7.11843e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_0__0_:SE 1.88594e-05) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_6__0_:SE 1.48281e-05) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_0__4_:SE 7.73208e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_1__4_:SE 7.4991e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_5__6_:SE 7.42907e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_0__6_:SE 7.89316e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_0__5_:SE 8.39385e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_7__7_:SE 8.57042e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_7__6_:SE 8.26784e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_8__7_:SE 8.08742e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_7__5_:SE 1e-06) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_2__u_seq2/memory_reg_1__6_:SE 1.54299e-05) on net n31520: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_11__1_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_11__0_:SE 8.47199e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_12__3_:SE 8.36058e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_8__0_:SE 8.09587e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_11__3_:SE 1.82169e-05) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_12__1_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_12__0_:SE 8.16726e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_15__6_:SE 8.55031e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_15__5_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_15__4_:SE 1.41375e-05) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_15__7_:SE 9.42517e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_7__4_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_7__5_:SE 7.88621e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_14__4_:SE 8.15195e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_8__7_:SE 1.38877e-05) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_8__4_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_8__5_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_8__6_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_6__4_:SE 7.76537e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_16__u_seq2/memory_reg_0__3_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_10__0_:SE 8.16648e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_9__1_:SE 8.35589e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_19__u_seq2/memory_reg_10__1_:SE 1e-06) on net n31513: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_7__u_seq2/memory_reg_6__0_:SE 7.47985e-06) on net n31498: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_7__u_seq2/memory_reg_6__1_:SE 7.26095e-06) on net n31498: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_7__u_seq2/memory_reg_3__1_:SE 7.12304e-06) on net n31498: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_7__u_seq2/memory_reg_2__1_:SE 1e-06) on net n31498: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_7__u_seq2/memory_reg_15__5_:SE 1e-06) on net n31498: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_7__u_seq2/memory_reg_14__4_:SE 7.78331e-06) on net n31498: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_7__u_seq2/memory_reg_14__6_:SE 1e-06) on net n31498: node not found (PARA-044)
+Error: Invalid capacitor (pipeline_chain_7__u_seq2/memory_reg_8__3_:SE 1e-06) on net n31498: node not found (PARA-044)
+Note - message 'PARA-044' default limit (100) exceeded.  Remainder will be suppressed.
+
+
+****************************************
+Report : read_parasitics /nfs/png/disks/MDC_Elite/2025/manis/assignment_v3.2/output/icc2/final/MYTOP.spef.maxTLU_125.spef
+Design : Top
+Version: V-2023.12-SP4-VAL-20240710
+Date   : Mon Sep  1 22:11:35 2025
+****************************************
+
+        79206 error(s)
+        Format is SPEF
+        Annotated nets                   :        34338
+        Annotated capacitances           :       802894
+        Annotated resistances            :       768556
+        Reduced coupling capacitances    :            0
+        Annotated PI models              :            0
+        Annotated Elmore delays          :            0
+
+
+****************************************
+Report : annotated_parasitics
+	-check
+	-internal_nets
+	-boundary_nets
+	-driverless_nets
+	-loadless_nets
+	-pin_to_pin_nets
+Design : Top
+Version: V-2023.12-SP4-VAL-20240710
+Date   : Mon Sep  1 22:11:35 2025
+****************************************
+
+                    |         |         |         |   RC    |   Not   |
+Net Type            |  Total  | Lumped  |  RC pi  | network |Annotated|
+--------------------+---------+---------+---------+---------+---------+
+Internal nets       |         |         |         |         |         |
+  - Pin to pin nets |   29659 |       0 |       0 |   29347 |     312 |
+  - Driverless nets |     406 |       0 |       0 |       0 |     406 |
+  - Loadless nets   |      66 |       0 |       0 |       0 |      66 |
+--------------------+---------+---------+---------+---------+---------+
+
+Boundary/port nets  |         |         |         |         |         |
+  - Pin to pin nets |    5069 |       0 |       0 |    4991 |      78 |
+  - Driverless nets |     182 |       0 |       0 |       0 |     182 |
+  - Loadless nets   |       0 |       0 |       0 |       0 |       0 |
+--------------------+---------+---------+---------+---------+---------+
+
+                    |   35382 |       0 |       0 |   34338 |    1044 |
+
+

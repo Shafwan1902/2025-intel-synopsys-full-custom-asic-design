@@ -1,0 +1,259 @@
+Successfully added cut lay CO
+Successfully added cut lay VIA1
+Successfully added cut lay VIA2
+Successfully added cut lay VIA3
+Successfully added cut lay VIA4
+Successfully added cut lay VIA5
+Successfully added cut lay VIA6
+Successfully added cut lay VIA7
+Successfully added cut lay VIA8
+Successfully added cut lay VIARDL
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M8
+Turn off antenna since no rule is specified
+Warning: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Cannot find a default contact code for layer CO. (ZRT-022)
+track auto-fill added 2 tracks on M1
+track auto-fill added 2 tracks on M2
+track auto-fill added 2 tracks on M3
+track auto-fill added 2 tracks on M4
+track auto-fill added 2 tracks on M5
+track auto-fill added 2 tracks on M6
+track auto-fill added 2 tracks on M7
+track auto-fill added 2 tracks on M8
+track auto-fill added 2 tracks on M9
+track auto-fill added 1 tracks on MRDL
+Found 0 pin access route guide groups.
+Info: number of net_type_blockage: 0 
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.32 outside the layer range. (ZRT-707)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Total number of nets = 41983, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+[DBIn Done] Elapsed real time: 0:00:03 
+[DBIn Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:21 total=0:00:21
+[DBIn Done] Stage (MB): Used  128  Alloctr  129  Proc    0 
+[DBIn Done] Total (MB): Used  131  Alloctr  133  Proc 6918 
+
+
+Start checking for open nets ... 
+
+Total number of nets = 41983, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+
+Check 41983 nets, 0 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used  129  Alloctr  132  Proc 6918 
+Printing options for 'route.common.*'
+common.advance_node_timing_driven_mode                  :	 false               
+common.aggressive_blockage_via_modeling                 :	 false               
+common.allow_connection_to_stripe_covered_secondary_pg_pin:	 false               
+common.allow_pg_as_shield                               :	 true                
+common.allow_tie_off_connect_to_shield                  :	 true                
+common.check_shield                                     :	 true                
+common.clock_net_max_layer_mode                         :	 unknown             
+common.clock_net_min_layer_mode                         :	 unknown             
+common.clock_topology                                   :	 normal              
+common.color_based_dpt_flow                             :	 false               
+common.comb_distance                                    :	 2                   
+common.concurrent_redundant_via_effort_level            :	 low                 
+common.concurrent_redundant_via_mode                    :	 off                 
+common.connect_floating_shapes                          :	 false               
+common.connect_with_pin_width_on_macros                 :	 false               
+common.connect_with_pin_width_on_macros_effort_level    :	 low                 
+common.connect_with_pin_width_on_top_level_ports        :	 false               
+common.connect_within_pins_by_layer_name                :	                     
+common.continue_with_frozen_global_route                :	 false               
+common.create_floating_shields                          :	 false               
+common.create_nets_for_floating_pins_pattern_must_join_via_ladder:	 false               
+common.crosstalk_effort_level                           :	 low                 
+common.dbin_enable_safe_via_array_reading               :	 true                
+common.debug_read_patterned_metal_shapes                :	 true                
+common.derive_connect_within_pin_via_region             :	 false               
+common.eco_route_concurrent_redundant_via_effort_level  :	 low                 
+common.eco_route_concurrent_redundant_via_mode          :	 off                 
+common.eco_route_fix_existing_drc                       :	 true                
+common.enable_aggressive_stack_range_over_max_stack_level_fixing:	 false               
+common.enable_multi_thread                              :	 true                
+common.enable_non_zero_blockage_ek_block                :	 false               
+common.enable_pin_width_connection                      :	 false               
+common.enable_single_connection_for_var_width           :	 true                
+common.enable_via_extension_blocking_for_blockage       :	 true                
+common.extra_nonpreferred_direction_wire_cost_multiplier_by_layer_name:	                     
+common.extra_preferred_direction_wire_cost_multiplier_by_layer_name:	                     
+common.extra_via_cost_multiplier_by_layer_name          :	                     
+common.extra_via_off_grid_cost_multiplier_by_layer_name :	                     
+common.filter_custom_via_def_with_no_vias               :	 false               
+common.filter_redundant_via_mapping                     :	 true                
+common.floorplan_aware_hier_va_gr                       :	 true                
+common.focus_scenario                                   :	 none                
+common.forbid_new_metal_by_layer_name                   :	                     
+common.forbid_odd_pitch_jog_by_layer_name               :	                     
+common.freeze_layer_by_layer_name                       :	                     
+common.freeze_via_to_frozen_layer_by_layer_name         :	                     
+common.global_max_layer_mode                            :	 soft                
+common.global_min_layer_mode                            :	 soft                
+common.high_resistance_flow                             :	 true                
+common.ignore_soft_drc_at_final_eco_stage               :	 false               
+common.ignore_var_spacing_to_blockage                   :	 false               
+common.ignore_var_spacing_to_pg                         :	 false               
+common.ignore_var_spacing_to_shield                     :	 true                
+common.interactive_mode_clear_timing                    :	 true                
+common.mark_clock_nets_minor_change                     :	 true                
+common.min_edge_offset_for_macro_pin_connection_by_layer_name:	                     
+common.min_edge_offset_for_secondary_pg_pin_connection_by_layer_name:	                     
+common.min_edge_offset_for_top_level_pin_connection_by_layer_name:	                     
+common.min_max_layer_distance_threshold                 :	 0                   
+common.min_shield_length_by_layer_name                  :	                     
+common.ndr_by_delta_voltage                             :	 false               
+common.net_max_layer_mode                               :	 hard                
+common.net_max_layer_mode_soft_cost                     :	 medium              
+common.net_min_layer_mode                               :	 soft                
+common.net_min_layer_mode_soft_cost                     :	 medium              
+common.no_merge_ndr_rule_for_single_connection          :	 false               
+common.number_of_secondary_pg_pin_connections           :	 0                   
+common.number_of_vias_over_global_max_layer             :	 1                   
+common.number_of_vias_over_net_max_layer                :	 1                   
+common.number_of_vias_under_global_min_layer            :	 1                   
+common.number_of_vias_under_net_min_layer               :	 1                   
+common.optimize_big_via_for_pin_access                  :	 false               
+common.optimize_for_dense_pin_access                    :	 false               
+common.optimize_for_fat_pin_access                      :	 true                
+common.optimize_for_pin_access                          :	 false               
+common.pg_shield_distance_threshold                     :	 0                   
+common.pin_spacing_control_mode                         :	 true                
+common.post_detail_route_fix_soft_violations            :	 false               
+common.post_detail_route_redundant_via_insertion        :	 off                 
+common.post_eco_route_fix_soft_violations               :	 false               
+common.post_group_route_fix_soft_violations             :	 false               
+common.post_incremental_detail_route_fix_soft_violations:	 false               
+common.prevent_bridge_pattern                           :	 {secondary_pg false} {clock false}
+common.process_design_masters_in_dbin                   :	 false               
+common.process_pg_augmentation_shapes                   :	 false               
+common.prune_orphaned_and_floating_nets_shapes_mode     :	 none                
+common.query_based_shield_ratio_reporting               :	 false               
+common.rc_driven_setup_effort_level                     :	 medium              
+common.reconnect_pin_after_shield_modification          :	 false               
+common.reduce_shield_same_net_drcs                      :	 false               
+common.redundant_via_exclude_weight_group_by_layer_name :	                     
+common.redundant_via_include_weight_group_by_layer_name :	                     
+common.relax_soft_spacing_outside_min_max_layer         :	 true                
+common.reroute_clock_shapes                             :	 false               
+common.reroute_user_shapes                              :	 false               
+common.reshield_modified_nets                           :	 off                 
+common.rotate_default_vias                              :	 true                
+common.route_soft_rule_effort_level                     :	 medium              
+common.route_top_boundary_mode                          :	 stay_inside         
+common.routing_rule_effort_level                        :	                     
+common.secondary_pg_pin_effort_level                    :	 hard                
+common.separate_tie_off_from_secondary_pg               :	 false               
+common.shield_tie_off_max_detail_route_iteration        :	 3                   
+common.shielding_nets                                   :	                     
+common.single_connection_to_pins                        :	 off                 
+common.skip_pg_augmentation_rects                       :	 false               
+common.skip_pg_augmentation_wires_and_vias              :	 false               
+common.skip_pnet_ignore_shapes                          :	 false               
+common.soft_rule_weight_to_effort_level_map             :	 {low low} {medium medium} {high high}
+common.threshold_noise_ratio                            :	 0.35                
+common.tie_all_out_of_boundary_via_ladder_ports         :	 false               
+common.tie_off_mode                                     :	 all                 
+common.track_auto_fill                                  :	 true                
+common.track_use_area                                   :	 false               
+common.track_width_constraint_relaxed_mode              :	 0                   
+common.treat_all_analog_nets_as_signal_nets_for_routing :	 false               
+common.treat_all_cover_cells_as_lib_cells_for_routing   :	 false               
+common.treat_all_scan_nets_as_signal_nets_for_routing   :	 true                
+common.treat_rectangles_as_routes                       :	 false               
+common.treat_via_array_as_big_via                       :	 false               
+common.use_min_shield_length_as_ndr_spacing_length_threshold:	 false               
+common.use_weighted_secondary_pg_pin_count              :	 false               
+common.verbose_level                                    :	 1                   
+common.via_array_mode                                   :	 all                 
+common.via_ladder_ndr_mode                              :	 full                
+common.via_ladder_top_layer_overrides_net_min_layer     :	 false               
+common.via_on_grid_by_layer_name                        :	                     
+common.virtual_flat                                     :	 false               
+common.voltage_area_aware                               :	 relaxed             
+common.weighted_number_of_secondary_pg_pin_connections  :	 0                   
+common.wide_macro_pin_as_fat_wire                       :	 false               
+common.wire_on_grid_by_layer_name                       :	                     
+common.write_instance_via_color                         :	 false               
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 373560 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 163782  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (163782  vias)
+    Layer VIA2       =  0.00% (0      / 154090  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (154090  vias)
+    Layer VIA3       =  0.00% (0      / 33938   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (33938   vias)
+    Layer VIA4       =  0.00% (0      / 14387   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (14387   vias)
+    Layer VIA5       =  0.00% (0      / 4981    vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (4981    vias)
+    Layer VIA6       =  0.00% (0      / 2300    vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (2300    vias)
+    Layer VIA7       =  0.00% (0      / 82      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (82      vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 373560 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 163782  vias)
+    Layer VIA2       =  0.00% (0      / 154090  vias)
+    Layer VIA3       =  0.00% (0      / 33938   vias)
+    Layer VIA4       =  0.00% (0      / 14387   vias)
+    Layer VIA5       =  0.00% (0      / 4981    vias)
+    Layer VIA6       =  0.00% (0      / 2300    vias)
+    Layer VIA7       =  0.00% (0      / 82      vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 373560 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 163782  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (163782  vias)
+    Layer VIA2       =  0.00% (0      / 154090  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (154090  vias)
+    Layer VIA3       =  0.00% (0      / 33938   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (33938   vias)
+    Layer VIA4       =  0.00% (0      / 14387   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (14387   vias)
+    Layer VIA5       =  0.00% (0      / 4981    vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (4981    vias)
+    Layer VIA6       =  0.00% (0      / 2300    vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (2300    vias)
+    Layer VIA7       =  0.00% (0      / 82      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (82      vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 41983, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 30322
+Total number of antenna violations = no antenna rules defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+

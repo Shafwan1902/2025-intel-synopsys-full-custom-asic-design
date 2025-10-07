@@ -1,0 +1,39 @@
+#Environment setup for DC Shell
+#--reports
+#  |___dc
+#       |___pre_synthesis
+#       |___post_synthesis_analysis
+#       |___library
+#  |___dft
+#      |___predft
+#      |___postdft
+#
+#shortcut
+alias s "source -verbose -echo"
+
+#dc reports setup pre synthesis
+set dc_rpt "../reports/dc"
+set dc_rpt_lib_path "../reports/dc/library"
+set dc_rpt_presyn_path "../reports/dc/pre_synthesis"
+file mkdir $dc_rpt
+file mkdir $dc_rpt_lib_path
+file mkdir $dc_rpt_presyn_path 
+
+#dc output
+set all_output_path "../output"
+file mkdir $all_output_path
+
+#dc reports analysis
+set dc_rpt_analysis "../reports/dc/post_synthesis_analysis"
+file mkdir $dc_rpt_analysis
+
+#pre-dft reports
+set dft_rpt_path "../reports/dft"
+set dft_rpt_predft_path "../reports/dft/pre_dft"
+file mkdir $dft_rpt_path
+file mkdir $dft_rpt_predft_path 
+
+#post-dft reports
+set dft_rpt_postdft_path "../reports/dft/post_dft"
+file mkdir $dft_rpt_postdft_path
+

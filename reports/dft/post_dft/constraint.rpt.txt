@@ -1,0 +1,45 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Aug 30 16:15:20 2025
+****************************************
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   n26979                       0.09           0.12          -0.03  (VIOLATED)
+       PIN :   pipeline_chain_9__u_mult/stage3_reg_0_/Q
+                                0.09           0.12          -0.03  (VIOLATED)
+   n26689                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n21541                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n18982                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n19617                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+
+   -----------------------------------------------------------------
+   Total                      5                  -0.03  
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   n26979                      16.00          24.43          -8.43  (VIOLATED)
+   pipeline_chain_26__u_seq2/memory[22]
+                               16.00          20.02          -4.02  (VIOLATED)
+   final_out[340]              16.00          16.99          -0.99  (VIOLATED)
+   final_out[341]              16.00          16.73          -0.73  (VIOLATED)
+   final_out[404]              16.00          16.42          -0.42  (VIOLATED)
+   final_out[405]              16.00          16.23          -0.23  (VIOLATED)
+   res_out[1725]               16.00          16.07          -0.07  (VIOLATED)
+   final_out[407]              16.00          16.02          -0.02  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      8                 -14.91  
+
+1

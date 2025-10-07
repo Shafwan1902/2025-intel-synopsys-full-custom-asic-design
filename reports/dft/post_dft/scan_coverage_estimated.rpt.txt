@@ -1,0 +1,79 @@
+In mode: Internal_scan...
+  Loading target library 'saed32hvt_ss0p95v125c'
+  Design has scan chains in this mode
+  Design is scan routed
+  Post-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  ...checking vector rules...
+  ...checking clock rules...
+  ...checking scan chain rules...
+  ...checking scan compression rules...
+  ...checking X-state rules...
+  ...checking tristate rules...
+  ...extracting scan details...
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 0
+
+-----------------------------------------------------------------
+
+
+Test Design rule checking did not find violations
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  0 out of 10945 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      *10672 cells are valid scan cells
+      * 272 cells are non-scan shift-register cells
+      *   1 cell is a synchronization element
+
+Information: Test design rule checking completed. (TEST-123)
+  Running test coverage estimation...
+ 313366 faults were added to fault list.
+ 0          197249  22436         0/0/5    92.74%      0.16
+ 0           14308   8128         0/0/9    97.37%      0.22
+ 0            4750   3378        0/0/16    98.91%      0.28
+ 0            1743   1635        0/0/20    99.47%      0.33
+ 0             661    974        0/0/24    99.69%      0.37
+ 0             318    656        0/0/27    99.79%      0.40
+ 0             201    455        0/0/30    99.85%      0.43
+ 0             120    335        0/0/30    99.89%      0.45
+ 0             128    206        1/0/33    99.93%      0.48
+ 0              92    114        1/0/33    99.96%      0.49
+ 0              65     49        1/0/33    99.98%      0.50
+ 0              41      8        1/0/38   100.00%      0.53
+ 
+            Pattern Summary Report
+ -----------------------------------------------
+ #internal patterns                           0
+ -----------------------------------------------
+ 
+
+     Uncollapsed Stuck Fault Summary Report
+ -----------------------------------------------
+ fault class                     code   #faults
+ ------------------------------  ----  ---------
+ Detected                         DT     309203
+ Possibly detected                PT          0
+ Undetectable                     UD       4155
+ ATPG untestable                  AU          0
+ Not detected                     ND          8
+ -----------------------------------------------
+ total faults                            313366
+ test coverage                           100.00%
+ -----------------------------------------------
+  Information: The test coverage above may be inferior
+               than the real test coverage with customized
+               protocol and test simulation library.
+1

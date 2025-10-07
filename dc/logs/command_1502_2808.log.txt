@@ -1,0 +1,627 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version S-2021.06-SP2 for linux64 - Aug 24, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Starting shell in Topographical mode...
+Initializing gui preferences from file  /nfs/site/home/yabdrash/.synopsys_dc_gui/preferences.tcl
+#Environment setup for DC Shell
+#shortcut
+alias s "source -verbose -echo"
+#dc reports setup pre synthesis
+set dc_rpt "../reports/dc"
+../reports/dc
+set dc_rpt_lib_path "../reports/dc/library"
+../reports/dc/library
+set dc_rpt_presyn_path "../reports/dc/pre_synthesis"
+../reports/dc/pre_synthesis
+#dc output
+set all_output_path "../output"
+../output
+#dc reports analysis
+set dc_rpt_analysis "../reports/dc/post_synthesis_analysis"
+../reports/dc/post_synthesis_analysis
+../reports/dc/post_synthesis_analysis
+dc_shell-topo> remove_design -all
+1
+dc_shell-topo> source scripts/lib_setup.tcl
+
+------------------- Internal Reference Library Settings -----------------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/milkyway/SRAM32NM
+
+
+------------------- Control File Reference Library Settings -----------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/milkyway/SRAM32NM
+-------------------------------------------------------------------------
+
+
+Sanity check for TLU+ vs MW-Tech files:
+ max_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+ min_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+ mapping_file: ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map
+ max_emul_tlu+: **NONE**
+ min_emul_tlu+: **NONE**
+ MW design lib: MYLIB
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+1
+dc_shell-topo> read_db "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_s s0p95v125c.db"
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/gtech.db'
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/standard.sldb'
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m. (PSYN-878)
+Warning: The pin direction of 'INP' pin on 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is inconsistent with the same-name pin in the '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m' physical library. No physical link for the logical lib cell. (PSYN-058)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/milkyway/SRAM32NM. (PSYN-878)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+  Loading link library 'gtech'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'. (DDB-24)
+Loaded 0 designs.
+dc_shell-topo> read_ddc ../output/netlist_top.ddc
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m. (PSYN-878)
+Warning: The pin direction of 'INP' pin on 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is inconsistent with the same-name pin in the '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m' physical library. No physical link for the logical lib cell. (PSYN-058)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/milkyway/SRAM32NM. (PSYN-878)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Reading ddc file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/output/netlist_top.ddc'.
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Loaded 21 designs.
+Current design is 'Top'.
+Top SeqLogicBlock2_Mod_30 SeqLogicBlock2_Mod_11 SeqLogicBlock2_Mod_12 SeqLogicBlock2_Mod_13 SeqLogicBlock2_Mod_14 SeqLogicBlock2_Mod_15 SeqLogicBlock2_Mod_16 SeqLogicBlock2_Mod_17 SeqLogicBlock2_Mod_18 SeqLogicBlock2_Mod_19 SeqLogicBlock2_Mod_20 SeqLogicBlock2_Mod_21 SeqLogicBlock2_Mod_22 SeqLogicBlock2_Mod_23 SeqLogicBlock2_Mod_24 SeqLogicBlock2_Mod_25 SeqLogicBlock2_Mod_26 SeqLogicBlock2_Mod_27 SeqLogicBlock2_Mod_28 SeqLogicBlock2_Mod_29
+dc_shell-topo> current_de
+current_design      current_design_name 
+dc_shell-topo> current_design Top
+Current design is 'Top'.
+{Top}
+dc_shell-topo> set test_default_period 10
+10
+dc_shell-topo> set test_default_strobe 5
+5
+dc_shell-topo> set_dft_signal -view exist_dft -type ScanClock -port {clk sclk} \
+[K[11G
+timing {45 55}
+Error: extra positional option 'timing' (CMD-012)
+Error: extra positional option '45 55' (CMD-012)
+dc_shell-topo> set_dft_signal -view exist_dft -type Reset -port rst_n \
+[K[11G
+-active_state 0[K[K[K[K[K[K[K[K[K[K[K[K[K
+[Ksdada
+Error: extra positional option 'sdada' (CMD-012)
+dc_shell-topo> set_dft_signal -view exist_dft -type ScanClock -port {clk sclk} \
+[K[11G
+-timing {45 55}
+Invalid View specified: exist_dft -- use ( spec/existing_dft )
+Discarded dft signal specification
+0
+dc_shell-topo> set_dft_signal -view exist_dft -type Reset -port rst_n \
+[K[11G
+-active_state 0
+Invalid View specified: exist_dft -- use ( spec/existing_dft )
+Discarded dft signal specification
+0
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanClock -port {clk sclk} \
+[K[11G
+-timing {45 55}
+Error: Timing specifications are outside of the default period 10.000000 ns. (TESTXG-69)
+Discarded dft signal specification
+0
+dc_shell-topo> set_dft_signal -view existing_dft -type Reset -port rst_n \
+[K[11G
+-active_state 0
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanClock -port {clk sclk} \
+[K[11G
+-timing {4.5 5.5}
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type Reset -port rst_n \
+[K[11G
+-active_state 0
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> create_test_protocol
+In mode: all_dft...
+
+Information: Starting test protocol creation. (TEST-219)
+  ...reading user specified clock signals...
+Information: Identified system/test clock port clk (4.0,5.0). (TEST-265)
+Information: Identified system/test clock port sclk (4.0,5.0). (TEST-265)
+  ...reading user specified asynchronous signals...
+Information: Identified active low asynchronous control port rst_n. (TEST-266)
+Warning: The multi-clock protocol requires that the strobe time be before a clock's pulse if it is used for transition fault testing. (TESTXG-56)
+1
+dc_shell-topo> dft_drc
+In mode: all_dft...
+  Pre-DFT DRC enabled
+Warning: Design 'Top' contains 3 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+Warning: insert_dft does not perform synthesis optimization in DC-Topographical mode. Run incremental compile to reoptimize the design after insert_dft. (TESTXG-58)
+  ...basic checks...
+  ...basic sequential cell checks...
+  	...checking for scan equivalents...
+  ...checking vector rules...
+  ...checking pre-dft rules...
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 0
+
+-----------------------------------------------------------------
+
+
+Test Design rule checking did not find violations
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  0 out of 10944 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      *10944 cells are valid scan cells
+
+Information: Test design rule checking completed. (TEST-123)
+1
+dc_shell-topo> c[Kc[Ktest[K[K[K[Kcreate
+create_auto_path_groups       create_net_search_pattern     create_qtm_port               
+create_block_abstraction      create_net_shape              create_register_bank          
+create_bounds                 create_operating_conditions   create_route_guide            
+create_bsd_patterns           create_pass_directories       create_rp_group               
+create_buffer_tree            create_pin_guide              create_scenario               
+create_bus                    create_placement_blockage     create_site_row               
+create_cache                  create_port                   create_supply_net             
+create_cell                   create_power_domain           create_supply_port            
+create_clock                  create_power_state_group      create_supply_set             
+create_command_group          create_power_switch           create_terminal               
+create_core_area              create_pst                    create_test_protocol          
+create_design                 create_qor_snapshot           create_test_vectors           
+create_dft_netlist            create_qtm_clock              create_track                  
+create_die_area               create_qtm_constraint_arc     create_user_shape             
+create_generated_clock        create_qtm_delay_arc          create_via                    
+create_link_block_abstraction create_qtm_drive_type         create_via_master             
+create_logic_net              create_qtm_generated_clock    create_via_rule               
+create_logic_port             create_qtm_insertion_delay    create_voltage_area           
+create_multibit               create_qtm_load_type          create_wiring_keepouts        
+create_mw_lib                 create_qtm_model              
+create_net                    create_qtm_path_type          
+dc_shell-topo> create_tes
+create_test_protocol create_test_vectors  
+dc_shell-topo> create_test_protocol [1@mc[1@ac[1@nc[1@ c
+2.  Synopsys Commands                                        Command Reference
+                             create_test_protocol
+
+NAME
+       create_test_protocol
+              Creates a test protocol based on user specifications.
+
+SYNTAX
+       status create_test_protocol
+               [-infer_asynch]
+               [-infer_clock]
+               [-capture_procedure single_clock | multi_clock]
+
+ARGUMENTS
+       -infer_asynch
+              Infers asynchronous set and reset signals in the design.
+
+       -infer_clock
+              Infers test clocks in the design.
+
+       -capture_procedure single_clock | multi_clock
+              Specifies the capture procedure type.  The multi_clock type cre-
+              ates a protocol file that uses generic  capture  procedures  for
+              all  capture  clocks.   The single_clock type creates a protocol
+              file that uses the legacy 3-vector capture  procedures  for  all
+              capture clocks.
+
+              The default is multi_clock.
+
+DESCRIPTION
+       The  create_test_protocol  command creates a test protocol for the cur-
+       rent design based on user specifications issued prior to  running  this
+       command.    The   specifications   are  made  using  commands  such  as
+       set_dft_signal.
+
+       This command removes any protocol that is present in memory  due  to  a
+       previous  execution  of create_test_protocol.  However, if the protocol
+       is present in memory due to a previous execution of read_test_protocol,
+       it issues a warning and does not create a new test protocol.
+
+       This  command  checks  whether the user-specified values are consistent
+       with each other.  If they are not, it issues an error and does not gen-
+       erate a protocol.
+
+       If -infer_asynch is specified, create_test_protocol infers asynchronous
+       set and reset signals in the design, and places them at off state  dur-
+       ing scan shifting.
+
+       If  -infer_clock  is  specified, create_test_protocol infers test clock
+       pins from the design, and pulses them during scan shifting.  The timing
+       of    the   test   clock   is   based   on   the   test_default_period,
+       test_default_delay, test_default_strobe, and  test_default_strobe_width
+       variables.
+
+       Both  -infer_asynch  and -infer_clock take previous user specifications
+       into account.
+
+       When the default -capture_procedure multi_clock is specified, the  pro-
+       tocol  file  contains four capture procedures: multiclock_capture, all-
+       clock_capture, allclock_launch, and allclock_launch_capture.  This sin-
+       gle  protocol file can be used for ATPG stuck-at, transition delay, and
+       path delay testing.
+
+       The  create_test_protocol  command  automatically  generates   a   mas-
+       ter_observe procedure for LSSD designs in STIL format.  However, to use
+       this feature, you must set the scan style to LSSD design by  using  the
+       set_scan_configuration -style command.
+
+       The  create_test_protocol command should be executed before running the
+       dft_drc command because design rule checking r
+AS SPECIFIED BY USER
+========================================
+
+
+========================================
+AS BUILT BY insert_dft
+========================================
+
+No scan path defined in this mode.
+
+0
+dc_shell-topo> report_scan_path -view exist -cell all
+ 
+****************************************
+Report : Scan path
+Design : Top
+Version: S-2021.06-SP2
+Date   : Thu Aug 28 18:06:17 2025
+****************************************
+
+========================================
+TEST MODE: Internal_scan
+VIEW     : Existing DFT
+========================================
+
+========================================
+AS SPECIFIED BY USER
+========================================
+
+
+========================================
+AS BUILT BY insert_dft
+========================================
+
+No scan path defined in this mode.
+
+0
+dc_shell-topo> report_scan
+report_scan_cell_set                  report_scan_path                      
+report_scan_chain                     report_scan_register_type             
+report_scan_compression_configuration report_scan_replacement               
+report_scan_configuration             report_scan_skew_group                
+report_scan_group                     report_scan_state                     
+report_scan_link                      report_scan_suppress_toggling         
+dc_shell-topo> report_scan_configuration 
+ 
+****************************************
+Report : Scan configuration
+Design : Top
+Version: S-2021.06-SP2
+Date   : Thu Aug 28 18:06:40 2025
+****************************************
+
+========================================
+TEST MODE: all_dft
+VIEW     : Specification
+========================================
+Chain count:                           4
+Scan Style:                            Multiplexed flip-flop
+Maximum scan chain length:             Undefined
+Exact scan chain length:               Undefined
+Physical Partitioning:                 Horizontal
+Replace:                               True
+Preserve multibit segments:            False
+Clock mixing:                          Mix clocks
+Internal clocks:                       none
+Retiming Flops:                        none
+Add lockup:                            True
+Lockup type:                           latch
+Insert terminal lockup:                False
+Create dedicated scan out ports:       False
+Shared scan in:                        0
+Bidirectional mode:                    No bidirectional type
+Internal Clock Mixing:                 False
+Test Clocks by System Clocks:          False
+Hierarchical Isolation:                False
+Multiple Scan Enable:                  Disable
+Pipeline Scan Enable:                  Disable
+Voltage Mixing:                        False
+Identify Shift Register:               False
+Power Domain Mixing:                   False
+Reuse MV Isolation Cells:              True
+Multi LSSD:                            Disable
+
+1
+dc_shell-topo> redirect -tee -file "$dft_rpt_dft_path/coverage_estimate.rpt" \
+[K[11G
+{dft_drc -coverage_estimate}
+In mode: all_dft...
+  Pre-DFT DRC enabled
+Warning: Design 'Top' contains 4 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+Error: Invalid test protocol. Create a test protocol again. (TEST-1310)
+Error: Could not perform design rule checking. (TEST-1311)
+0
+dc_shell-topo> 
+dc_shell-topo> redirect -tee -file "$dft_rpt_dft_path/scan_config.rpt" \
+[K[11G
+{report_scan_configuration}
+ 
+****************************************
+Report : Scan configuration
+Design : Top
+Version: S-2021.06-SP2
+Date   : Thu Aug 28 18:08:01 2025
+****************************************
+
+========================================
+TEST MODE: all_dft
+VIEW     : Specification
+========================================
+Chain count:                           4
+Scan Style:                            Multiplexed flip-flop
+Maximum scan chain length:             Undefined
+Exact scan chain length:               Undefined
+Physical Partitioning:                 Horizontal
+Replace:                               True
+Preserve multibit segments:            False
+Clock mixing:                          Mix clocks
+Internal clocks:                       none
+Retiming Flops:                        none
+Add lockup:                            True
+Lockup type:                           latch
+Insert terminal lockup:                False
+Create dedicated scan out ports:       False
+Shared scan in:                        0
+Bidirectional mode:                    No bidirectional type
+Internal Clock Mixing:                 False
+Test Clocks by System Clocks:          False
+Hierarchical Isolation:                False
+Multiple Scan Enable:                  Disable
+Pipeline Scan Enable:                  Disable
+Voltage Mixing:                        False
+Identify Shift Register:               False
+Power Domain Mixing:                   False
+Reuse MV Isolation Cells:              True
+Multi LSSD:                            Disable
+
+1
+dc_shell-topo> s 0emv[K[K[K[K[Kcd 0sc[K[K[Kscripts/0env_setup.tcl [P [P [1@s 
+#Environment setup for DC Shell
+#shortcut
+alias s "source -verbose -echo"
+#dc reports setup pre synthesis
+set dc_rpt "../reports/dc"
+../reports/dc
+set dc_rpt_lib_path "../reports/dc/library"
+../reports/dc/library
+set dc_rpt_presyn_path "../reports/dc/pre_synthesis"
+../reports/dc/pre_synthesis
+file mkdir $dc_rpt
+file mkdir $dc_rpt_lib_path
+file mkdir $dc_rpt_presyn_path 
+#dc output
+set all_output_path "../output"
+../output
+file mkdir $all_output_path
+#dc reports analysis
+set dc_rpt_analysis "../reports/dc/post_synthesis_analysis"
+../reports/dc/post_synthesis_analysis
+file mkdir $dc_rpt_analysis
+#pre-dft reports
+set dft_rpt_path "../reports/dft"
+../reports/dft
+set dft_rpt_predft_path "../reports/dft/pre_dft"
+../reports/dft/pre_dft
+file mkdir $dft_rpt_path
+file mkdir $dft_rpt_predft_path 
+#dft reports
+set dft_rpt_dft_path "../reports/dft/dft"
+../reports/dft/dft
+file mkdir $dft_rpt_dft_path
+#post-dft reports
+set dft_rpt_postdft_path "../reports/dft/post_dft"
+../reports/dft/post_dft
+file mkdir $dft_rpt_postdft_path
+dc_shell-topo> #scan enable
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanEnable -port test_se
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> 
+dc_shell-topo> #scan data in 
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanDataIn -port test_si1
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanDataIn -port test_si2
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanDataIn -port test_si3
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanDataIn -port test_si4
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> 
+dc_shell-topo> #scan data out
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanDataOut -port res_out[1976]
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanDataOut -port res_out[1987]
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanDataOut -port res_out[2041]
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanDataOut -port seq1_out[246]
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> preview_dft 
+****************************************************************
+Information: TLUPlus based RC computation is enabled. (RCEX-141)
+****************************************************************
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is TLU+. (RCEX-015)
+Information: Library Derived Cap for layer M1 : 0.16 0.14 (RCEX-011)
+Information: Library Derived Res for layer M1 : 2e-06 2e-06 (RCEX-011)
+Information: Library Derived Cap for layer M2 : 0.17 0.15 (RCEX-011)
+Information: Library Derived Res for layer M2 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M3 : 0.11 0.096 (RCEX-011)
+Information: Library Derived Res for layer M3 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M4 : 0.11 0.096 (RCEX-011)
+Information: Library Derived Res for layer M4 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M5 : 0.094 0.079 (RCEX-011)
+Information: Library Derived Res for layer M5 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M6 : 0.094 0.079 (RCEX-011)
+Information: Library Derived Res for layer M6 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M7 : 0.092 0.076 (RCEX-011)
+Information: Library Derived Res for layer M7 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M8 : 0.092 0.076 (RCEX-011)
+Information: Library Derived Res for layer M8 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M9 : 0.11 0.088 (RCEX-011)
+Information: Library Derived Res for layer M9 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer MRDL : 0.11 0.11 (RCEX-011)
+Information: Library Derived Res for layer MRDL : 1.8e-07 1.8e-07 (RCEX-011)
+Information: Library Derived Horizontal Cap : 0.11 0.096 (RCEX-011)
+Information: Library Derived Horizontal Res : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Vertical Cap : 0.11 0.1 (RCEX-011)
+Information: Library Derived Vertical Res : 1.5e-06 1.5e-06 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 4.6e-07 4.6e-07 (RCEX-011)
+
+Running DFT insertion in topographical mode.
+
+Information: Starting test design rule checking. (TEST-222)
+Error: Invalid test protocol. Create a test protocol again. (TEST-1310)
+Error: Could not run pre-dft design rule checking. (TEST-1313)
+0
+dc_shell-topo> create_tes
+create_test_protocol create_test_vectors  
+dc_shell-topo> create_test_protocol 
+In mode: all_dft...
+
+Information: Starting test protocol creation. (TEST-219)
+  ...reading user specified clock signals...
+Information: Identified system/test clock port clk (4.0,5.0). (TEST-265)
+Information: Identified system/test clock port sclk (4.0,5.0). (TEST-265)
+  ...reading user specified asynchronous signals...
+Information: Identified active low asynchronous control port rst_n. (TEST-266)
+Warning: The multi-clock protocol requires that the strobe time be before a clock's pulse if it is used for transition fault testing. (TESTXG-56)
+1
+dc_shell-topo> pre
+prefer      preview_dft 
+dc_shell-topo> preview_dft 
+****************************************************************
+Information: TLUPlus based RC computation is enabled. (RCEX-141)
+****************************************************************
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is TLU+. (RCEX-015)
+Information: Library Derived Cap for layer M1 : 0.16 0.14 (RCEX-011)
+Information: Library Derived Res for layer M1 : 2e-06 2e-06 (RCEX-011)
+Information: Library Derived Cap for layer M2 : 0.17 0.15 (RCEX-011)
+Information: Library Derived Res for layer M2 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M3 : 0.11 0.096 (RCEX-011)
+Information: Library Derived Res for layer M3 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M4 : 0.11 0.096 (RCEX-011)
+Information: Library Derived Res for layer M4 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M5 : 0.094 0.079 (RCEX-011)
+Information: Library Derived Res for layer M5 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M6 : 0.094 0.079 (RCEX-011)
+Information: Library Derived Res for layer M6 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M7 : 0.092 0.076 (RCEX-011)
+Information: Library Derived Res for layer M7 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M8 : 0.092 0.076 (RCEX-011)
+Information: Library Derived Res for layer M8 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M9 : 0.11 0.088 (RCEX-011)
+Information: Library Derived Res for layer M9 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer MRDL : 0.11 0.11 (RCEX-011)
+Information: Library Derived Res for layer MRDL : 1.8e-07 1.8e-07 (RCEX-011)
+Information: Library Derived Horizontal Cap : 0.11 0.096 (RCEX-011)
+Information: Library Derived Horizontal Res : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Vertical Cap : 0.11 0.1 (RCEX-011)
+Information: Library Derived Vertical Res : 1.5e-06 1.5e-06 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 4.6e-07 4.6e-07 (RCEX-011)
+
+Running DFT insertion in topographical mode.
+
+Information: Starting test design rule checking. (TEST-222)

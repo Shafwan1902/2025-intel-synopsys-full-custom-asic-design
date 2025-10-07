@@ -1,0 +1,32 @@
+Information: Deserialized np data
+INFO: timer data loaded from /tmp/Top_60655_560146880.timdat
+Information: Freeing timing information from routing. (ZRT-574)
+****************************************
+Report : qor
+        -summary
+Design : Top
+Version: S-2021.06-SP2
+Date   : Mon Sep  8 10:04:59 2025
+****************************************
+Information: The RC mode used is DR for design 'Top'. (NEX-022)
+Extracting design: Top 
+Information: coupling capacitance is lumped to ground. (NEX-030)
+Information: 42009 nets are successfully extracted. (NEX-028)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Timer using 'AWP, CRPR'. (TIM-050)
+
+Timing
+---------------------------------------------------------------------------
+Context                                 WNS            TNS            NVE
+---------------------------------------------------------------------------
+Design             (Setup)             0.00           0.00              0
+
+Design             (Hold)              0.01           0.00              0
+---------------------------------------------------------------------------
+
+Miscellaneous
+---------------------------------------------------------------------------
+Cell Area (netlist):                         170937.25
+Cell Area (netlist and physical only):       170937.25
+Nets with DRC Violations:       48
+1

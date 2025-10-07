@@ -1,0 +1,57 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Aug 30 16:09:59 2025
+****************************************
+
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32rvt_ss0p95v125c (File: /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db)
+    saed32lvt_ss0p95v125c (File: /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32lvt_ss0p95v125c
+Wire Load Model Mode: Inactive.
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+Warning: Cannot report correlated power unless power prediction mode is set. (PWR-727)
+Power Breakdown
+---------------
+
+                             Cell        Driven Net  Tot Dynamic      Cell
+                             Internal    Switching   Power (uW)       Leakage
+Cell                         Power (uW)  Power (uW)  (% Cell/Tot)     Power (pW)
+--------------------------------------------------------------------------------
+Netlist Power                8.771e+03   1.621e+03   1.039e+04 (84%)  6.953e+09
+Estimated Clock Tree Power   N/A         N/A          (N/A)           N/A
+--------------------------------------------------------------------------------
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.2147            0.1460        1.4470e+05            0.5054  (   0.00%)
+register       7.7774e+03          351.3293        6.0278e+09        1.4157e+04  (  81.62%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    993.4819        1.2694e+03        9.2521e+08        3.1881e+03  (  18.38%)
+--------------------------------------------------------------------------------------------------
+Total          8.7711e+03 uW     1.6209e+03 uW     6.9531e+09 pW     1.7345e+04 uW
+1

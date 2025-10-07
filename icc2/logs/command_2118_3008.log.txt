@@ -1,0 +1,624 @@
+
+
+
+                              IC Compiler II (TM)
+
+             Version S-2021.06-SP2 for linux64 - Aug 26, 2021 -SLE
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Loading user preference file /nfs/site/home/yabdrash/.synopsys_icc2_gui/preferences.tcl
+Load ICV ICCII menu file: /nfs/png/disks/MDC_Elite/cad/icv/P-2019.06-SP2-11/etc/tcl-u/Icc2Menu.tcl
+ + VUE INFO: Please click View->IC Validator VUE in LayoutWindow menu
+            to launch VUE.
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE ERROR: couldn't open socket: address already in use
+
+ + VUE INFO: Found a usable port: 2464
+
+Loading user favorites file /nfs/site/home/yabdrash/.synopsys_icc2_gui/favorites.tcl
+icc2_shell> gui_show_man_page set_ignored_layers
+icc2_shell> source scripts/5icc2_init.tcl -echo -verbose
+alias s "source -echo -verbose"
+suppress_message FRAM-054
+suppress_message UIC-025
+suppress_message "ATTR-11 ATTR-12"
+s scripts/lib_setup.tcl
+# ICC2 Library Setup - MYLIB
+#Paths (all libraries needed)
+set_app_var search_path ".     ../libs/tech/milkyway     ../libs/tech/star_rcxt     ../libs/stdcell_hvt/ndms     ../libs/stdcell_lvt/ndms     ../libs/stdcell_rvt/ndms     ../libs/sram/ndms"
+.     ../libs/tech/milkyway     ../libs/tech/star_rcxt     ../libs/stdcell_hvt/ndms     ../libs/stdcell_lvt/ndms     ../libs/stdcell_rvt/ndms     ../libs/sram/ndms
+set TECH_FILE "../libs/tech/milkyway/saed32nm_1p9m_mw.tf"
+../libs/tech/milkyway/saed32nm_1p9m_mw.tf
+set REFERENCE_LIBRARY [join "../libs/stdcell_hvt/ndms/saed32hvt_c.ndm                               ../libs/stdcell_lvt/ndms/saed32lvt_c.ndm                               ../libs/stdcell_rvt/ndms/saed32rvt_c.ndm                               ../libs/sram/ndms/saed32sram.ndm"]
+../libs/stdcell_hvt/ndms/saed32hvt_c.ndm ../libs/stdcell_lvt/ndms/saed32lvt_c.ndm ../libs/stdcell_rvt/ndms/saed32rvt_c.ndm ../libs/sram/ndms/saed32sram.ndm
+if {![file isdirectory MYLIB]} {
+    create_lib MYLIB -technology $TECH_FILE -ref_libs $REFERENCE_LIBRARY
+    derive_design_level_via_regions
+} else {
+    open_lib MYLIB
+}
+Warning: saed32nm_1p9m_mw.tf line 649, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 648, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 728, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 726, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 727, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 803, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 801, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 802, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 877, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 875, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 876, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 951, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 949, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 950, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1025, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1023, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1024, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1099, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutHeightTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1097, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutNameTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: saed32nm_1p9m_mw.tf line 1098, the table size defined by property 'cutTblSize' is '4'. However, the actual table size of property 'cutWidthTbl' is '8'. This property will be ignored. (TECH-008w)
+Warning: Property isDefaultContact is re-defined in section ContactCode. Ignoring previous definition.(saed32nm_1p9m_mw.tf line:2061) (TECH-220)
+Warning: Property isDefaultContact is re-defined in section ContactCode. Ignoring previous definition.(saed32nm_1p9m_mw.tf line:2081) (TECH-220)
+Warning: The value of the sameNetMinSpacing attribute of layer M1 is invalid. Attribute sameNetMinSpacing should not be greater than attribute minSpacing. (saed32nm_1p9m_mw.tf line 591) (TECH-050)
+Information: Loading technology file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/libs/tech/milkyway/saed32nm_1p9m_mw.tf' (FILE-007)
+Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'saed32hvt_c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'MYLIB'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'saed32lvt_c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'MYLIB'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'saed32rvt_c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'MYLIB'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Information: Using technology 'saed32nm_1p9m_mw.tf' to derive design library via region in the frame-views of library 'saed32hvt_c'. (FRAM-088)
+Via regions for library saed32hvt_c created successfully
+Information: Using technology 'saed32nm_1p9m_mw.tf' to derive design library via region in the frame-views of library 'saed32lvt_c'. (FRAM-088)
+Via regions for library saed32lvt_c created successfully
+Information: Using technology 'saed32nm_1p9m_mw.tf' to derive design library via region in the frame-views of library 'saed32rvt_c'. (FRAM-088)
+Via regions for library saed32rvt_c created successfully
+Finish deriving library override via region
+1
+set np [exec grep processor /proc/cpuinfo | wc -l]
+20
+if {$np > 8} { set np 8 }
+8
+set_host_options -max_cores $np
+1
+puts "ICC2 library setup complete. MYLIB ready to use."
+ICC2 library setup complete. MYLIB ready to use.
+read_ddc {../output/mapped_scan_opt.ddc}
+Information: Loading DDC file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/output/mapped_scan_opt.ddc' (FILE-007)
+Information: Reading DDC into new design 'Top' in library 'MYLIB'. (DDCR-002)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Warning: Ignoring string attribute design_read_licenses on design object(s):
+         Attribute type conflicts with existing attributes. (DDC-15)
+Using libraries: MYLIB saed32hvt_c saed32lvt_c saed32rvt_c saed32sram
+Linking block MYLIB:Top.design
+Information: User units loaded from library 'saed32hvt_c' (LNK-040)
+Design 'Top' was successfully linked.
+Information: Loading DEF file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/icc2/snps_check_scan_def_temp_file.def' (FILE-007)
+Information: Reading 'VERSION' statement. (DEFR-016)
+Warning: Ignoring unsupported 'NAMESCASESENSITIVE' statement. (DEFR-015)
+Information: Reading 'DIVIDERCHAR' statement. (DEFR-016)
+Information: Reading 'BUSBITCHARS' statement. (DEFR-016)
+Information: Reading 'DESIGN' statement. (DEFR-016)
+Information: Reading 'SCANCHAINS' section. (DEFR-016)
+--------------------------------
+Number of Ignored DEF Constructs
+--------------------------------
+NAMESCASESENSITIVE             : 1/1
+---------------------------------------
+Number of Processed/Read DEF Constructs
+---------------------------------------
+VERSION                        : 1/1
+DIVIDERCHAR                    : 1/1
+BUSBITCHARS                    : 1/1
+DESIGN                         : 1/1
+SCANCHAINS                     : 11/11
+1
+read_sdc {../output/mapped_scan_opt.sdc}
+Information: Loading SDC version 2.1 file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v4/output/mapped_scan_opt.sdc' (FILE-007)
+Information: Timer using 8 threads
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported. (CSTR-021)
+Warning: set_load on nets is not supported
+
+   final_out[566]           16.00000       16.04066       -0.04066  (VIOLATED) 
+     PIN : ZBUF_4_inst_8739/Y
+                            16.00000       16.04066       -0.04066  (VIOLATED) 
+
+   pipeline_chain_8__u_seq2/addr[3]
+                             8.00000        8.03877       -0.03877  (VIOLATED) 
+     PIN : pipeline_chain_8__u_seq2/addr_reg_3_/Q
+                             8.00000        8.03877       -0.03877  (VIOLATED) 
+
+   pipeline_chain_18__u_seq2/n162
+                            16.00000       16.03666       -0.03666  (VIOLATED) 
+     PIN : pipeline_chain_18__u_seq2/U31/Y
+                            16.00000       16.03666       -0.03666  (VIOLATED) 
+
+   ZBUF_17_919              16.00000       16.03638       -0.03638  (VIOLATED) 
+     PIN : ZBUF_17_inst_9463/Y
+                            16.00000       16.03638       -0.03638  (VIOLATED) 
+
+   n25961                    8.00000        8.03430       -0.03430  (VIOLATED) 
+     PIN : pipeline_chain_15__u_mult/stage3_reg_12_/QN
+                             8.00000        8.03430       -0.03430  (VIOLATED) 
+
+   final_out[269]            8.00000        8.02968       -0.02967  (VIOLATED) 
+     PIN : U7260/Y           8.00000        8.02968       -0.02967  (VIOLATED) 
+
+   ZBUF_17_50               16.00000       16.02825       -0.02825  (VIOLATED) 
+     PIN : ZBUF_17_inst_7312/Y
+                            16.00000       16.02825       -0.02825  (VIOLATED) 
+
+   ropt_net_369             16.00000       16.02610       -0.02610  (VIOLATED) 
+     PIN : ropt_mt_inst_17042/Y
+                            16.00000       16.02610       -0.02610  (VIOLATED) 
+
+   ropt_net_449             16.00000       16.02397       -0.02397  (VIOLATED) 
+     PIN : ropt_mt_inst_17122/Y
+                            16.00000       16.02397       -0.02397  (VIOLATED) 
+
+   seq1_out[220]             8.00000        8.02349       -0.02349  (VIOLATED) 
+     PIN : pipeline_chain_27__u_seq1/lfsr_reg_4_/Q
+                             8.00000        8.02349       -0.02349  (VIOLATED) 
+
+   n7354                     8.00000        8.02287       -0.02287  (VIOLATED) 
+     PIN : U8286/Y           8.00000        8.02287       -0.02287  (VIOLATED) 
+
+   n26303                    8.00000        8.02127       -0.02127  (VIOLATED) 
+     PIN : pipeline_chain_8__u_mult/stage3_reg_26_/QN
+                             8.00000        8.02127       -0.02127  (VIOLATED) 
+
+   res_out[1751]            32.00000       32.02110       -0.02110  (VIOLATED) 
+     PIN : ropt_mt_inst_17199/Y
+                            32.00000       32.02110       -0.02110  (VIOLATED) 
+
+   ropt_net_363             16.00000       16.02105       -0.02105  (VIOLATED) 
+     PIN : ropt_mt_inst_17036/Y
+                            16.00000       16.02105       -0.02105  (VIOLATED) 
+
+   gre_net_201              16.00000       16.02093       -0.02093  (VIOLATED) 
+     PIN : gre_mt_inst_16626/Y
+                            16.00000       16.02093       -0.02093  (VIOLATED) 
+
+   final_out[1693]           8.00000        8.01921       -0.01921  (VIOLATED) 
+     PIN : U12697/Y          8.00000        8.01921       -0.01921  (VIOLATED) 
+
+   n15389                    8.00000        8.01743       -0.01743  (VIOLATED) 
+     PIN : U10599/Y          8.00000        8.01743       -0.01743  (VIOLATED) 
+
+   n15173                    8.00000        8.01688       -0.01688  (VIOLATED) 
+     PIN : U10747/Y          8.00000        8.01688       -0.01688  (VIOLATED) 
+
+   n26677                    8.00000        8.01632       -0.01632  (VIOLATED) 
+     PIN : pipeline_chain_18__u_seq1/lfsr_reg_0_/Q
+                             8.00000        8.01632       -0.01632  (VIOLATED) 
+
+   final_out[250]            8.00000        8.01611       -0.01611  (VIOLATED) 
+     PIN : U18800/S          8.00000        8.01611       -0.01611  (VIOLATED) 
+
+   ZBUF_638_657             32.00000       32.01557       -0.01557  (VIOLATED) 
+     PIN : ZBUF_638_inst_8704/Y
+                            32.00000       32.01557       -0.01557  (VIOLATED) 
+
+   n22876                   16.00000       16.01512       -0.01512  (VIOLATED) 
+     PIN : U17803/Y         16.00000       16.01512       -0.01512  (VIOLATED) 
+
+   final_out[607]            8.00000        8.01508       -0.01508  (VIOLATED) 
+     PIN : U12877/Y          8.00000        8.01508       -0.01508  (VIOLATED) 
+
+   n22503                   64.00000       64.01257       -0.01257  (VIOLATED) 
+     PIN : U15420/Y         64.00000       64.01257       -0.01257  (VIOLATED) 
+
+   n15211                    8.00000        8.01010       -0.01010  (VIOLATED) 
+     PIN : U19032/Y          8.00000        8.01010       -0.01010  (VIOLATED) 
+
+   ZBUF_35_11               16.00000       16.01007       -0.01007  (VIOLATED) 
+     PIN : ZBUF_35_inst_16575/Y
+                            16.00000       16.01007       -0.01007  (VIOLATED) 
+
+   res_out[1129]            16.00000       16.00875       -0.00875  (VIOLATED) 
+     PIN : U23332/Y         16.00000       16.00875       -0.00875  (VIOLATED) 
+
+   n15115                    8.00000        8.00831       -0.00831  (VIOLATED) 
+     PIN : U18880/Y          8.00000        8.00831       -0.00831  (VIOLATED) 
+
+   ctsbuf_net_40139         168.00000      168.00746      -0.00747  (VIOLATED) 
+     PIN : cts_inv_313112987/Y
+                            168.00000      168.00746      -0.00747  (VIOLATED) 
+
+   n6327                    16.00000       16.00734       -0.00734  (VIOLATED) 
+     PIN : U8496/Y          16.00000       16.00734       -0.00734  (VIOLATED) 
+
+   final_out[597]            8.00000        8.00610       -0.00610  (VIOLATED) 
+     PIN : U11597/Y          8.00000        8.00610       -0.00610  (VIOLATED) 
+
+   ZBUF_17_83               16.00000       16.00562       -0.00562  (VIOLATED) 
+     PIN : ZBUF_17_inst_7473/Y
+                            16.00000       16.00562       -0.00562  (VIOLATED) 
+
+   n7226                     8.00000        8.00286       -0.00286  (VIOLATED) 
+     PIN : U9708/Y           8.00000        8.00286       -0.00286  (VIOLATED) 
+
+   ropt_net_421             16.00000       16.00252       -0.00252  (VIOLATED) 
+     PIN : ropt_mt_inst_17094/Y
+                            16.00000       16.00252       -0.00252  (VIOLATED) 
+
+   ropt_net_372             16.00000       16.00250       -0.00250  (VIOLATED) 
+     PIN : ropt_mt_inst_17045/Y
+                            16.00000       16.00250       -0.00250  (VIOLATED) 
+
+   final_out[68]            32.00000       32.00222       -0.00222  (VIOLATED) 
+     PIN : ZBUF_15_inst_7590/Y
+                            32.00000       32.00222       -0.00222  (VIOLATED) 
+
+  ---------------------------------------------------------------------------
+   Number of max_capacitance violation(s): 350
+
+   Mode: default Corner: default
+   Scenario: default
+  ---------------------------------------------------------------------------
+   Number of min_capacitance violation(s): 0
+
+   Total number of violation(s): 365
+1
+icc2_shell> redirect -tee -file ../reports/icc2/route/qor_summary_signoff_tune.rpt {report_qor -summary}
+****************************************
+Report : qor
+        -summary
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 11:53:37 2025
+****************************************
+Information: Timer using 'AWP, CRPR'. (TIM-050)
+
+Timing
+---------------------------------------------------------------------------
+Context                                 WNS            TNS            NVE
+---------------------------------------------------------------------------
+Design             (Setup)            -0.01          -0.03              4
+
+Design             (Hold)              0.06           0.00              0
+---------------------------------------------------------------------------
+
+Miscellaneous
+---------------------------------------------------------------------------
+Cell Area (netlist):                         169249.74
+Cell Area (netlist and physical only):       169249.74
+Nets with DRC Violations:      350
+1
+icc2_shell> redirect -tee -file ../reports/icc2/route/qor_summary_signoff_tune.rpt {report_qor -summary}[13G[Ksave_block -as saver_blocks/MYTOP_SIGNOFF_TUNE
+Information: Saving 'MYLIB:save_blocks/MYTOP_ROUTE.design' to 'MYLIB:saver_blocks/MYTOP_SIGNOFF_TUNE.design'. (DES-028)
+1
+icc2_shell> # Export signoff files
+icc2_shell> write_verilog ../output/icc2_scan_opt.v
+1
+icc2_shell> write_sdc -output ../output/icc2_scan_opt.sdc
+Information: The command 'write_sdc' cleared the undo history. (UNDO-016)
+1
+icc2_shell> write_parasitics -output ../output/icc2_scan_opt.spef
+Information: Design save_blocks has 41143 nets, 0 global routed, 41141 detail routed. (NEX-024)
+NEX: extract design Top
+Information: batch extract takes 0.00 seconds, elapse 0.00 seconds (NEX-015)
+Information: The stitching and editing of coupling caps is turned OFF for design 'MYLIB:save_blocks/MYTOP_ROUTE.design'. (TIM-125)
+NEX: write corner ID 0 parasitics to ../output/icc2_scan_opt.spef.maxTLU_125.spef 
+spefName ../output/icc2_scan_opt.spef.maxTLU_125.spef, corner name default 
+NEX: write corner ID 1 parasitics to ../output/icc2_scan_opt.spef.minTLU_125.spef 
+spefName ../output/icc2_scan_opt.spef.minTLU_125.spef, corner name default 
+NEX:Warning write_parasitics supports only Ohm and kOhm as user resistance unit not 1MOhm, we force to set it Ohm.Information: SPEF output -mt with 8 threads (NEX-014)
+icc2_shell> report_ci[Kon
+report_congestion              report_constraint_mapping_file 
+report_constraint_groups       report_constraints             
+icc2_shell> report_congestion 
+****************************************
+Report : congestion
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sun Aug 31 12:01:17 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |    6704 |    15 |    4557  ( 2.25%) |       1
+H routing |    2868 |     4 |    2585  ( 2.56%) |       3
+V routing |    3836 |    15 |    1972  ( 1.95%) |       1
+
+1
+icc2_shell> exit
+save_block MYLIB:save_blocks/MYTOP_ROUTE
+Information: Saving block 'MYLIB:save_blocks/MYTOP_ROUTE.design'
+icc2_shell> Maximum memory usage for this session: 5875.45 MB
+Maximum memory usage for this session including child processes: 6468.29 MB
+CPU usage for this session:  38315 seconds ( 10.64 hours)
+Elapsed time for this session:  52273 seconds ( 14.52 hours)
+Thank you for using IC Compiler II.

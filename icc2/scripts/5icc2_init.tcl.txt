@@ -1,0 +1,48 @@
+
+alias s "source -echo -verbose"
+
+suppress_message FRAM-054
+suppress_message UIC-025
+suppress_message "ATTR-11 ATTR-12"
+suppress_message CSTR-021
+
+s scripts/lib_setup.tcl
+
+read_ddc {../output/mapped_scan_opt.ddc}
+read_sdc {../output/mapped_scan_opt.sdc}
+#read_scandef {../output/mapped_scan_opt.scandef}
+ 
+link_block
+current_block
+list_blocks
+
+read_parasitic_tech -tlup ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus \
+    -layermap ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map -name maxTLU
+ 
+read_parasitic_tech -tlup ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus \
+    -layermap ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map -name minTLU
+ 
+set_parasitic_parameters -corners default -late_spec maxTLU -early_spec minTLU
+
+get_site_defs
+set_attribute [get_site_defs unit] symmetry Y
+set_attribute [get_site_defs unit] is_default true
+
+#set_attribute [get_layers {M1 M3 M5 M7 M9}] routing_direction horizontal
+#set_attribute [get_layers {M2 M4 M6 M8}] routing_direction vertical
+
+set_attribute [get_layers {M1 M3 M5 M7 M9}] routing_direction horizontal
+set_attribute [get_layers {M2 M4 M6 M8 M10}] routing_direction vertical
+
+get_attribute [get_layers M?] routing_direction
+report_ignored_layers
+
+#set_ignored_layers -max_routing_layer M8
+set_ignored_layers -max_routing_layer M9
+
+report_ignored_layers
+
+set_voltage 0.95 -object_list VDD
+set_voltage 0.00 -object_list VSS
+
+save_block -as save_blocks/TOP_INIT

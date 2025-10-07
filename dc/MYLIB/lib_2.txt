@@ -1,0 +1,5 @@
+LIBRARY    MYLIB
+  REFERENCE    ../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  REFERENCE    ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  REFERENCE    ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  REFERENCE    ../libs/sram/milkyway/SRAM32NM

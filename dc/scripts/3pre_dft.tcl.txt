@@ -1,0 +1,182 @@
+#shortcut
+alias s "source -verbose -echo"
+
+#setup
+remove_design -all
+s scripts/0env_setup.tcl
+s scripts/lib_setup.tcl
+read_db "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db"
+read_ddc ../output/mapped_top.ddc
+current_design Top
+link
+
+#read
+redirect -tee -file "$dft_rpt_predft_path/all_nets.rpt" \
+	{report_net}
+
+redirect -tee -file "$dft_rpt_predft_path/hierarchy.rpt" \
+	{report_hierarchy}
+
+redirect -tee -file "$dft_rpt_predft_path/all_ports.rpt" \
+	{report_port}
+
+#pre-dft setup
+#set test clock
+set test_default_period 10
+set test_default_strobe 5
+set test_default_bidir_delay 2
+
+#must ports
+set_dft_signal -view existing_dft -type ScanClock \
+	-port {clk sclk} -timing {4.5 5.5}
+set_dft_signal -view existing_dft -type Reset \
+	-port rst_n -active_state 0
+
+#configuration
+set_scan_configuration -chain_count 10 -clock_mixing mix_clocks \
+	-add_lockup true -style multiplexed_flip_flop
+set_dft_insertion_configuration -synthesis_optimization none \
+	-preserve_design_name true
+set test_disable_enchanced_dft_drc_reporting false
+
+#scan
+set_dft_signal -view spec -type ScanEnable \
+	-port in_c[63] -active_state 1
+
+#scan data in
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_a[0]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_a[15]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_a[30]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_b[0]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_b[15]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_b[30]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_c[0]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_c[15]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_c[30]
+set_dft_signal -view spec -type ScanDataIn \
+	-port in_c[45]
+
+#scan data out
+set_dft_signal -view spec -type ScanDataOut \
+	-port {seq1_out[0]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {seq1_out[125]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {seq2_out[0]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {seq2_out[200]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {seq3_out[0]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {seq3_out[125]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {res_out[0]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {res_out[1023]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {final_out[0]}
+set_dft_signal -view spec -type ScanDataOut \
+	-port {final_out[1023]}
+
+
+#set manual scan path
+set_scan_path chain1 -view spec \
+	-scan_data_in in_a[0] \
+	-scan_data_out seq1_out[0] \
+	-scan_enable in_c[63]
+
+set_scan_path chain2 -view spec \
+	-scan_data_in in_a[15] \
+	-scan_data_out seq1_out[125] \
+	-scan_enable in_c[63]
+
+set_scan_path chain3 -view spec \
+	-scan_data_in in_a[30] \
+	-scan_data_out seq2_out[0] \
+	-scan_enable in_c[63]
+
+set_scan_path chain4 -view spec \
+	-scan_data_in in_b[0] \
+	-scan_data_out seq2_out[200] \
+	-scan_enable in_c[63]
+
+set_scan_path chain5 -view spec \
+	-scan_data_in in_b[15] \
+	-scan_data_out seq3_out[0] \
+	-scan_enable in_c[63]
+
+set_scan_path chain6 -view spec \
+	-scan_data_in in_b[30] \
+	-scan_data_out seq3_out[125] \
+	-scan_enable in_c[63]
+
+set_scan_path chain7 -view spec \
+	-scan_data_in in_c[0] \
+	-scan_data_out final_out[0] \
+	-scan_enable in_c[63]
+
+set_scan_path chain8 -view spec \
+	-scan_data_in in_c[15] \
+	-scan_data_out final_out[1023] \
+	-scan_enable in_c[63]
+
+set_scan_path chain9 -view spec \
+	-scan_data_in in_c[30] \
+	-scan_data_out res_out[0] \
+	-scan_enable in_c[63]
+
+set_scan_path chain10 -view spec \
+	-scan_data_in in_c[45] \
+	-scan_data_out res_out[1023] \
+	-scan_enable in_c[63]
+
+
+#start
+create_test_protocol
+dft_drc
+preview_dft
+insert_dft
+
+#reports on pre dft scan chains results
+redirect -tee -file "$dft_rpt_predft_path/scan_coverage_estimated.rpt" \
+	{dft_drc -coverage_estimate}
+redirect -tee -file "$dft_rpt_predft_path/check_design_post_synthesis.rpt" \
+	{check_design}
+redirect -tee -file "$dft_rpt_predft_path/timing.rpt" \
+	{report_timing}
+redirect -tee -file "$dft_rpt_predft_path/timing_max.rpt" \
+	{report_timing -max_paths 10 -delay_type max}
+redirect -tee -file "$dft_rpt_predft_path/timing_min.rpt" \
+	{report_timing -max_paths 10 -delay_type min}
+redirect -tee -file "$dft_rpt_predft_path/area.rpt" \
+	{report_area}
+redirect -tee -file "$dft_rpt_predft_path/power.rpt" \
+	{report_power}
+redirect -tee -file "$dft_rpt_predft_path/constraint.rpt" \
+	{report_constraints -all}
+redirect -tee -file "$dft_rpt_predft_path/qor.rpt" \
+	{report_qor}
+redirect -tee -file "$dft_rpt_predft_path/scan_config.rpt" \
+	{report_scan_configuration}
+redirect -tee -file "$dft_rpt_predft_path/dft_signal.rpt" \
+	{report_dft_signal -view exist}
+
+#save netlist and protocol
+set test_stil_netlist_format verilog 
+
+write -format verilog -hierarchy -output "$all_output_path/mapped_scan.v"
+write_scan_def -output "$all_output_path/mapped_scan.scandef"
+check_scan_def
+
+write_test_protocol -output "$all_output_path/mapped_scan.spf"
+write -format ddc -hierarchy -output "$all_output_path/mapped_scan.ddc"
+write_sdc -nosplit "$all_output_path/mapped_scan.sdc"

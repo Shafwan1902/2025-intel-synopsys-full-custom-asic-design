@@ -1,0 +1,175 @@
+#@ # 
+#@ # Running icc2_shell Version S-2021.06-SP2 for linux64 -- Aug 26, 2021
+#@ # Date:   Thu Sep 11 09:05:43 2025
+#@ # Run by: manis@pglkvm08
+#@ 
+
+start_gui
+gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Logical Cells}
+# ---------------------------------------------
+# Suppress unnecessary messages
+# ---------------------------------------------
+suppress_message FRAM-054
+suppress_message UIC-025
+suppress_message "ATTR-11 ATTR-12"
+ 
+# ---------------------------------------------
+# Library setup
+# ---------------------------------------------
+source scripts/lib_setup.tcl 
+ 
+# ---------------------------------------------
+# Load netlist & constraints from DC
+# ---------------------------------------------
+read_verilog ../output/mapped_scan_opt.v -top Top
+read_sdc ../output/mapped_scan_opt.sdc
+read_def ../output/mapped_scan_opt.scandef
+
+link_block
+current_block
+list_blocks
+ 
+# ---------------------------------------------
+# Parasitics and site/layer setup
+# ---------------------------------------------
+read_parasitic_tech -tlup ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus \
+    -layermap ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map -name maxTLU
+ 
+read_parasitic_tech -tlup ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus \
+    -layermap ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map -name minTLU
+ 
+#set_parasitic_parameters -corners default -late_spec maxTLU -early_spec minTLU
+
+
+# Default site
+get_site_defs
+set_attribute [get_site_defs unit] symmetry Y
+set_attribute [get_site_defs unit] is_default true
+ 
+# Routing directions & ignored layers
+set_attribute [get_layers {M1 M3 M5 M7 M9}] routing_direction horizontal
+set_attribute [get_layers {M2 M4 M6 M8}] routing_direction vertical
+
+# To confirm that the model have set up properly
+get_attribute [get_layers M?] routing_direction
+
+# To confirm all metal layer are available for signal routing
+report_ignored_layers
+set_ignored_layers -max_routing_layer M8
+report_ignored_layers
+ 
+# Voltages
+set_voltage 0.95 -object_list VDD
+set_voltage 0.00 -object_list VSS
+ 
+# Save initial block
+save_block -as MYTOP_INIT1
+ 
+# ---------------------------------------------
+# Floorplan
+# ---------------------------------------------
+ 
+# Initialize floorplan with side ratio and core offset only
+initialize_floorplan -side_ratio {1 1} -core_offset {20} -core_utilization 0.67
+ 
+create_placement -floorplan
+ 
+# Place IO pins
+set_block_pin_constraints -self -allowed_layers {M3 M4 M5 M6}
+place_pins -self
+ 
+report_congestion -rerun_global_router
+
+create_pin_constraint -type individual -ports [get_ports *clk] -width 0.1 -length 0.4
+place_pins -self
+
+save_block -as MYTOP_PLACEPINS
+
+
+# Build power network
+remove_pg_strategies -all
+remove_pg_patterns -all
+remove_pg_regions -all
+remove_pg_via_master rules -all
+remove_pg_strategy_via_rules -all
+remove_routes -net_types {power ground} -ring -stripe -macro_pin_connect -lib_cell_pin_connect > /dev/null
+
+# Automatically connect power and ground nets
+connect_pg_net -automatic
+check_mv_design
+
+############### PG #########################
+
+##Power MESH pattern
+set_pg_via_master_rule -via_array_dimension {8 10} pgvia_8x10
+create_pg_mesh_pattern P_top_two -layers {{{horizontal_layer : M7} {width : 1.104} {spacing : interleaving} {offset : 0.856} {pitch : 13.376} {trim : true}} {{vertical_layer : M8} {width : 4.64} {spacing : interleaving} {offset : 6.08} {pitch : 19.456} {trim : true}}} -via_rule {{intersection : adjacent} {via_master : pgvia_8x10}}
+create_pg_mesh_pattern P_m2_triple -layers {{{vertical_layer : M2} {width : 0.44 0.192 0.192} {spacing : 2.724 3.456} {offset : 1.216} {pitch : 9.728} {trim : true} {track_alignment : track}}} -via_rule {{intersection : adjacent} {via_master : pgvia_8x10}}
+
+
+##SET PG STRATEGY
+set_pg_strategy S_default_vddvss -core -pattern {{name : P_top_two}{nets : {VDD VSS}}{offset_start : {20.000 20.000}}} -extension {{{stop : design_boundary_and_generate_pin}}}
+set_pg_strategy S_m2_vddvss -core -pattern {{name : P_m2_triple}{nets : {VDD VSS VSS }}{offset_start : {20.000 0.000}}} -extension {{{direction : T B}{stop : design_boundary_and_generate_pin}}}
+compile_pg -strategies {S_default_vddvss S_m2_vddvss}
+
+
+
+##Build standard cell rails
+create_pg_std_cell_conn_pattern P_std_cell_rail
+
+set_pg_strategy S_std_cell_rail_VSS_VDD \
+-core \
+-pattern {{name : P_std_cell_rail}{nets : {VSS VDD}}} \
+-extension {{{direction : L R T B}{stop : outermost_ring}}}
+
+set_pg_strategy_via_rule S_via_stdcellrail -via_rule {{intersection : adjacent}{via_master : default}}
+compile_pg -strategies {S_std_cell_rail_VSS_VDD S_std_cell_rail_VDDH} -via_rule S_via_stdcellrail
+
+
+##Checking
+check_pg_missing_vias
+check_pg_drc 
+check_pg_connectivity -check_std_cell_pins none
+redirect -tee -file ../reports/icc2/pg/check_mv_design_floorplan.rpt {check_mv_design}
+redirect -tee -file ../reports/icc2/pg/congestion_floorplan.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/pg/clock_qor_floorplan.rpt {report_clock_qor}
+redirect -tee -file ../reports/icc2/pg/qor_summary_floorplan.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/pg/timing_setup_floorplan.rpt {report_timing -delay_type max}
+redirect -tee -file ../reports/icc2/pg/timing_hold_floorplan.rpt {report_timing -delay_type min}
+redirect -tee -file ../reports/icc2/pg/constraint_floorplan.rpt {report_constraints}
+redirect -tee -file ../reports/icc2/pg/constraint_DRC_floorplan.rpt {report_constraint -all_violators -min_capacitance -max_capacitance -max_transition}
+redirect -tee -file ../reports/icc2/pg/design_physical_floorplan.rpt {report_design -physical}
+redirect -tee -file ../reports/icc2/pg/design_floorplan.rpt {report_design}
+save_block -as MYTOP_PG_GOOD
+save_lib
+check_design -checks pre_placement_stage
+check_design -checks physical_constraints
+mark_clock_trees
+create_routing_rule CLK_RULE \
+    -widths {M6 0.3 M7 0.3 M8 0.3} \
+    -spacings {M6 0.3 M7 0.3 M8 0.3}
+set_clock_routing_rules -rules CLK_RULE -min_routing_layer M6 -max_routing_layer M8
+set_lib_cell_purpose [get_lib_cells *TIEH*] -include optimization
+set_lib_cell_purpose [get_lib_cells *TIEL*] -include optimization
+set_app_options -name opt.tie_cell.max_fanout -value 8
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+create_placement -effort high -timing_driven -congestion
+legalize_placement
+redirect -tee -file ../reports/icc2/check_floorplan.rpt {check_mv_design}
+redirect -tee -file ../reports/icc2/congestion_floorplan.rpt {report_congestion -rerun_global_router}
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+set_app_options -list {cts.optimize.enable_congestion_aware_ndr_promotion {true}}
+
+place_opt
+place_opt
+place_opt
+win_set_filter -visible -class cell -filter {hard_macro_margin hard_margin route_blockage_margin soft_margin}
+win_set_filter -visible -class pseudo_bump -filter {deleted}
+win_set_filter -visible -class placement_blockage -filter {wiring} -layer {0-82}
+win_set_filter -expand_cell_types {soft_macro  }
+win_set_select_class -visible {cell port bound routing_blockage shaping_blockage pg_region bump_region pseudo_bump pin_blockage block_shielding topology_node topology_edge topology_repeater annotation_shape core_area die_area edit_group shape via terminal fill_cell placement_blockage }
+win_set_filter -class cell -filter {array hard_macro_margin hard_margin route_blockage_margin soft_margin}
+win_set_filter -class pseudo_bump -filter {deleted}
+win_set_filter -class placement_blockage -filter {wiring} -layer {0-82}
+win_set_select_class {cell port bound routing_blockage shaping_blockage pg_region bump_region pseudo_bump pin_blockage topology_node topology_edge topology_repeater annotation_shape edit_group shape via placement_blockage }
+win_select_objects -within {{556.682 -18.835} {571.331 27.206}} -slct_targets global -slct_targets_operation clear
+exit

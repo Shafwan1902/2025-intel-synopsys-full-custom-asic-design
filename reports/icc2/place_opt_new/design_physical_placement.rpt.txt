@@ -1,0 +1,17 @@
+Warning: The option '-physical' has been deprecated and is scheduled to be removed in a future release. Please use report_design -help to see the latest supported options of command report_design. (NDMUI-332)
+****************************************
+Report : design
+        -physical
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Sep  6 15:29:10 2025
+****************************************
+
+Physical Information:
+  Total moveable cell area: 170653.884
+  Total fixed cell area: 0.000
+  Total physical cell area: 170653.884
+  Core area: {20 20} {512.48 511.568}
+                                  Count                           Area
+  TOTAL LEAF CELLS                38581                     170653.884
+1

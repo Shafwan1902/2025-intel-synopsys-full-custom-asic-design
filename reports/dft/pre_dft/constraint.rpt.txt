@@ -1,0 +1,477 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Aug 30 16:10:00 2025
+****************************************
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   pipeline_chain_24__u_seq2/addr[1]
+                                0.21           0.69          -0.48  (VIOLATED)
+       PIN :   pipeline_chain_24__u_seq2/addr_reg_1_/Q
+                                0.21           0.69          -0.48  (VIOLATED)
+   pipeline_chain_24__u_seq2/addr[2]
+                                0.21           0.69          -0.48  (VIOLATED)
+       PIN :   pipeline_chain_24__u_seq2/addr_reg_2_/Q
+                                0.21           0.69          -0.48  (VIOLATED)
+   pipeline_chain_24__u_seq2/addr[0]
+                                0.21           0.68          -0.46  (VIOLATED)
+       PIN :   pipeline_chain_24__u_seq2/addr_reg_0_/Q
+                                0.21           0.68          -0.46  (VIOLATED)
+   n17965                       0.21           0.64          -0.42  (VIOLATED)
+       PIN :   pipeline_chain_24__u_seq2/addr_reg_3_/Q
+                                0.21           0.64          -0.42  (VIOLATED)
+   pipeline_chain_26__u_seq2/addr[0]
+                                0.21           0.61          -0.40  (VIOLATED)
+       PIN :   pipeline_chain_26__u_seq2/addr_reg_0_/Q
+                                0.21           0.61          -0.40  (VIOLATED)
+   pipeline_chain_26__u_seq2/addr[1]
+                                0.21           0.58          -0.37  (VIOLATED)
+       PIN :   pipeline_chain_26__u_seq2/addr_reg_1_/Q
+                                0.21           0.58          -0.37  (VIOLATED)
+   pipeline_chain_25__u_seq2/addr[0]
+                                0.21           0.58          -0.37  (VIOLATED)
+       PIN :   pipeline_chain_25__u_seq2/addr_reg_0_/Q
+                                0.21           0.58          -0.37  (VIOLATED)
+   pipeline_chain_26__u_seq2/addr[2]
+                                0.21           0.58          -0.36  (VIOLATED)
+       PIN :   pipeline_chain_26__u_seq2/addr_reg_2_/Q
+                                0.21           0.58          -0.36  (VIOLATED)
+   pipeline_chain_25__u_seq2/addr[1]
+                                0.21           0.56          -0.35  (VIOLATED)
+       PIN :   pipeline_chain_25__u_seq2/addr_reg_1_/Q
+                                0.21           0.56          -0.35  (VIOLATED)
+   pipeline_chain_31__u_seq2/addr[1]
+                                0.21           0.56          -0.35  (VIOLATED)
+       PIN :   pipeline_chain_31__u_seq2/addr_reg_1_/Q
+                                0.21           0.56          -0.35  (VIOLATED)
+   pipeline_chain_25__u_seq2/addr[2]
+                                0.21           0.55          -0.34  (VIOLATED)
+       PIN :   pipeline_chain_25__u_seq2/addr_reg_2_/Q
+                                0.21           0.55          -0.34  (VIOLATED)
+   pipeline_chain_31__u_seq2/addr[2]
+                                0.21           0.54          -0.33  (VIOLATED)
+       PIN :   pipeline_chain_31__u_seq2/addr_reg_2_/Q
+                                0.21           0.54          -0.33  (VIOLATED)
+   n18303                       0.09           0.41          -0.33  (VIOLATED)
+       PIN :   pipeline_chain_2__u_mult/stage2_reg_61_/Q
+                                0.09           0.41          -0.33  (VIOLATED)
+   n17957                       0.21           0.53          -0.32  (VIOLATED)
+       PIN :   pipeline_chain_26__u_seq2/addr_reg_3_/Q
+                                0.21           0.53          -0.32  (VIOLATED)
+   pipeline_chain_31__u_seq2/addr[0]
+                                0.21           0.53          -0.31  (VIOLATED)
+       PIN :   pipeline_chain_31__u_seq2/addr_reg_0_/Q
+                                0.21           0.53          -0.31  (VIOLATED)
+   n17961                       0.21           0.52          -0.31  (VIOLATED)
+       PIN :   pipeline_chain_25__u_seq2/addr_reg_3_/Q
+                                0.21           0.52          -0.31  (VIOLATED)
+   pipeline_chain_0__u_seq2/addr[1]
+                                0.21           0.51          -0.30  (VIOLATED)
+       PIN :   pipeline_chain_0__u_seq2/addr_reg_1_/Q
+                                0.21           0.51          -0.30  (VIOLATED)
+   n17938                       0.21           0.50          -0.29  (VIOLATED)
+       PIN :   pipeline_chain_31__u_seq2/addr_reg_3_/Q
+                                0.21           0.50          -0.29  (VIOLATED)
+   pipeline_chain_30__u_seq2/addr[2]
+                                0.21           0.48          -0.27  (VIOLATED)
+       PIN :   pipeline_chain_30__u_seq2/addr_reg_2_/Q
+                                0.21           0.48          -0.27  (VIOLATED)
+   pipeline_chain_30__u_seq2/addr[0]
+                                0.21           0.48          -0.26  (VIOLATED)
+       PIN :   pipeline_chain_30__u_seq2/addr_reg_0_/Q
+                                0.21           0.48          -0.26  (VIOLATED)
+   pipeline_chain_0__u_seq2/addr[2]
+                                0.21           0.47          -0.26  (VIOLATED)
+       PIN :   pipeline_chain_0__u_seq2/addr_reg_2_/Q
+                                0.21           0.47          -0.26  (VIOLATED)
+   pipeline_chain_30__u_seq2/addr[1]
+                                0.21           0.47          -0.26  (VIOLATED)
+       PIN :   pipeline_chain_30__u_seq2/addr_reg_1_/Q
+                                0.21           0.47          -0.26  (VIOLATED)
+   n17942                       0.21           0.47          -0.26  (VIOLATED)
+       PIN :   pipeline_chain_30__u_seq2/addr_reg_3_/Q
+                                0.21           0.47          -0.26  (VIOLATED)
+   pipeline_chain_23__u_seq2/addr[0]
+                                0.21           0.44          -0.22  (VIOLATED)
+       PIN :   pipeline_chain_23__u_seq2/addr_reg_0_/Q
+                                0.21           0.44          -0.22  (VIOLATED)
+   pipeline_chain_27__u_seq2/addr[2]
+                                0.21           0.43          -0.22  (VIOLATED)
+       PIN :   pipeline_chain_27__u_seq2/addr_reg_2_/Q
+                                0.21           0.43          -0.22  (VIOLATED)
+   n17955                       0.21           0.43          -0.21  (VIOLATED)
+       PIN :   pipeline_chain_27__u_seq2/addr_reg_3_/Q
+                                0.21           0.43          -0.21  (VIOLATED)
+   pipeline_chain_27__u_seq2/addr[0]
+                                0.21           0.42          -0.20  (VIOLATED)
+       PIN :   pipeline_chain_27__u_seq2/addr_reg_0_/Q
+                                0.21           0.42          -0.20  (VIOLATED)
+   pipeline_chain_27__u_seq2/addr[1]
+                                0.21           0.40          -0.19  (VIOLATED)
+       PIN :   pipeline_chain_27__u_seq2/addr_reg_1_/Q
+                                0.21           0.40          -0.19  (VIOLATED)
+   pipeline_chain_29__u_seq2/addr[0]
+                                0.21           0.40          -0.18  (VIOLATED)
+       PIN :   pipeline_chain_29__u_seq2/addr_reg_0_/Q
+                                0.21           0.40          -0.18  (VIOLATED)
+   pipeline_chain_23__u_seq2/addr[2]
+                                0.21           0.39          -0.17  (VIOLATED)
+       PIN :   pipeline_chain_23__u_seq2/addr_reg_2_/Q
+                                0.21           0.39          -0.17  (VIOLATED)
+   pipeline_chain_29__u_seq2/addr[2]
+                                0.21           0.38          -0.17  (VIOLATED)
+       PIN :   pipeline_chain_29__u_seq2/addr_reg_2_/Q
+                                0.21           0.38          -0.17  (VIOLATED)
+   pipeline_chain_23__u_seq2/addr[1]
+                                0.21           0.38          -0.17  (VIOLATED)
+       PIN :   pipeline_chain_23__u_seq2/addr_reg_1_/Q
+                                0.21           0.38          -0.17  (VIOLATED)
+   pipeline_chain_29__u_seq2/addr[1]
+                                0.21           0.38          -0.16  (VIOLATED)
+       PIN :   pipeline_chain_29__u_seq2/addr_reg_1_/Q
+                                0.21           0.38          -0.16  (VIOLATED)
+   pipeline_chain_21__u_seq2/addr[1]
+                                0.21           0.37          -0.16  (VIOLATED)
+       PIN :   pipeline_chain_21__u_seq2/addr_reg_1_/Q
+                                0.21           0.37          -0.16  (VIOLATED)
+   pipeline_chain_0__u_seq2/addr[0]
+                                0.21           0.37          -0.15  (VIOLATED)
+       PIN :   pipeline_chain_0__u_seq2/addr_reg_0_/Q
+                                0.21           0.37          -0.15  (VIOLATED)
+   pipeline_chain_21__u_seq2/addr[2]
+                                0.21           0.37          -0.15  (VIOLATED)
+       PIN :   pipeline_chain_21__u_seq2/addr_reg_2_/Q
+                                0.21           0.37          -0.15  (VIOLATED)
+   n17945                       0.21           0.36          -0.15  (VIOLATED)
+       PIN :   pipeline_chain_29__u_seq2/addr_reg_3_/Q
+                                0.21           0.36          -0.15  (VIOLATED)
+   pipeline_chain_21__u_seq2/addr[0]
+                                0.21           0.36          -0.15  (VIOLATED)
+       PIN :   pipeline_chain_21__u_seq2/addr_reg_0_/Q
+                                0.21           0.36          -0.15  (VIOLATED)
+   n17970                       0.21           0.36          -0.14  (VIOLATED)
+       PIN :   pipeline_chain_23__u_seq2/addr_reg_3_/Q
+                                0.21           0.36          -0.14  (VIOLATED)
+   pipeline_chain_22__u_seq2/addr[0]
+                                0.21           0.35          -0.14  (VIOLATED)
+       PIN :   pipeline_chain_22__u_seq2/addr_reg_0_/Q
+                                0.21           0.35          -0.14  (VIOLATED)
+   pipeline_chain_22__u_seq2/addr[1]
+                                0.21           0.34          -0.13  (VIOLATED)
+       PIN :   pipeline_chain_22__u_seq2/addr_reg_1_/Q
+                                0.21           0.34          -0.13  (VIOLATED)
+   pipeline_chain_22__u_seq2/addr[2]
+                                0.21           0.34          -0.13  (VIOLATED)
+       PIN :   pipeline_chain_22__u_seq2/addr_reg_2_/Q
+                                0.21           0.34          -0.13  (VIOLATED)
+   n17977                       0.21           0.33          -0.11  (VIOLATED)
+       PIN :   pipeline_chain_21__u_seq2/addr_reg_3_/Q
+                                0.21           0.33          -0.11  (VIOLATED)
+   n17975                       0.21           0.33          -0.11  (VIOLATED)
+       PIN :   pipeline_chain_22__u_seq2/addr_reg_3_/Q
+                                0.21           0.33          -0.11  (VIOLATED)
+   pipeline_chain_28__u_seq2/addr[0]
+                                0.21           0.31          -0.10  (VIOLATED)
+       PIN :   pipeline_chain_28__u_seq2/addr_reg_0_/Q
+                                0.21           0.31          -0.10  (VIOLATED)
+   pipeline_chain_28__u_seq2/addr[2]
+                                0.21           0.31          -0.09  (VIOLATED)
+       PIN :   pipeline_chain_28__u_seq2/addr_reg_2_/Q
+                                0.21           0.31          -0.09  (VIOLATED)
+   pipeline_chain_28__u_seq2/addr[1]
+                                0.21           0.31          -0.09  (VIOLATED)
+       PIN :   pipeline_chain_28__u_seq2/addr_reg_1_/Q
+                                0.21           0.31          -0.09  (VIOLATED)
+   n17950                       0.21           0.29          -0.08  (VIOLATED)
+       PIN :   pipeline_chain_28__u_seq2/addr_reg_3_/Q
+                                0.21           0.29          -0.08  (VIOLATED)
+   pipeline_chain_19__u_mult/stage1[5]
+                                0.20           0.27          -0.07  (VIOLATED)
+       PIN :   pipeline_chain_19__u_mult/stage1_reg_5_/Q
+                                0.20           0.27          -0.07  (VIOLATED)
+   pipeline_chain_28__u_seq3/shifter[5]
+                                0.12           0.17          -0.05  (VIOLATED)
+       PIN :   pipeline_chain_28__u_seq3/shifter_reg_5_/Q
+                                0.12           0.17          -0.05  (VIOLATED)
+   pipeline_chain_5__u_seq3/shifter[5]
+                                0.12           0.16          -0.04  (VIOLATED)
+       PIN :   pipeline_chain_5__u_seq3/shifter_reg_5_/Q
+                                0.12           0.16          -0.04  (VIOLATED)
+   n26979                       0.09           0.12          -0.03  (VIOLATED)
+       PIN :   pipeline_chain_9__u_mult/stage3_reg_0_/Q
+                                0.09           0.12          -0.03  (VIOLATED)
+   pipeline_chain_9__u_mult/stage1[53]
+                                0.20           0.23          -0.03  (VIOLATED)
+       PIN :   pipeline_chain_9__u_mult/stage1_reg_53_/Q
+                                0.20           0.23          -0.03  (VIOLATED)
+   pipeline_chain_14__u_mult/stage1[24]
+                                0.20           0.22          -0.03  (VIOLATED)
+       PIN :   pipeline_chain_14__u_mult/stage1_reg_24_/Q
+                                0.20           0.22          -0.03  (VIOLATED)
+   pipeline_chain_26__u_seq2/memory[22]
+                                0.20           0.22          -0.02  (VIOLATED)
+       PIN :   pipeline_chain_26__u_seq2/memory_reg_13__6_/Q
+                                0.20           0.22          -0.02  (VIOLATED)
+   pipeline_chain_24__u_seq3/shifter[5]
+                                0.12           0.13          -0.01  (VIOLATED)
+       PIN :   pipeline_chain_24__u_seq3/shifter_reg_5_/Q
+                                0.12           0.13          -0.01  (VIOLATED)
+   n18854                       0.09           0.10          -0.01  (VIOLATED)
+       PIN :   pipeline_chain_6__u_mult/stage2_reg_22_/Q
+                                0.09           0.10          -0.01  (VIOLATED)
+   n18469                       0.09           0.10          -0.01  (VIOLATED)
+       PIN :   pipeline_chain_3__u_mult/stage2_reg_23_/Q
+                                0.09           0.10          -0.01  (VIOLATED)
+   n21798                       0.09           0.09          -0.01  (VIOLATED)
+       PIN :   pipeline_chain_29__u_mult/stage2_reg_22_/Q
+                                0.09           0.09          -0.01  (VIOLATED)
+   n18470                       0.09           0.09          -0.01  (VIOLATED)
+       PIN :   pipeline_chain_3__u_mult/stage2_reg_22_/Q
+                                0.09           0.09          -0.01  (VIOLATED)
+   n28957                       0.20           0.20          -0.01  (VIOLATED)
+       PIN :   pipeline_chain_9__u_seq2/memory_reg_3__1_/Q
+                                0.20           0.20          -0.01  (VIOLATED)
+   pipeline_chain_4__u_seq3/shifter[5]
+                                0.12           0.13          -0.01  (VIOLATED)
+       PIN :   pipeline_chain_4__u_seq3/shifter_reg_5_/Q
+                                0.12           0.13          -0.01  (VIOLATED)
+   n18218                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n19752                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n20648                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n18559                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n19622                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n26689                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n21541                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n18982                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+   n19617                       0.09           0.09           0.00  (VIOLATED: increase significant digits)
+
+   -----------------------------------------------------------------
+   Total                      71                -11.96  
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   pipeline_chain_24__u_seq2/addr[1]
+                                8.00          56.21         -48.21  (VIOLATED)
+   pipeline_chain_24__u_seq2/addr[2]
+                                8.00          55.81         -47.81  (VIOLATED)
+   pipeline_chain_24__u_seq2/addr[0]
+                                8.00          54.98         -46.98  (VIOLATED)
+   n17965                       8.00          51.64         -43.64  (VIOLATED)
+   pipeline_chain_26__u_seq2/addr[0]
+                                8.00          49.00         -41.00  (VIOLATED)
+   n18303                       8.00          47.99         -39.99  (VIOLATED)
+   pipeline_chain_26__u_seq2/addr[1]
+                                8.00          46.34         -38.34  (VIOLATED)
+   pipeline_chain_25__u_seq2/addr[0]
+                                8.00          46.30         -38.30  (VIOLATED)
+   pipeline_chain_26__u_seq2/addr[2]
+                                8.00          46.25         -38.25  (VIOLATED)
+   pipeline_chain_25__u_seq2/addr[1]
+                                8.00          44.92         -36.92  (VIOLATED)
+   pipeline_chain_31__u_seq2/addr[1]
+                                8.00          44.63         -36.63  (VIOLATED)
+   pipeline_chain_25__u_seq2/addr[2]
+                                8.00          44.11         -36.11  (VIOLATED)
+   pipeline_chain_31__u_seq2/addr[2]
+                                8.00          43.43         -35.43  (VIOLATED)
+   n17957                       8.00          42.65         -34.65  (VIOLATED)
+   pipeline_chain_26__u_seq2/memory[22]
+                               16.00          50.00         -34.00  (VIOLATED)
+   n17961                       8.00          41.84         -33.84  (VIOLATED)
+   pipeline_chain_31__u_seq2/addr[0]
+                                8.00          41.64         -33.64  (VIOLATED)
+   pipeline_chain_0__u_seq2/addr[1]
+                                8.00          41.14         -33.14  (VIOLATED)
+   n17938                       8.00          40.28         -32.28  (VIOLATED)
+   pipeline_chain_30__u_seq2/addr[2]
+                                8.00          38.00         -30.00  (VIOLATED)
+   pipeline_chain_30__u_seq2/addr[0]
+                                8.00          37.95         -29.95  (VIOLATED)
+   n17942                       8.00          37.76         -29.76  (VIOLATED)
+   pipeline_chain_30__u_seq2/addr[1]
+                                8.00          37.50         -29.50  (VIOLATED)
+   pipeline_chain_0__u_seq2/addr[2]
+                                8.00          37.21         -29.21  (VIOLATED)
+   pipeline_chain_23__u_seq2/addr[0]
+                                8.00          34.48         -26.48  (VIOLATED)
+   n17955                       8.00          33.67         -25.67  (VIOLATED)
+   pipeline_chain_27__u_seq2/addr[2]
+                                8.00          33.57         -25.57  (VIOLATED)
+   pipeline_chain_27__u_seq2/addr[0]
+                                8.00          32.80         -24.80  (VIOLATED)
+   pipeline_chain_27__u_seq2/addr[1]
+                                8.00          31.64         -23.64  (VIOLATED)
+   pipeline_chain_29__u_seq2/addr[0]
+                                8.00          30.90         -22.90  (VIOLATED)
+   pipeline_chain_23__u_seq2/addr[2]
+                                8.00          29.86         -21.86  (VIOLATED)
+   pipeline_chain_23__u_seq2/addr[1]
+                                8.00          29.70         -21.70  (VIOLATED)
+   pipeline_chain_29__u_seq2/addr[2]
+                                8.00          29.59         -21.59  (VIOLATED)
+   pipeline_chain_19__u_mult/stage1[5]
+                                8.00          29.44         -21.44  (VIOLATED)
+   pipeline_chain_29__u_seq2/addr[1]
+                                8.00          29.37         -21.37  (VIOLATED)
+   pipeline_chain_21__u_seq2/addr[1]
+                                8.00          28.75         -20.75  (VIOLATED)
+   pipeline_chain_0__u_seq2/addr[0]
+                                8.00          28.62         -20.62  (VIOLATED)
+   n17945                       8.00          28.37         -20.37  (VIOLATED)
+   pipeline_chain_21__u_seq2/addr[0]
+                                8.00          28.19         -20.19  (VIOLATED)
+   pipeline_chain_21__u_seq2/addr[2]
+                                8.00          28.12         -20.12  (VIOLATED)
+   n17970                       8.00          27.82         -19.82  (VIOLATED)
+   pipeline_chain_22__u_seq2/addr[0]
+                                8.00          27.15         -19.15  (VIOLATED)
+   pipeline_chain_22__u_seq2/addr[1]
+                                8.00          26.31         -18.31  (VIOLATED)
+   pipeline_chain_22__u_seq2/addr[2]
+                                8.00          25.96         -17.96  (VIOLATED)
+   n17977                       8.00          25.05         -17.05  (VIOLATED)
+   n17975                       8.00          25.01         -17.01  (VIOLATED)
+   pipeline_chain_9__u_mult/stage1[53]
+                                8.00          24.84         -16.84  (VIOLATED)
+   pipeline_chain_14__u_mult/stage1[24]
+                                8.00          24.51         -16.51  (VIOLATED)
+   pipeline_chain_28__u_seq2/addr[0]
+                                8.00          23.94         -15.94  (VIOLATED)
+   pipeline_chain_28__u_seq2/addr[1]
+                                8.00          23.18         -15.18  (VIOLATED)
+   pipeline_chain_28__u_seq2/addr[2]
+                                8.00          22.96         -14.96  (VIOLATED)
+   n17950                       8.00          22.05         -14.05  (VIOLATED)
+   n28957                       8.00          21.61         -13.61  (VIOLATED)
+   n29032                       8.00          19.55         -11.55  (VIOLATED)
+   pipeline_chain_17__u_mult/stage1[35]
+                                8.00          19.01         -11.01  (VIOLATED)
+   pipeline_chain_21__u_seq2/memory[38]
+                                8.00          18.34         -10.34  (VIOLATED)
+   n26979                      16.00          24.43          -8.43  (VIOLATED)
+   n28785                       8.00          13.70          -5.70  (VIOLATED)
+   n28787                       8.00          13.24          -5.24  (VIOLATED)
+   pipeline_chain_30__u_seq2/memory[80]
+                                8.00          12.77          -4.77  (VIOLATED)
+   pipeline_chain_28__u_seq3/shifter[5]
+                                8.00          11.84          -3.84  (VIOLATED)
+   n28859                       8.00          11.46          -3.46  (VIOLATED)
+   pipeline_chain_5__u_seq3/shifter[5]
+                                8.00          11.09          -3.09  (VIOLATED)
+   pipeline_chain_28__u_seq2/memory[103]
+                                8.00          10.91          -2.91  (VIOLATED)
+   pipeline_chain_12__u_mult/stage1[22]
+                                8.00           9.75          -1.75  (VIOLATED)
+   final_out[244]               8.00           9.66          -1.66  (VIOLATED)
+   final_out[611]               8.00           9.64          -1.64  (VIOLATED)
+   pipeline_chain_25__u_seq2/memory[115]
+                                8.00           9.60          -1.60  (VIOLATED)
+   final_out[295]               8.00           9.59          -1.59  (VIOLATED)
+   final_out[242]               8.00           9.59          -1.59  (VIOLATED)
+   n26691                      16.00          17.55          -1.55  (VIOLATED)
+   final_out[550]               8.00           9.53          -1.53  (VIOLATED)
+   final_out[241]               8.00           9.50          -1.50  (VIOLATED)
+   final_out[238]               8.00           9.42          -1.42  (VIOLATED)
+   final_out[240]               8.00           9.41          -1.41  (VIOLATED)
+   n4478                       16.00          17.39          -1.39  (VIOLATED)
+   final_out[237]               8.00           9.37          -1.37  (VIOLATED)
+   final_out[239]               8.00           9.34          -1.34  (VIOLATED)
+   final_out[236]               8.00           9.31          -1.31  (VIOLATED)
+   final_out[675]               8.00           9.28          -1.28  (VIOLATED)
+   n26706                       8.00           9.28          -1.28  (VIOLATED)
+   final_out[245]               8.00           9.24          -1.24  (VIOLATED)
+   seq1_out[30]                 8.00           9.20          -1.20  (VIOLATED)
+   final_out[612]               8.00           9.14          -1.14  (VIOLATED)
+   final_out[867]               8.00           9.13          -1.13  (VIOLATED)
+   final_out[549]               8.00           9.11          -1.11  (VIOLATED)
+   final_out[423]               8.00           9.06          -1.06  (VIOLATED)
+   final_out[547]               8.00           9.04          -1.04  (VIOLATED)
+   seq1_out[100]                8.00           9.01          -1.01  (VIOLATED)
+   final_out[340]              16.00          16.99          -0.99  (VIOLATED)
+   n18854                       8.00           8.96          -0.96  (VIOLATED)
+   n18469                       8.00           8.93          -0.93  (VIOLATED)
+   seq1_out[9]                  8.00           8.92          -0.92  (VIOLATED)
+   seq1_out[39]                 8.00           8.90          -0.90  (VIOLATED)
+   n21798                       8.00           8.87          -0.87  (VIOLATED)
+   pipeline_chain_24__u_seq3/shifter[5]
+                                8.00           8.86          -0.86  (VIOLATED)
+   final_out[548]               8.00           8.86          -0.86  (VIOLATED)
+   seq1_out[150]                8.00           8.82          -0.82  (VIOLATED)
+   n18470                       8.00           8.81          -0.81  (VIOLATED)
+   seq1_out[174]                8.00           8.80          -0.80  (VIOLATED)
+   final_out[296]               8.00           8.79          -0.79  (VIOLATED)
+   final_out[246]               8.00           8.79          -0.79  (VIOLATED)
+   seq1_out[175]                8.00           8.74          -0.74  (VIOLATED)
+   final_out[341]              16.00          16.73          -0.73  (VIOLATED)
+   seq1_out[10]                 8.00           8.64          -0.64  (VIOLATED)
+   n26715                       8.00           8.62          -0.62  (VIOLATED)
+   seq1_out[148]                8.00           8.59          -0.59  (VIOLATED)
+   seq1_out[36]                 8.00           8.57          -0.57  (VIOLATED)
+   final_out[804]               8.00           8.55          -0.55  (VIOLATED)
+   n26696                       8.00           8.53          -0.53  (VIOLATED)
+   final_out[358]               8.00           8.50          -0.50  (VIOLATED)
+   seq1_out[228]                8.00           8.45          -0.45  (VIOLATED)
+   final_out[404]              16.00          16.42          -0.42  (VIOLATED)
+   n26678                       8.00           8.41          -0.41  (VIOLATED)
+   seq1_out[52]                 8.00           8.40          -0.40  (VIOLATED)
+   n26695                       8.00           8.39          -0.39  (VIOLATED)
+   final_out[552]               8.00           8.39          -0.39  (VIOLATED)
+   seq1_out[11]                 8.00           8.38          -0.38  (VIOLATED)
+   n26679                       8.00           8.34          -0.34  (VIOLATED)
+   seq1_out[229]                8.00           8.32          -0.32  (VIOLATED)
+   n18218                       8.00           8.32          -0.32  (VIOLATED)
+   n26716                       8.00           8.31          -0.31  (VIOLATED)
+   final_out[405]              16.00          16.23          -0.23  (VIOLATED)
+   pipeline_chain_4__u_seq3/shifter[5]
+                                8.00           8.22          -0.22  (VIOLATED)
+   final_out[247]               8.00           8.21          -0.21  (VIOLATED)
+   seq1_out[38]                 8.00           8.20          -0.20  (VIOLATED)
+   n26714                       8.00           8.20          -0.20  (VIOLATED)
+   n26687                      16.00          16.19          -0.19  (VIOLATED)
+   final_out[424]               8.00           8.17          -0.17  (VIOLATED)
+   n26690                      16.00          16.17          -0.17  (VIOLATED)
+   n19752                       8.00           8.17          -0.17  (VIOLATED)
+   seq2_out[424]                8.00           8.17          -0.17  (VIOLATED)
+   n20648                       8.00           8.16          -0.16  (VIOLATED)
+   n18559                       8.00           8.16          -0.16  (VIOLATED)
+   final_out[297]               8.00           8.15          -0.15  (VIOLATED)
+   seq2_out[446]                8.00           8.14          -0.14  (VIOLATED)
+   pipeline_chain_28__u_seq2/memory[69]
+                                8.00           8.14          -0.14  (VIOLATED)
+   seq2_out[425]                8.00           8.13          -0.13  (VIOLATED)
+   n19622                       8.00           8.09          -0.09  (VIOLATED)
+   res_out[1530]               16.00          16.09          -0.09  (VIOLATED)
+   res_out[1469]               16.00          16.09          -0.09  (VIOLATED)
+   seq1_out[13]                 8.00           8.08          -0.08  (VIOLATED)
+   res_out[1725]               16.00          16.07          -0.07  (VIOLATED)
+   seq2_out[440]                8.00           8.07          -0.07  (VIOLATED)
+   seq2_out[442]                8.00           8.07          -0.07  (VIOLATED)
+   res_out[956]                16.00          16.06          -0.06  (VIOLATED)
+   seq2_out[444]                8.00           8.05          -0.05  (VIOLATED)
+   seq3_out[27]                 8.00           8.04          -0.04  (VIOLATED)
+   res_out[2]                  16.00          16.04          -0.04  (VIOLATED)
+   res_out[486]                16.00          16.04          -0.04  (VIOLATED)
+   res_out[1930]               16.00          16.04          -0.04  (VIOLATED)
+   res_out[1758]               16.00          16.02          -0.02  (VIOLATED)
+   seq1_out[75]                16.00          16.02          -0.02  (VIOLATED)
+   final_out[541]               8.00           8.02          -0.02  (VIOLATED)
+   final_out[407]              16.00          16.02          -0.02  (VIOLATED)
+   res_out[1481]               16.00          16.02          -0.02  (VIOLATED)
+   res_out[1772]               16.00          16.01          -0.01  (VIOLATED)
+   seq1_out[205]               16.00          16.01          -0.01  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      158             -1582.25  
+
+1

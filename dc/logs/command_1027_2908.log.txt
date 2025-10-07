@@ -1,0 +1,706 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version S-2021.06-SP2 for linux64 - Aug 24, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Starting shell in Topographical mode...
+Initializing gui preferences from file  /nfs/site/home/yabdrash/.synopsys_dc_gui/preferences.tcl
+dc_shell-topo> #shortcut
+dc_shell-topo> alias s "source -verbose -echo"
+dc_shell-topo> 
+dc_shell-topo> #setup
+dc_shell-topo> remove_design -all
+1
+dc_shell-topo> s scripts/0env_setup.tcl
+#Environment setup for DC Shell
+#--reports
+#  |___dc
+#       |___pre_synthesis
+#       |___post_synthesis_analysis
+#       |___library
+#  |___dft
+#      |___predft
+#      |___dft
+#      |___postdft
+#
+#shortcut
+alias s "source -verbose -echo"
+#dc reports setup pre synthesis
+set dc_rpt "../reports/dc"
+../reports/dc
+set dc_rpt_lib_path "../reports/dc/library"
+../reports/dc/library
+set dc_rpt_presyn_path "../reports/dc/pre_synthesis"
+../reports/dc/pre_synthesis
+file mkdir $dc_rpt
+file mkdir $dc_rpt_lib_path
+file mkdir $dc_rpt_presyn_path 
+#dc output
+set all_output_path "../output"
+../output
+file mkdir $all_output_path
+#dc reports analysis
+set dc_rpt_analysis "../reports/dc/post_synthesis_analysis"
+../reports/dc/post_synthesis_analysis
+file mkdir $dc_rpt_analysis
+#pre-dft reports
+set dft_rpt_path "../reports/dft"
+../reports/dft
+set dft_rpt_predft_path "../reports/dft/pre_dft"
+../reports/dft/pre_dft
+file mkdir $dft_rpt_path
+file mkdir $dft_rpt_predft_path 
+#dft reports
+set dft_rpt_dft_path "../reports/dft/dft"
+../reports/dft/dft
+file mkdir $dft_rpt_dft_path
+#post-dft reports
+set dft_rpt_postdft_path "../reports/dft/post_dft"
+../reports/dft/post_dft
+file mkdir $dft_rpt_postdft_path
+dc_shell-topo> s scripts/lib_setup.tcl
+set target_library "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db"
+saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db
+set link_library "* $target_library saed32sram_ss0p95v125c.db"
+* saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss0p95v125c.db
+set search_path "$search_path . ../rtl ./scripts  ../libs/stdcell_hvt/db_nldm  ../libs/stdcell_lvt/db_nldm  ../libs/stdcell_rvt/db_nldm  ../libs/sram/db_nldm"
+. /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/dw/syn_ver /nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/dw/sim_ver . ../rtl ./scripts  ../libs/stdcell_hvt/db_nldm  ../libs/stdcell_lvt/db_nldm  ../libs/stdcell_rvt/db_nldm  ../libs/sram/db_nldm
+define_design_lib default -path ./work 
+1
+set MW_REFERENCE_LIB_DIRS "../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM"
+../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM
+set TECH_FILE "../libs/tech/milkyway/saed32nm_1p9m_mw.tf" 
+../libs/tech/milkyway/saed32nm_1p9m_mw.tf
+set MAP_FILE  "../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map"  
+../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map
+set TLUPLUS_MAX_FILE "../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus"  
+../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+set TLUPLUS_MIN_FILE "../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus" 
+../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+set MW_POWER_NET                "VDD" 
+VDD
+set MW_POWER_PORT               "VDD" 
+VDD
+set MW_GROUND_NET               "VSS" 
+VSS
+set MW_GROUND_PORT              "VSS" 
+VSS
+set MIN_ROUTING_LAYER            "M1"   
+M1
+set MAX_ROUTING_LAYER            "M6"  
+M6
+set mw_reference_library ${MW_REFERENCE_LIB_DIRS}
+../libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m                            ../libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m 			   ../libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m 			   ../libs/sram/milkyway/SRAM32NM
+set mw_design_library MYLIB 
+MYLIB
+if {![file isdirectory $mw_design_library ]} {
+   create_mw_lib   -technology $TECH_FILE      -mw_reference_library $mw_reference_library       $mw_design_library
+    } else {
+      set_mw_lib_reference $mw_design_library -mw_reference_library $mw_reference_library
+    }
+
+------------------- Internal Reference Library Settings -----------------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/milkyway/SRAM32NM
+
+
+------------------- Control File Reference Library Settings -----------
+
+Library    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/dc/MYLIB
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m
+  Reference    /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/milkyway/SRAM32NM
+-------------------------------------------------------------------------
+
+1
+open_mw_lib     $mw_design_library
+{MYLIB}
+check_library > ../reports/dc_check_lib.rpt 
+set_tlu_plus_files -max_tluplus $TLUPLUS_MAX_FILE       -min_tluplus $TLUPLUS_MIN_FILE       -tech2itf_map $MAP_FILE
+1
+check_tlu_plus_files
+
+Sanity check for TLU+ vs MW-Tech files:
+ max_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
+ min_tlu+: ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
+ mapping_file: ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map
+ max_emul_tlu+: **NONE**
+ min_emul_tlu+: **NONE**
+ MW design lib: MYLIB
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+1
+set_dont_use [get_lib_cell */ISO*]
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+1
+set_dont_use [get_lib_cell */RSDFFARX*]
+1
+set_dont_use [get_lib_cell */*LS*]
+1
+set_dont_use [get_lib_cell */*AO*]
+1
+1
+dc_shell-topo> read_db "saed32lvt_ss0p95v125c.db saed32hvt_ss0p95v125c.db saed32rvt_ss0p95v125c.db saed32sram_ss 0p95v125c.db"
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/gtech.db'
+Loading db file '/nfs/png/disks/MDC_Elite/cad/designcompiler/S-2021.06-SP2/libraries/syn/standard.sldb'
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m. (PSYN-878)
+Warning: The pin direction of 'INP' pin on 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is inconsistent with the same-name pin in the '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m' physical library. No physical link for the logical lib cell. (PSYN-058)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/milkyway/SRAM32NM. (PSYN-878)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+  Loading link library 'gtech'
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'. (DDB-24)
+Loading db file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'
+Warning: Overwriting design file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db'. (DDB-24)
+Loaded 0 designs.
+dc_shell-topo> read_ddc ../output/netlist_top.ddc
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/milkyway/saed32nm_hvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m. (PSYN-878)
+Warning: The pin direction of 'INP' pin on 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is inconsistent with the same-name pin in the '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/milkyway/saed32nm_rvt_1p9m' physical library. No physical link for the logical lib cell. (PSYN-058)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/milkyway/saed32nm_lvt_1p9m. (PSYN-878)
+Information: linking reference library : /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/milkyway/SRAM32NM. (PSYN-878)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'ANTENNA_RVT' cell in the 'saed32rvt_ss0p95v125c' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Reading ddc file '/nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/output/netlist_top.ddc'.
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Loaded 21 designs.
+Current design is 'Top'.
+Top SeqLogicBlock2_Mod_30 SeqLogicBlock2_Mod_11 SeqLogicBlock2_Mod_12 SeqLogicBlock2_Mod_13 SeqLogicBlock2_Mod_14 SeqLogicBlock2_Mod_15 SeqLogicBlock2_Mod_16 SeqLogicBlock2_Mod_17 SeqLogicBlock2_Mod_18 SeqLogicBlock2_Mod_19 SeqLogicBlock2_Mod_20 SeqLogicBlock2_Mod_21 SeqLogicBlock2_Mod_22 SeqLogicBlock2_Mod_23 SeqLogicBlock2_Mod_24 SeqLogicBlock2_Mod_25 SeqLogicBlock2_Mod_26 SeqLogicBlock2_Mod_27 SeqLogicBlock2_Mod_28 SeqLogicBlock2_Mod_29
+dc_shell-topo> current_design Top
+Current design is 'Top'.
+{Top}
+dc_shell-topo> link
+
+  Linking design 'Top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (21 designs)              /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/output/netlist_top.ddc, etc
+  saed32lvt_ss0p95v125c (library) /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db
+  saed32hvt_ss0p95v125c (library) /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db
+  saed32rvt_ss0p95v125c (library) /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db
+  saed32sram_ss0p95v125c (library) /nfs/png/disks/MDC_Elite/2025/yabdrash/assignment_v2.1/libs/sram/db_nldm/saed32sram_ss0p95v125c.db
+
+1
+dc_shell-topo> set test_default_period 10
+10
+dc_shell-topo> set test_default_strobe 5
+5
+dc_shell-topo> set test_default_bidir_delay 2
+2
+dc_shell-topo> set_dft_signal -view existing_dft -type ScanClock \
+[K[11G
+-port {clk sclk} -timing {4.5 5.5}
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view existing_dft -type Reset \
+[K[11G
+-port rst_n -active_state 0
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_scan_configuration -chain_count 4 -clock_mixing mix_clocks \
+[K[11G
+-add_lockup true
+Accepted scan configuration for modes: all_dft
+1
+dc_shell-topo> set_dft_insertion_configuration -synthesis_optimization none \
+[K[11G
+-preserve_design_name true
+Accepted insert_dft configuration specification.
+1
+dc_shell-topo> set test_ds[Kis
+test_disable_enhanced_dft_drc_reporting test_disconnect_non_functional_so       
+test_disable_find_best_scan_out         
+dc_shell-topo> set test_disable_enhanced_dft_drc_reporting false
+false
+dc_shell-topo> set_dft_signal -view spec -type ScanEnable \
+[K[11G
+-port in_c[31] -active_state 1
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view spec -type ScanDataIn \
+[K[11G
+-port in_a[0]
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view spec -type ScanDataIn \
+[K[11G
+-port in_b[0]
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view spec -type ScanDataIn \
+[K[11G
+-port in_c[0]
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view spec -type ScanDataOut \
+[K[11G
+-port {seq1_out[0]}
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view spec -type ScanDataOut \
+[K[11G
+-port {seq1_out[0]}
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_dft_signal -view spec -type ScanDataOut \
+[K[11G
+-port {seq1_out[0]}
+Accepted dft signal specification for modes: all_dft
+1
+dc_shell-topo> set_scan_path chain1 -view spec \
+[K[11G
+-scan_data_in in_a[0] \
+[K[11G
+-scan_data_out seq1_out[0] \
+[K[11G
+-scan_enable in_c[31]
+Accepted scan path specification for mode: Internal_scan
+1
+dc_shell-topo> set_scan_path chain2 -view spec \
+[K[11G
+-scan_data_in in_b[0] \
+[K[11G
+-scan_data_out seq2_out[0] \
+[K[11G
+-scan_enable in_c[31]
+Error: Port seq2_out[0] is not of type ScanDataOut
+Error: The scan path specification has been rejected. (UIT-629)
+0
+dc_shell-topo> report_scan_configuration 
+ 
+****************************************
+Report : Scan configuration
+Design : Top
+Version: S-2021.06-SP2
+Date   : Fri Aug 29 12:36:58 2025
+****************************************
+
+========================================
+TEST MODE: all_dft
+VIEW     : Specification
+========================================
+Chain count:                           4
+Scan Style:                            Multiplexed flip-flop
+Maximum scan chain length:             Undefined
+Exact scan chain length:               Undefined
+Physical Partitioning:                 Horizontal
+Replace:                               True
+Preserve multibit segments:            False
+Clock mixing:                          Mix clocks
+Internal clocks:                       none
+Retiming Flops:                        none
+[7m--More--[0m[A
+
+[KAdd lockup:                            True
+[7m--More--[0m[A
+
+[KLockup type:                           latch
+[7m--More--[0m[A
+
+[KInsert terminal lockup:                False
+[7m--More--[0m[A
+
+[KCreate dedicated scan out ports:       False
+[7m--More--[0m[A
+
+[KShared scan in:                        0
+[7m--More--[0m[A
+
+[KBidirectional mode:                    No bidirectional type
+[7m--More--[0m[A
+
+[KInternal Clock Mixing:                 False
+[7m--More--[0m[A
+
+[KTest Clocks by System Clocks:          False
+[7m--More--[0m[A
+
+[KHierarchical Isolation:                False
+[7m--More--[0m[A
+
+[KMultiple Scan Enable:                  Disable
+[7m--More--[0m[A
+
+[KPipeline Scan Enable:                  Disable
+[7m--More--[0m[A
+
+[KVoltage Mixing:                        False
+[7m--More--[0m[A
+
+[KIdentify Shift Register:               False
+[7m--More--[0m[A
+
+[KPower Domain Mixing:                   False
+[7m--More--[0m[A
+
+[KReuse MV Isolation Cells:              True
+[7m--More--[0m[A
+
+[KMulti LSSD:                            Disable
+[7m--More--[0m[A
+
+[K
+1
+dc_shell-topo> 
+dc_shell-topo> report_dft_signal -view exist
+ 
+****************************************
+Report : DFT signals
+Design : Top
+Version: S-2021.06-SP2
+Date   : Fri Aug 29 12:37:17 2025
+****************************************
+
+========================================
+TEST MODE: all_dft_user
+VIEW     : Existing DFT
+========================================
+Port               SignalType          Active    Hookup    Timing    Usage
+----------         ----------          ------    ------    ------    -----
+sclk               ScanMasterClock     1         -         P 10.0 R 4.0 F 5.0
+sclk               MasterClock         1         -         P 10.0 R 4.0 F 5.0
+clk                ScanMasterClock     1         -         P 10.0 R 4.0 F 5.0
+clk                MasterClock         1         -         P 10.0 R 4.0 F 5.0
+rst_n              Reset               0         -         P 10.0 R 5.0 F 4.0
+========================================
+TEST MODE: all_dft_protocol
+VIEW     : Existing DFT
+[7m--More--[0m[A
+
+[K========================================
+[7m--More--[0m[A
+
+[KPort               SignalType          Active    Hookup    Timing    Usage
+[7m--More--[0m[A
+
+[K----------         ----------          ------    ------    ------    -----
+[7m--More--[0m[A
+
+[Ksclk               ScanMasterClock     1         -         P 10.0 R 4.0 F 5.0
+[7m--More--[0m[A
+
+[Ksclk               MasterClock         1         -         P 10.0 R 4.0 F 5.0
+[7m--More--[0m[A
+
+[Kclk                ScanMasterClock     1         -         P 10.0 R 4.0 F 5.0
+[7m--More--[0m[A
+
+[Kclk                MasterClock         1         -         P 10.0 R 4.0 F 5.0
+[7m--More--[0m[A
+
+[Krst_n              Reset               0         -         P 10.0 R 5.0 F 4.0
+[7m--More--[0m[A
+
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K        Environment Assertions:
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K            create_voltage_area (1.6)
+[7m--More--[0m[A
+
+[K            set_case_analysis
+[7m--More--[0m[A
+
+[K            set_drive
+[7m--More--[0m[A
+
+[K            set_driving_cell
+[7m--More--[0m[A
+
+[K            set_fanout_load
+[7m--More--[0m[A
+
+[K            set_input_transition
+[7m--More--[0m[A
+
+[K            set_ideal_network (1.7)
+[7m--More--[0m[A
+
+[K            set_level_shifter_strategy (1.6)
+[7m--More--[0m[A
+
+[K            set_level_shifter_threshold (1.6)
+[7m--More--[0m[A
+
+[K            set_load
+[7m--More--[0m[A
+
+[K            set_logic_dc
+[7m--More--[0m[A
+
+[K            set_logic_one
+[7m--More--[0m[A
+
+[K            set_logic_zero
+[7m--More--[0m[A
+
+[K            set_max_area
+[7m--More--[0m[A
+
+[K            set_max_capacitance
+[7m--More--[0m[A
+
+[K            set_max_dynamic_power (1.4)
+[7m--More--[0m[A
+
+[K            set_max_fanout
+[7m--More--[0m[A
+
+[K            set_max_leakage_power (1.4)
+[7m--More--[0m[A
+
+[K            set_max_transition
+[7m--More--[0m[A
+
+[K            set_min_capacitance
+[7m--More--[0m[A
+
+[K            set_min_fanout
+[7m--More--[0m[A
+
+[K            set_min_porosity (1.4)
+[7m--More--[0m[A
+
+[K            set_operating_conditions
+[7m--More--[0m[A
+
+[K            set_port_fanout_number
+[7m--More--[0m[A
+
+[K            set_resistance
+[7m--More--[0m[A
+
+[K            set_wire_load_min_block_size
+[7m--More--[0m[A
+
+[K            set_wire_load_mode
+[7m--More--[0m[A
+
+[K            set_wire_load_model
+[7m--More--[0m[A
+
+[K            set_wire_load_selection_group
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K       Like write_script, the write_sdc command writes out  commands  relative
+[7m--More--[0m[A
+
+[K       to  the  top  of  the  design, regardless of the current instance.  SDC
+[7m--More--[0m[A
+
+[K       files written by write_sdc must be read in from the top of the design.
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K       For a complete guide to using SDC with Synopsys applications,  see  the
+[7m--More--[0m[A
+
+[K       Using  the Synopsys Design Constraints Format Application Note which is
+[7m--More--[0m[A
+
+[K       available through SolvNET at http://solvnet.synopsys.com.
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K       The usage of some of the supported commands is restricted when  reading
+[7m--More--[0m[A
+
+[K       SDC.   In some cases, some options are not allowed.  The write_sdc com-
+[7m--More--[0m[A
+
+[K       mand supports the restricted usage by restricting what is written.  The
+[7m--More--[0m[A
+
+[K       following restrictions apply for SDC Version 1.3:
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K        o For set_driving_cell, the -min and -max options are not supported.
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K        o  For  set_port_fanout_number, the -min and -max options are not sup-
+[7m--More--[0m[A
+
+[K         ported.
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K       When the hierarchy has been  partially  flattened,  embedded  hierarchy
+[7m--More--[0m[A
+
+[K       separators  can  make names ambiguous.  It is not clear which hierarchy
+[7m--More--[0m[A
+
+[K       separator characters are part of the name, and which are  real  separa-
+[7m--More--[0m[A
+
+[K       tors.   Beginning  with SDC Version 1.2, hierarchical names can be made
+[7m--More--[0m[A
+
+[K       non-ambiguous using the set_hierarchy_separator SDC command and/or  the
+[7m--More--[0m[A
+
+[K       -hsc  option  available  on the get_cells, get_lib_cells, get_lib_pins,
+[7m--More--[0m[A
+
+[K       get_nets, and get_pins SDC object access commands.  By default,  Prime-
+[7m--More--[0m[A
+
+[K       Time and Design Compiler write an SDC file using these features to cre-
+[7m--More--[0m[A
+
+[K       ate non-ambiguous names.  It is considered best practice to  write  SDC
+[7m--More--[0m[A
+
+[K       files  that  contain names that are not ambiguous.  However, if you are
+[7m--More--[0m[A
+
+[K       using a third-party application that does not fully support SDC 1.2  or
+[7m--More--[0m[A
+
+[K       later  (that  is,  it  does  not support the non-ambiguous hierarchical
+[7m--More--[0m[A
+
+[K       names features of SDC), then you can suppress these features by setting
+[7m--More--[0m[A
+
+[K       sdc_write_unambiguous_names variable to true.
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K   Multicorner-Multimode Support
+[7m--More--[0m[A
+
+[K       This command uses information from the current scenario only.
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[KEXAMPLES
+[7m--More--[0m[A
+
+[K       The following command writes the SDC script to the file named top.sdc:
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K         prompt> write_sdc top.sdc
+[7m--More--[0m[A
+
+[K         1
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[KSEE ALSO
+[7m--More--[0m[A
+
+[K       read_sdc(2)
+[7m--More--[0m[A
+
+[K       write_script(2)
+[7m--More--[0m[A
+
+[K       sdc_write_unambiguous_names(3)
+[7m--More--[0m[A
+
+[K
+[7m--More--[0m[A
+
+[K                          Version S-2021.06-SP2
+[7m--More--[0m[A
+
+[K            Copyright (c) 2021 Synopsys, Inc. All rights reserved.
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> 
+dc_shell-topo> man write_sdc[16G[4P[25G -nosplit -output "$all_output_path/mapped_scan_opt.sdc" [P-[1@ -
+Error: unknown option '-output' (CMD-010)
+dc_shell-topo> write_sdc -nosplit -output "$all_output_path/mapped_scan_opt.sdc"[P"[P"[P"[P"[P"[P"[P"[P"
+1
+dc_shell-topo> 

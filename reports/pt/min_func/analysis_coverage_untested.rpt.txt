@@ -1,0 +1,228 @@
+****************************************
+Report : analysis_coverage
+	-status_details {untested}
+	-sort_by slack
+Design : Top
+Version: V-2023.12-SP4-VAL-20240710
+Date   : Mon Sep  1 22:43:06 2025
+****************************************
+
+Type of Check         Total              Met         Violated         Untested
+--------------------------------------------------------------------------------
+setup                 24368      4720 ( 19%)         0 (  0%)     19648 ( 81%)
+hold                  24368      4720 ( 19%)         0 (  0%)     19648 ( 81%)
+recovery               8304      1008 ( 12%)         0 (  0%)      7296 ( 88%)
+removal                8304         0 (  0%)         0 (  0%)      8304 (100%)
+min_pulse_width       24912     16608 ( 67%)         0 (  0%)      8304 ( 33%)
+out_setup              5120      4800 ( 94%)         0 (  0%)       320 (  6%)
+out_hold               5120         0 (  0%)         0 (  0%)      5120 (100%)
+--------------------------------------------------------------------------------
+All Checks           100496     31856 ( 32%)         0 (  0%)     68640 ( 68%)
+
+
+Constrained                  Related             Check
+Pin                          Pin       Clock     Type         Slack  Reason
+--------------------------------------------------------------------------------
+seq2_out[335]                -         clk       out_hold  untested  no_paths
+seq2_out[335]                -         clk       out_setup untested  no_paths
+seq2_out[334]                -         clk       out_hold  untested  no_paths
+seq2_out[334]                -         clk       out_setup untested  no_paths
+seq2_out[333]                -         clk       out_hold  untested  no_paths
+seq2_out[333]                -         clk       out_setup untested  no_paths
+seq2_out[332]                -         clk       out_hold  untested  no_paths
+seq2_out[332]                -         clk       out_setup untested  no_paths
+seq2_out[331]                -         clk       out_hold  untested  no_paths
+seq2_out[331]                -         clk       out_setup untested  no_paths
+seq2_out[330]                -         clk       out_hold  untested  no_paths
+seq2_out[330]                -         clk       out_setup untested  no_paths
+seq2_out[329]                -         clk       out_hold  untested  no_paths
+seq2_out[329]                -         clk       out_setup untested  no_paths
+seq2_out[328]                -         clk       out_hold  untested  no_paths
+seq2_out[328]                -         clk       out_setup untested  no_paths
+seq2_out[327]                -         clk       out_hold  untested  no_paths
+seq2_out[327]                -         clk       out_setup untested  no_paths
+seq2_out[326]                -         clk       out_hold  untested  no_paths
+seq2_out[326]                -         clk       out_setup untested  no_paths
+seq2_out[325]                -         clk       out_hold  untested  no_paths
+seq2_out[325]                -         clk       out_setup untested  no_paths
+seq2_out[324]                -         clk       out_hold  untested  no_paths
+seq2_out[324]                -         clk       out_setup untested  no_paths
+seq2_out[323]                -         clk       out_hold  untested  no_paths
+seq2_out[323]                -         clk       out_setup untested  no_paths
+seq2_out[322]                -         clk       out_hold  untested  no_paths
+seq2_out[322]                -         clk       out_setup untested  no_paths
+seq2_out[321]                -         clk       out_hold  untested  no_paths
+seq2_out[321]                -         clk       out_setup untested  no_paths
+seq2_out[320]                -         clk       out_hold  untested  no_paths
+seq2_out[320]                -         clk       out_setup untested  no_paths
+seq2_out[319]                -         clk       out_hold  untested  no_paths
+seq2_out[319]                -         clk       out_setup untested  no_paths
+seq2_out[318]                -         clk       out_hold  untested  no_paths
+seq2_out[318]                -         clk       out_setup untested  no_paths
+seq2_out[317]                -         clk       out_hold  untested  no_paths
+seq2_out[317]                -         clk       out_setup untested  no_paths
+seq2_out[316]                -         clk       out_hold  untested  no_paths
+seq2_out[316]                -         clk       out_setup untested  no_paths
+seq2_out[315]                -         clk       out_hold  untested  no_paths
+seq2_out[315]                -         clk       out_setup untested  no_paths
+seq2_out[314]                -         clk       out_hold  untested  no_paths
+seq2_out[314]                -         clk       out_setup untested  no_paths
+seq2_out[313]                -         clk       out_hold  untested  no_paths
+seq2_out[313]                -         clk       out_setup untested  no_paths
+seq2_out[312]                -         clk       out_hold  untested  no_paths
+seq2_out[312]                -         clk       out_setup untested  no_paths
+seq2_out[305]                -         clk       out_hold  untested  no_paths
+seq2_out[305]                -         clk       out_setup untested  no_paths
+seq2_out[271]                -         clk       out_hold  untested  no_paths
+seq2_out[271]                -         clk       out_setup untested  no_paths
+seq2_out[270]                -         clk       out_hold  untested  no_paths
+seq2_out[270]                -         clk       out_setup untested  no_paths
+seq2_out[269]                -         clk       out_hold  untested  no_paths
+seq2_out[269]                -         clk       out_setup untested  no_paths
+seq2_out[268]                -         clk       out_hold  untested  no_paths
+seq2_out[268]                -         clk       out_setup untested  no_paths
+seq2_out[267]                -         clk       out_hold  untested  no_paths
+seq2_out[267]                -         clk       out_setup untested  no_paths
+seq2_out[266]                -         clk       out_hold  untested  no_paths
+seq2_out[266]                -         clk       out_setup untested  no_paths
+seq2_out[265]                -         clk       out_hold  untested  no_paths
+seq2_out[265]                -         clk       out_setup untested  no_paths
+seq2_out[264]                -         clk       out_hold  untested  no_paths
+seq2_out[264]                -         clk       out_setup untested  no_paths
+seq2_out[263]                -         clk       out_hold  untested  no_paths
+seq2_out[263]                -         clk       out_setup untested  no_paths
+seq2_out[262]                -         clk       out_hold  untested  no_paths
+seq2_out[262]                -         clk       out_setup untested  no_paths
+seq2_out[259]                -         clk       out_hold  untested  no_paths
+seq2_out[259]                -         clk       out_setup untested  no_paths
+seq2_out[258]                -         clk       out_hold  untested  no_paths
+seq2_out[258]                -         clk       out_setup untested  no_paths
+seq2_out[257]                -         clk       out_hold  untested  no_paths
+seq2_out[257]                -         clk       out_setup untested  no_paths
+seq2_out[256]                -         clk       out_hold  untested  no_paths
+seq2_out[256]                -         clk       out_setup untested  no_paths
+seq2_out[255]                -         clk       out_hold  untested  no_paths
+seq2_out[255]                -         clk       out_setup untested  no_paths
+seq2_out[254]                -         clk       out_hold  untested  no_paths
+seq2_out[254]                -         clk       out_setup untested  no_paths
+seq2_out[253]                -         clk       out_hold  untested  no_paths
+seq2_out[253]                -         clk       out_setup untested  no_paths
+seq2_out[252]                -         clk       out_hold  untested  no_paths
+seq2_out[252]                -         clk       out_setup untested  no_paths
+seq2_out[251]                -         clk       out_hold  untested  no_paths
+seq2_out[251]                -         clk       out_setup untested  no_paths
+seq2_out[250]                -         clk       out_hold  untested  no_paths
+seq2_out[250]                -         clk       out_setup untested  no_paths
+seq2_out[249]                -         clk       out_hold  untested  no_paths
+seq2_out[249]                -         clk       out_setup untested  no_paths
+seq2_out[248]                -         clk       out_hold  untested  no_paths
+seq2_out[248]                -         clk       out_setup untested  no_paths
+seq2_out[247]                -         clk       out_hold  untested  no_paths
+seq2_out[247]                -         clk       out_setup untested  no_paths
+seq2_out[246]                -         clk       out_hold  untested  no_paths
+seq2_out[246]                -         clk       out_setup untested  no_paths
+seq2_out[245]                -         clk       out_hold  untested  no_paths
+seq2_out[245]                -         clk       out_setup untested  no_paths
+seq2_out[243]                -         clk       out_hold  untested  no_paths
+seq2_out[243]                -         clk       out_setup untested  no_paths
+seq2_out[242]                -         clk       out_hold  untested  no_paths
+seq2_out[242]                -         clk       out_setup untested  no_paths
+seq2_out[240]                -         clk       out_hold  untested  no_paths
+seq2_out[240]                -         clk       out_setup untested  no_paths
+seq2_out[223]                -         clk       out_hold  untested  no_paths
+seq2_out[223]                -         clk       out_setup untested  no_paths
+seq2_out[221]                -         clk       out_hold  untested  no_paths
+seq2_out[221]                -         clk       out_setup untested  no_paths
+seq2_out[207]                -         clk       out_hold  untested  no_paths
+seq2_out[207]                -         clk       out_setup untested  no_paths
+seq2_out[206]                -         clk       out_hold  untested  no_paths
+seq2_out[206]                -         clk       out_setup untested  no_paths
+seq2_out[205]                -         clk       out_hold  untested  no_paths
+seq2_out[205]                -         clk       out_setup untested  no_paths
+seq2_out[204]                -         clk       out_hold  untested  no_paths
+seq2_out[204]                -         clk       out_setup untested  no_paths
+seq2_out[199]                -         clk       out_hold  untested  no_paths
+seq2_out[199]                -         clk       out_setup untested  no_paths
+seq2_out[198]                -         clk       out_hold  untested  no_paths
+seq2_out[198]                -         clk       out_setup untested  no_paths
+seq2_out[197]                -         clk       out_hold  untested  no_paths
+seq2_out[197]                -         clk       out_setup untested  no_paths
+seq2_out[196]                -         clk       out_hold  untested  no_paths
+seq2_out[196]                -         clk       out_setup untested  no_paths
+seq2_out[195]                -         clk       out_hold  untested  no_paths
+seq2_out[195]                -         clk       out_setup untested  no_paths
+seq2_out[194]                -         clk       out_hold  untested  no_paths
+seq2_out[194]                -         clk       out_setup untested  no_paths
+seq2_out[193]                -         clk       out_hold  untested  no_paths
+seq2_out[193]                -         clk       out_setup untested  no_paths
+seq2_out[192]                -         clk       out_hold  untested  no_paths
+seq2_out[192]                -         clk       out_setup untested  no_paths
+seq2_out[191]                -         clk       out_hold  untested  no_paths
+seq2_out[191]                -         clk       out_setup untested  no_paths
+seq2_out[190]                -         clk       out_hold  untested  no_paths
+seq2_out[190]                -         clk       out_setup untested  no_paths
+seq2_out[189]                -         clk       out_hold  untested  no_paths
+seq2_out[189]                -         clk       out_setup untested  no_paths
+seq2_out[188]                -         clk       out_hold  untested  no_paths
+seq2_out[188]                -         clk       out_setup untested  no_paths
+seq2_out[187]                -         clk       out_hold  untested  no_paths
+seq2_out[187]                -         clk       out_setup untested  no_paths
+seq2_out[186]                -         clk       out_hold  untested  no_paths
+seq2_out[186]                -         clk       out_setup untested  no_paths
+seq2_out[185]                -         clk       out_hold  untested  no_paths
+seq2_out[185]                -         clk       out_setup untested  no_paths
+seq2_out[184]                -         clk       out_hold  untested  no_paths
+seq2_out[184]                -         clk       out_setup untested  no_paths
+seq2_out[183]                -         clk       out_hold  untested  no_paths
+seq2_out[183]                -         clk       out_setup untested  no_paths
+seq2_out[182]                -         clk       out_hold  untested  no_paths
+seq2_out[182]                -         clk       out_setup untested  no_paths
+seq2_out[179]                -         clk       out_hold  untested  no_paths
+seq2_out[179]                -         clk       out_setup untested  no_paths
+seq2_out[178]                -         clk       out_hold  untested  no_paths
+seq2_out[178]                -         clk       out_setup untested  no_paths
+seq2_out[175]                -         clk       out_hold  untested  no_paths
+seq2_out[175]                -         clk       out_setup untested  no_paths
+seq2_out[174]                -         clk       out_hold  untested  no_paths
+seq2_out[174]                -         clk       out_setup untested  no_paths
+seq2_out[173]                -         clk       out_hold  untested  no_paths
+seq2_out[173]                -         clk       out_setup untested  no_paths
+seq2_out[172]                -         clk       out_hold  untested  no_paths
+seq2_out[172]                -         clk       out_setup untested  no_paths
+seq2_out[171]                -         clk       out_hold  untested  no_paths
+seq2_out[171]                -         clk       out_setup untested  no_paths
+seq2_out[170]                -         clk       out_hold  untested  no_paths
+seq2_out[170]                -         clk       out_setup untested  no_paths
+seq2_out[169]                -         clk       out_hold  untested  no_paths
+seq2_out[169]                -         clk       out_setup untested  no_paths
+seq2_out[168]                -         clk       out_hold  untested  no_paths
+seq2_out[168]                -         clk       out_setup untested  no_paths
+seq2_out[167]                -         clk       out_hold  untested  no_paths
+seq2_out[167]                -         clk       out_setup untested  no_paths
+seq2_out[166]                -         clk       out_hold  untested  no_paths
+seq2_out[166]                -         clk       out_setup untested  no_paths
+seq2_out[165]                -         clk       out_hold  untested  no_paths
+                             CLK(rise) sclk      recovery  untested  false_paths
+pipeline_chain_27__u_mult/stage3_reg_57_/SETB(rise)
+                             CLK(rise) sclk      removal   untested  false_paths
+pipeline_chain_25__u_mult/stage3_reg_52_/SI
+                             CLK(rise) -         hold      untested  constant_disabled
+pipeline_chain_25__u_mult/stage3_reg_52_/SI
+                             CLK(rise) -         setup     untested  constant_disabled
+pipeline_chain_25__u_mult/stage3_reg_52_/SE
+                             CLK(rise) -         hold      untested  constant_disabled
+pipeline_chain_25__u_mult/stage3_reg_52_/SE
+                             CLK(rise) -         setup     untested  constant_disabled
+pipeline_chain_25__u_mult/stage3_reg_52_/SETB(low)
+                             -         -         min_pulse_width
+                                                           untested  no_clock
+pipeline_chain_25__u_mult/stage3_reg_52_/SETB(rise)
+                             CLK(rise) sclk      recovery  untested  false_paths
+pipeline_chain_25__u_mult/stage3_reg_52_/SETB(rise)
+                             CLK(rise) sclk      removal   untested  false_paths
+pipeline_chain_4__u_seq3/shifter_reg_2_/SETB(low)
+                             -         -         min_pulse_width
+                                                           untested  no_clock
+pipeline_chain_4__u_seq3/shifter_reg_2_/SETB(rise)
+
+

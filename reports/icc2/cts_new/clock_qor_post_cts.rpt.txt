@@ -1,0 +1,36 @@
+ Info: Initializing timer in CLOCK_SYN_REPORT_MODE
+****************************************
+Report : clock qor
+        -type summary
+Design : Top
+Version: S-2021.06-SP2
+Date   : Sat Sep  6 15:46:35 2025
+****************************************
+
+Attributes
+===========
+M Master Clock
+G Generated Clock
+& Internal Generated Clock
+U User Defined Skew Group
+D Default Skew Group
+* Generated Clock Balanced Separately
+
+==============================================
+==== Summary Reporting for Corner default ====
+==============================================
+
+================================================= Summary Table for Corner default =================================================
+Clock /                               Attrs     Sinks Levels    Clock     Clock     Clock       Max    Global  Trans DRC  Cap DRC
+Skew Group                                                   Repeater  Repeater   Stdcell   Latency      Skew     Count     Count
+                                                                Count      Area      Area
+------------------------------------------------------------------------------------------------------------------------------------
+### Mode: default, Scenario: default
+sclk                                    M,D      6144      5       71    756.33    756.33      0.27      0.19         0         0
+clk                                     M,D      4801      4       51    461.53    463.05      0.18      0.10         0         0
+------------------------------------------------------------------------------------------------------------------------------------
+All Clocks                                      10945      5      122   1217.86   1219.38      0.27      0.19         0         0
+
+
+Warning: Please use -largest / -smallest / -all switches with -show_verbose_paths / -show_paths to report the clock paths. (CTS-956)
+1

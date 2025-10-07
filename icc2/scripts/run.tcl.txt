@@ -1,0 +1,508 @@
+# ---------------------------------------------
+# Suppress unnecessary messages
+# ---------------------------------------------
+suppress_message FRAM-054
+suppress_message UIC-025
+suppress_message "ATTR-11 ATTR-12"
+ 
+# ---------------------------------------------
+# Library setup
+# ---------------------------------------------
+source scripts/lib_setup.tcl 
+ 
+# ---------------------------------------------
+# Load netlist & constraints from DC
+# ---------------------------------------------
+read_verilog ../output/mapped_scan_opt.v -top Top
+read_sdc ../output/mapped_scan_opt.sdc
+read_def ../output/mapped_scan_opt.scandef
+
+link_block
+current_block
+list_blocks
+ 
+# ---------------------------------------------
+# Parasitics and site/layer setup
+# ---------------------------------------------
+read_parasitic_tech -tlup ../libs/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus \
+    -layermap ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map -name maxTLU
+ 
+read_parasitic_tech -tlup ../libs/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus \
+    -layermap ../libs/tech/milkyway/saed32nm_tf_itf_tluplus.map -name minTLU
+ 
+set_parasitic_parameters -corners default -late_spec maxTLU -early_spec minTLU
+
+################################################Init Floorplan###################################
+initialize_floorplan -side_ratio {2 2} -core_offset {20}
+
+##voltage area placement
+shape_blocks
+
+##Define voltage
+set_voltage 0.95 -object_list VDD
+set_voltage 0.00 -object_list VSS
+
+##Define metal routing direction
+get_site_defs
+set_attribute [get_site_defs unit] symmetry Y
+set_attribute [get_site_defs unit] is_default true
+set_attribute [get_layers {M1 M3 M5 M7 M9}] routing_direction horizontal
+set_attribute [get_layers {M2 M4 M6 M8}] routing_direction vertical
+get_attribute [get_layers M?] routing_direction
+
+##Max routing layer up to M6 only !
+set_ignored_layers -max_routing_layer M6
+report_ignored_layers
+
+##Place The Block Ports
+set_block_pin_constraints -self -allowed_layers {M3 M4 M5 M6}
+place_pins -self
+
+##standard cell placement
+create_placement -floorplan
+
+
+##Resize IO pad [clock]
+create_pin_constraint -type individual -ports [get_ports *clk] -width 0.1 -length 0.4
+place_pins -self
+
+
+##Connect PG Net
+connect_pg_net
+check_mv_design 
+
+
+# Build power network
+remove_pg_strategies -all
+remove_pg_patterns -all
+remove_pg_regions -all
+remove_pg_via_master rules -all
+remove_pg_strategy_via_rules -all
+remove_routes -net_types {power ground} -ring -stripe -macro_pin_connect -lib_cell_pin_connect > /dev/null
+
+# Automatically connect power and ground nets
+connect_pg_net -automatic
+check_mv_design
+
+############### PG #########################
+
+##Power MESH pattern
+set_pg_via_master_rule -via_array_dimension {8 10} pgvia_8x10
+create_pg_mesh_pattern P_top_two -layers {{{horizontal_layer : M7} {width : 1.104} {spacing : interleaving} {offset : 0.856} {pitch : 13.376} {trim : true}} {{vertical_layer : M8} {width : 4.64} {spacing : interleaving} {offset : 6.08} {pitch : 19.456} {trim : true}}} -via_rule {{intersection : adjacent} {via_master : pgvia_8x10}}
+create_pg_mesh_pattern P_m2_triple -layers {{{vertical_layer : M2} {width : 0.44 0.192 0.192} {spacing : 2.724 3.456} {offset : 1.216} {pitch : 9.728} {trim : true} {track_alignment : track}}} -via_rule {{intersection : adjacent} {via_master : pgvia_8x10}}
+
+
+##SET PG STRATEGY
+set_pg_strategy S_default_vddvss -core -pattern {{name : P_top_two}{nets : {VDD VSS}}{offset_start : {20.000 20.000}}} -extension {{{stop : design_boundary_and_generate_pin}}}
+set_pg_strategy S_m2_vddvss -core -pattern {{name : P_m2_triple}{nets : {VDD VSS VSS }}{offset_start : {20.000 0.000}}} -extension {{{direction : T B}{stop : design_boundary_and_generate_pin}}}
+compile_pg -strategies {S_default_vddvss S_m2_vddvss}
+
+
+
+##Build standard cell rails
+create_pg_std_cell_conn_pattern P_std_cell_rail
+
+set_pg_strategy S_std_cell_rail_VSS_VDD \
+-core \
+-pattern {{name : P_std_cell_rail}{nets : {VSS VDD}}} \
+-extension {{{direction : L R T B}{stop : outermost_ring}}}
+
+set_pg_strategy_via_rule S_via_stdcellrail -via_rule {{intersection : adjacent}{via_master : default}}
+compile_pg -strategies {S_std_cell_rail_VSS_VDD S_std_cell_rail_VDDH} -via_rule S_via_stdcellrail
+
+
+##Checking
+check_pg_missing_vias
+check_pg_drc 
+check_pg_connectivity -check_std_cell_pins none
+
+redirect -tee -file ../reports/icc2/pg/check_mv_design_floorplan.rpt {check_mv_design}
+redirect -tee -file ../reports/icc2/pg/congestion_floorplan.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/pg/clock_qor_floorplan.rpt {report_clock_qor}
+redirect -tee -file ../reports/icc2/pg/qor_summary_floorplan.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/pg/timing_setup_floorplan.rpt {report_timing -delay_type max}
+redirect -tee -file ../reports/icc2/pg/timing_hold_floorplan.rpt {report_timing -delay_type min}
+redirect -tee -file ../reports/icc2/pg/constraint_floorplan.rpt {report_constraints}
+redirect -tee -file ../reports/icc2/pg/constraint_DRC_floorplan.rpt {report_constraint -all_violators -min_capacitance -max_capacitance -max_transition}
+redirect -tee -file ../reports/icc2/pg/design_physical_floorplan.rpt {report_design -physical}
+redirect -tee -file ../reports/icc2/pg/design_floorplan.rpt {report_design}
+
+save_block -as MYTOP_PGtest14kdrc
+
+# Save the Lib
+save_lib
+
+####################################################################PLACEMENT OPTIMIZATION##################################################################
+check_design -checks pre_placement_stage
+check_design -checks physical_constraints
+mark_clock_trees
+
+create_routing_rule CLK_RULE \
+    -widths {M6 0.3 M7 0.3 M8 0.3} \
+    -spacings {M6 0.3 M7 0.3 M8 0.3}
+set_clock_routing_rules -rules CLK_RULE -min_routing_layer M6 -max_routing_layer M8
+
+set_lib_cell_purpose [get_lib_cells *TIEH*] -include optimization
+set_lib_cell_purpose [get_lib_cells *TIEL*] -include optimization
+
+set_app_options -name opt.tie_cell.max_fanout -value 8
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+
+create_placement -effort high -timing_driven -congestion
+legalize_placement
+
+redirect -tee -file ../reports/icc2/check_floorplan.rpt {check_mv_design}
+redirect -tee -file ../reports/icc2/congestion_floorplan.rpt {report_congestion -rerun_global_router}
+
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+set_app_options -list {cts.optimize.enable_congestion_aware_ndr_promotion {true}}
+
+place_opt
+
+redirect -tee -file ../reports/icc2/place_opt_new/congestion_placement.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/place_opt_new/clock_qor_placement.rpt {report_clock_qor}
+redirect -tee -file ../reports/icc2/place_opt_new/qor_summary_placement.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/place_opt_new/timing_setup_placement.rpt {report_timing -delay_type max}
+redirect -tee -file ../reports/icc2/place_opt_new/timing_hold_plcement.rpt {report_timing -delay_type min}
+redirect -tee -file ../reports/icc2/place_opt_new/constraint_placement.rpt {report_constraints}
+redirect -tee -file ../reports/icc2/place_opt_new/constraint_DRC_placement.rpt {report_constraint -all_violators -min_capacitance -max_capacitance -max_transition}
+redirect -tee -file ../reports/icc2/place_opt_new/design_physical_placement.rpt {report_design -physical}
+redirect -tee -file ../reports/icc2/place_opt_new/design_plcement.rpt {report_design}
+
+save_block -as MYTOP_placeoptgood34drc
+
+###############################################################################
+
+######################################################################CLOCK TREE SYNTHESIS##################################################################
+set cts_cell [get_lib_cells "*/ISO* */RSDFFARX* */*LS* */*AO*"] 
+set_dont_touch [get_lib_cells $cts_cell] true
+
+set_app_options -name time.remove_clock_reconvergence_pessimism -value true
+
+set_app_options -name clock_opt.flow.enable_ccd -value false
+set_app_options -name cts.compile.enable_local_skew -value true
+set_app_options -name cts.optimize.enable_local_skew -value true
+
+remove_clock_uncertainty [get_clocks *clk] 
+
+clock_opt -to route_clock
+
+redirect -tee -file ../reports/icc2/cts_new/clock_qor_pre_cts.rpt {report_clock_qor}
+redirect -tee -file ../reports/icc2/cts_new/qor_summary_pre_cts.rpt {report_qor -summary}
+
+clock_opt -to final_opto
+
+redirect -tee -file ../reports/icc2/cts_new/congestion_post_cts.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/cts_new/clock_qor_post_cts.rpt {report_clock_qor}
+redirect -tee -file ../reports/icc2/cts_new/qor_post_cts.rpt {report_qor}
+redirect -tee -file ../reports/icc2/cts_new/qor_summary_post_cts.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/cts_new/timing_setup_cts.rpt {report_timing -delay_type max}
+redirect -tee -file ../reports/icc2/cts_new/timing_hold_cts.rpt {report_timing -delay_type min}
+redirect -tee -file ../reports/icc2/cts_new/constraint_post_cts.rpt {report_constraints}
+redirect -tee -file ../reports/icc2/cts_new/constraint_DRC_cts.rpt {report_constraint -all_violators -min_capacitance -max_capacitance -max_transition}
+redirect -tee -file ../reports/icc2/cts_new/design_physical_post_cts.rpt {report_design -physical}
+redirect -tee -file ../reports/icc2/cts_new/design_post_cts.rpt {report_design}
+redirect -tee -file ../reports/icc2/cts_new/check_route_cts.rpt {check_routes}
+
+save_block -as MYTOP_ctsnew4drc
+
+########################################################################ROUTE SIGNOFF######################################################################
+set_app_options -name route.common.verbose_level -value 1 
+
+##PERFORM ROUTING
+check_design -checks pre_route_stage 
+set_app_options -name route.global.timing_driven    -value true
+set_app_options -name route.global.crosstalk_driven -value false
+set_app_options -name route.track.timing_driven     -value true
+set_app_options -name route.track.crosstalk_driven  -value true
+set_app_options -name route.detail.timing_driven    -value true
+set_app_options -name route.detail.force_max_number_iterations -value false
+
+##ROUTING
+
+######1st route opt###############
+route_auto
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum1.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt1.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt1.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt1.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route1.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route1.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint1.rpt {report_constraints -all_violators}
+
+
+######2nd route opt###############
+
+set_app_options -name time.pba_optimization_mode -value path
+
+##router will use fixed spacing rules and won’t adjust wire spacing dynamically to improve timing
+set_app_options -name route.detail.eco_route_use_soft_spacing_for_timing_optimization -value false 
+
+##PT Related Stuff
+
+set_app_options -name time.enable_ccs_rcv_cap -value true
+set_app_options -name time.delay_calc_waveform_analysis_mode -value full_design
+set_app_options -name time.awp_compatibility_mode -value false
+set_app_options -name time.enable_si_timing_windows -value true
+route_auto
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum2.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt2.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt2.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt2.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route2.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route2.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint2.rpt {report_constraints -all_violators}
+
+
+######3rd route opt###############
+
+set_app_options -name time.pba_optimization_mode -value path
+set_app_options -name route.detail.eco_route_use_soft_spacing_for_timing_optimization -value false
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum3.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt3.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt3.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt3.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route3.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route3.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint3.rpt {report_constraints -all_violators}
+
+#Check LVS and DRC Violations
+report_timing
+check_lvs
+check_routes
+
+save_block -as MYTOP_routeopt_beforeHaha
+
+set tofix "U18009/S U18012/S U17989/S U17537/S U17984/S U17572/S U17189/S U17636/S U17767/S HFSBUF_10_2917/Y HFSBUF_4_1001/Y U15552/Y HFSBUF_67_2717/Y pipeline_chain_29__u_mult/stage3_reg_28_/QN pipeline_chain_5__u_seq1/lfsr_reg_1_/Q U17569/S pipeline_chain_3__u_seq2/addr_reg_1_/Q U23082/Y pipeline_chain_28__u_mult/stage3_reg_38_/QN U18149/S pipeline_chain_27__u_mult/stage1_reg_8_/Q pipeline_chain_6__u_mult/stage3_reg_29_/QN U10683/Y U11525/Y pipeline_chain_29__u_seq2/memory_reg_6__3_/Q U11545/Y U10569/Y U18213/S U4679/Y pipeline_chain_6__u_seq2/U106/Y HFSBUF_17_2182/Y U18197/S pipeline_chain_13__u_seq2/U139/Y U4705/Y U10684/Y U23013/Y pipeline_chain_19__u_seq2/U31/Y HFSBUF_57_2915/Y U11325/Y HFSBUF_4_980/Y pipeline_chain_17__u_mult/stage3_reg_49_/QN U5165/Y HFSBUF_61_1504/Y HFSBUF_4_695/Y HFSBUF_49_2770/Y HFSBUF_17_2633/Y HFSBUF_34_1610/Y HFSBUF_4_726/Y pipeline_chain_8__u_mult/stage3_reg_50_/QN U10725/Y pipeline_chain_5__u_mult/stage3_reg_25_/QN pipeline_chain_13__u_seq2/U205/Y pipeline_chain_10__u_mult/stage3_reg_48_/QN HFSBUF_57_2761/Y ropt_mt_inst_19360/Y U18130/CO HFSBUF_4_2612/Y HFSBUF_4_181/Y pipeline_chain_18__u_mult/stage3_reg_57_/QN U21325/Y U23513/Y pipeline_chain_17__u_seq2/U95/Y HFSBUF_17_2347/Y pipeline_chain_1__u_seq3/shifter_reg_4_/Q ropt_mt_inst_19331/Y pipeline_chain_20__u_seq2/U38/Y U21600/Y U10795/Y HFSBUF_4_229/Y"
+
+
+foreach haha $tofix {split_fanout -driver $haha -max_fanout 4 -lib_cell saed32hvt_c/NBUFFX8_HVT -on_route}
+
+
+legalize_placement -incremental -post_route ; route_eco -reroute modified_nets_first_then_others -utilize_dangling_wires true -max_reported_nets -1 -open_net_driven true ; report_constraints -all_violators
+
+redirect -tee -file ../reports/icc2/tofix/qor_suml.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/tofix/timing_hold_post_routeoptl.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/tofix/setuptiming_post_routeoptl.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/tofix/checkroute_post_routeoptl.rpt {check_routes}
+redirect -tee -file ../reports/icc2/tofix/congestion_post_routel.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/tofix/lvs_post_routel.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/tofix/report_constaraintl.rpt {report_constraints -all_violators}
+
+#more time consuming
+set_route_opt_target_endpoints  -ldrc_objects_collection "U18009/S U18012/S U17989/S U17537/S U17984/S U17572/S U17189/S U17636/S U17767/S HFSBUF_10_2917/Y HFSBUF_4_1001/Y U15552/Y HFSBUF_67_2717/Y pipeline_chain_29__u_mult/stage3_reg_28_/QN pipeline_chain_5__u_seq1/lfsr_reg_1_/Q U17569/S pipeline_chain_3__u_seq2/addr_reg_1_/Q U23082/Y pipeline_chain_28__u_mult/stage3_reg_38_/QN U18149/S pipeline_chain_27__u_mult/stage1_reg_8_/Q pipeline_chain_6__u_mult/stage3_reg_29_/QN U10683/Y U11525/Y pipeline_chain_29__u_seq2/memory_reg_6__3_/Q U11545/Y U10569/Y U18213/S U4679/Y pipeline_chain_6__u_seq2/U106/Y HFSBUF_17_2182/Y U18197/S pipeline_chain_13__u_seq2/U139/Y U4705/Y U10684/Y U23013/Y pipeline_chain_19__u_seq2/U31/Y HFSBUF_57_2915/Y U11325/Y HFSBUF_4_980/Y pipeline_chain_17__u_mult/stage3_reg_49_/QN U5165/Y HFSBUF_61_1504/Y HFSBUF_4_695/Y HFSBUF_49_2770/Y HFSBUF_17_2633/Y HFSBUF_34_1610/Y HFSBUF_4_726/Y pipeline_chain_8__u_mult/stage3_reg_50_/QN U10725/Y pipeline_chain_5__u_mult/stage3_reg_25_/QN pipeline_chain_13__u_seq2/U205/Y pipeline_chain_10__u_mult/stage3_reg_48_/QN HFSBUF_57_2761/Y ropt_mt_inst_19360/Y U18130/CO HFSBUF_4_2612/Y HFSBUF_4_181/Y pipeline_chain_18__u_mult/stage3_reg_57_/QN U21325/Y U23513/Y pipeline_chain_17__u_seq2/U95/Y HFSBUF_17_2347/Y pipeline_chain_1__u_seq3/shifter_reg_4_/Q ropt_mt_inst_19331/Y pipeline_chain_20__u_seq2/U38/Y U21600/Y U10795/Y HFSBUF_4_229/Y" ; route_opt
+
+redirect -tee -file ../reports/icc2/tofix/qor_sumhaha.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/tofix/timing_hold_post_routeopthaha.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/tofix/setuptiming_post_routeopthaha.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/tofix/checkroute_post_routeopthaha.rpt {check_routes}
+redirect -tee -file ../reports/icc2/tofix/congestion_post_routehaha.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/tofix/lvs_post_routehaha.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/tofix/report_constarainthaha.rpt {report_constraints -all_violators}
+
+save_block -as MYTOP_routeopt_afterHaha1
+
+set tofix "U10796/Y ropt_mt_inst_19335/Y gre_mt_inst_18958/Y HFSBUF_4_980/Y HFSBUF_481_1949/Y ropt_mt_inst_19293/Y ropt_mt_inst_19368/Y HFSBUF_103_1849/Y HFSBUF_67_2717/Y HFSBUF_34_2393/Y U18149/S U18367/CO pipeline_chain_28__u_mult/stage3_reg_38_/QN U23082/Y U11545/Y pipeline_chain_29__u_seq2/memory_reg_6__3_/Q U11525/Y pipeline_chain_27__u_mult/stage1_reg_8_/Q U18213/S pipeline_chain_6__u_seq2/U106/Y HFSBUF_34_1655/Y pipeline_chain_3__u_seq2/addr_reg_3_/Q HFSBUF_17_2182/Y U18197/S U18699/S pipeline_chain_13__u_seq2/U139/Y U7082/Y U11325/Y U23013/Y HFSBUF_4_695/Y HFSBUF_61_1504/Y HFSBUF_57_2915/Y HFSBUF_17_2633/Y pipeline_chain_17__u_mult/stage3_reg_49_/QN U23061/Y pipeline_chain_17__u_seq2/U95/Y HFSBUF_4_726/Y U18130/CO U10584/Y pipeline_chain_13__u_seq2/U205/Y HFSBUF_4_181/Y HFSBUF_34_1610/Y ropt_mt_inst_19229/Y pipeline_chain_18__u_mult/stage3_reg_57_/QN U21600/Y HFSBUF_4_221/Y U21325/Y ropt_mt_inst_19331/Y U12409/Y"
+
+
+foreach haha $tofix {split_fanout -driver $haha -max_fanout 4 -lib_cell saed32hvt_c/NBUFFX8_HVT -on_route}
+
+
+legalize_placement -incremental -post_route ; route_eco -reroute modified_nets_first_then_others -utilize_dangling_wires true -max_reported_nets -1 -open_net_driven true ; report_constraints -all_violators
+
+
+#more time consuming
+set_route_opt_target_endpoints  -ldrc_objects_collection "U10796/Y ropt_mt_inst_19335/Y gre_mt_inst_18958/Y HFSBUF_4_980/Y HFSBUF_481_1949/Y ropt_mt_inst_19293/Y ropt_mt_inst_19368/Y HFSBUF_103_1849/Y HFSBUF_67_2717/Y HFSBUF_34_2393/Y U18149/S U18367/CO pipeline_chain_28__u_mult/stage3_reg_38_/QN U23082/Y U11545/Y pipeline_chain_29__u_seq2/memory_reg_6__3_/Q U11525/Y pipeline_chain_27__u_mult/stage1_reg_8_/Q U18213/S pipeline_chain_6__u_seq2/U106/Y HFSBUF_34_1655/Y pipeline_chain_3__u_seq2/addr_reg_3_/Q HFSBUF_17_2182/Y U18197/S U18699/S pipeline_chain_13__u_seq2/U139/Y U7082/Y U11325/Y U23013/Y HFSBUF_4_695/Y HFSBUF_61_1504/Y HFSBUF_57_2915/Y HFSBUF_17_2633/Y pipeline_chain_17__u_mult/stage3_reg_49_/QN U23061/Y pipeline_chain_17__u_seq2/U95/Y HFSBUF_4_726/Y U18130/CO U10584/Y pipeline_chain_13__u_seq2/U205/Y HFSBUF_4_181/Y HFSBUF_34_1610/Y ropt_mt_inst_19229/Y pipeline_chain_18__u_mult/stage3_reg_57_/QN U21600/Y HFSBUF_4_221/Y U21325/Y ropt_mt_inst_19331/Y U12409/Y" ; route_opt
+
+redirect -tee -file ../reports/icc2/tofix/qor_sumhaha2.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/tofix/timing_hold_post_routeopthaha2.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/tofix/setuptiming_post_routeopthaha2.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/tofix/checkroute_post_routeopthaha2.rpt {check_routes}
+redirect -tee -file ../reports/icc2/tofix/congestion_post_routehaha2.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/tofix/lvs_post_routehaha2.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/tofix/report_constarainthaha2.rpt {report_constraints -all_violators}
+
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum4.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt4.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt4.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt4.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route4.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route4.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint4.rpt {report_constraints -all_violators}
+
+set_app_options -name opt.port.eliminate_verilog_assign -value true
+
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum5.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt5.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt5.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt5.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route5.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route5.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint5.rpt {report_constraints -all_violators}
+
+save_block -as MYTOP_routeopt5
+
+set n [get_nets "final_out[2046] n13224 n13742 n13784 n13907 n13687 final_out[340] n24106 pipeline_chain_6__u_seq2/n158 pipeline_chain_10__u_seq2/addr[3] final_out[23] n7315 n9740 n22892 seq3_out[3] n14953 final_out[1645] n4400 res_out[1124] n7213 pipeline_chain_8__u_seq2/addr[3] n25968 n26142 seq2_out[101] res_out[1863] n22363 res_out[958] n7171 n22815 pipeline_chain_19__u_seq2/n160 HFSNET_1957 res_out[388] final_out[252] seq3_out[32] HFSNET_2210 pipeline_chain_3__u_seq2/n189 n25416 final_out[467] n22359 final_out[465] n26716 final_out[1030] final_out[437] res_out[1049] n11211 res_out[513] final_out[957] final_out[1879] seq2_out[509] final_out[637]"]
+
+set_attr [remove_from_collection [get_nets -hier] $n] -name physical_status -value minor_change
+
+route_eco -nets $n -reroute modified_nets_only  -max_detail_route_iterations 20
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sumeco1.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopteco1.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopteco1.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopteco1.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_routeeco1.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_routeeco1.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constarainteco1.rpt {report_constraints -all_violators}
+
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum6.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt6.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt6.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt6.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route6.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route6.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint6.rpt {report_constraints -all_violators}
+
+save_block -as MYTOP_routeopt6
+
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum7.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt7.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt7.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt7.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route7.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route7.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint7.rpt {report_constraints -all_violators}
+
+save_block -as MYTOP_routeopt7
+
+set_route_opt_target_endpoints  -ldrc_objects_collection "final_out[2046] n13224 n13742 n13784 n13907 n13687 pipeline_chain_19__u_seq2/HFSNET_5 n31332 final_out[340] pipeline_chain_10__u_seq2/addr[3] pipeline_chain_6__u_seq2/n158 n22892 final_out[23] seq3_out[3] n9740 n7315 n25968 final_out[1645] n7171 res_out[1124] n26142 pipeline_chain_8__u_seq2/addr[3] n22363 seq2_out[101] res_out[1863] HFSNET_2210 pipeline_chain_3__u_seq2/n189 n4400 final_out[252] res_out[388] seq3_out[32] pipeline_chain_19__u_seq2/n160 final_out[465] final_out[467] res_out[513] n22359 final_out[437] res_out[1049] n11211 final_out[957] seq1_out[53] res_out[1566] seq2_out[509] final_out[1879] n25500 final_out[637]" ; route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum8.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt8.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt8.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt8.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route8.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route8.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint8.rpt {report_constraints -all_violators}
+
+save_block -as MYTOP_routeopt8
+
+set tofix "final_out[2046] n13224 n13742 n13784 n13907 n13687 pipeline_chain_19__u_seq2/HFSNET_5 n31332 final_out[340] pipeline_chain_10__u_seq2/addr[3] pipeline_chain_6__u_seq2/n158 n22892 final_out[23] seq3_out[3] n9740 n7315 n25968 final_out[1645] n7171 res_out[1124] n26142 pipeline_chain_8__u_seq2/addr[3] n22363 seq2_out[101] res_out[1863] HFSNET_2210 pipeline_chain_3__u_seq2/n189 n4400 final_out[252] res_out[388] seq3_out[32] pipeline_chain_19__u_seq2/n160 final_out[465] final_out[467] res_out[513] n22359 final_out[437] res_out[1049] n11211 final_out[957] seq1_out[53] res_out[1566] seq2_out[509] final_out[1879] n25500 final_out[637]"
+
+
+foreach haha $tofix {split_fanout -driver $haha -max_fanout 4 -lib_cell saed32hvt_c/NBUFFX8_HVT -on_route}
+
+
+legalize_placement -incremental -post_route ; route_eco -reroute modified_nets_first_then_others -utilize_dangling_wires true -max_reported_nets -1 -open_net_driven true ; report_constraints -all_violators
+
+route_opt
+
+save_block -as MYTOP_routeopt9
+
+set tofix "U18012/S U17189/S U17572/S U17636/S U17767/S U17569/S HFSBUF_4_1086/Y pipeline_chain_10__u_seq2/addr_reg_3_/Q pipeline_chain_6__u_seq2/U24/Y U17819/Y HFSBUF_4_1056/Y U8061/Y pipeline_chain_14__u_mult/stage3_reg_40_/QN U10545/Y U19554/SO U8386/Y U18197/S U22564/Y pipeline_chain_11__u_mult/stage3_reg_22_/QN pipeline_chain_8__u_seq2/addr_reg_3_/Q pipeline_chain_6__u_seq2/U106/Y HFSBUF_11_3176/Y HFSBUF_17_2419/Y U4576/Y pipeline_chain_3__u_seq2/U7/Y U4705/Y U20985/SO U18798/S U23364/Y U4472/Y U11325/Y HFSBUF_34_1814/Y U7593/Y ropt_mt_inst_19312/Y pipeline_chain_19__u_seq2/U28/Y HFSBUF_49_2894/Y U22634/Y U9408/Y U18489/S HFSBUF_68_2881/Y U18629/S U12409/Y pipeline_chain_6__u_seq1/lfsr_reg_5_/Q U21963/Y pipeline_chain_6__u_seq1/lfsr_reg_1_/Q"
+
+
+foreach haha $tofix {split_fanout -driver $haha -max_fanout 4 -lib_cell saed32hvt_c/NBUFFX8_HVT -on_route}
+
+
+legalize_placement -incremental -post_route ; route_eco -reroute modified_nets_first_then_others -utilize_dangling_wires true -max_reported_nets -1 -open_net_driven true ; report_constraints -all_violators
+
+set_route_opt_target_endpoints  -ldrc_objects_collection "U18012/S U17189/S U17572/S U17636/S U17767/S U17569/S HFSBUF_4_1086/Y pipeline_chain_10__u_seq2/addr_reg_3_/Q pipeline_chain_6__u_seq2/U24/Y U17819/Y HFSBUF_4_1056/Y U8061/Y pipeline_chain_14__u_mult/stage3_reg_40_/QN U10545/Y U19554/SO U8386/Y U18197/S U22564/Y pipeline_chain_11__u_mult/stage3_reg_22_/QN pipeline_chain_8__u_seq2/addr_reg_3_/Q pipeline_chain_6__u_seq2/U106/Y HFSBUF_11_3176/Y HFSBUF_17_2419/Y U4576/Y pipeline_chain_3__u_seq2/U7/Y U4705/Y U20985/SO U18798/S U23364/Y U4472/Y U11325/Y HFSBUF_34_1814/Y U7593/Y ropt_mt_inst_19312/Y pipeline_chain_19__u_seq2/U28/Y HFSBUF_49_2894/Y U22634/Y U9408/Y U18489/S HFSBUF_68_2881/Y U18629/S U12409/Y pipeline_chain_6__u_seq1/lfsr_reg_5_/Q U21963/Y pipeline_chain_6__u_seq1/lfsr_reg_1_/Q" ; route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum9.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt9.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt9.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt9.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route9.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route9.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint9.rpt {report_constraints -all_violators}
+
+save_block -as MYTOP_routeopt10
+
+set pin_list {U10578/Y U8061/Y HFSINV_13_3057/Y pipeline_chain_6__u_seq2/U106/Y HFSBUF_4_1056/Y pipeline_chain_14__u_mult/stage3_reg_40_/QN U10545/Y U19554/SO U9408/Y pipeline_chain_11__u_mult/stage3_reg_22_/QN U18197/S U8386/Y U22564/Y HFSBUF_11_3176/Y HFSBUF_17_2419/Y U18798/S U20985/SO HFSBUF_49_2894/Y U23364/Y ropt_mt_inst_19312/Y U11325/Y U22634/Y U18489/S U7593/Y U18629/S HFSBUF_68_2881/Y U21963/Y U5689/Y U12409/Y pipeline_chain_14__u_mult/stage3_reg_36_/QN}
+set cell_list {}
+foreach pin $pin_list {
+    set cell_name [lindex [split $pin "/"] 0]
+    lappend cell_list $cell_name
+}
+# Remove duplicates
+set cell_list [lsort -unique $cell_list]
+puts $cell_list
+
+set c [get_cells $cell_list]
+
+set_auto_disable_drc_nets -on_clock_network true
+
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum101.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt101.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt101.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt101.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route101.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route101.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint101.rpt {report_constraints -all_violators}
+
+save_block -as MYTOP_routeopt101
+
+connect_pg_net -automatic
+
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum11.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt11.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt11.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt11.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route11.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route11.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint11.rpt {report_constraints -all_violators}
+
+#Faillll, open previous block
+save_block -as MYTOP_routeopt11
+
+open_block MYTOP_routeopt101
+
+set_app_options -name route_opt.flow.enable_ccd_clock_drc_fixing -value always_on
+
+route_opt
+
+redirect -tee -file ../reports/icc2/routeopt_new/qor_sum12.rpt {report_qor -summary}
+redirect -tee -file ../reports/icc2/routeopt_new/timing_hold_post_routeopt12.rpt {report_timing -significant_digits 5 -delay_type min}
+redirect -tee -file ../reports/icc2/routeopt_new/setuptiming_post_routeopt12.rpt {report_timing -significant_digits 5}
+redirect -tee -file ../reports/icc2/routeopt_new/checkroute_post_routeopt12.rpt {check_routes}
+redirect -tee -file ../reports/icc2/routeopt_new/congestion_post_route12.rpt {report_congestion}
+redirect -tee -file ../reports/icc2/routeopt_new/lvs_post_route12.rpt {check_lvs}
+redirect -tee -file ../reports/icc2/routeopt_new/report_constaraint12.rpt {report_constraints -all_violators}
+
+save_block -as MYTOP_routeopt12
+
+set_app_options -name route_opt.flow.size_only_mode -value equal_or_smaller
+route_opt
+
+save_lib
+
+
+# =========================================================
+# Final outputs for signoff
+# =========================================================
+
+save_block -as MYTOP_FINAL_FINAL9PM
+#save_block -as MYTOP_FINAL_0DRC_rmvnet
+
+save_lib
+

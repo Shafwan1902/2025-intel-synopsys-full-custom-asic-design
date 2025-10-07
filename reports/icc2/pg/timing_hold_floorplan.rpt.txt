@@ -1,0 +1,46 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 1
+        -report_by design
+Design : Top
+Version: S-2021.06-SP2
+Date   : Thu Sep 11 09:16:57 2025
+****************************************
+
+  Startpoint: pipeline_chain_1__u_seq3/shifter_reg_6_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: pipeline_chain_1__u_seq3/shifter_reg_7_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  pipeline_chain_1__u_seq3/shifter_reg_6_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  pipeline_chain_1__u_seq3/shifter_reg_6_/Q (SDFFARX1_RVT)
+                                                   0.16      0.16 f
+  pipeline_chain_1__u_seq3/shifter_reg_7_/D (DFFASX1_HVT)
+                                                   0.00      0.16 f
+  data arrival time                                          0.16
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.30      0.30
+  pipeline_chain_1__u_seq3/shifter_reg_7_/CLK (DFFASX1_HVT)
+                                                   0.00      0.30 r
+  library hold time                               -0.02      0.28
+  data required time                                         0.28
+  ------------------------------------------------------------------------
+  data required time                                         0.28
+  data arrival time                                         -0.16
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.12
+
+
+1
